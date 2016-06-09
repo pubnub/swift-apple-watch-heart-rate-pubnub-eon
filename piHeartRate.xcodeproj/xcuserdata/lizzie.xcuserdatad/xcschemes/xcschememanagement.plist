@@ -4,6 +4,21 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>getHeartRate (Glance).xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>7</integer>
+		</dict>
+		<key>getHeartRate (Notification).xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>6</integer>
+		</dict>
+		<key>getHeartRate.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>5</integer>
+		</dict>
 		<key>piHeartRate.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -12,6 +27,11 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>6A2015DD1D073CDC000E3AFE</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>6AE1DC7A1D07338D00C24422</key>
 		<dict>
 			<key>primary</key>

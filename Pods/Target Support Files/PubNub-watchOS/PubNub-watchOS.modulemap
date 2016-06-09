@@ -1,0 +1,6 @@
+framework module PubNub {
+  umbrella header "PubNub-watchOS-umbrella.h"
+
+  export *
+  module * { export * }
+}

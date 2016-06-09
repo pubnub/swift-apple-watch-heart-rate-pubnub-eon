@@ -1,0 +1,1 @@
+ const unsigned char CocoaLumberjackVersionString[] __attribute__ ((used)) = "@(#)PROGRAM:CocoaLumberjack  PROJECT:Pods-1" "\n"; const double CocoaLumberjackVersionNumber __attribute__ ((used)) = (double)1.;

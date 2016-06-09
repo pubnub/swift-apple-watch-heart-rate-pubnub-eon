@@ -1,0 +1,167 @@
+### Swift dependencies file v0 ###
+provides-top-level:
+- "ExtensionDelegate"
+provides-nominal:
+- "C22getHeartRate_Extension17ExtensionDelegate"
+provides-member:
+- ["C22getHeartRate_Extension17ExtensionDelegate", ""]
+provides-dynamic-lookup:
+- "applicationDidFinishLaunching"
+- "applicationDidBecomeActive"
+- "applicationWillResignActive"
+depends-top-level:
+- "NSObject"
+- "ExtensionDelegate"
+- "WKExtensionDelegate"
+depends-member:
+- ["Ps9AnyObject", "applicationDidBecomeActive"]
+- ["Ps9AnyObject", "applicationDidFinishLaunching"]
+- ["Ps9AnyObject", "applicationWillResignActive"]
+- ["Ps9AnyObject", "didReceiveLocalNotification"]
+- ["Ps9AnyObject", "didReceiveRemoteNotification"]
+- ["Ps9AnyObject", "handleActionWithIdentifier"]
+- ["Ps9AnyObject", "handleUserActivity"]
+- ["Ps9AnyObject", "init"]
+- ["Ps9AnyObject", ""]
+- ["Ps11CVarArgType", "applicationDidBecomeActive"]
+- ["Ps11CVarArgType", "applicationDidFinishLaunching"]
+- ["Ps11CVarArgType", "applicationWillResignActive"]
+- ["Ps11CVarArgType", "didReceiveLocalNotification"]
+- ["Ps11CVarArgType", "didReceiveRemoteNotification"]
+- ["Ps11CVarArgType", "handleActionWithIdentifier"]
+- ["Ps11CVarArgType", "handleUserActivity"]
+- ["Ps11CVarArgType", "init"]
+- ["Ps11CVarArgType", ""]
+- ["Ps28CustomDebugStringConvertible", "applicationDidBecomeActive"]
+- ["Ps28CustomDebugStringConvertible", "applicationDidFinishLaunching"]
+- ["Ps28CustomDebugStringConvertible", "applicationWillResignActive"]
+- ["Ps28CustomDebugStringConvertible", "didReceiveLocalNotification"]
+- ["Ps28CustomDebugStringConvertible", "didReceiveRemoteNotification"]
+- ["Ps28CustomDebugStringConvertible", "handleActionWithIdentifier"]
+- ["Ps28CustomDebugStringConvertible", "handleUserActivity"]
+- ["Ps28CustomDebugStringConvertible", "init"]
+- ["Ps28CustomDebugStringConvertible", ""]
+- ["Ps23CustomStringConvertible", "applicationDidBecomeActive"]
+- ["Ps23CustomStringConvertible", "applicationDidFinishLaunching"]
+- ["Ps23CustomStringConvertible", "applicationWillResignActive"]
+- ["Ps23CustomStringConvertible", "didReceiveLocalNotification"]
+- ["Ps23CustomStringConvertible", "didReceiveRemoteNotification"]
+- ["Ps23CustomStringConvertible", "handleActionWithIdentifier"]
+- ["Ps23CustomStringConvertible", "handleUserActivity"]
+- ["Ps23CustomStringConvertible", "init"]
+- ["Ps23CustomStringConvertible", ""]
+- ["Ps9Equatable", "applicationDidBecomeActive"]
+- ["Ps9Equatable", "applicationDidFinishLaunching"]
+- ["Ps9Equatable", "applicationWillResignActive"]
+- ["Ps9Equatable", "didReceiveLocalNotification"]
+- ["Ps9Equatable", "didReceiveRemoteNotification"]
+- ["Ps9Equatable", "handleActionWithIdentifier"]
+- ["Ps9Equatable", "handleUserActivity"]
+- ["Ps9Equatable", "init"]
+- ["Ps9Equatable", ""]
+- ["C22getHeartRate_Extension17ExtensionDelegate", "applicationDidBecomeActive"]
+- ["C22getHeartRate_Extension17ExtensionDelegate", "applicationDidFinishLaunching"]
+- ["C22getHeartRate_Extension17ExtensionDelegate", "applicationWillResignActive"]
+- ["C22getHeartRate_Extension17ExtensionDelegate", "deinit"]
+- ["C22getHeartRate_Extension17ExtensionDelegate", "didReceiveLocalNotification"]
+- ["C22getHeartRate_Extension17ExtensionDelegate", "didReceiveRemoteNotification"]
+- ["C22getHeartRate_Extension17ExtensionDelegate", "handleActionWithIdentifier"]
+- ["C22getHeartRate_Extension17ExtensionDelegate", "handleUserActivity"]
+- ["C22getHeartRate_Extension17ExtensionDelegate", "init"]
+- ["Ps8Hashable", "applicationDidBecomeActive"]
+- ["Ps8Hashable", "applicationDidFinishLaunching"]
+- ["Ps8Hashable", "applicationWillResignActive"]
+- ["Ps8Hashable", "didReceiveLocalNotification"]
+- ["Ps8Hashable", "didReceiveRemoteNotification"]
+- ["Ps8Hashable", "handleActionWithIdentifier"]
+- ["Ps8Hashable", "handleUserActivity"]
+- ["Ps8Hashable", "init"]
+- ["Ps8Hashable", ""]
+- ["CSo8NSObject", "applicationDidBecomeActive"]
+- ["CSo8NSObject", "applicationDidFinishLaunching"]
+- ["CSo8NSObject", "applicationWillResignActive"]
+- ["CSo8NSObject", "didReceiveLocalNotification"]
+- ["CSo8NSObject", "didReceiveRemoteNotification"]
+- ["CSo8NSObject", "handleActionWithIdentifier"]
+- ["CSo8NSObject", "handleUserActivity"]
+- ["CSo8NSObject", "init"]
+- ["CSo8NSObject", ""]
+- ["PSo16NSObjectProtocol", "applicationDidBecomeActive"]
+- ["PSo16NSObjectProtocol", "applicationDidFinishLaunching"]
+- ["PSo16NSObjectProtocol", "applicationWillResignActive"]
+- ["PSo16NSObjectProtocol", "didReceiveLocalNotification"]
+- ["PSo16NSObjectProtocol", "didReceiveRemoteNotification"]
+- ["PSo16NSObjectProtocol", "handleActionWithIdentifier"]
+- ["PSo16NSObjectProtocol", "handleUserActivity"]
+- ["PSo16NSObjectProtocol", "init"]
+- ["PSo16NSObjectProtocol", ""]
+- ["PSo19WKExtensionDelegate", "applicationDidBecomeActive"]
+- ["PSo19WKExtensionDelegate", "applicationDidFinishLaunching"]
+- ["PSo19WKExtensionDelegate", "applicationWillResignActive"]
+- ["PSo19WKExtensionDelegate", "didReceiveLocalNotification"]
+- ["PSo19WKExtensionDelegate", "didReceiveRemoteNotification"]
+- ["PSo19WKExtensionDelegate", "handleActionWithIdentifier"]
+- ["PSo19WKExtensionDelegate", "handleUserActivity"]
+- ["PSo19WKExtensionDelegate", ""]
+depends-nominal:
+- "Ps9AnyObject"
+- "Ps11CVarArgType"
+- "Ps28CustomDebugStringConvertible"
+- "Ps23CustomStringConvertible"
+- "Ps9Equatable"
+- "C22getHeartRate_Extension17ExtensionDelegate"
+- "Ps8Hashable"
+- "CSo8NSObject"
+- "PSo16NSObjectProtocol"
+- "PSo19WKExtensionDelegate"
+depends-dynamic-lookup:
+depends-external:
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/watchsimulator/i386/Swift.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/watchsimulator/i386/WatchKit.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/watchsimulator/i386/Foundation.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/watchsimulator/i386/Darwin.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/watchsimulator/i386/Dispatch.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/watchsimulator/i386/ObjectiveC.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/watchsimulator/i386/CoreGraphics.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/watchsimulator/i386/UIKit.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/watchsimulator/i386/CoreLocation.swiftmodule"
+- "/Users/lizzie/Desktop/piHeartRate/DerivedData/piHeartRate/Build/Products/Debug-watchsimulator/PubNub-watchOS/PubNub.framework/Headers/PubNub.h"
+- "/Users/lizzie/Desktop/piHeartRate/DerivedData/piHeartRate/Build/Products/Debug-watchsimulator/PubNub-watchOS/PubNub.framework/Headers/PNObjectEventListener.h"
+- "/Users/lizzie/Desktop/piHeartRate/DerivedData/piHeartRate/Build/Products/Debug-watchsimulator/PubNub-watchOS/PubNub.framework/Headers/PNErrorCodes.h"
+- "/Users/lizzie/Desktop/piHeartRate/DerivedData/piHeartRate/Build/Products/Debug-watchsimulator/PubNub-watchOS/PubNub.framework/Headers/PNLog.h"
+- "/Users/lizzie/Desktop/piHeartRate/DerivedData/piHeartRate/Build/Products/Debug-watchsimulator/PubNub-watchOS/PubNub.framework/Headers/PNTimeResult.h"
+- "/Users/lizzie/Desktop/piHeartRate/DerivedData/piHeartRate/Build/Products/Debug-watchsimulator/PubNub-watchOS/PubNub.framework/Headers/PNSubscribeStatus.h"
+- "/Users/lizzie/Desktop/piHeartRate/DerivedData/piHeartRate/Build/Products/Debug-watchsimulator/PubNub-watchOS/PubNub.framework/Headers/PNSubscriberResults.h"
+- "/Users/lizzie/Desktop/piHeartRate/DerivedData/piHeartRate/Build/Products/Debug-watchsimulator/PubNub-watchOS/PubNub.framework/Headers/PNPublishStatus.h"
+- "/Users/lizzie/Desktop/piHeartRate/DerivedData/piHeartRate/Build/Products/Debug-watchsimulator/PubNub-watchOS/PubNub.framework/Headers/PNPresenceWhereNowResult.h"
+- "/Users/lizzie/Desktop/piHeartRate/DerivedData/piHeartRate/Build/Products/Debug-watchsimulator/PubNub-watchOS/PubNub.framework/Headers/PNPresenceChannelHereNowResult.h"
+- "/Users/lizzie/Desktop/piHeartRate/DerivedData/piHeartRate/Build/Products/Debug-watchsimulator/PubNub-watchOS/PubNub.framework/Headers/PNPresenceGlobalHereNowResult.h"
+- "/Users/lizzie/Desktop/piHeartRate/DerivedData/piHeartRate/Build/Products/Debug-watchsimulator/PubNub-watchOS/PubNub.framework/Headers/PNPresenceChannelGroupHereNowResult.h"
+- "/Users/lizzie/Desktop/piHeartRate/DerivedData/piHeartRate/Build/Products/Debug-watchsimulator/PubNub-watchOS/PubNub.framework/Headers/PNHistoryResult.h"
+- "/Users/lizzie/Desktop/piHeartRate/DerivedData/piHeartRate/Build/Products/Debug-watchsimulator/PubNub-watchOS/PubNub.framework/Headers/PNClientStateUpdateStatus.h"
+- "/Users/lizzie/Desktop/piHeartRate/DerivedData/piHeartRate/Build/Products/Debug-watchsimulator/PubNub-watchOS/PubNub.framework/Headers/PNChannelGroupsResult.h"
+- "/Users/lizzie/Desktop/piHeartRate/DerivedData/piHeartRate/Build/Products/Debug-watchsimulator/PubNub-watchOS/PubNub.framework/Headers/PNChannelGroupClientStateResult.h"
+- "/Users/lizzie/Desktop/piHeartRate/DerivedData/piHeartRate/Build/Products/Debug-watchsimulator/PubNub-watchOS/PubNub.framework/Headers/PNChannelGroupChannelsResult.h"
+- "/Users/lizzie/Desktop/piHeartRate/DerivedData/piHeartRate/Build/Products/Debug-watchsimulator/PubNub-watchOS/PubNub.framework/Headers/PNChannelClientStateResult.h"
+- "/Users/lizzie/Desktop/piHeartRate/DerivedData/piHeartRate/Build/Products/Debug-watchsimulator/PubNub-watchOS/PubNub.framework/Headers/PNAPNSEnabledChannelsResult.h"
+- "/Users/lizzie/Desktop/piHeartRate/DerivedData/piHeartRate/Build/Products/Debug-watchsimulator/PubNub-watchOS/PubNub.framework/Headers/PNServiceData.h"
+- "/Users/lizzie/Desktop/piHeartRate/DerivedData/piHeartRate/Build/Products/Debug-watchsimulator/PubNub-watchOS/PubNub.framework/Headers/PNResult.h"
+- "/Users/lizzie/Desktop/piHeartRate/DerivedData/piHeartRate/Build/Products/Debug-watchsimulator/PubNub-watchOS/PubNub.framework/Headers/PNStatus.h"
+- "/Users/lizzie/Desktop/piHeartRate/DerivedData/piHeartRate/Build/Products/Debug-watchsimulator/PubNub-watchOS/PubNub.framework/Headers/PNErrorStatus.h"
+- "/Users/lizzie/Desktop/piHeartRate/DerivedData/piHeartRate/Build/Products/Debug-watchsimulator/PubNub-watchOS/PubNub.framework/Headers/PNAcknowledgmentStatus.h"
+- "/Users/lizzie/Desktop/piHeartRate/DerivedData/piHeartRate/Build/Products/Debug-watchsimulator/PubNub-watchOS/PubNub.framework/Headers/PNConfiguration.h"
+- "/Users/lizzie/Desktop/piHeartRate/DerivedData/piHeartRate/Build/Products/Debug-watchsimulator/PubNub-watchOS/PubNub.framework/Headers/PNClientInformation.h"
+- "/Users/lizzie/Desktop/piHeartRate/DerivedData/piHeartRate/Build/Products/Debug-watchsimulator/PubNub-watchOS/PubNub.framework/Headers/PNAES.h"
+- "/Users/lizzie/Desktop/piHeartRate/DerivedData/piHeartRate/Build/Products/Debug-watchsimulator/PubNub-watchOS/PubNub.framework/Headers/PubNub+Time.h"
+- "/Users/lizzie/Desktop/piHeartRate/DerivedData/piHeartRate/Build/Products/Debug-watchsimulator/PubNub-watchOS/PubNub.framework/Headers/PubNub+Subscribe.h"
+- "/Users/lizzie/Desktop/piHeartRate/DerivedData/piHeartRate/Build/Products/Debug-watchsimulator/PubNub-watchOS/PubNub.framework/Headers/PubNub+State.h"
+- "/Users/lizzie/Desktop/piHeartRate/DerivedData/piHeartRate/Build/Products/Debug-watchsimulator/PubNub-watchOS/PubNub.framework/Headers/PubNub+Publish.h"
+- "/Users/lizzie/Desktop/piHeartRate/DerivedData/piHeartRate/Build/Products/Debug-watchsimulator/PubNub-watchOS/PubNub.framework/Headers/PubNub+Presence.h"
+- "/Users/lizzie/Desktop/piHeartRate/DerivedData/piHeartRate/Build/Products/Debug-watchsimulator/PubNub-watchOS/PubNub.framework/Headers/PubNub+History.h"
+- "/Users/lizzie/Desktop/piHeartRate/DerivedData/piHeartRate/Build/Products/Debug-watchsimulator/PubNub-watchOS/PubNub.framework/Headers/PubNub+ChannelGroup.h"
+- "/Users/lizzie/Desktop/piHeartRate/DerivedData/piHeartRate/Build/Products/Debug-watchsimulator/PubNub-watchOS/PubNub.framework/Headers/PNStructures.h"
+- "/Users/lizzie/Desktop/piHeartRate/DerivedData/piHeartRate/Build/Products/Debug-watchsimulator/PubNub-watchOS/PubNub.framework/Headers/PubNub+Core.h"
+- "/Users/lizzie/Desktop/piHeartRate/DerivedData/piHeartRate/Build/Products/Debug-watchsimulator/PubNub-watchOS/PubNub.framework/Headers/PubNub+APNS.h"
+- "/Users/lizzie/Desktop/piHeartRate/DerivedData/piHeartRate/Build/Products/Debug-watchsimulator/PubNub-watchOS/PubNub.framework/Headers/PubNub-watchOS-umbrella.h"
+- "/Users/lizzie/Desktop/piHeartRate/DerivedData/piHeartRate/Build/Products/Debug-watchsimulator/PubNub-watchOS/PubNub.framework/Modules/module.modulemap"
+interface-hash: "be7cd5e2a574f1f62c3c9a28a6f67747"

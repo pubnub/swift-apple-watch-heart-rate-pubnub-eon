@@ -7,6 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		080171E67D6EA66A45580FE5 /* Pods_getHeartRate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 668B100BC52023F9B12EA73D /* Pods_getHeartRate.framework */; };
+		13969F70212C6AA7CBAECC2E /* Pods_piHeartRate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43B46C40E3DACB3239DF2AFF /* Pods_piHeartRate.framework */; };
+		6A2015E21D073CDD000E3AFE /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6A2015E01D073CDD000E3AFE /* Interface.storyboard */; };
+		6A2015E41D073CDD000E3AFE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6A2015E31D073CDD000E3AFE /* Assets.xcassets */; };
+		6A2015EB1D073CDD000E3AFE /* getHeartRate Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 6A2015EA1D073CDD000E3AFE /* getHeartRate Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		6A2015F21D073CDD000E3AFE /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A2015F11D073CDD000E3AFE /* InterfaceController.swift */; };
+		6A2015F41D073CDD000E3AFE /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A2015F31D073CDD000E3AFE /* ExtensionDelegate.swift */; };
+		6A2015F61D073CDD000E3AFE /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A2015F51D073CDD000E3AFE /* NotificationController.swift */; };
+		6A2015F81D073CDD000E3AFE /* GlanceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A2015F71D073CDD000E3AFE /* GlanceController.swift */; };
+		6A2015FA1D073CDD000E3AFE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6A2015F91D073CDD000E3AFE /* Assets.xcassets */; };
+		6A2015FE1D073CDD000E3AFE /* getHeartRate.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 6A2015DE1D073CDC000E3AFE /* getHeartRate.app */; };
+		6A56BBA91D079970008E4962 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A56BBA81D079970008E4962 /* HealthKit.framework */; };
+		6AB2456F1D0A219C00031A1E /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A20160A1D0756A6000E3AFE /* HealthKit.framework */; };
 		6AE1DC7F1D07338D00C24422 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AE1DC7E1D07338D00C24422 /* AppDelegate.swift */; };
 		6AE1DC811D07338D00C24422 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AE1DC801D07338D00C24422 /* ViewController.swift */; };
 		6AE1DC841D07338D00C24422 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6AE1DC821D07338D00C24422 /* Main.storyboard */; };
@@ -14,9 +27,25 @@
 		6AE1DC891D07338D00C24422 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6AE1DC871D07338D00C24422 /* LaunchScreen.storyboard */; };
 		6AE1DC941D07338D00C24422 /* piHeartRateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AE1DC931D07338D00C24422 /* piHeartRateTests.swift */; };
 		6AE1DC9F1D07338D00C24422 /* piHeartRateUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AE1DC9E1D07338D00C24422 /* piHeartRateUITests.swift */; };
+		8F32A85675FB95E7EB8535C0 /* Pods_getHeartRate_Extension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CECDE99122E0802377900EFB /* Pods_getHeartRate_Extension.framework */; };
+		9FD09EDA0B2DF3626FDB9EEB /* Pods_piHeartRate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64102C3DB5011AD8D84D6460 /* Pods_piHeartRate.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		6A2015EC1D073CDD000E3AFE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6AE1DC731D07338D00C24422 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6A2015E91D073CDD000E3AFE;
+			remoteInfo = "getHeartRate Extension";
+		};
+		6A2015FC1D073CDD000E3AFE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6AE1DC731D07338D00C24422 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6A2015DD1D073CDC000E3AFE;
+			remoteInfo = getHeartRate;
+		};
 		6AE1DC901D07338D00C24422 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 6AE1DC731D07338D00C24422 /* Project object */;
@@ -33,7 +62,55 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		6A2016021D073CDD000E3AFE /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				6A2015EB1D073CDD000E3AFE /* getHeartRate Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6A2016061D073CDD000E3AFE /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				6A2015FE1D073CDD000E3AFE /* getHeartRate.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		0A339833FE35895EA97F77E2 /* Pods-getHeartRate Extension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-getHeartRate Extension.release.xcconfig"; path = "Pods/Target Support Files/Pods-getHeartRate Extension/Pods-getHeartRate Extension.release.xcconfig"; sourceTree = "<group>"; };
+		1141F4E921D15D1DD0BA0DF4 /* Pods-getHeartRate Extension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-getHeartRate Extension.debug.xcconfig"; path = "Pods/Target Support Files/Pods-getHeartRate Extension/Pods-getHeartRate Extension.debug.xcconfig"; sourceTree = "<group>"; };
+		43B46C40E3DACB3239DF2AFF /* Pods_piHeartRate.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_piHeartRate.framework; path = "/Users/lizzie/Desktop/piHeartRate/build/Debug-iphoneos/Pods_piHeartRate.framework"; sourceTree = "<absolute>"; };
+		64102C3DB5011AD8D84D6460 /* Pods_piHeartRate.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_piHeartRate.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		668B100BC52023F9B12EA73D /* Pods_getHeartRate.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_getHeartRate.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6A2015DE1D073CDC000E3AFE /* getHeartRate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = getHeartRate.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		6A2015E11D073CDD000E3AFE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
+		6A2015E31D073CDD000E3AFE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		6A2015E51D073CDD000E3AFE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6A2015EA1D073CDD000E3AFE /* getHeartRate Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "getHeartRate Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6A2015F01D073CDD000E3AFE /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
+		6A2015F11D073CDD000E3AFE /* InterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
+		6A2015F31D073CDD000E3AFE /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
+		6A2015F51D073CDD000E3AFE /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
+		6A2015F71D073CDD000E3AFE /* GlanceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlanceController.swift; sourceTree = "<group>"; };
+		6A2015F91D073CDD000E3AFE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		6A2015FB1D073CDD000E3AFE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6A2016091D0756A6000E3AFE /* getHeartRate Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "getHeartRate Extension.entitlements"; sourceTree = "<group>"; };
+		6A20160A1D0756A6000E3AFE /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS2.2.sdk/System/Library/Frameworks/HealthKit.framework; sourceTree = DEVELOPER_DIR; };
+		6A56BBA81D079970008E4962 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
+		6A56BBAA1D079BB8008E4962 /* HealthKitUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKitUI.framework; path = System/Library/Frameworks/HealthKitUI.framework; sourceTree = SDKROOT; };
+		6A87B8971D089DA3007DEB86 /* piHeartRate.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = piHeartRate.entitlements; sourceTree = "<group>"; };
+		6A87B8981D08D42A007DEB86 /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		6AE1DC7B1D07338D00C24422 /* piHeartRate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = piHeartRate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6AE1DC7E1D07338D00C24422 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6AE1DC801D07338D00C24422 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -47,13 +124,38 @@
 		6AE1DC9A1D07338D00C24422 /* piHeartRateUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = piHeartRateUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6AE1DC9E1D07338D00C24422 /* piHeartRateUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = piHeartRateUITests.swift; sourceTree = "<group>"; };
 		6AE1DCA01D07338D00C24422 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		711EA6D4636E2C54776E7F40 /* Pods-getHeartRate.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-getHeartRate.release.xcconfig"; path = "Pods/Target Support Files/Pods-getHeartRate/Pods-getHeartRate.release.xcconfig"; sourceTree = "<group>"; };
+		7D0E154CDB677BFDA0D05310 /* Pods-piHeartRate.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-piHeartRate.release.xcconfig"; path = "Pods/Target Support Files/Pods-piHeartRate/Pods-piHeartRate.release.xcconfig"; sourceTree = "<group>"; };
+		9DC8646D4B5EF70032E2FDEF /* Pods-piHeartRate.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-piHeartRate.debug.xcconfig"; path = "Pods/Target Support Files/Pods-piHeartRate/Pods-piHeartRate.debug.xcconfig"; sourceTree = "<group>"; };
+		CC0A7FB5811B6F5E44607631 /* Pods-getHeartRate.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-getHeartRate.debug.xcconfig"; path = "Pods/Target Support Files/Pods-getHeartRate/Pods-getHeartRate.debug.xcconfig"; sourceTree = "<group>"; };
+		CECDE99122E0802377900EFB /* Pods_getHeartRate_Extension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_getHeartRate_Extension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		25757283CF455D3F61DFD79F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				080171E67D6EA66A45580FE5 /* Pods_getHeartRate.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6A2015E71D073CDD000E3AFE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6AB2456F1D0A219C00031A1E /* HealthKit.framework in Frameworks */,
+				8F32A85675FB95E7EB8535C0 /* Pods_getHeartRate_Extension.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		6AE1DC781D07338D00C24422 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6A56BBA91D079970008E4962 /* HealthKit.framework in Frameworks */,
+				13969F70212C6AA7CBAECC2E /* Pods_piHeartRate.framework in Frameworks */,
+				9FD09EDA0B2DF3626FDB9EEB /* Pods_piHeartRate.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -74,13 +176,64 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		495DA640AD7BF369B24DDE9E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6A56BBAA1D079BB8008E4962 /* HealthKitUI.framework */,
+				6A56BBA81D079970008E4962 /* HealthKit.framework */,
+				6A20160A1D0756A6000E3AFE /* HealthKit.framework */,
+				668B100BC52023F9B12EA73D /* Pods_getHeartRate.framework */,
+				64102C3DB5011AD8D84D6460 /* Pods_piHeartRate.framework */,
+				CECDE99122E0802377900EFB /* Pods_getHeartRate_Extension.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		6A2015DF1D073CDD000E3AFE /* getHeartRate */ = {
+			isa = PBXGroup;
+			children = (
+				6A2015E01D073CDD000E3AFE /* Interface.storyboard */,
+				6A2015E31D073CDD000E3AFE /* Assets.xcassets */,
+				6A2015E51D073CDD000E3AFE /* Info.plist */,
+			);
+			path = getHeartRate;
+			sourceTree = "<group>";
+		};
+		6A2015EE1D073CDD000E3AFE /* getHeartRate Extension */ = {
+			isa = PBXGroup;
+			children = (
+				6A2016091D0756A6000E3AFE /* getHeartRate Extension.entitlements */,
+				6A2015F11D073CDD000E3AFE /* InterfaceController.swift */,
+				6A2015F31D073CDD000E3AFE /* ExtensionDelegate.swift */,
+				6A2015F51D073CDD000E3AFE /* NotificationController.swift */,
+				6A2015F71D073CDD000E3AFE /* GlanceController.swift */,
+				6A2015F91D073CDD000E3AFE /* Assets.xcassets */,
+				6A2015FB1D073CDD000E3AFE /* Info.plist */,
+				6A2015EF1D073CDD000E3AFE /* Supporting Files */,
+			);
+			path = "getHeartRate Extension";
+			sourceTree = "<group>";
+		};
+		6A2015EF1D073CDD000E3AFE /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				6A2015F01D073CDD000E3AFE /* PushNotificationPayload.apns */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		6AE1DC721D07338D00C24422 = {
 			isa = PBXGroup;
 			children = (
+				6A87B8981D08D42A007DEB86 /* Podfile */,
 				6AE1DC7D1D07338D00C24422 /* piHeartRate */,
 				6AE1DC921D07338D00C24422 /* piHeartRateTests */,
 				6AE1DC9D1D07338D00C24422 /* piHeartRateUITests */,
+				6A2015DF1D073CDD000E3AFE /* getHeartRate */,
+				6A2015EE1D073CDD000E3AFE /* getHeartRate Extension */,
 				6AE1DC7C1D07338D00C24422 /* Products */,
+				8BE1381557F2D99359FDBBB3 /* Pods */,
+				495DA640AD7BF369B24DDE9E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -90,6 +243,8 @@
 				6AE1DC7B1D07338D00C24422 /* piHeartRate.app */,
 				6AE1DC8F1D07338D00C24422 /* piHeartRateTests.xctest */,
 				6AE1DC9A1D07338D00C24422 /* piHeartRateUITests.xctest */,
+				6A2015DE1D073CDC000E3AFE /* getHeartRate.app */,
+				6A2015EA1D073CDD000E3AFE /* getHeartRate Extension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -97,6 +252,7 @@
 		6AE1DC7D1D07338D00C24422 /* piHeartRate */ = {
 			isa = PBXGroup;
 			children = (
+				6A87B8971D089DA3007DEB86 /* piHeartRate.entitlements */,
 				6AE1DC7E1D07338D00C24422 /* AppDelegate.swift */,
 				6AE1DC801D07338D00C24422 /* ViewController.swift */,
 				6AE1DC821D07338D00C24422 /* Main.storyboard */,
@@ -125,20 +281,78 @@
 			path = piHeartRateUITests;
 			sourceTree = "<group>";
 		};
+		8BE1381557F2D99359FDBBB3 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				9DC8646D4B5EF70032E2FDEF /* Pods-piHeartRate.debug.xcconfig */,
+				7D0E154CDB677BFDA0D05310 /* Pods-piHeartRate.release.xcconfig */,
+				1141F4E921D15D1DD0BA0DF4 /* Pods-getHeartRate Extension.debug.xcconfig */,
+				0A339833FE35895EA97F77E2 /* Pods-getHeartRate Extension.release.xcconfig */,
+				CC0A7FB5811B6F5E44607631 /* Pods-getHeartRate.debug.xcconfig */,
+				711EA6D4636E2C54776E7F40 /* Pods-getHeartRate.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		6AE1DC7A1D07338D00C24422 /* piHeartRate */ = {
+		6A2015DD1D073CDC000E3AFE /* getHeartRate */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 6AE1DCA31D07338D00C24422 /* Build configuration list for PBXNativeTarget "piHeartRate" */;
+			buildConfigurationList = 6A2016031D073CDD000E3AFE /* Build configuration list for PBXNativeTarget "getHeartRate" */;
 			buildPhases = (
-				6AE1DC771D07338D00C24422 /* Sources */,
-				6AE1DC781D07338D00C24422 /* Frameworks */,
-				6AE1DC791D07338D00C24422 /* Resources */,
+				F476210FC24FAF56934BC63C /* [CP] Check Pods Manifest.lock */,
+				6A2015DC1D073CDC000E3AFE /* Resources */,
+				6A2016021D073CDD000E3AFE /* Embed App Extensions */,
+				25757283CF455D3F61DFD79F /* Frameworks */,
+				939D791189B0BC431D9C869B /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				6A2015ED1D073CDD000E3AFE /* PBXTargetDependency */,
+			);
+			name = getHeartRate;
+			productName = getHeartRate;
+			productReference = 6A2015DE1D073CDC000E3AFE /* getHeartRate.app */;
+			productType = "com.apple.product-type.application.watchapp2";
+		};
+		6A2015E91D073CDD000E3AFE /* getHeartRate Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6A2015FF1D073CDD000E3AFE /* Build configuration list for PBXNativeTarget "getHeartRate Extension" */;
+			buildPhases = (
+				404C37A04822DE8A4740D73D /* [CP] Check Pods Manifest.lock */,
+				6A2015E61D073CDD000E3AFE /* Sources */,
+				6A2015E71D073CDD000E3AFE /* Frameworks */,
+				6A2015E81D073CDD000E3AFE /* Resources */,
+				72F6EFD0BB072E218D13BC78 /* [CP] Embed Pods Frameworks */,
+				D0455A8BAE72F2B3B64DA17A /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "getHeartRate Extension";
+			productName = "getHeartRate Extension";
+			productReference = 6A2015EA1D073CDD000E3AFE /* getHeartRate Extension.appex */;
+			productType = "com.apple.product-type.watchkit2-extension";
+		};
+		6AE1DC7A1D07338D00C24422 /* piHeartRate */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6AE1DCA31D07338D00C24422 /* Build configuration list for PBXNativeTarget "piHeartRate" */;
+			buildPhases = (
+				994CACBD6FD590562A285E84 /* [CP] Check Pods Manifest.lock */,
+				6AE1DC771D07338D00C24422 /* Sources */,
+				6AE1DC781D07338D00C24422 /* Frameworks */,
+				6AE1DC791D07338D00C24422 /* Resources */,
+				500712DE04D7C163F09F8510 /* [CP] Embed Pods Frameworks */,
+				8B3498EBD95998F71C250244 /* [CP] Copy Pods Resources */,
+				6A2016061D073CDD000E3AFE /* Embed Watch Content */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				6A2015FD1D073CDD000E3AFE /* PBXTargetDependency */,
 			);
 			name = piHeartRate;
 			productName = piHeartRate;
@@ -149,9 +363,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6AE1DCA61D07338D00C24422 /* Build configuration list for PBXNativeTarget "piHeartRateTests" */;
 			buildPhases = (
+				5B7BBA852E0E62E8BBD8693B /* [CP] Check Pods Manifest.lock */,
 				6AE1DC8B1D07338D00C24422 /* Sources */,
 				6AE1DC8C1D07338D00C24422 /* Frameworks */,
 				6AE1DC8D1D07338D00C24422 /* Resources */,
+				640522F9C590047626B4228E /* [CP] Embed Pods Frameworks */,
+				918A09CE51E41E9F02E71D88 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -191,8 +408,27 @@
 				LastUpgradeCheck = 0730;
 				ORGANIZATIONNAME = "Lizzie Siegle";
 				TargetAttributes = {
+					6A2015DD1D073CDC000E3AFE = {
+						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = KM8FC9L4K5;
+					};
+					6A2015E91D073CDD000E3AFE = {
+						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = KM8FC9L4K5;
+						SystemCapabilities = {
+							com.apple.HealthKit = {
+								enabled = 1;
+							};
+						};
+					};
 					6AE1DC7A1D07338D00C24422 = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = KM8FC9L4K5;
+						SystemCapabilities = {
+							com.apple.HealthKit = {
+								enabled = 1;
+							};
+						};
 					};
 					6AE1DC8E1D07338D00C24422 = {
 						CreatedOnToolsVersion = 7.3.1;
@@ -220,11 +456,30 @@
 				6AE1DC7A1D07338D00C24422 /* piHeartRate */,
 				6AE1DC8E1D07338D00C24422 /* piHeartRateTests */,
 				6AE1DC991D07338D00C24422 /* piHeartRateUITests */,
+				6A2015DD1D073CDC000E3AFE /* getHeartRate */,
+				6A2015E91D073CDD000E3AFE /* getHeartRate Extension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		6A2015DC1D073CDC000E3AFE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6A2015E41D073CDD000E3AFE /* Assets.xcassets in Resources */,
+				6A2015E21D073CDD000E3AFE /* Interface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6A2015E81D073CDD000E3AFE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6A2015FA1D073CDD000E3AFE /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		6AE1DC791D07338D00C24422 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -251,7 +506,186 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		404C37A04822DE8A4740D73D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		500712DE04D7C163F09F8510 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-piHeartRate/Pods-piHeartRate-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5B7BBA852E0E62E8BBD8693B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		640522F9C590047626B4228E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-piHeartRateTests/Pods-piHeartRateTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		72F6EFD0BB072E218D13BC78 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-getHeartRate Extension/Pods-getHeartRate Extension-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8B3498EBD95998F71C250244 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-piHeartRate/Pods-piHeartRate-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		918A09CE51E41E9F02E71D88 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-piHeartRateTests/Pods-piHeartRateTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		939D791189B0BC431D9C869B /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-getHeartRate/Pods-getHeartRate-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		994CACBD6FD590562A285E84 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		D0455A8BAE72F2B3B64DA17A /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-getHeartRate Extension/Pods-getHeartRate Extension-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F476210FC24FAF56934BC63C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
+		6A2015E61D073CDD000E3AFE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6A2015F61D073CDD000E3AFE /* NotificationController.swift in Sources */,
+				6A2015F41D073CDD000E3AFE /* ExtensionDelegate.swift in Sources */,
+				6A2015F21D073CDD000E3AFE /* InterfaceController.swift in Sources */,
+				6A2015F81D073CDD000E3AFE /* GlanceController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		6AE1DC771D07338D00C24422 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -280,6 +714,16 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		6A2015ED1D073CDD000E3AFE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6A2015E91D073CDD000E3AFE /* getHeartRate Extension */;
+			targetProxy = 6A2015EC1D073CDD000E3AFE /* PBXContainerItemProxy */;
+		};
+		6A2015FD1D073CDD000E3AFE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6A2015DD1D073CDC000E3AFE /* getHeartRate */;
+			targetProxy = 6A2015FC1D073CDD000E3AFE /* PBXContainerItemProxy */;
+		};
 		6AE1DC911D07338D00C24422 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 6AE1DC7A1D07338D00C24422 /* piHeartRate */;
@@ -293,6 +737,14 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		6A2015E01D073CDD000E3AFE /* Interface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6A2015E11D073CDD000E3AFE /* Base */,
+			);
+			name = Interface.storyboard;
+			sourceTree = "<group>";
+		};
 		6AE1DC821D07338D00C24422 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -312,6 +764,99 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		6A2016001D073CDD000E3AFE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1141F4E921D15D1DD0BA0DF4 /* Pods-getHeartRate Extension.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "getHeartRate Extension/getHeartRate Extension.entitlements";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/CocoaLumberjack",
+					"$(PROJECT_DIR)/build/Release-iphoneos/PubNub",
+				);
+				INFOPLIST_FILE = "getHeartRate Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = lsie.piHeartRate.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.2;
+			};
+			name = Debug;
+		};
+		6A2016011D073CDD000E3AFE /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0A339833FE35895EA97F77E2 /* Pods-getHeartRate Extension.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "getHeartRate Extension/getHeartRate Extension.entitlements";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/CocoaLumberjack",
+					"$(PROJECT_DIR)/build/Release-iphoneos/PubNub",
+				);
+				INFOPLIST_FILE = "getHeartRate Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = lsie.piHeartRate.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.2;
+			};
+			name = Release;
+		};
+		6A2016041D073CDD000E3AFE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CC0A7FB5811B6F5E44607631 /* Pods-getHeartRate.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/CocoaLumberjack",
+					"$(PROJECT_DIR)/build/Release-iphoneos/PubNub",
+				);
+				IBSC_MODULE = getHeartRate_Extension;
+				INFOPLIST_FILE = getHeartRate/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = lsie.piHeartRate.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.2;
+			};
+			name = Debug;
+		};
+		6A2016051D073CDD000E3AFE /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 711EA6D4636E2C54776E7F40 /* Pods-getHeartRate.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/CocoaLumberjack",
+					"$(PROJECT_DIR)/build/Release-iphoneos/PubNub",
+				);
+				IBSC_MODULE = getHeartRate_Extension;
+				INFOPLIST_FILE = getHeartRate/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = lsie.piHeartRate.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.2;
+			};
+			name = Release;
+		};
 		6AE1DCA11D07338D00C24422 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -349,7 +894,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -389,7 +934,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -399,23 +944,45 @@
 		};
 		6AE1DCA41D07338D00C24422 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9DC8646D4B5EF70032E2FDEF /* Pods-piHeartRate.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = piHeartRate/piHeartRate.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/build/Release-iphoneos/PubNub",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/CocoaLumberjack",
+				);
 				INFOPLIST_FILE = piHeartRate/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = lsie.piHeartRate;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
 		6AE1DCA51D07338D00C24422 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7D0E154CDB677BFDA0D05310 /* Pods-piHeartRate.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = piHeartRate/piHeartRate.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/build/Release-iphoneos/PubNub",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/CocoaLumberjack",
+				);
 				INFOPLIST_FILE = piHeartRate/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = lsie.piHeartRate;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -468,6 +1035,24 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		6A2015FF1D073CDD000E3AFE /* Build configuration list for PBXNativeTarget "getHeartRate Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6A2016001D073CDD000E3AFE /* Debug */,
+				6A2016011D073CDD000E3AFE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6A2016031D073CDD000E3AFE /* Build configuration list for PBXNativeTarget "getHeartRate" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6A2016041D073CDD000E3AFE /* Debug */,
+				6A2016051D073CDD000E3AFE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		6AE1DC761D07338D00C24422 /* Build configuration list for PBXProject "piHeartRate" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -484,6 +1069,7 @@
 				6AE1DCA51D07338D00C24422 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		6AE1DCA61D07338D00C24422 /* Build configuration list for PBXNativeTarget "piHeartRateTests" */ = {
 			isa = XCConfigurationList;
@@ -492,6 +1078,7 @@
 				6AE1DCA81D07338D00C24422 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		6AE1DCA91D07338D00C24422 /* Build configuration list for PBXNativeTarget "piHeartRateUITests" */ = {
 			isa = XCConfigurationList;
@@ -500,6 +1087,7 @@
 				6AE1DCAB1D07338D00C24422 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

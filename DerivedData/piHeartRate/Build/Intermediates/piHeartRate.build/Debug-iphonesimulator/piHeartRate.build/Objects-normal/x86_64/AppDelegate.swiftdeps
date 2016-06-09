@@ -1,0 +1,937 @@
+### Swift dependencies file v0 ###
+provides-top-level:
+- "AppDelegate"
+provides-nominal:
+- "C11piHeartRate11AppDelegate"
+provides-member:
+- ["C11piHeartRate11AppDelegate", ""]
+provides-dynamic-lookup:
+- "application"
+- "applicationDidBecomeActive"
+- "window"
+- "applicationWillTerminate"
+- "client"
+- "client"
+- "applicationWillEnterForeground"
+- "config"
+- "healthStore"
+- "applicationDidEnterBackground"
+- "channel"
+- "applicationWillResignActive"
+- "applicationShouldRequestHealthAuthorization"
+depends-top-level:
+- !private "!="
+- !private "+"
+- "UIResponder"
+- "UIWindow"
+- "PNMessageResult"
+- "AppDelegate"
+- "HKHealthStore"
+- "PubNub"
+- !private "BooleanLiteralType"
+- !private "print"
+- "UIApplicationDelegate"
+- "NSObject"
+- "PNConfiguration"
+- "UIApplication"
+- "PNObjectEventListener"
+- "StringLiteralType"
+- "AnyObject"
+- !private "Array"
+- !private "??"
+- "Bool"
+- "WCSessionDelegate"
+depends-member:
+- !private ["Ps16AbsoluteValuable", "IntegerLiteralType"]
+- !private ["Ps16AbsoluteValuable", "Stride"]
+- !private ["Ps16AbsoluteValuable", "init"]
+- ["Ps9AnyObject", "HKHealthStore"]
+- !private ["Ps9AnyObject", "PNConfiguration"]
+- !private ["Ps9AnyObject", "PubNub"]
+- !private ["Ps9AnyObject", "actualChannel"]
+- !private ["Ps9AnyObject", "addListener"]
+- ["Ps9AnyObject", "application"]
+- ["Ps9AnyObject", "applicationDidBecomeActive"]
+- ["Ps9AnyObject", "applicationDidEnterBackground"]
+- ["Ps9AnyObject", "applicationDidFinishLaunching"]
+- ["Ps9AnyObject", "applicationDidReceiveMemoryWarning"]
+- ["Ps9AnyObject", "applicationProtectedDataDidBecomeAvailable"]
+- ["Ps9AnyObject", "applicationProtectedDataWillBecomeUnavailable"]
+- ["Ps9AnyObject", "applicationShouldRequestHealthAuthorization"]
+- ["Ps9AnyObject", "applicationSignificantTimeChange"]
+- ["Ps9AnyObject", "applicationWillEnterForeground"]
+- ["Ps9AnyObject", "applicationWillResignActive"]
+- ["Ps9AnyObject", "applicationWillTerminate"]
+- ["Ps9AnyObject", "channel"]
+- ["Ps9AnyObject", "client"]
+- !private ["Ps9AnyObject", "clientWithConfiguration"]
+- ["Ps9AnyObject", "config"]
+- !private ["Ps9AnyObject", "data"]
+- !private ["Ps9AnyObject", "deinit"]
+- !private ["Ps9AnyObject", "handleAuthorizationForExtensionWithCompletion"]
+- ["Ps9AnyObject", "healthStore"]
+- ["Ps9AnyObject", "init"]
+- !private ["Ps9AnyObject", "message"]
+- !private ["Ps9AnyObject", "print"]
+- !private ["Ps9AnyObject", "publish"]
+- ["Ps9AnyObject", "session"]
+- ["Ps9AnyObject", "sessionDidBecomeInactive"]
+- ["Ps9AnyObject", "sessionDidDeactivate"]
+- ["Ps9AnyObject", "sessionReachabilityDidChange"]
+- ["Ps9AnyObject", "sessionWatchStateDidChange"]
+- !private ["Ps9AnyObject", "subscribeToChannels"]
+- !private ["Ps9AnyObject", "subscribedChannel"]
+- !private ["Ps9AnyObject", "timetoken"]
+- ["Ps9AnyObject", "window"]
+- ["Ps9AnyObject", ""]
+- ["C11piHeartRate11AppDelegate", "AnyObject"]
+- ["C11piHeartRate11AppDelegate", "Bool"]
+- ["C11piHeartRate11AppDelegate", "HKHealthStore"]
+- ["C11piHeartRate11AppDelegate", "NSObject"]
+- ["C11piHeartRate11AppDelegate", "PNConfiguration"]
+- ["C11piHeartRate11AppDelegate", "PNMessageResult"]
+- ["C11piHeartRate11AppDelegate", "PubNub"]
+- ["C11piHeartRate11AppDelegate", "UIApplication"]
+- ["C11piHeartRate11AppDelegate", "UIWindow"]
+- ["C11piHeartRate11AppDelegate", "application"]
+- ["C11piHeartRate11AppDelegate", "applicationDidBecomeActive"]
+- ["C11piHeartRate11AppDelegate", "applicationDidEnterBackground"]
+- ["C11piHeartRate11AppDelegate", "applicationDidFinishLaunching"]
+- ["C11piHeartRate11AppDelegate", "applicationDidReceiveMemoryWarning"]
+- ["C11piHeartRate11AppDelegate", "applicationProtectedDataDidBecomeAvailable"]
+- ["C11piHeartRate11AppDelegate", "applicationProtectedDataWillBecomeUnavailable"]
+- ["C11piHeartRate11AppDelegate", "applicationShouldRequestHealthAuthorization"]
+- ["C11piHeartRate11AppDelegate", "applicationSignificantTimeChange"]
+- ["C11piHeartRate11AppDelegate", "applicationWillEnterForeground"]
+- ["C11piHeartRate11AppDelegate", "applicationWillResignActive"]
+- ["C11piHeartRate11AppDelegate", "applicationWillTerminate"]
+- ["C11piHeartRate11AppDelegate", "channel"]
+- ["C11piHeartRate11AppDelegate", "client"]
+- ["C11piHeartRate11AppDelegate", "config"]
+- ["C11piHeartRate11AppDelegate", "deinit"]
+- ["C11piHeartRate11AppDelegate", "healthStore"]
+- ["C11piHeartRate11AppDelegate", "init"]
+- !private ["C11piHeartRate11AppDelegate", "print"]
+- ["C11piHeartRate11AppDelegate", "session"]
+- ["C11piHeartRate11AppDelegate", "sessionDidBecomeInactive"]
+- ["C11piHeartRate11AppDelegate", "sessionDidDeactivate"]
+- ["C11piHeartRate11AppDelegate", "sessionReachabilityDidChange"]
+- ["C11piHeartRate11AppDelegate", "sessionWatchStateDidChange"]
+- ["C11piHeartRate11AppDelegate", "window"]
+- !private ["Sa", "Element"]
+- !private ["Ps23ArrayLiteralConvertible", "Element"]
+- !private ["Ps22BidirectionalIndexType", "Distance"]
+- !private ["Ps22BidirectionalIndexType", "IntegerLiteralType"]
+- !private ["Ps22BidirectionalIndexType", "Stride"]
+- !private ["Ps22BidirectionalIndexType", "_DisallowMixedSignArithmetic"]
+- !private ["Ps22BidirectionalIndexType", "init"]
+- !private ["Ps21BitwiseOperationsType", "Distance"]
+- !private ["Ps21BitwiseOperationsType", "IntegerLiteralType"]
+- !private ["Ps21BitwiseOperationsType", "Stride"]
+- !private ["Ps21BitwiseOperationsType", "_DisallowMixedSignArithmetic"]
+- !private ["Ps21BitwiseOperationsType", "init"]
+- !private ["Sb", "_getBuiltinLogicValue"]
+- !private ["Sb", "deinit"]
+- !private ["Ps25BooleanLiteralConvertible", "_getBuiltinLogicValue"]
+- !private ["Ps11BooleanType", "_getBuiltinLogicValue"]
+- !private ["V12CoreGraphics7CGFloat", "IntegerLiteralType"]
+- !private ["V12CoreGraphics7CGFloat", "Stride"]
+- !private ["V12CoreGraphics7CGFloat", "deinit"]
+- !private ["Ps11CVarArgType", "Distance"]
+- ["Ps11CVarArgType", "HKHealthStore"]
+- !private ["Ps11CVarArgType", "IntegerLiteralType"]
+- !private ["Ps11CVarArgType", "PNConfiguration"]
+- !private ["Ps11CVarArgType", "PubNub"]
+- !private ["Ps11CVarArgType", "Stride"]
+- !private ["Ps11CVarArgType", "_DisallowMixedSignArithmetic"]
+- !private ["Ps11CVarArgType", "actualChannel"]
+- !private ["Ps11CVarArgType", "addListener"]
+- ["Ps11CVarArgType", "application"]
+- ["Ps11CVarArgType", "applicationDidBecomeActive"]
+- ["Ps11CVarArgType", "applicationDidEnterBackground"]
+- ["Ps11CVarArgType", "applicationDidFinishLaunching"]
+- ["Ps11CVarArgType", "applicationDidReceiveMemoryWarning"]
+- ["Ps11CVarArgType", "applicationProtectedDataDidBecomeAvailable"]
+- ["Ps11CVarArgType", "applicationProtectedDataWillBecomeUnavailable"]
+- ["Ps11CVarArgType", "applicationShouldRequestHealthAuthorization"]
+- ["Ps11CVarArgType", "applicationSignificantTimeChange"]
+- ["Ps11CVarArgType", "applicationWillEnterForeground"]
+- ["Ps11CVarArgType", "applicationWillResignActive"]
+- ["Ps11CVarArgType", "applicationWillTerminate"]
+- ["Ps11CVarArgType", "channel"]
+- ["Ps11CVarArgType", "client"]
+- !private ["Ps11CVarArgType", "clientWithConfiguration"]
+- ["Ps11CVarArgType", "config"]
+- !private ["Ps11CVarArgType", "data"]
+- !private ["Ps11CVarArgType", "handleAuthorizationForExtensionWithCompletion"]
+- ["Ps11CVarArgType", "healthStore"]
+- ["Ps11CVarArgType", "init"]
+- !private ["Ps11CVarArgType", "message"]
+- !private ["Ps11CVarArgType", "print"]
+- !private ["Ps11CVarArgType", "publish"]
+- ["Ps11CVarArgType", "session"]
+- ["Ps11CVarArgType", "sessionDidBecomeInactive"]
+- ["Ps11CVarArgType", "sessionDidDeactivate"]
+- ["Ps11CVarArgType", "sessionReachabilityDidChange"]
+- ["Ps11CVarArgType", "sessionWatchStateDidChange"]
+- !private ["Ps11CVarArgType", "subscribeToChannels"]
+- !private ["Ps11CVarArgType", "subscribedChannel"]
+- !private ["Ps11CVarArgType", "timetoken"]
+- ["Ps11CVarArgType", "window"]
+- ["Ps11CVarArgType", ""]
+- !private ["Vs9Character", "deinit"]
+- !private ["Ps14CollectionType", "Element"]
+- !private ["Ps10Comparable", "Distance"]
+- !private ["Ps10Comparable", "IntegerLiteralType"]
+- !private ["Ps10Comparable", "Stride"]
+- !private ["Ps10Comparable", "_DisallowMixedSignArithmetic"]
+- !private ["Ps10Comparable", "init"]
+- !private ["Ps28CustomDebugStringConvertible", "Element"]
+- ["Ps28CustomDebugStringConvertible", "HKHealthStore"]
+- !private ["Ps28CustomDebugStringConvertible", "IntegerLiteralType"]
+- !private ["Ps28CustomDebugStringConvertible", "PNConfiguration"]
+- !private ["Ps28CustomDebugStringConvertible", "PubNub"]
+- !private ["Ps28CustomDebugStringConvertible", "Stride"]
+- !private ["Ps28CustomDebugStringConvertible", "actualChannel"]
+- !private ["Ps28CustomDebugStringConvertible", "addListener"]
+- ["Ps28CustomDebugStringConvertible", "application"]
+- ["Ps28CustomDebugStringConvertible", "applicationDidBecomeActive"]
+- ["Ps28CustomDebugStringConvertible", "applicationDidEnterBackground"]
+- ["Ps28CustomDebugStringConvertible", "applicationDidFinishLaunching"]
+- ["Ps28CustomDebugStringConvertible", "applicationDidReceiveMemoryWarning"]
+- ["Ps28CustomDebugStringConvertible", "applicationProtectedDataDidBecomeAvailable"]
+- ["Ps28CustomDebugStringConvertible", "applicationProtectedDataWillBecomeUnavailable"]
+- ["Ps28CustomDebugStringConvertible", "applicationShouldRequestHealthAuthorization"]
+- ["Ps28CustomDebugStringConvertible", "applicationSignificantTimeChange"]
+- ["Ps28CustomDebugStringConvertible", "applicationWillEnterForeground"]
+- ["Ps28CustomDebugStringConvertible", "applicationWillResignActive"]
+- ["Ps28CustomDebugStringConvertible", "applicationWillTerminate"]
+- ["Ps28CustomDebugStringConvertible", "channel"]
+- ["Ps28CustomDebugStringConvertible", "client"]
+- !private ["Ps28CustomDebugStringConvertible", "clientWithConfiguration"]
+- ["Ps28CustomDebugStringConvertible", "config"]
+- !private ["Ps28CustomDebugStringConvertible", "data"]
+- !private ["Ps28CustomDebugStringConvertible", "handleAuthorizationForExtensionWithCompletion"]
+- ["Ps28CustomDebugStringConvertible", "healthStore"]
+- ["Ps28CustomDebugStringConvertible", "init"]
+- !private ["Ps28CustomDebugStringConvertible", "message"]
+- !private ["Ps28CustomDebugStringConvertible", "print"]
+- !private ["Ps28CustomDebugStringConvertible", "publish"]
+- ["Ps28CustomDebugStringConvertible", "session"]
+- ["Ps28CustomDebugStringConvertible", "sessionDidBecomeInactive"]
+- ["Ps28CustomDebugStringConvertible", "sessionDidDeactivate"]
+- ["Ps28CustomDebugStringConvertible", "sessionReachabilityDidChange"]
+- ["Ps28CustomDebugStringConvertible", "sessionWatchStateDidChange"]
+- !private ["Ps28CustomDebugStringConvertible", "subscribeToChannels"]
+- !private ["Ps28CustomDebugStringConvertible", "subscribedChannel"]
+- !private ["Ps28CustomDebugStringConvertible", "timetoken"]
+- ["Ps28CustomDebugStringConvertible", "window"]
+- ["Ps28CustomDebugStringConvertible", ""]
+- !private ["Ps23CustomStringConvertible", "Distance"]
+- !private ["Ps23CustomStringConvertible", "Element"]
+- ["Ps23CustomStringConvertible", "HKHealthStore"]
+- !private ["Ps23CustomStringConvertible", "IntegerLiteralType"]
+- !private ["Ps23CustomStringConvertible", "PNConfiguration"]
+- !private ["Ps23CustomStringConvertible", "PubNub"]
+- !private ["Ps23CustomStringConvertible", "Stride"]
+- !private ["Ps23CustomStringConvertible", "_DisallowMixedSignArithmetic"]
+- !private ["Ps23CustomStringConvertible", "_getBuiltinLogicValue"]
+- !private ["Ps23CustomStringConvertible", "actualChannel"]
+- !private ["Ps23CustomStringConvertible", "addListener"]
+- ["Ps23CustomStringConvertible", "application"]
+- ["Ps23CustomStringConvertible", "applicationDidBecomeActive"]
+- ["Ps23CustomStringConvertible", "applicationDidEnterBackground"]
+- ["Ps23CustomStringConvertible", "applicationDidFinishLaunching"]
+- ["Ps23CustomStringConvertible", "applicationDidReceiveMemoryWarning"]
+- ["Ps23CustomStringConvertible", "applicationProtectedDataDidBecomeAvailable"]
+- ["Ps23CustomStringConvertible", "applicationProtectedDataWillBecomeUnavailable"]
+- ["Ps23CustomStringConvertible", "applicationShouldRequestHealthAuthorization"]
+- ["Ps23CustomStringConvertible", "applicationSignificantTimeChange"]
+- ["Ps23CustomStringConvertible", "applicationWillEnterForeground"]
+- ["Ps23CustomStringConvertible", "applicationWillResignActive"]
+- ["Ps23CustomStringConvertible", "applicationWillTerminate"]
+- ["Ps23CustomStringConvertible", "channel"]
+- ["Ps23CustomStringConvertible", "client"]
+- !private ["Ps23CustomStringConvertible", "clientWithConfiguration"]
+- ["Ps23CustomStringConvertible", "config"]
+- !private ["Ps23CustomStringConvertible", "data"]
+- !private ["Ps23CustomStringConvertible", "handleAuthorizationForExtensionWithCompletion"]
+- ["Ps23CustomStringConvertible", "healthStore"]
+- ["Ps23CustomStringConvertible", "init"]
+- !private ["Ps23CustomStringConvertible", "message"]
+- !private ["Ps23CustomStringConvertible", "print"]
+- !private ["Ps23CustomStringConvertible", "publish"]
+- ["Ps23CustomStringConvertible", "session"]
+- ["Ps23CustomStringConvertible", "sessionDidBecomeInactive"]
+- ["Ps23CustomStringConvertible", "sessionDidDeactivate"]
+- ["Ps23CustomStringConvertible", "sessionReachabilityDidChange"]
+- ["Ps23CustomStringConvertible", "sessionWatchStateDidChange"]
+- !private ["Ps23CustomStringConvertible", "subscribeToChannels"]
+- !private ["Ps23CustomStringConvertible", "subscribedChannel"]
+- !private ["Ps23CustomStringConvertible", "timetoken"]
+- ["Ps23CustomStringConvertible", "window"]
+- ["Ps23CustomStringConvertible", ""]
+- !private ["Sd", "IntegerLiteralType"]
+- !private ["Sd", "Stride"]
+- !private ["Sd", "deinit"]
+- !private ["Sd", "init"]
+- !private ["Ps9Equatable", "Distance"]
+- ["Ps9Equatable", "HKHealthStore"]
+- !private ["Ps9Equatable", "IntegerLiteralType"]
+- !private ["Ps9Equatable", "PNConfiguration"]
+- !private ["Ps9Equatable", "PubNub"]
+- !private ["Ps9Equatable", "Stride"]
+- !private ["Ps9Equatable", "_DisallowMixedSignArithmetic"]
+- !private ["Ps9Equatable", "_getBuiltinLogicValue"]
+- !private ["Ps9Equatable", "actualChannel"]
+- !private ["Ps9Equatable", "addListener"]
+- ["Ps9Equatable", "application"]
+- ["Ps9Equatable", "applicationDidBecomeActive"]
+- ["Ps9Equatable", "applicationDidEnterBackground"]
+- ["Ps9Equatable", "applicationDidFinishLaunching"]
+- ["Ps9Equatable", "applicationDidReceiveMemoryWarning"]
+- ["Ps9Equatable", "applicationProtectedDataDidBecomeAvailable"]
+- ["Ps9Equatable", "applicationProtectedDataWillBecomeUnavailable"]
+- ["Ps9Equatable", "applicationShouldRequestHealthAuthorization"]
+- ["Ps9Equatable", "applicationSignificantTimeChange"]
+- ["Ps9Equatable", "applicationWillEnterForeground"]
+- ["Ps9Equatable", "applicationWillResignActive"]
+- ["Ps9Equatable", "applicationWillTerminate"]
+- ["Ps9Equatable", "channel"]
+- ["Ps9Equatable", "client"]
+- !private ["Ps9Equatable", "clientWithConfiguration"]
+- ["Ps9Equatable", "config"]
+- !private ["Ps9Equatable", "data"]
+- !private ["Ps9Equatable", "handleAuthorizationForExtensionWithCompletion"]
+- ["Ps9Equatable", "healthStore"]
+- ["Ps9Equatable", "init"]
+- !private ["Ps9Equatable", "message"]
+- !private ["Ps9Equatable", "print"]
+- !private ["Ps9Equatable", "publish"]
+- ["Ps9Equatable", "session"]
+- ["Ps9Equatable", "sessionDidBecomeInactive"]
+- ["Ps9Equatable", "sessionDidDeactivate"]
+- ["Ps9Equatable", "sessionReachabilityDidChange"]
+- ["Ps9Equatable", "sessionWatchStateDidChange"]
+- !private ["Ps9Equatable", "subscribeToChannels"]
+- !private ["Ps9Equatable", "subscribedChannel"]
+- !private ["Ps9Equatable", "timetoken"]
+- ["Ps9Equatable", "window"]
+- ["Ps9Equatable", ""]
+- !private ["Ps41ExtendedGraphemeClusterLiteralConvertible", "init"]
+- !private ["Sf", "IntegerLiteralType"]
+- !private ["Sf", "Stride"]
+- !private ["Sf", "deinit"]
+- !private ["Sf", "init"]
+- !private ["Vs7Float80", "IntegerLiteralType"]
+- !private ["Vs7Float80", "Stride"]
+- !private ["Vs7Float80", "deinit"]
+- !private ["Vs7Float80", "init"]
+- !private ["Ps23FloatLiteralConvertible", "IntegerLiteralType"]
+- !private ["Ps23FloatLiteralConvertible", "Stride"]
+- !private ["Ps23FloatLiteralConvertible", "init"]
+- !private ["Ps17FloatingPointType", "IntegerLiteralType"]
+- !private ["Ps17FloatingPointType", "Stride"]
+- !private ["Ps17FloatingPointType", "init"]
+- !private ["Ps16ForwardIndexType", "Distance"]
+- !private ["Ps16ForwardIndexType", "IntegerLiteralType"]
+- !private ["Ps16ForwardIndexType", "Stride"]
+- !private ["Ps16ForwardIndexType", "_DisallowMixedSignArithmetic"]
+- !private ["Ps16ForwardIndexType", "init"]
+- !private ["CSo13HKHealthStore", "handleAuthorizationForExtensionWithCompletion"]
+- ["CSo13HKHealthStore", "init"]
+- !private ["Ps8Hashable", "Distance"]
+- ["Ps8Hashable", "HKHealthStore"]
+- !private ["Ps8Hashable", "IntegerLiteralType"]
+- !private ["Ps8Hashable", "PNConfiguration"]
+- !private ["Ps8Hashable", "PubNub"]
+- !private ["Ps8Hashable", "Stride"]
+- !private ["Ps8Hashable", "_DisallowMixedSignArithmetic"]
+- !private ["Ps8Hashable", "_getBuiltinLogicValue"]
+- !private ["Ps8Hashable", "actualChannel"]
+- !private ["Ps8Hashable", "addListener"]
+- ["Ps8Hashable", "application"]
+- ["Ps8Hashable", "applicationDidBecomeActive"]
+- ["Ps8Hashable", "applicationDidEnterBackground"]
+- ["Ps8Hashable", "applicationDidFinishLaunching"]
+- ["Ps8Hashable", "applicationDidReceiveMemoryWarning"]
+- ["Ps8Hashable", "applicationProtectedDataDidBecomeAvailable"]
+- ["Ps8Hashable", "applicationProtectedDataWillBecomeUnavailable"]
+- ["Ps8Hashable", "applicationShouldRequestHealthAuthorization"]
+- ["Ps8Hashable", "applicationSignificantTimeChange"]
+- ["Ps8Hashable", "applicationWillEnterForeground"]
+- ["Ps8Hashable", "applicationWillResignActive"]
+- ["Ps8Hashable", "applicationWillTerminate"]
+- ["Ps8Hashable", "channel"]
+- ["Ps8Hashable", "client"]
+- !private ["Ps8Hashable", "clientWithConfiguration"]
+- ["Ps8Hashable", "config"]
+- !private ["Ps8Hashable", "data"]
+- !private ["Ps8Hashable", "handleAuthorizationForExtensionWithCompletion"]
+- ["Ps8Hashable", "healthStore"]
+- ["Ps8Hashable", "init"]
+- !private ["Ps8Hashable", "message"]
+- !private ["Ps8Hashable", "print"]
+- !private ["Ps8Hashable", "publish"]
+- ["Ps8Hashable", "session"]
+- ["Ps8Hashable", "sessionDidBecomeInactive"]
+- ["Ps8Hashable", "sessionDidDeactivate"]
+- ["Ps8Hashable", "sessionReachabilityDidChange"]
+- ["Ps8Hashable", "sessionWatchStateDidChange"]
+- !private ["Ps8Hashable", "subscribeToChannels"]
+- !private ["Ps8Hashable", "subscribedChannel"]
+- !private ["Ps8Hashable", "timetoken"]
+- ["Ps8Hashable", "window"]
+- ["Ps8Hashable", ""]
+- !private ["Ps9Indexable", "Element"]
+- !private ["Si", "Distance"]
+- !private ["Si", "IntegerLiteralType"]
+- !private ["Si", "Stride"]
+- !private ["Si", "deinit"]
+- !private ["Si", "init"]
+- !private ["Vs5Int16", "Stride"]
+- !private ["Vs5Int16", "deinit"]
+- !private ["Vs5Int16", "init"]
+- !private ["Vs5Int32", "Stride"]
+- !private ["Vs5Int32", "deinit"]
+- !private ["Vs5Int32", "init"]
+- !private ["Vs5Int64", "Stride"]
+- !private ["Vs5Int64", "deinit"]
+- !private ["Vs5Int64", "init"]
+- !private ["Vs4Int8", "Stride"]
+- !private ["Vs4Int8", "deinit"]
+- !private ["Vs4Int8", "init"]
+- !private ["Ps21IntegerArithmeticType", "Distance"]
+- !private ["Ps21IntegerArithmeticType", "IntegerLiteralType"]
+- !private ["Ps21IntegerArithmeticType", "Stride"]
+- !private ["Ps21IntegerArithmeticType", "_DisallowMixedSignArithmetic"]
+- !private ["Ps21IntegerArithmeticType", "init"]
+- !private ["Ps25IntegerLiteralConvertible", "Distance"]
+- !private ["Ps25IntegerLiteralConvertible", "IntegerLiteralType"]
+- !private ["Ps25IntegerLiteralConvertible", "Stride"]
+- !private ["Ps25IntegerLiteralConvertible", "_DisallowMixedSignArithmetic"]
+- !private ["Ps25IntegerLiteralConvertible", "init"]
+- !private ["Ps11IntegerType", "Distance"]
+- !private ["Ps11IntegerType", "IntegerLiteralType"]
+- !private ["Ps11IntegerType", "Stride"]
+- !private ["Ps11IntegerType", "_DisallowMixedSignArithmetic"]
+- !private ["Ps11IntegerType", "init"]
+- !private ["Ps14MirrorPathType", "Distance"]
+- !private ["Ps14MirrorPathType", "IntegerLiteralType"]
+- !private ["Ps14MirrorPathType", "Stride"]
+- !private ["Ps14MirrorPathType", "init"]
+- !private ["Ps21MutableCollectionType", "Element"]
+- !private ["Ps16MutableIndexable", "Element"]
+- !private ["Ps16MutableSliceable", "Element"]
+- !private ["PSo8NSCoding", "init"]
+- !private ["PSo9NSCopying", "init"]
+- !private ["PSo16NSMutableCopying", "init"]
+- ["CSo8NSObject", "AnyObject"]
+- ["CSo8NSObject", "Bool"]
+- ["CSo8NSObject", "HKHealthStore"]
+- ["CSo8NSObject", "NSObject"]
+- ["CSo8NSObject", "PNConfiguration"]
+- ["CSo8NSObject", "PNMessageResult"]
+- ["CSo8NSObject", "PubNub"]
+- ["CSo8NSObject", "UIApplication"]
+- ["CSo8NSObject", "UIWindow"]
+- !private ["CSo8NSObject", "actualChannel"]
+- !private ["CSo8NSObject", "addListener"]
+- ["CSo8NSObject", "application"]
+- ["CSo8NSObject", "applicationDidBecomeActive"]
+- ["CSo8NSObject", "applicationDidEnterBackground"]
+- ["CSo8NSObject", "applicationDidFinishLaunching"]
+- ["CSo8NSObject", "applicationDidReceiveMemoryWarning"]
+- ["CSo8NSObject", "applicationProtectedDataDidBecomeAvailable"]
+- ["CSo8NSObject", "applicationProtectedDataWillBecomeUnavailable"]
+- ["CSo8NSObject", "applicationShouldRequestHealthAuthorization"]
+- ["CSo8NSObject", "applicationSignificantTimeChange"]
+- ["CSo8NSObject", "applicationWillEnterForeground"]
+- ["CSo8NSObject", "applicationWillResignActive"]
+- ["CSo8NSObject", "applicationWillTerminate"]
+- ["CSo8NSObject", "channel"]
+- ["CSo8NSObject", "client"]
+- !private ["CSo8NSObject", "clientWithConfiguration"]
+- ["CSo8NSObject", "config"]
+- !private ["CSo8NSObject", "data"]
+- !private ["CSo8NSObject", "handleAuthorizationForExtensionWithCompletion"]
+- ["CSo8NSObject", "healthStore"]
+- ["CSo8NSObject", "init"]
+- !private ["CSo8NSObject", "message"]
+- !private ["CSo8NSObject", "print"]
+- !private ["CSo8NSObject", "publish"]
+- ["CSo8NSObject", "session"]
+- ["CSo8NSObject", "sessionDidBecomeInactive"]
+- ["CSo8NSObject", "sessionDidDeactivate"]
+- ["CSo8NSObject", "sessionReachabilityDidChange"]
+- ["CSo8NSObject", "sessionWatchStateDidChange"]
+- !private ["CSo8NSObject", "subscribeToChannels"]
+- !private ["CSo8NSObject", "subscribedChannel"]
+- !private ["CSo8NSObject", "timetoken"]
+- ["CSo8NSObject", "window"]
+- ["PSo16NSObjectProtocol", "HKHealthStore"]
+- !private ["PSo16NSObjectProtocol", "PNConfiguration"]
+- !private ["PSo16NSObjectProtocol", "PubNub"]
+- !private ["PSo16NSObjectProtocol", "actualChannel"]
+- !private ["PSo16NSObjectProtocol", "addListener"]
+- ["PSo16NSObjectProtocol", "application"]
+- ["PSo16NSObjectProtocol", "applicationDidBecomeActive"]
+- ["PSo16NSObjectProtocol", "applicationDidEnterBackground"]
+- ["PSo16NSObjectProtocol", "applicationDidFinishLaunching"]
+- ["PSo16NSObjectProtocol", "applicationDidReceiveMemoryWarning"]
+- ["PSo16NSObjectProtocol", "applicationProtectedDataDidBecomeAvailable"]
+- ["PSo16NSObjectProtocol", "applicationProtectedDataWillBecomeUnavailable"]
+- ["PSo16NSObjectProtocol", "applicationShouldRequestHealthAuthorization"]
+- ["PSo16NSObjectProtocol", "applicationSignificantTimeChange"]
+- ["PSo16NSObjectProtocol", "applicationWillEnterForeground"]
+- ["PSo16NSObjectProtocol", "applicationWillResignActive"]
+- ["PSo16NSObjectProtocol", "applicationWillTerminate"]
+- ["PSo16NSObjectProtocol", "channel"]
+- ["PSo16NSObjectProtocol", "client"]
+- !private ["PSo16NSObjectProtocol", "clientWithConfiguration"]
+- ["PSo16NSObjectProtocol", "config"]
+- !private ["PSo16NSObjectProtocol", "data"]
+- !private ["PSo16NSObjectProtocol", "handleAuthorizationForExtensionWithCompletion"]
+- ["PSo16NSObjectProtocol", "healthStore"]
+- ["PSo16NSObjectProtocol", "init"]
+- !private ["PSo16NSObjectProtocol", "message"]
+- !private ["PSo16NSObjectProtocol", "print"]
+- !private ["PSo16NSObjectProtocol", "publish"]
+- ["PSo16NSObjectProtocol", "session"]
+- ["PSo16NSObjectProtocol", "sessionDidBecomeInactive"]
+- ["PSo16NSObjectProtocol", "sessionDidDeactivate"]
+- ["PSo16NSObjectProtocol", "sessionReachabilityDidChange"]
+- ["PSo16NSObjectProtocol", "sessionWatchStateDidChange"]
+- !private ["PSo16NSObjectProtocol", "subscribeToChannels"]
+- !private ["PSo16NSObjectProtocol", "subscribedChannel"]
+- !private ["PSo16NSObjectProtocol", "timetoken"]
+- ["PSo16NSObjectProtocol", "window"]
+- ["PSo16NSObjectProtocol", ""]
+- !private ["PSo14NSSecureCoding", "init"]
+- !private ["CSo8NSString", "deinit"]
+- !private ["CSo8NSString", "init"]
+- !private ["Sq", "deinit"]
+- !private ["Ps16OutputStreamType", "init"]
+- !private ["CSo15PNConfiguration", "init"]
+- !private ["CSo13PNMessageData", "actualChannel"]
+- !private ["CSo13PNMessageData", "message"]
+- !private ["CSo13PNMessageData", "subscribedChannel"]
+- !private ["CSo13PNMessageData", "timetoken"]
+- !private ["CSo15PNMessageResult", "data"]
+- ["PSo21PNObjectEventListener", "HKHealthStore"]
+- !private ["PSo21PNObjectEventListener", "PNConfiguration"]
+- !private ["PSo21PNObjectEventListener", "PubNub"]
+- ["PSo21PNObjectEventListener", "application"]
+- ["PSo21PNObjectEventListener", "applicationDidBecomeActive"]
+- ["PSo21PNObjectEventListener", "applicationDidEnterBackground"]
+- ["PSo21PNObjectEventListener", "applicationDidFinishLaunching"]
+- ["PSo21PNObjectEventListener", "applicationDidReceiveMemoryWarning"]
+- ["PSo21PNObjectEventListener", "applicationProtectedDataDidBecomeAvailable"]
+- ["PSo21PNObjectEventListener", "applicationProtectedDataWillBecomeUnavailable"]
+- ["PSo21PNObjectEventListener", "applicationShouldRequestHealthAuthorization"]
+- ["PSo21PNObjectEventListener", "applicationSignificantTimeChange"]
+- ["PSo21PNObjectEventListener", "applicationWillEnterForeground"]
+- ["PSo21PNObjectEventListener", "applicationWillResignActive"]
+- ["PSo21PNObjectEventListener", "applicationWillTerminate"]
+- !private ["PSo21PNObjectEventListener", "channel"]
+- ["PSo21PNObjectEventListener", "client"]
+- !private ["PSo21PNObjectEventListener", "config"]
+- !private ["PSo21PNObjectEventListener", "healthStore"]
+- !private ["PSo21PNObjectEventListener", "print"]
+- ["PSo21PNObjectEventListener", "session"]
+- ["PSo21PNObjectEventListener", "sessionDidBecomeInactive"]
+- ["PSo21PNObjectEventListener", "sessionDidDeactivate"]
+- ["PSo21PNObjectEventListener", "sessionReachabilityDidChange"]
+- ["PSo21PNObjectEventListener", "sessionWatchStateDidChange"]
+- ["PSo21PNObjectEventListener", "window"]
+- ["PSo21PNObjectEventListener", ""]
+- !private ["CSo8PNResult", "data"]
+- !private ["CSo13PNServiceData", "actualChannel"]
+- !private ["CSo13PNServiceData", "message"]
+- !private ["CSo13PNServiceData", "subscribedChannel"]
+- !private ["CSo13PNServiceData", "timetoken"]
+- !private ["CSo16PNSubscriberData", "actualChannel"]
+- !private ["CSo16PNSubscriberData", "message"]
+- !private ["CSo16PNSubscriberData", "subscribedChannel"]
+- !private ["CSo16PNSubscriberData", "timetoken"]
+- !private ["CSo6PubNub", "addListener"]
+- !private ["CSo6PubNub", "clientWithConfiguration"]
+- !private ["CSo6PubNub", "publish"]
+- !private ["CSo6PubNub", "subscribeToChannels"]
+- !private ["Ps21RandomAccessIndexType", "Distance"]
+- !private ["Ps21RandomAccessIndexType", "IntegerLiteralType"]
+- !private ["Ps21RandomAccessIndexType", "Stride"]
+- !private ["Ps21RandomAccessIndexType", "_DisallowMixedSignArithmetic"]
+- !private ["Ps21RandomAccessIndexType", "init"]
+- !private ["Ps30RangeReplaceableCollectionType", "Element"]
+- !private ["Ps12SequenceType", "Element"]
+- !private ["Ps17SignedIntegerType", "Distance"]
+- !private ["Ps17SignedIntegerType", "IntegerLiteralType"]
+- !private ["Ps17SignedIntegerType", "Stride"]
+- !private ["Ps17SignedIntegerType", "init"]
+- !private ["Ps16SignedNumberType", "Distance"]
+- !private ["Ps16SignedNumberType", "IntegerLiteralType"]
+- !private ["Ps16SignedNumberType", "Stride"]
+- !private ["Ps16SignedNumberType", "init"]
+- !private ["Ps10Streamable", "init"]
+- !private ["Ps10Strideable", "Distance"]
+- !private ["Ps10Strideable", "IntegerLiteralType"]
+- !private ["Ps10Strideable", "Stride"]
+- !private ["Ps10Strideable", "_DisallowMixedSignArithmetic"]
+- !private ["Ps10Strideable", "init"]
+- !private ["SS", "deinit"]
+- !private ["SS", "init"]
+- !private ["Ps30StringInterpolationConvertible", "init"]
+- !private ["Ps24StringLiteralConvertible", "init"]
+- ["PSo21UIApplicationDelegate", "HKHealthStore"]
+- !private ["PSo21UIApplicationDelegate", "PNConfiguration"]
+- !private ["PSo21UIApplicationDelegate", "PubNub"]
+- ["PSo21UIApplicationDelegate", "application"]
+- ["PSo21UIApplicationDelegate", "applicationDidBecomeActive"]
+- ["PSo21UIApplicationDelegate", "applicationDidEnterBackground"]
+- ["PSo21UIApplicationDelegate", "applicationDidFinishLaunching"]
+- ["PSo21UIApplicationDelegate", "applicationDidReceiveMemoryWarning"]
+- ["PSo21UIApplicationDelegate", "applicationProtectedDataDidBecomeAvailable"]
+- ["PSo21UIApplicationDelegate", "applicationProtectedDataWillBecomeUnavailable"]
+- ["PSo21UIApplicationDelegate", "applicationShouldRequestHealthAuthorization"]
+- ["PSo21UIApplicationDelegate", "applicationSignificantTimeChange"]
+- ["PSo21UIApplicationDelegate", "applicationWillEnterForeground"]
+- ["PSo21UIApplicationDelegate", "applicationWillResignActive"]
+- ["PSo21UIApplicationDelegate", "applicationWillTerminate"]
+- !private ["PSo21UIApplicationDelegate", "channel"]
+- ["PSo21UIApplicationDelegate", "client"]
+- !private ["PSo21UIApplicationDelegate", "config"]
+- !private ["PSo21UIApplicationDelegate", "healthStore"]
+- !private ["PSo21UIApplicationDelegate", "print"]
+- ["PSo21UIApplicationDelegate", "session"]
+- ["PSo21UIApplicationDelegate", "sessionDidBecomeInactive"]
+- ["PSo21UIApplicationDelegate", "sessionDidDeactivate"]
+- ["PSo21UIApplicationDelegate", "sessionReachabilityDidChange"]
+- ["PSo21UIApplicationDelegate", "sessionWatchStateDidChange"]
+- ["PSo21UIApplicationDelegate", "window"]
+- ["PSo21UIApplicationDelegate", ""]
+- ["CSo11UIResponder", "AnyObject"]
+- ["CSo11UIResponder", "Bool"]
+- ["CSo11UIResponder", "HKHealthStore"]
+- ["CSo11UIResponder", "NSObject"]
+- ["CSo11UIResponder", "PNConfiguration"]
+- ["CSo11UIResponder", "PNMessageResult"]
+- ["CSo11UIResponder", "PubNub"]
+- ["CSo11UIResponder", "UIApplication"]
+- ["CSo11UIResponder", "UIWindow"]
+- ["CSo11UIResponder", "application"]
+- ["CSo11UIResponder", "applicationDidBecomeActive"]
+- ["CSo11UIResponder", "applicationDidEnterBackground"]
+- ["CSo11UIResponder", "applicationDidFinishLaunching"]
+- ["CSo11UIResponder", "applicationDidReceiveMemoryWarning"]
+- ["CSo11UIResponder", "applicationProtectedDataDidBecomeAvailable"]
+- ["CSo11UIResponder", "applicationProtectedDataWillBecomeUnavailable"]
+- ["CSo11UIResponder", "applicationShouldRequestHealthAuthorization"]
+- ["CSo11UIResponder", "applicationSignificantTimeChange"]
+- ["CSo11UIResponder", "applicationWillEnterForeground"]
+- ["CSo11UIResponder", "applicationWillResignActive"]
+- ["CSo11UIResponder", "applicationWillTerminate"]
+- ["CSo11UIResponder", "channel"]
+- ["CSo11UIResponder", "client"]
+- ["CSo11UIResponder", "config"]
+- ["CSo11UIResponder", "healthStore"]
+- ["CSo11UIResponder", "init"]
+- !private ["CSo11UIResponder", "print"]
+- ["CSo11UIResponder", "session"]
+- ["CSo11UIResponder", "sessionDidBecomeInactive"]
+- ["CSo11UIResponder", "sessionDidDeactivate"]
+- ["CSo11UIResponder", "sessionReachabilityDidChange"]
+- ["CSo11UIResponder", "sessionWatchStateDidChange"]
+- ["CSo11UIResponder", "window"]
+- ["CSo11UIResponder", ""]
+- !private ["Su", "Distance"]
+- !private ["Su", "IntegerLiteralType"]
+- !private ["Su", "Stride"]
+- !private ["Su", "_DisallowMixedSignArithmetic"]
+- !private ["Su", "deinit"]
+- !private ["Su", "init"]
+- !private ["Vs6UInt16", "Distance"]
+- !private ["Vs6UInt16", "IntegerLiteralType"]
+- !private ["Vs6UInt16", "Stride"]
+- !private ["Vs6UInt16", "_DisallowMixedSignArithmetic"]
+- !private ["Vs6UInt16", "deinit"]
+- !private ["Vs6UInt16", "init"]
+- !private ["Vs6UInt32", "Distance"]
+- !private ["Vs6UInt32", "IntegerLiteralType"]
+- !private ["Vs6UInt32", "Stride"]
+- !private ["Vs6UInt32", "_DisallowMixedSignArithmetic"]
+- !private ["Vs6UInt32", "deinit"]
+- !private ["Vs6UInt32", "init"]
+- !private ["Vs6UInt64", "Distance"]
+- !private ["Vs6UInt64", "IntegerLiteralType"]
+- !private ["Vs6UInt64", "Stride"]
+- !private ["Vs6UInt64", "_DisallowMixedSignArithmetic"]
+- !private ["Vs6UInt64", "deinit"]
+- !private ["Vs6UInt64", "init"]
+- !private ["Vs5UInt8", "Distance"]
+- !private ["Vs5UInt8", "IntegerLiteralType"]
+- !private ["Vs5UInt8", "Stride"]
+- !private ["Vs5UInt8", "_DisallowMixedSignArithmetic"]
+- !private ["Vs5UInt8", "deinit"]
+- !private ["Vs5UInt8", "init"]
+- !private ["Sc", "deinit"]
+- !private ["Ps31UnicodeScalarLiteralConvertible", "init"]
+- !private ["Sp", "deinit"]
+- !private ["SP", "deinit"]
+- !private ["Ps19UnsignedIntegerType", "Distance"]
+- !private ["Ps19UnsignedIntegerType", "IntegerLiteralType"]
+- !private ["Ps19UnsignedIntegerType", "Stride"]
+- !private ["Ps19UnsignedIntegerType", "_DisallowMixedSignArithmetic"]
+- !private ["Ps19UnsignedIntegerType", "init"]
+- ["PSo17WCSessionDelegate", "HKHealthStore"]
+- !private ["PSo17WCSessionDelegate", "PNConfiguration"]
+- !private ["PSo17WCSessionDelegate", "PubNub"]
+- ["PSo17WCSessionDelegate", "application"]
+- ["PSo17WCSessionDelegate", "applicationDidBecomeActive"]
+- ["PSo17WCSessionDelegate", "applicationDidEnterBackground"]
+- ["PSo17WCSessionDelegate", "applicationDidFinishLaunching"]
+- ["PSo17WCSessionDelegate", "applicationDidReceiveMemoryWarning"]
+- ["PSo17WCSessionDelegate", "applicationProtectedDataDidBecomeAvailable"]
+- ["PSo17WCSessionDelegate", "applicationProtectedDataWillBecomeUnavailable"]
+- ["PSo17WCSessionDelegate", "applicationShouldRequestHealthAuthorization"]
+- ["PSo17WCSessionDelegate", "applicationSignificantTimeChange"]
+- ["PSo17WCSessionDelegate", "applicationWillEnterForeground"]
+- ["PSo17WCSessionDelegate", "applicationWillResignActive"]
+- ["PSo17WCSessionDelegate", "applicationWillTerminate"]
+- !private ["PSo17WCSessionDelegate", "channel"]
+- ["PSo17WCSessionDelegate", "client"]
+- !private ["PSo17WCSessionDelegate", "config"]
+- !private ["PSo17WCSessionDelegate", "healthStore"]
+- !private ["PSo17WCSessionDelegate", "print"]
+- ["PSo17WCSessionDelegate", "session"]
+- ["PSo17WCSessionDelegate", "sessionDidBecomeInactive"]
+- ["PSo17WCSessionDelegate", "sessionDidDeactivate"]
+- ["PSo17WCSessionDelegate", "sessionReachabilityDidChange"]
+- ["PSo17WCSessionDelegate", "sessionWatchStateDidChange"]
+- ["PSo17WCSessionDelegate", "window"]
+- ["PSo17WCSessionDelegate", ""]
+- !private ["Ps10_ArrayType", "Element"]
+- !private ["Ps33_BuiltinBooleanLiteralConvertible", "_getBuiltinLogicValue"]
+- !private ["Ps49_BuiltinExtendedGraphemeClusterLiteralConvertible", "init"]
+- !private ["Ps31_BuiltinFloatLiteralConvertible", "IntegerLiteralType"]
+- !private ["Ps31_BuiltinFloatLiteralConvertible", "Stride"]
+- !private ["Ps31_BuiltinFloatLiteralConvertible", "init"]
+- !private ["Ps33_BuiltinIntegerLiteralConvertible", "Distance"]
+- !private ["Ps33_BuiltinIntegerLiteralConvertible", "IntegerLiteralType"]
+- !private ["Ps33_BuiltinIntegerLiteralConvertible", "Stride"]
+- !private ["Ps33_BuiltinIntegerLiteralConvertible", "_DisallowMixedSignArithmetic"]
+- !private ["Ps33_BuiltinIntegerLiteralConvertible", "init"]
+- !private ["Ps32_BuiltinStringLiteralConvertible", "init"]
+- !private ["Ps37_BuiltinUTF16StringLiteralConvertible", "init"]
+- !private ["Ps39_BuiltinUnicodeScalarLiteralConvertible", "init"]
+- !private ["Ps19_CVarArgAlignedType", "Distance"]
+- !private ["Ps19_CVarArgAlignedType", "IntegerLiteralType"]
+- !private ["Ps19_CVarArgAlignedType", "Stride"]
+- !private ["Ps19_CVarArgAlignedType", "_DisallowMixedSignArithmetic"]
+- !private ["Ps19_CVarArgAlignedType", "init"]
+- !private ["Ps22_CVarArgPassedAsDouble", "IntegerLiteralType"]
+- !private ["Ps22_CVarArgPassedAsDouble", "Stride"]
+- !private ["Ps22_CVarArgPassedAsDouble", "init"]
+- !private ["Ps24_DestructorSafeContainer", "Element"]
+- !private ["Ps28_DisallowMixedSignArithmetic", "Distance"]
+- !private ["Ps28_DisallowMixedSignArithmetic", "IntegerLiteralType"]
+- !private ["Ps28_DisallowMixedSignArithmetic", "Stride"]
+- !private ["Ps28_DisallowMixedSignArithmetic", "_DisallowMixedSignArithmetic"]
+- !private ["Ps28_DisallowMixedSignArithmetic", "init"]
+- !private ["Ps14_Incrementable", "Distance"]
+- !private ["Ps14_Incrementable", "IntegerLiteralType"]
+- !private ["Ps14_Incrementable", "Stride"]
+- !private ["Ps14_Incrementable", "_DisallowMixedSignArithmetic"]
+- !private ["Ps14_Incrementable", "init"]
+- !private ["Ps22_IntegerArithmeticType", "Distance"]
+- !private ["Ps22_IntegerArithmeticType", "IntegerLiteralType"]
+- !private ["Ps22_IntegerArithmeticType", "Stride"]
+- !private ["Ps22_IntegerArithmeticType", "_DisallowMixedSignArithmetic"]
+- !private ["Ps22_IntegerArithmeticType", "init"]
+- !private ["Ps12_IntegerType", "Distance"]
+- !private ["Ps12_IntegerType", "IntegerLiteralType"]
+- !private ["Ps12_IntegerType", "Stride"]
+- !private ["Ps12_IntegerType", "_DisallowMixedSignArithmetic"]
+- !private ["Ps12_IntegerType", "init"]
+- !private ["Ps21_ObjectiveCBridgeable", "Distance"]
+- !private ["Ps21_ObjectiveCBridgeable", "Element"]
+- !private ["Ps21_ObjectiveCBridgeable", "IntegerLiteralType"]
+- !private ["Ps21_ObjectiveCBridgeable", "Stride"]
+- !private ["Ps21_ObjectiveCBridgeable", "_DisallowMixedSignArithmetic"]
+- !private ["Ps21_ObjectiveCBridgeable", "_getBuiltinLogicValue"]
+- !private ["Ps21_ObjectiveCBridgeable", "init"]
+- !private ["Vs26_OptionalNilComparisonType", "deinit"]
+- !private ["Ps22_RandomAccessAmbiguity", "Distance"]
+- !private ["Ps22_RandomAccessAmbiguity", "IntegerLiteralType"]
+- !private ["Ps22_RandomAccessAmbiguity", "Stride"]
+- !private ["Ps22_RandomAccessAmbiguity", "_DisallowMixedSignArithmetic"]
+- !private ["Ps22_RandomAccessAmbiguity", "init"]
+- !private ["Ps12_Reflectable", "Distance"]
+- !private ["Ps12_Reflectable", "Element"]
+- !private ["Ps12_Reflectable", "IntegerLiteralType"]
+- !private ["Ps12_Reflectable", "Stride"]
+- !private ["Ps12_Reflectable", "_DisallowMixedSignArithmetic"]
+- !private ["Ps12_Reflectable", "_getBuiltinLogicValue"]
+- !private ["Ps12_Reflectable", "init"]
+- !private ["Ps18_SignedIntegerType", "Distance"]
+- !private ["Ps18_SignedIntegerType", "IntegerLiteralType"]
+- !private ["Ps18_SignedIntegerType", "Stride"]
+- !private ["Ps18_SignedIntegerType", "init"]
+- !private ["Ps18_StringElementType", "Distance"]
+- !private ["Ps18_StringElementType", "IntegerLiteralType"]
+- !private ["Ps18_StringElementType", "Stride"]
+- !private ["Ps18_StringElementType", "_DisallowMixedSignArithmetic"]
+- !private ["Ps18_StringElementType", "init"]
+depends-nominal:
+- !private "Ps16AbsoluteValuable"
+- "Ps9AnyObject"
+- "C11piHeartRate11AppDelegate"
+- !private "Sa"
+- !private "Ps23ArrayLiteralConvertible"
+- !private "Ps22BidirectionalIndexType"
+- !private "Ps21BitwiseOperationsType"
+- !private "Sb"
+- !private "Ps25BooleanLiteralConvertible"
+- !private "Ps11BooleanType"
+- !private "V12CoreGraphics7CGFloat"
+- "Ps11CVarArgType"
+- !private "Vs9Character"
+- !private "Ps14CollectionType"
+- !private "Ps10Comparable"
+- "Ps28CustomDebugStringConvertible"
+- "Ps23CustomStringConvertible"
+- !private "Sd"
+- "Ps9Equatable"
+- !private "Ps41ExtendedGraphemeClusterLiteralConvertible"
+- !private "Sf"
+- !private "Vs7Float80"
+- !private "Ps23FloatLiteralConvertible"
+- !private "Ps17FloatingPointType"
+- !private "Ps16ForwardIndexType"
+- "CSo13HKHealthStore"
+- "Ps8Hashable"
+- !private "Ps9Indexable"
+- !private "Si"
+- !private "Vs5Int16"
+- !private "Vs5Int32"
+- !private "Vs5Int64"
+- !private "Vs4Int8"
+- !private "Ps21IntegerArithmeticType"
+- !private "Ps25IntegerLiteralConvertible"
+- !private "Ps11IntegerType"
+- !private "Ps14MirrorPathType"
+- !private "Ps21MutableCollectionType"
+- !private "Ps16MutableIndexable"
+- !private "Ps16MutableSliceable"
+- !private "PSo8NSCoding"
+- !private "PSo9NSCopying"
+- !private "PSo16NSMutableCopying"
+- "CSo8NSObject"
+- "PSo16NSObjectProtocol"
+- !private "PSo14NSSecureCoding"
+- !private "CSo8NSString"
+- !private "Sq"
+- !private "Ps16OutputStreamType"
+- !private "CSo15PNConfiguration"
+- !private "CSo13PNMessageData"
+- !private "CSo15PNMessageResult"
+- "PSo21PNObjectEventListener"
+- !private "CSo8PNResult"
+- !private "CSo13PNServiceData"
+- !private "CSo16PNSubscriberData"
+- !private "CSo6PubNub"
+- !private "Ps21RandomAccessIndexType"
+- !private "Ps30RangeReplaceableCollectionType"
+- !private "Ps12SequenceType"
+- !private "Ps17SignedIntegerType"
+- !private "Ps16SignedNumberType"
+- !private "Ps10Streamable"
+- !private "Ps10Strideable"
+- !private "SS"
+- !private "Ps30StringInterpolationConvertible"
+- !private "Ps24StringLiteralConvertible"
+- "PSo21UIApplicationDelegate"
+- "CSo11UIResponder"
+- !private "Su"
+- !private "Vs6UInt16"
+- !private "Vs6UInt32"
+- !private "Vs6UInt64"
+- !private "Vs5UInt8"
+- !private "Sc"
+- !private "Ps31UnicodeScalarLiteralConvertible"
+- !private "Sp"
+- !private "SP"
+- !private "Ps19UnsignedIntegerType"
+- "PSo17WCSessionDelegate"
+- !private "Ps10_ArrayType"
+- !private "Ps33_BuiltinBooleanLiteralConvertible"
+- !private "Ps49_BuiltinExtendedGraphemeClusterLiteralConvertible"
+- !private "Ps31_BuiltinFloatLiteralConvertible"
+- !private "Ps33_BuiltinIntegerLiteralConvertible"
+- !private "Ps32_BuiltinStringLiteralConvertible"
+- !private "Ps37_BuiltinUTF16StringLiteralConvertible"
+- !private "Ps39_BuiltinUnicodeScalarLiteralConvertible"
+- !private "Ps19_CVarArgAlignedType"
+- !private "Ps22_CVarArgPassedAsDouble"
+- !private "Ps24_DestructorSafeContainer"
+- !private "Ps28_DisallowMixedSignArithmetic"
+- !private "Ps14_Incrementable"
+- !private "Ps22_IntegerArithmeticType"
+- !private "Ps12_IntegerType"
+- !private "Ps21_ObjectiveCBridgeable"
+- !private "Vs26_OptionalNilComparisonType"
+- !private "Ps22_RandomAccessAmbiguity"
+- !private "Ps12_Reflectable"
+- !private "Ps18_SignedIntegerType"
+- !private "Ps18_StringElementType"
+depends-dynamic-lookup:
+depends-external:
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Swift.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/UIKit.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Foundation.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Darwin.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Dispatch.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/ObjectiveC.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreGraphics.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreImage.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/WatchConnectivity.swiftmodule"
+- "/Users/lizzie/Desktop/piHeartRate/DerivedData/piHeartRate/Build/Products/Debug-iphonesimulator/PubNub-iOS/PubNub.framework/Headers/PubNub.h"
+- "/Users/lizzie/Desktop/piHeartRate/DerivedData/piHeartRate/Build/Products/Debug-iphonesimulator/PubNub-iOS/PubNub.framework/Headers/PNObjectEventListener.h"
+- "/Users/lizzie/Desktop/piHeartRate/DerivedData/piHeartRate/Build/Products/Debug-iphonesimulator/PubNub-iOS/PubNub.framework/Headers/PNErrorCodes.h"
+- "/Users/lizzie/Desktop/piHeartRate/DerivedData/piHeartRate/Build/Products/Debug-iphonesimulator/PubNub-iOS/PubNub.framework/Headers/PNLog.h"
+- "/Users/lizzie/Desktop/piHeartRate/DerivedData/piHeartRate/Build/Products/Debug-iphonesimulator/PubNub-iOS/PubNub.framework/Headers/PNTimeResult.h"
+- "/Users/lizzie/Desktop/piHeartRate/DerivedData/piHeartRate/Build/Products/Debug-iphonesimulator/PubNub-iOS/PubNub.framework/Headers/PNSubscribeStatus.h"
+- "/Users/lizzie/Desktop/piHeartRate/DerivedData/piHeartRate/Build/Products/Debug-iphonesimulator/PubNub-iOS/PubNub.framework/Headers/PNSubscriberResults.h"
+- "/Users/lizzie/Desktop/piHeartRate/DerivedData/piHeartRate/Build/Products/Debug-iphonesimulator/PubNub-iOS/PubNub.framework/Headers/PNPublishStatus.h"
+- "/Users/lizzie/Desktop/piHeartRate/DerivedData/piHeartRate/Build/Products/Debug-iphonesimulator/PubNub-iOS/PubNub.framework/Headers/PNPresenceWhereNowResult.h"
+- "/Users/lizzie/Desktop/piHeartRate/DerivedData/piHeartRate/Build/Products/Debug-iphonesimulator/PubNub-iOS/PubNub.framework/Headers/PNPresenceChannelHereNowResult.h"
+- "/Users/lizzie/Desktop/piHeartRate/DerivedData/piHeartRate/Build/Products/Debug-iphonesimulator/PubNub-iOS/PubNub.framework/Headers/PNPresenceGlobalHereNowResult.h"
+- "/Users/lizzie/Desktop/piHeartRate/DerivedData/piHeartRate/Build/Products/Debug-iphonesimulator/PubNub-iOS/PubNub.framework/Headers/PNPresenceChannelGroupHereNowResult.h"
+- "/Users/lizzie/Desktop/piHeartRate/DerivedData/piHeartRate/Build/Products/Debug-iphonesimulator/PubNub-iOS/PubNub.framework/Headers/PNHistoryResult.h"
+- "/Users/lizzie/Desktop/piHeartRate/DerivedData/piHeartRate/Build/Products/Debug-iphonesimulator/PubNub-iOS/PubNub.framework/Headers/PNClientStateUpdateStatus.h"
+- "/Users/lizzie/Desktop/piHeartRate/DerivedData/piHeartRate/Build/Products/Debug-iphonesimulator/PubNub-iOS/PubNub.framework/Headers/PNChannelGroupsResult.h"
+- "/Users/lizzie/Desktop/piHeartRate/DerivedData/piHeartRate/Build/Products/Debug-iphonesimulator/PubNub-iOS/PubNub.framework/Headers/PNChannelGroupClientStateResult.h"
+- "/Users/lizzie/Desktop/piHeartRate/DerivedData/piHeartRate/Build/Products/Debug-iphonesimulator/PubNub-iOS/PubNub.framework/Headers/PNChannelGroupChannelsResult.h"
+- "/Users/lizzie/Desktop/piHeartRate/DerivedData/piHeartRate/Build/Products/Debug-iphonesimulator/PubNub-iOS/PubNub.framework/Headers/PNChannelClientStateResult.h"
+- "/Users/lizzie/Desktop/piHeartRate/DerivedData/piHeartRate/Build/Products/Debug-iphonesimulator/PubNub-iOS/PubNub.framework/Headers/PNAPNSEnabledChannelsResult.h"
+- "/Users/lizzie/Desktop/piHeartRate/DerivedData/piHeartRate/Build/Products/Debug-iphonesimulator/PubNub-iOS/PubNub.framework/Headers/PNServiceData.h"
+- "/Users/lizzie/Desktop/piHeartRate/DerivedData/piHeartRate/Build/Products/Debug-iphonesimulator/PubNub-iOS/PubNub.framework/Headers/PNResult.h"
+- "/Users/lizzie/Desktop/piHeartRate/DerivedData/piHeartRate/Build/Products/Debug-iphonesimulator/PubNub-iOS/PubNub.framework/Headers/PNStatus.h"
+- "/Users/lizzie/Desktop/piHeartRate/DerivedData/piHeartRate/Build/Products/Debug-iphonesimulator/PubNub-iOS/PubNub.framework/Headers/PNErrorStatus.h"
+- "/Users/lizzie/Desktop/piHeartRate/DerivedData/piHeartRate/Build/Products/Debug-iphonesimulator/PubNub-iOS/PubNub.framework/Headers/PNAcknowledgmentStatus.h"
+- "/Users/lizzie/Desktop/piHeartRate/DerivedData/piHeartRate/Build/Products/Debug-iphonesimulator/PubNub-iOS/PubNub.framework/Headers/PNConfiguration.h"
+- "/Users/lizzie/Desktop/piHeartRate/DerivedData/piHeartRate/Build/Products/Debug-iphonesimulator/PubNub-iOS/PubNub.framework/Headers/PNClientInformation.h"
+- "/Users/lizzie/Desktop/piHeartRate/DerivedData/piHeartRate/Build/Products/Debug-iphonesimulator/PubNub-iOS/PubNub.framework/Headers/PNAES.h"
+- "/Users/lizzie/Desktop/piHeartRate/DerivedData/piHeartRate/Build/Products/Debug-iphonesimulator/PubNub-iOS/PubNub.framework/Headers/PubNub+Time.h"
+- "/Users/lizzie/Desktop/piHeartRate/DerivedData/piHeartRate/Build/Products/Debug-iphonesimulator/PubNub-iOS/PubNub.framework/Headers/PubNub+Subscribe.h"
+- "/Users/lizzie/Desktop/piHeartRate/DerivedData/piHeartRate/Build/Products/Debug-iphonesimulator/PubNub-iOS/PubNub.framework/Headers/PubNub+State.h"
+- "/Users/lizzie/Desktop/piHeartRate/DerivedData/piHeartRate/Build/Products/Debug-iphonesimulator/PubNub-iOS/PubNub.framework/Headers/PubNub+Publish.h"
+- "/Users/lizzie/Desktop/piHeartRate/DerivedData/piHeartRate/Build/Products/Debug-iphonesimulator/PubNub-iOS/PubNub.framework/Headers/PubNub+Presence.h"
+- "/Users/lizzie/Desktop/piHeartRate/DerivedData/piHeartRate/Build/Products/Debug-iphonesimulator/PubNub-iOS/PubNub.framework/Headers/PubNub+History.h"
+- "/Users/lizzie/Desktop/piHeartRate/DerivedData/piHeartRate/Build/Products/Debug-iphonesimulator/PubNub-iOS/PubNub.framework/Headers/PubNub+ChannelGroup.h"
+- "/Users/lizzie/Desktop/piHeartRate/DerivedData/piHeartRate/Build/Products/Debug-iphonesimulator/PubNub-iOS/PubNub.framework/Headers/PNStructures.h"
+- "/Users/lizzie/Desktop/piHeartRate/DerivedData/piHeartRate/Build/Products/Debug-iphonesimulator/PubNub-iOS/PubNub.framework/Headers/PubNub+Core.h"
+- "/Users/lizzie/Desktop/piHeartRate/DerivedData/piHeartRate/Build/Products/Debug-iphonesimulator/PubNub-iOS/PubNub.framework/Headers/PubNub+APNS.h"
+- "/Users/lizzie/Desktop/piHeartRate/DerivedData/piHeartRate/Build/Products/Debug-iphonesimulator/PubNub-iOS/PubNub.framework/Headers/PubNub-iOS-umbrella.h"
+- "/Users/lizzie/Desktop/piHeartRate/DerivedData/piHeartRate/Build/Products/Debug-iphonesimulator/PubNub-iOS/PubNub.framework/Modules/module.modulemap"
+interface-hash: "89313a9b2784fdc0cab83c32871fa979"

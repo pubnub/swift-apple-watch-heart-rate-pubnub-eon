@@ -1,0 +1,1217 @@
+{
+  'version': 0,
+  'case-sensitive': 'false',
+  'roots': [
+    {
+      'type': 'directory',
+      'name': "/Users/lizzie/Desktop/piHeartRate/DerivedData/piHeartRate/Build/Products/Debug-iphonesimulator/CocoaLumberjack-iOS/CocoaLumberjack.framework/Headers",
+      'contents': [
+        {
+          'type': 'file',
+          'name': "CocoaLumberjack-Swift.h",
+          'external-contents': "/Users/lizzie/Desktop/piHeartRate/DerivedData/piHeartRate/Build/Products/Debug-iphonesimulator/CocoaLumberjack-iOS/CocoaLumberjack.framework/Headers/CocoaLumberjack-Swift.h"
+        },
+        {
+          'type': 'file',
+          'name': "CocoaLumberjack.h",
+          'external-contents': "/Users/lizzie/Desktop/piHeartRate/Pods/CocoaLumberjack/Classes/CocoaLumberjack.h"
+        },
+        {
+          'type': 'file',
+          'name': "DDASLLogCapture.h",
+          'external-contents': "/Users/lizzie/Desktop/piHeartRate/Pods/CocoaLumberjack/Classes/DDASLLogCapture.h"
+        },
+        {
+          'type': 'file',
+          'name': "DDASLLogger.h",
+          'external-contents': "/Users/lizzie/Desktop/piHeartRate/Pods/CocoaLumberjack/Classes/DDASLLogger.h"
+        },
+        {
+          'type': 'file',
+          'name': "DDAbstractDatabaseLogger.h",
+          'external-contents': "/Users/lizzie/Desktop/piHeartRate/Pods/CocoaLumberjack/Classes/DDAbstractDatabaseLogger.h"
+        },
+        {
+          'type': 'file',
+          'name': "DDAssertMacros.h",
+          'external-contents': "/Users/lizzie/Desktop/piHeartRate/Pods/CocoaLumberjack/Classes/DDAssertMacros.h"
+        },
+        {
+          'type': 'file',
+          'name': "DDContextFilterLogFormatter.h",
+          'external-contents': "/Users/lizzie/Desktop/piHeartRate/Pods/CocoaLumberjack/Classes/Extensions/DDContextFilterLogFormatter.h"
+        },
+        {
+          'type': 'file',
+          'name': "DDDispatchQueueLogFormatter.h",
+          'external-contents': "/Users/lizzie/Desktop/piHeartRate/Pods/CocoaLumberjack/Classes/Extensions/DDDispatchQueueLogFormatter.h"
+        },
+        {
+          'type': 'file',
+          'name': "DDFileLogger.h",
+          'external-contents': "/Users/lizzie/Desktop/piHeartRate/Pods/CocoaLumberjack/Classes/DDFileLogger.h"
+        },
+        {
+          'type': 'file',
+          'name': "DDLegacyMacros.h",
+          'external-contents': "/Users/lizzie/Desktop/piHeartRate/Pods/CocoaLumberjack/Classes/DDLegacyMacros.h"
+        },
+        {
+          'type': 'file',
+          'name': "DDLog+LOGV.h",
+          'external-contents': "/Users/lizzie/Desktop/piHeartRate/Pods/CocoaLumberjack/Classes/DDLog+LOGV.h"
+        },
+        {
+          'type': 'file',
+          'name': "DDLog.h",
+          'external-contents': "/Users/lizzie/Desktop/piHeartRate/Pods/CocoaLumberjack/Classes/DDLog.h"
+        },
+        {
+          'type': 'file',
+          'name': "DDLogMacros.h",
+          'external-contents': "/Users/lizzie/Desktop/piHeartRate/Pods/CocoaLumberjack/Classes/DDLogMacros.h"
+        },
+        {
+          'type': 'file',
+          'name': "DDMultiFormatter.h",
+          'external-contents': "/Users/lizzie/Desktop/piHeartRate/Pods/CocoaLumberjack/Classes/Extensions/DDMultiFormatter.h"
+        },
+        {
+          'type': 'file',
+          'name': "DDTTYLogger.h",
+          'external-contents': "/Users/lizzie/Desktop/piHeartRate/Pods/CocoaLumberjack/Classes/DDTTYLogger.h"
+        }
+      ]
+    },
+    {
+      'type': 'directory',
+      'name': "/Users/lizzie/Desktop/piHeartRate/DerivedData/piHeartRate/Build/Products/Debug-iphonesimulator/CocoaLumberjack-iOS/CocoaLumberjack.framework/Modules",
+      'contents': [
+        {
+          'type': 'file',
+          'name': "module.modulemap",
+          'external-contents': "/Users/lizzie/Desktop/piHeartRate/DerivedData/piHeartRate/Build/Intermediates/Pods.build/Debug-iphonesimulator/CocoaLumberjack-iOS.build/module.modulemap"
+        }
+      ]
+    },
+    {
+      'type': 'directory',
+      'name': "/Users/lizzie/Desktop/piHeartRate/DerivedData/piHeartRate/Build/Products/Debug-iphonesimulator/Pods_piHeartRate.framework/Headers",
+      'contents': [
+        {
+          'type': 'file',
+          'name': "Pods-piHeartRate-umbrella.h",
+          'external-contents': "/Users/lizzie/Desktop/piHeartRate/Pods/Target Support Files/Pods-piHeartRate/Pods-piHeartRate-umbrella.h"
+        },
+        {
+          'type': 'file',
+          'name': "Pods_piHeartRate-Swift.h",
+          'external-contents': "/Users/lizzie/Desktop/piHeartRate/DerivedData/piHeartRate/Build/Products/Debug-iphonesimulator/Pods_piHeartRate.framework/Headers/Pods_piHeartRate-Swift.h"
+        }
+      ]
+    },
+    {
+      'type': 'directory',
+      'name': "/Users/lizzie/Desktop/piHeartRate/DerivedData/piHeartRate/Build/Products/Debug-iphonesimulator/Pods_piHeartRate.framework/Modules",
+      'contents': [
+        {
+          'type': 'file',
+          'name': "module.modulemap",
+          'external-contents': "/Users/lizzie/Desktop/piHeartRate/DerivedData/piHeartRate/Build/Intermediates/Pods.build/Debug-iphonesimulator/Pods-piHeartRate.build/module.modulemap"
+        }
+      ]
+    },
+    {
+      'type': 'directory',
+      'name': "/Users/lizzie/Desktop/piHeartRate/DerivedData/piHeartRate/Build/Products/Debug-iphonesimulator/PubNub-iOS/PubNub.framework/Headers",
+      'contents': [
+        {
+          'type': 'file',
+          'name': "PNAES.h",
+          'external-contents': "/Users/lizzie/Desktop/piHeartRate/Pods/PubNub/PubNub/Data/PNAES.h"
+        },
+        {
+          'type': 'file',
+          'name': "PNAPNSEnabledChannelsResult.h",
+          'external-contents': "/Users/lizzie/Desktop/piHeartRate/Pods/PubNub/PubNub/Data/Service Objects/PNAPNSEnabledChannelsResult.h"
+        },
+        {
+          'type': 'file',
+          'name': "PNAcknowledgmentStatus.h",
+          'external-contents': "/Users/lizzie/Desktop/piHeartRate/Pods/PubNub/PubNub/Data/Service Objects/PNAcknowledgmentStatus.h"
+        },
+        {
+          'type': 'file',
+          'name': "PNChannelClientStateResult.h",
+          'external-contents': "/Users/lizzie/Desktop/piHeartRate/Pods/PubNub/PubNub/Data/Service Objects/PNChannelClientStateResult.h"
+        },
+        {
+          'type': 'file',
+          'name': "PNChannelGroupChannelsResult.h",
+          'external-contents': "/Users/lizzie/Desktop/piHeartRate/Pods/PubNub/PubNub/Data/Service Objects/PNChannelGroupChannelsResult.h"
+        },
+        {
+          'type': 'file',
+          'name': "PNChannelGroupClientStateResult.h",
+          'external-contents': "/Users/lizzie/Desktop/piHeartRate/Pods/PubNub/PubNub/Data/Service Objects/PNChannelGroupClientStateResult.h"
+        },
+        {
+          'type': 'file',
+          'name': "PNChannelGroupsResult.h",
+          'external-contents': "/Users/lizzie/Desktop/piHeartRate/Pods/PubNub/PubNub/Data/Service Objects/PNChannelGroupsResult.h"
+        },
+        {
+          'type': 'file',
+          'name': "PNClientInformation.h",
+          'external-contents': "/Users/lizzie/Desktop/piHeartRate/Pods/PubNub/PubNub/Data/PNClientInformation.h"
+        },
+        {
+          'type': 'file',
+          'name': "PNClientStateUpdateStatus.h",
+          'external-contents': "/Users/lizzie/Desktop/piHeartRate/Pods/PubNub/PubNub/Data/Service Objects/PNClientStateUpdateStatus.h"
+        },
+        {
+          'type': 'file',
+          'name': "PNConfiguration.h",
+          'external-contents': "/Users/lizzie/Desktop/piHeartRate/Pods/PubNub/PubNub/Data/PNConfiguration.h"
+        },
+        {
+          'type': 'file',
+          'name': "PNErrorCodes.h",
+          'external-contents': "/Users/lizzie/Desktop/piHeartRate/Pods/PubNub/PubNub/Misc/PNErrorCodes.h"
+        },
+        {
+          'type': 'file',
+          'name': "PNErrorStatus.h",
+          'external-contents': "/Users/lizzie/Desktop/piHeartRate/Pods/PubNub/PubNub/Data/Service Objects/PNErrorStatus.h"
+        },
+        {
+          'type': 'file',
+          'name': "PNHistoryResult.h",
+          'external-contents': "/Users/lizzie/Desktop/piHeartRate/Pods/PubNub/PubNub/Data/Service Objects/PNHistoryResult.h"
+        },
+        {
+          'type': 'file',
+          'name': "PNLog.h",
+          'external-contents': "/Users/lizzie/Desktop/piHeartRate/Pods/PubNub/PubNub/Misc/Logger/PNLog.h"
+        },
+        {
+          'type': 'file',
+          'name': "PNObjectEventListener.h",
+          'external-contents': "/Users/lizzie/Desktop/piHeartRate/Pods/PubNub/PubNub/Misc/Protocols/PNObjectEventListener.h"
+        },
+        {
+          'type': 'file',
+          'name': "PNPresenceChannelGroupHereNowResult.h",
+          'external-contents': "/Users/lizzie/Desktop/piHeartRate/Pods/PubNub/PubNub/Data/Service Objects/PNPresenceChannelGroupHereNowResult.h"
+        },
+        {
+          'type': 'file',
+          'name': "PNPresenceChannelHereNowResult.h",
+          'external-contents': "/Users/lizzie/Desktop/piHeartRate/Pods/PubNub/PubNub/Data/Service Objects/PNPresenceChannelHereNowResult.h"
+        },
+        {
+          'type': 'file',
+          'name': "PNPresenceGlobalHereNowResult.h",
+          'external-contents': "/Users/lizzie/Desktop/piHeartRate/Pods/PubNub/PubNub/Data/Service Objects/PNPresenceGlobalHereNowResult.h"
+        },
+        {
+          'type': 'file',
+          'name': "PNPresenceWhereNowResult.h",
+          'external-contents': "/Users/lizzie/Desktop/piHeartRate/Pods/PubNub/PubNub/Data/Service Objects/PNPresenceWhereNowResult.h"
+        },
+        {
+          'type': 'file',
+          'name': "PNPublishStatus.h",
+          'external-contents': "/Users/lizzie/Desktop/piHeartRate/Pods/PubNub/PubNub/Data/Service Objects/PNPublishStatus.h"
+        },
+        {
+          'type': 'file',
+          'name': "PNResult.h",
+          'external-contents': "/Users/lizzie/Desktop/piHeartRate/Pods/PubNub/PubNub/Data/Service Objects/PNResult.h"
+        },
+        {
+          'type': 'file',
+          'name': "PNServiceData.h",
+          'external-contents': "/Users/lizzie/Desktop/piHeartRate/Pods/PubNub/PubNub/Data/Service Objects/PNServiceData.h"
+        },
+        {
+          'type': 'file',
+          'name': "PNStatus.h",
+          'external-contents': "/Users/lizzie/Desktop/piHeartRate/Pods/PubNub/PubNub/Data/Service Objects/PNStatus.h"
+        },
+        {
+          'type': 'file',
+          'name': "PNStructures.h",
+          'external-contents': "/Users/lizzie/Desktop/piHeartRate/Pods/PubNub/PubNub/Misc/PNStructures.h"
+        },
+        {
+          'type': 'file',
+          'name': "PNSubscribeStatus.h",
+          'external-contents': "/Users/lizzie/Desktop/piHeartRate/Pods/PubNub/PubNub/Data/Service Objects/PNSubscribeStatus.h"
+        },
+        {
+          'type': 'file',
+          'name': "PNSubscriberResults.h",
+          'external-contents': "/Users/lizzie/Desktop/piHeartRate/Pods/PubNub/PubNub/Data/Service Objects/PNSubscriberResults.h"
+        },
+        {
+          'type': 'file',
+          'name': "PNTimeResult.h",
+          'external-contents': "/Users/lizzie/Desktop/piHeartRate/Pods/PubNub/PubNub/Data/Service Objects/PNTimeResult.h"
+        },
+        {
+          'type': 'file',
+          'name': "PubNub+APNS.h",
+          'external-contents': "/Users/lizzie/Desktop/piHeartRate/Pods/PubNub/PubNub/Core/PubNub+APNS.h"
+        },
+        {
+          'type': 'file',
+          'name': "PubNub+ChannelGroup.h",
+          'external-contents': "/Users/lizzie/Desktop/piHeartRate/Pods/PubNub/PubNub/Core/PubNub+ChannelGroup.h"
+        },
+        {
+          'type': 'file',
+          'name': "PubNub+Core.h",
+          'external-contents': "/Users/lizzie/Desktop/piHeartRate/Pods/PubNub/PubNub/Core/PubNub+Core.h"
+        },
+        {
+          'type': 'file',
+          'name': "PubNub+History.h",
+          'external-contents': "/Users/lizzie/Desktop/piHeartRate/Pods/PubNub/PubNub/Core/PubNub+History.h"
+        },
+        {
+          'type': 'file',
+          'name': "PubNub+Presence.h",
+          'external-contents': "/Users/lizzie/Desktop/piHeartRate/Pods/PubNub/PubNub/Core/PubNub+Presence.h"
+        },
+        {
+          'type': 'file',
+          'name': "PubNub+Publish.h",
+          'external-contents': "/Users/lizzie/Desktop/piHeartRate/Pods/PubNub/PubNub/Core/PubNub+Publish.h"
+        },
+        {
+          'type': 'file',
+          'name': "PubNub+State.h",
+          'external-contents': "/Users/lizzie/Desktop/piHeartRate/Pods/PubNub/PubNub/Core/PubNub+State.h"
+        },
+        {
+          'type': 'file',
+          'name': "PubNub+Subscribe.h",
+          'external-contents': "/Users/lizzie/Desktop/piHeartRate/Pods/PubNub/PubNub/Core/PubNub+Subscribe.h"
+        },
+        {
+          'type': 'file',
+          'name': "PubNub+Time.h",
+          'external-contents': "/Users/lizzie/Desktop/piHeartRate/Pods/PubNub/PubNub/Core/PubNub+Time.h"
+        },
+        {
+          'type': 'file',
+          'name': "PubNub-Swift.h",
+          'external-contents': "/Users/lizzie/Desktop/piHeartRate/DerivedData/piHeartRate/Build/Products/Debug-iphonesimulator/PubNub-iOS/PubNub.framework/Headers/PubNub-Swift.h"
+        },
+        {
+          'type': 'file',
+          'name': "PubNub-iOS-umbrella.h",
+          'external-contents': "/Users/lizzie/Desktop/piHeartRate/Pods/Target Support Files/PubNub-iOS/PubNub-iOS-umbrella.h"
+        },
+        {
+          'type': 'file',
+          'name': "PubNub.h",
+          'external-contents': "/Users/lizzie/Desktop/piHeartRate/Pods/PubNub/PubNub/PubNub.h"
+        }
+      ]
+    },
+    {
+      'type': 'directory',
+      'name': "/Users/lizzie/Desktop/piHeartRate/DerivedData/piHeartRate/Build/Products/Debug-iphonesimulator/PubNub-iOS/PubNub.framework/Modules",
+      'contents': [
+        {
+          'type': 'file',
+          'name': "module.modulemap",
+          'external-contents': "/Users/lizzie/Desktop/piHeartRate/DerivedData/piHeartRate/Build/Intermediates/Pods.build/Debug-iphonesimulator/PubNub-iOS.build/module.modulemap"
+        }
+      ]
+    },
+    {
+      'type': 'directory',
+      'name': "/Users/lizzie/Desktop/piHeartRate/DerivedData/piHeartRate/Build/Products/Debug-iphonesimulator/PubNub-iOS/PubNub.framework/PrivateHeaders",
+      'contents': [
+        {
+          'type': 'file',
+          'name': "PNArray.h",
+          'external-contents': "/Users/lizzie/Desktop/piHeartRate/Pods/PubNub/PubNub/Misc/Helpers/PNArray.h"
+        },
+        {
+          'type': 'file',
+          'name': "PNChannel.h",
+          'external-contents': "/Users/lizzie/Desktop/piHeartRate/Pods/PubNub/PubNub/Misc/Helpers/PNChannel.h"
+        },
+        {
+          'type': 'file',
+          'name': "PNChannelGroupAuditionParser.h",
+          'external-contents': "/Users/lizzie/Desktop/piHeartRate/Pods/PubNub/PubNub/Network/Parsers/PNChannelGroupAuditionParser.h"
+        },
+        {
+          'type': 'file',
+          'name': "PNChannelGroupModificationParser.h",
+          'external-contents': "/Users/lizzie/Desktop/piHeartRate/Pods/PubNub/PubNub/Network/Parsers/PNChannelGroupModificationParser.h"
+        },
+        {
+          'type': 'file',
+          'name': "PNClass.h",
+          'external-contents': "/Users/lizzie/Desktop/piHeartRate/Pods/PubNub/PubNub/Misc/Helpers/PNClass.h"
+        },
+        {
+          'type': 'file',
+          'name': "PNClientState.h",
+          'external-contents': "/Users/lizzie/Desktop/piHeartRate/Pods/PubNub/PubNub/Data/Managers/PNClientState.h"
+        },
+        {
+          'type': 'file',
+          'name': "PNClientStateParser.h",
+          'external-contents': "/Users/lizzie/Desktop/piHeartRate/Pods/PubNub/PubNub/Network/Parsers/PNClientStateParser.h"
+        },
+        {
+          'type': 'file',
+          'name': "PNConfiguration+Private.h",
+          'external-contents': "/Users/lizzie/Desktop/piHeartRate/Pods/PubNub/PubNub/Data/PNConfiguration+Private.h"
+        },
+        {
+          'type': 'file',
+          'name': "PNConstants.h",
+          'external-contents': "/Users/lizzie/Desktop/piHeartRate/Pods/PubNub/PubNub/Misc/PNConstants.h"
+        },
+        {
+          'type': 'file',
+          'name': "PNData.h",
+          'external-contents': "/Users/lizzie/Desktop/piHeartRate/Pods/PubNub/PubNub/Misc/Helpers/PNData.h"
+        },
+        {
+          'type': 'file',
+          'name': "PNDictionary.h",
+          'external-contents': "/Users/lizzie/Desktop/piHeartRate/Pods/PubNub/PubNub/Misc/Helpers/PNDictionary.h"
+        },
+        {
+          'type': 'file',
+          'name': "PNEnvelopeInformation.h",
+          'external-contents': "/Users/lizzie/Desktop/piHeartRate/Pods/PubNub/PubNub/Data/PNEnvelopeInformation.h"
+        },
+        {
+          'type': 'file',
+          'name': "PNErrorParser.h",
+          'external-contents': "/Users/lizzie/Desktop/piHeartRate/Pods/PubNub/PubNub/Network/Parsers/PNErrorParser.h"
+        },
+        {
+          'type': 'file',
+          'name': "PNErrorStatus+Private.h",
+          'external-contents': "/Users/lizzie/Desktop/piHeartRate/Pods/PubNub/PubNub/Data/Service Objects/PNErrorStatus+Private.h"
+        },
+        {
+          'type': 'file',
+          'name': "PNGZIP.h",
+          'external-contents': "/Users/lizzie/Desktop/piHeartRate/Pods/PubNub/PubNub/Misc/Helpers/PNGZIP.h"
+        },
+        {
+          'type': 'file',
+          'name': "PNHeartbeat.h",
+          'external-contents': "/Users/lizzie/Desktop/piHeartRate/Pods/PubNub/PubNub/Data/Managers/PNHeartbeat.h"
+        },
+        {
+          'type': 'file',
+          'name': "PNHeartbeatParser.h",
+          'external-contents': "/Users/lizzie/Desktop/piHeartRate/Pods/PubNub/PubNub/Network/Parsers/PNHeartbeatParser.h"
+        },
+        {
+          'type': 'file',
+          'name': "PNHelpers.h",
+          'external-contents': "/Users/lizzie/Desktop/piHeartRate/Pods/PubNub/PubNub/Misc/Helpers/PNHelpers.h"
+        },
+        {
+          'type': 'file',
+          'name': "PNHistoryParser.h",
+          'external-contents': "/Users/lizzie/Desktop/piHeartRate/Pods/PubNub/PubNub/Network/Parsers/PNHistoryParser.h"
+        },
+        {
+          'type': 'file',
+          'name': "PNJSON.h",
+          'external-contents': "/Users/lizzie/Desktop/piHeartRate/Pods/PubNub/PubNub/Misc/Helpers/PNJSON.h"
+        },
+        {
+          'type': 'file',
+          'name': "PNKeychain.h",
+          'external-contents': "/Users/lizzie/Desktop/piHeartRate/Pods/PubNub/PubNub/Data/PNKeychain.h"
+        },
+        {
+          'type': 'file',
+          'name': "PNLeaveParser.h",
+          'external-contents': "/Users/lizzie/Desktop/piHeartRate/Pods/PubNub/PubNub/Network/Parsers/PNLeaveParser.h"
+        },
+        {
+          'type': 'file',
+          'name': "PNLogFileManager.h",
+          'external-contents': "/Users/lizzie/Desktop/piHeartRate/Pods/PubNub/PubNub/Misc/Logger/PNLogFileManager.h"
+        },
+        {
+          'type': 'file',
+          'name': "PNLogMacro.h",
+          'external-contents': "/Users/lizzie/Desktop/piHeartRate/Pods/PubNub/PubNub/Misc/Logger/PNLogMacro.h"
+        },
+        {
+          'type': 'file',
+          'name': "PNLogger.h",
+          'external-contents': "/Users/lizzie/Desktop/piHeartRate/Pods/PubNub/PubNub/Misc/Logger/PNLogger.h"
+        },
+        {
+          'type': 'file',
+          'name': "PNMessagePublishParser.h",
+          'external-contents': "/Users/lizzie/Desktop/piHeartRate/Pods/PubNub/PubNub/Network/Parsers/PNMessagePublishParser.h"
+        },
+        {
+          'type': 'file',
+          'name': "PNNetwork.h",
+          'external-contents': "/Users/lizzie/Desktop/piHeartRate/Pods/PubNub/PubNub/Network/PNNetwork.h"
+        },
+        {
+          'type': 'file',
+          'name': "PNNetworkResponseSerializer.h",
+          'external-contents': "/Users/lizzie/Desktop/piHeartRate/Pods/PubNub/PubNub/Network/PNNetworkResponseSerializer.h"
+        },
+        {
+          'type': 'file',
+          'name': "PNNumber.h",
+          'external-contents': "/Users/lizzie/Desktop/piHeartRate/Pods/PubNub/PubNub/Misc/Helpers/PNNumber.h"
+        },
+        {
+          'type': 'file',
+          'name': "PNParser.h",
+          'external-contents': "/Users/lizzie/Desktop/piHeartRate/Pods/PubNub/PubNub/Misc/Protocols/PNParser.h"
+        },
+        {
+          'type': 'file',
+          'name': "PNPresenceHereNowParser.h",
+          'external-contents': "/Users/lizzie/Desktop/piHeartRate/Pods/PubNub/PubNub/Network/Parsers/PNPresenceHereNowParser.h"
+        },
+        {
+          'type': 'file',
+          'name': "PNPresenceWhereNowParser.h",
+          'external-contents': "/Users/lizzie/Desktop/piHeartRate/Pods/PubNub/PubNub/Network/Parsers/PNPresenceWhereNowParser.h"
+        },
+        {
+          'type': 'file',
+          'name': "PNPrivateStructures.h",
+          'external-contents': "/Users/lizzie/Desktop/piHeartRate/Pods/PubNub/PubNub/Misc/PNPrivateStructures.h"
+        },
+        {
+          'type': 'file',
+          'name': "PNPushNotificationsAuditParser.h",
+          'external-contents': "/Users/lizzie/Desktop/piHeartRate/Pods/PubNub/PubNub/Network/Parsers/PNPushNotificationsAuditParser.h"
+        },
+        {
+          'type': 'file',
+          'name': "PNPushNotificationsStateModificationParser.h",
+          'external-contents': "/Users/lizzie/Desktop/piHeartRate/Pods/PubNub/PubNub/Network/Parsers/PNPushNotificationsStateModificationParser.h"
+        },
+        {
+          'type': 'file',
+          'name': "PNReachability.h",
+          'external-contents': "/Users/lizzie/Desktop/piHeartRate/Pods/PubNub/PubNub/Network/PNReachability.h"
+        },
+        {
+          'type': 'file',
+          'name': "PNRequestParameters.h",
+          'external-contents': "/Users/lizzie/Desktop/piHeartRate/Pods/PubNub/PubNub/Network/PNRequestParameters.h"
+        },
+        {
+          'type': 'file',
+          'name': "PNResult+Private.h",
+          'external-contents': "/Users/lizzie/Desktop/piHeartRate/Pods/PubNub/PubNub/Data/Service Objects/PNResult+Private.h"
+        },
+        {
+          'type': 'file',
+          'name': "PNServiceData+Private.h",
+          'external-contents': "/Users/lizzie/Desktop/piHeartRate/Pods/PubNub/PubNub/Data/Service Objects/PNServiceData+Private.h"
+        },
+        {
+          'type': 'file',
+          'name': "PNStateListener.h",
+          'external-contents': "/Users/lizzie/Desktop/piHeartRate/Pods/PubNub/PubNub/Data/Managers/PNStateListener.h"
+        },
+        {
+          'type': 'file',
+          'name': "PNStatus+Private.h",
+          'external-contents': "/Users/lizzie/Desktop/piHeartRate/Pods/PubNub/PubNub/Data/Service Objects/PNStatus+Private.h"
+        },
+        {
+          'type': 'file',
+          'name': "PNString.h",
+          'external-contents': "/Users/lizzie/Desktop/piHeartRate/Pods/PubNub/PubNub/Misc/Helpers/PNString.h"
+        },
+        {
+          'type': 'file',
+          'name': "PNSubscribeParser.h",
+          'external-contents': "/Users/lizzie/Desktop/piHeartRate/Pods/PubNub/PubNub/Network/Parsers/PNSubscribeParser.h"
+        },
+        {
+          'type': 'file',
+          'name': "PNSubscribeStatus+Private.h",
+          'external-contents': "/Users/lizzie/Desktop/piHeartRate/Pods/PubNub/PubNub/Data/Service Objects/PNSubscribeStatus+Private.h"
+        },
+        {
+          'type': 'file',
+          'name': "PNSubscriber.h",
+          'external-contents': "/Users/lizzie/Desktop/piHeartRate/Pods/PubNub/PubNub/Data/Managers/PNSubscriber.h"
+        },
+        {
+          'type': 'file',
+          'name': "PNTimeParser.h",
+          'external-contents': "/Users/lizzie/Desktop/piHeartRate/Pods/PubNub/PubNub/Network/Parsers/PNTimeParser.h"
+        },
+        {
+          'type': 'file',
+          'name': "PNURLBuilder.h",
+          'external-contents': "/Users/lizzie/Desktop/piHeartRate/Pods/PubNub/PubNub/Network/PNURLBuilder.h"
+        },
+        {
+          'type': 'file',
+          'name': "PNURLRequest.h",
+          'external-contents': "/Users/lizzie/Desktop/piHeartRate/Pods/PubNub/PubNub/Misc/Helpers/PNURLRequest.h"
+        },
+        {
+          'type': 'file',
+          'name': "PubNub+CorePrivate.h",
+          'external-contents': "/Users/lizzie/Desktop/piHeartRate/Pods/PubNub/PubNub/Core/PubNub+CorePrivate.h"
+        },
+        {
+          'type': 'file',
+          'name': "PubNub+PresencePrivate.h",
+          'external-contents': "/Users/lizzie/Desktop/piHeartRate/Pods/PubNub/PubNub/Core/PubNub+PresencePrivate.h"
+        },
+        {
+          'type': 'file',
+          'name': "PubNub+SubscribePrivate.h",
+          'external-contents': "/Users/lizzie/Desktop/piHeartRate/Pods/PubNub/PubNub/Core/PubNub+SubscribePrivate.h"
+        }
+      ]
+    },
+    {
+      'type': 'directory',
+      'name': "/Users/lizzie/Desktop/piHeartRate/DerivedData/piHeartRate/Build/Products/Debug-watchsimulator/CocoaLumberjack-watchOS/CocoaLumberjack.framework/Headers",
+      'contents': [
+        {
+          'type': 'file',
+          'name': "CocoaLumberjack-Swift.h",
+          'external-contents': "/Users/lizzie/Desktop/piHeartRate/DerivedData/piHeartRate/Build/Products/Debug-watchsimulator/CocoaLumberjack-watchOS/CocoaLumberjack.framework/Headers/CocoaLumberjack-Swift.h"
+        },
+        {
+          'type': 'file',
+          'name': "CocoaLumberjack.h",
+          'external-contents': "/Users/lizzie/Desktop/piHeartRate/Pods/CocoaLumberjack/Classes/CocoaLumberjack.h"
+        },
+        {
+          'type': 'file',
+          'name': "DDASLLogCapture.h",
+          'external-contents': "/Users/lizzie/Desktop/piHeartRate/Pods/CocoaLumberjack/Classes/DDASLLogCapture.h"
+        },
+        {
+          'type': 'file',
+          'name': "DDASLLogger.h",
+          'external-contents': "/Users/lizzie/Desktop/piHeartRate/Pods/CocoaLumberjack/Classes/DDASLLogger.h"
+        },
+        {
+          'type': 'file',
+          'name': "DDAbstractDatabaseLogger.h",
+          'external-contents': "/Users/lizzie/Desktop/piHeartRate/Pods/CocoaLumberjack/Classes/DDAbstractDatabaseLogger.h"
+        },
+        {
+          'type': 'file',
+          'name': "DDAssertMacros.h",
+          'external-contents': "/Users/lizzie/Desktop/piHeartRate/Pods/CocoaLumberjack/Classes/DDAssertMacros.h"
+        },
+        {
+          'type': 'file',
+          'name': "DDContextFilterLogFormatter.h",
+          'external-contents': "/Users/lizzie/Desktop/piHeartRate/Pods/CocoaLumberjack/Classes/Extensions/DDContextFilterLogFormatter.h"
+        },
+        {
+          'type': 'file',
+          'name': "DDDispatchQueueLogFormatter.h",
+          'external-contents': "/Users/lizzie/Desktop/piHeartRate/Pods/CocoaLumberjack/Classes/Extensions/DDDispatchQueueLogFormatter.h"
+        },
+        {
+          'type': 'file',
+          'name': "DDFileLogger.h",
+          'external-contents': "/Users/lizzie/Desktop/piHeartRate/Pods/CocoaLumberjack/Classes/DDFileLogger.h"
+        },
+        {
+          'type': 'file',
+          'name': "DDLegacyMacros.h",
+          'external-contents': "/Users/lizzie/Desktop/piHeartRate/Pods/CocoaLumberjack/Classes/DDLegacyMacros.h"
+        },
+        {
+          'type': 'file',
+          'name': "DDLog+LOGV.h",
+          'external-contents': "/Users/lizzie/Desktop/piHeartRate/Pods/CocoaLumberjack/Classes/DDLog+LOGV.h"
+        },
+        {
+          'type': 'file',
+          'name': "DDLog.h",
+          'external-contents': "/Users/lizzie/Desktop/piHeartRate/Pods/CocoaLumberjack/Classes/DDLog.h"
+        },
+        {
+          'type': 'file',
+          'name': "DDLogMacros.h",
+          'external-contents': "/Users/lizzie/Desktop/piHeartRate/Pods/CocoaLumberjack/Classes/DDLogMacros.h"
+        },
+        {
+          'type': 'file',
+          'name': "DDMultiFormatter.h",
+          'external-contents': "/Users/lizzie/Desktop/piHeartRate/Pods/CocoaLumberjack/Classes/Extensions/DDMultiFormatter.h"
+        },
+        {
+          'type': 'file',
+          'name': "DDTTYLogger.h",
+          'external-contents': "/Users/lizzie/Desktop/piHeartRate/Pods/CocoaLumberjack/Classes/DDTTYLogger.h"
+        }
+      ]
+    },
+    {
+      'type': 'directory',
+      'name': "/Users/lizzie/Desktop/piHeartRate/DerivedData/piHeartRate/Build/Products/Debug-watchsimulator/CocoaLumberjack-watchOS/CocoaLumberjack.framework/Modules",
+      'contents': [
+        {
+          'type': 'file',
+          'name': "module.modulemap",
+          'external-contents': "/Users/lizzie/Desktop/piHeartRate/DerivedData/piHeartRate/Build/Intermediates/Pods.build/Debug-watchsimulator/CocoaLumberjack-watchOS.build/module.modulemap"
+        }
+      ]
+    },
+    {
+      'type': 'directory',
+      'name': "/Users/lizzie/Desktop/piHeartRate/DerivedData/piHeartRate/Build/Products/Debug-watchsimulator/Pods_getHeartRate.framework/Headers",
+      'contents': [
+        {
+          'type': 'file',
+          'name': "Pods-getHeartRate-umbrella.h",
+          'external-contents': "/Users/lizzie/Desktop/piHeartRate/Pods/Target Support Files/Pods-getHeartRate/Pods-getHeartRate-umbrella.h"
+        },
+        {
+          'type': 'file',
+          'name': "Pods_getHeartRate-Swift.h",
+          'external-contents': "/Users/lizzie/Desktop/piHeartRate/DerivedData/piHeartRate/Build/Products/Debug-watchsimulator/Pods_getHeartRate.framework/Headers/Pods_getHeartRate-Swift.h"
+        }
+      ]
+    },
+    {
+      'type': 'directory',
+      'name': "/Users/lizzie/Desktop/piHeartRate/DerivedData/piHeartRate/Build/Products/Debug-watchsimulator/Pods_getHeartRate.framework/Modules",
+      'contents': [
+        {
+          'type': 'file',
+          'name': "module.modulemap",
+          'external-contents': "/Users/lizzie/Desktop/piHeartRate/DerivedData/piHeartRate/Build/Intermediates/Pods.build/Debug-watchsimulator/Pods-getHeartRate.build/module.modulemap"
+        }
+      ]
+    },
+    {
+      'type': 'directory',
+      'name': "/Users/lizzie/Desktop/piHeartRate/DerivedData/piHeartRate/Build/Products/Debug-watchsimulator/Pods_getHeartRate_Extension.framework/Headers",
+      'contents': [
+        {
+          'type': 'file',
+          'name': "Pods-getHeartRate Extension-umbrella.h",
+          'external-contents': "/Users/lizzie/Desktop/piHeartRate/Pods/Target Support Files/Pods-getHeartRate Extension/Pods-getHeartRate Extension-umbrella.h"
+        },
+        {
+          'type': 'file',
+          'name': "Pods_getHeartRate_Extension-Swift.h",
+          'external-contents': "/Users/lizzie/Desktop/piHeartRate/DerivedData/piHeartRate/Build/Products/Debug-watchsimulator/Pods_getHeartRate_Extension.framework/Headers/Pods_getHeartRate_Extension-Swift.h"
+        }
+      ]
+    },
+    {
+      'type': 'directory',
+      'name': "/Users/lizzie/Desktop/piHeartRate/DerivedData/piHeartRate/Build/Products/Debug-watchsimulator/Pods_getHeartRate_Extension.framework/Modules",
+      'contents': [
+        {
+          'type': 'file',
+          'name': "module.modulemap",
+          'external-contents': "/Users/lizzie/Desktop/piHeartRate/DerivedData/piHeartRate/Build/Intermediates/Pods.build/Debug-watchsimulator/Pods-getHeartRate Extension.build/module.modulemap"
+        }
+      ]
+    },
+    {
+      'type': 'directory',
+      'name': "/Users/lizzie/Desktop/piHeartRate/DerivedData/piHeartRate/Build/Products/Debug-watchsimulator/PubNub-watchOS/PubNub.framework/Headers",
+      'contents': [
+        {
+          'type': 'file',
+          'name': "PNAES.h",
+          'external-contents': "/Users/lizzie/Desktop/piHeartRate/Pods/PubNub/PubNub/Data/PNAES.h"
+        },
+        {
+          'type': 'file',
+          'name': "PNAPNSEnabledChannelsResult.h",
+          'external-contents': "/Users/lizzie/Desktop/piHeartRate/Pods/PubNub/PubNub/Data/Service Objects/PNAPNSEnabledChannelsResult.h"
+        },
+        {
+          'type': 'file',
+          'name': "PNAcknowledgmentStatus.h",
+          'external-contents': "/Users/lizzie/Desktop/piHeartRate/Pods/PubNub/PubNub/Data/Service Objects/PNAcknowledgmentStatus.h"
+        },
+        {
+          'type': 'file',
+          'name': "PNChannelClientStateResult.h",
+          'external-contents': "/Users/lizzie/Desktop/piHeartRate/Pods/PubNub/PubNub/Data/Service Objects/PNChannelClientStateResult.h"
+        },
+        {
+          'type': 'file',
+          'name': "PNChannelGroupChannelsResult.h",
+          'external-contents': "/Users/lizzie/Desktop/piHeartRate/Pods/PubNub/PubNub/Data/Service Objects/PNChannelGroupChannelsResult.h"
+        },
+        {
+          'type': 'file',
+          'name': "PNChannelGroupClientStateResult.h",
+          'external-contents': "/Users/lizzie/Desktop/piHeartRate/Pods/PubNub/PubNub/Data/Service Objects/PNChannelGroupClientStateResult.h"
+        },
+        {
+          'type': 'file',
+          'name': "PNChannelGroupsResult.h",
+          'external-contents': "/Users/lizzie/Desktop/piHeartRate/Pods/PubNub/PubNub/Data/Service Objects/PNChannelGroupsResult.h"
+        },
+        {
+          'type': 'file',
+          'name': "PNClientInformation.h",
+          'external-contents': "/Users/lizzie/Desktop/piHeartRate/Pods/PubNub/PubNub/Data/PNClientInformation.h"
+        },
+        {
+          'type': 'file',
+          'name': "PNClientStateUpdateStatus.h",
+          'external-contents': "/Users/lizzie/Desktop/piHeartRate/Pods/PubNub/PubNub/Data/Service Objects/PNClientStateUpdateStatus.h"
+        },
+        {
+          'type': 'file',
+          'name': "PNConfiguration.h",
+          'external-contents': "/Users/lizzie/Desktop/piHeartRate/Pods/PubNub/PubNub/Data/PNConfiguration.h"
+        },
+        {
+          'type': 'file',
+          'name': "PNErrorCodes.h",
+          'external-contents': "/Users/lizzie/Desktop/piHeartRate/Pods/PubNub/PubNub/Misc/PNErrorCodes.h"
+        },
+        {
+          'type': 'file',
+          'name': "PNErrorStatus.h",
+          'external-contents': "/Users/lizzie/Desktop/piHeartRate/Pods/PubNub/PubNub/Data/Service Objects/PNErrorStatus.h"
+        },
+        {
+          'type': 'file',
+          'name': "PNHistoryResult.h",
+          'external-contents': "/Users/lizzie/Desktop/piHeartRate/Pods/PubNub/PubNub/Data/Service Objects/PNHistoryResult.h"
+        },
+        {
+          'type': 'file',
+          'name': "PNLog.h",
+          'external-contents': "/Users/lizzie/Desktop/piHeartRate/Pods/PubNub/PubNub/Misc/Logger/PNLog.h"
+        },
+        {
+          'type': 'file',
+          'name': "PNObjectEventListener.h",
+          'external-contents': "/Users/lizzie/Desktop/piHeartRate/Pods/PubNub/PubNub/Misc/Protocols/PNObjectEventListener.h"
+        },
+        {
+          'type': 'file',
+          'name': "PNPresenceChannelGroupHereNowResult.h",
+          'external-contents': "/Users/lizzie/Desktop/piHeartRate/Pods/PubNub/PubNub/Data/Service Objects/PNPresenceChannelGroupHereNowResult.h"
+        },
+        {
+          'type': 'file',
+          'name': "PNPresenceChannelHereNowResult.h",
+          'external-contents': "/Users/lizzie/Desktop/piHeartRate/Pods/PubNub/PubNub/Data/Service Objects/PNPresenceChannelHereNowResult.h"
+        },
+        {
+          'type': 'file',
+          'name': "PNPresenceGlobalHereNowResult.h",
+          'external-contents': "/Users/lizzie/Desktop/piHeartRate/Pods/PubNub/PubNub/Data/Service Objects/PNPresenceGlobalHereNowResult.h"
+        },
+        {
+          'type': 'file',
+          'name': "PNPresenceWhereNowResult.h",
+          'external-contents': "/Users/lizzie/Desktop/piHeartRate/Pods/PubNub/PubNub/Data/Service Objects/PNPresenceWhereNowResult.h"
+        },
+        {
+          'type': 'file',
+          'name': "PNPublishStatus.h",
+          'external-contents': "/Users/lizzie/Desktop/piHeartRate/Pods/PubNub/PubNub/Data/Service Objects/PNPublishStatus.h"
+        },
+        {
+          'type': 'file',
+          'name': "PNResult.h",
+          'external-contents': "/Users/lizzie/Desktop/piHeartRate/Pods/PubNub/PubNub/Data/Service Objects/PNResult.h"
+        },
+        {
+          'type': 'file',
+          'name': "PNServiceData.h",
+          'external-contents': "/Users/lizzie/Desktop/piHeartRate/Pods/PubNub/PubNub/Data/Service Objects/PNServiceData.h"
+        },
+        {
+          'type': 'file',
+          'name': "PNStatus.h",
+          'external-contents': "/Users/lizzie/Desktop/piHeartRate/Pods/PubNub/PubNub/Data/Service Objects/PNStatus.h"
+        },
+        {
+          'type': 'file',
+          'name': "PNStructures.h",
+          'external-contents': "/Users/lizzie/Desktop/piHeartRate/Pods/PubNub/PubNub/Misc/PNStructures.h"
+        },
+        {
+          'type': 'file',
+          'name': "PNSubscribeStatus.h",
+          'external-contents': "/Users/lizzie/Desktop/piHeartRate/Pods/PubNub/PubNub/Data/Service Objects/PNSubscribeStatus.h"
+        },
+        {
+          'type': 'file',
+          'name': "PNSubscriberResults.h",
+          'external-contents': "/Users/lizzie/Desktop/piHeartRate/Pods/PubNub/PubNub/Data/Service Objects/PNSubscriberResults.h"
+        },
+        {
+          'type': 'file',
+          'name': "PNTimeResult.h",
+          'external-contents': "/Users/lizzie/Desktop/piHeartRate/Pods/PubNub/PubNub/Data/Service Objects/PNTimeResult.h"
+        },
+        {
+          'type': 'file',
+          'name': "PubNub+APNS.h",
+          'external-contents': "/Users/lizzie/Desktop/piHeartRate/Pods/PubNub/PubNub/Core/PubNub+APNS.h"
+        },
+        {
+          'type': 'file',
+          'name': "PubNub+ChannelGroup.h",
+          'external-contents': "/Users/lizzie/Desktop/piHeartRate/Pods/PubNub/PubNub/Core/PubNub+ChannelGroup.h"
+        },
+        {
+          'type': 'file',
+          'name': "PubNub+Core.h",
+          'external-contents': "/Users/lizzie/Desktop/piHeartRate/Pods/PubNub/PubNub/Core/PubNub+Core.h"
+        },
+        {
+          'type': 'file',
+          'name': "PubNub+History.h",
+          'external-contents': "/Users/lizzie/Desktop/piHeartRate/Pods/PubNub/PubNub/Core/PubNub+History.h"
+        },
+        {
+          'type': 'file',
+          'name': "PubNub+Presence.h",
+          'external-contents': "/Users/lizzie/Desktop/piHeartRate/Pods/PubNub/PubNub/Core/PubNub+Presence.h"
+        },
+        {
+          'type': 'file',
+          'name': "PubNub+Publish.h",
+          'external-contents': "/Users/lizzie/Desktop/piHeartRate/Pods/PubNub/PubNub/Core/PubNub+Publish.h"
+        },
+        {
+          'type': 'file',
+          'name': "PubNub+State.h",
+          'external-contents': "/Users/lizzie/Desktop/piHeartRate/Pods/PubNub/PubNub/Core/PubNub+State.h"
+        },
+        {
+          'type': 'file',
+          'name': "PubNub+Subscribe.h",
+          'external-contents': "/Users/lizzie/Desktop/piHeartRate/Pods/PubNub/PubNub/Core/PubNub+Subscribe.h"
+        },
+        {
+          'type': 'file',
+          'name': "PubNub+Time.h",
+          'external-contents': "/Users/lizzie/Desktop/piHeartRate/Pods/PubNub/PubNub/Core/PubNub+Time.h"
+        },
+        {
+          'type': 'file',
+          'name': "PubNub-Swift.h",
+          'external-contents': "/Users/lizzie/Desktop/piHeartRate/DerivedData/piHeartRate/Build/Products/Debug-watchsimulator/PubNub-watchOS/PubNub.framework/Headers/PubNub-Swift.h"
+        },
+        {
+          'type': 'file',
+          'name': "PubNub-watchOS-umbrella.h",
+          'external-contents': "/Users/lizzie/Desktop/piHeartRate/Pods/Target Support Files/PubNub-watchOS/PubNub-watchOS-umbrella.h"
+        },
+        {
+          'type': 'file',
+          'name': "PubNub.h",
+          'external-contents': "/Users/lizzie/Desktop/piHeartRate/Pods/PubNub/PubNub/PubNub.h"
+        }
+      ]
+    },
+    {
+      'type': 'directory',
+      'name': "/Users/lizzie/Desktop/piHeartRate/DerivedData/piHeartRate/Build/Products/Debug-watchsimulator/PubNub-watchOS/PubNub.framework/Modules",
+      'contents': [
+        {
+          'type': 'file',
+          'name': "module.modulemap",
+          'external-contents': "/Users/lizzie/Desktop/piHeartRate/DerivedData/piHeartRate/Build/Intermediates/Pods.build/Debug-watchsimulator/PubNub-watchOS.build/module.modulemap"
+        }
+      ]
+    },
+    {
+      'type': 'directory',
+      'name': "/Users/lizzie/Desktop/piHeartRate/DerivedData/piHeartRate/Build/Products/Debug-watchsimulator/PubNub-watchOS/PubNub.framework/PrivateHeaders",
+      'contents': [
+        {
+          'type': 'file',
+          'name': "PNArray.h",
+          'external-contents': "/Users/lizzie/Desktop/piHeartRate/Pods/PubNub/PubNub/Misc/Helpers/PNArray.h"
+        },
+        {
+          'type': 'file',
+          'name': "PNChannel.h",
+          'external-contents': "/Users/lizzie/Desktop/piHeartRate/Pods/PubNub/PubNub/Misc/Helpers/PNChannel.h"
+        },
+        {
+          'type': 'file',
+          'name': "PNChannelGroupAuditionParser.h",
+          'external-contents': "/Users/lizzie/Desktop/piHeartRate/Pods/PubNub/PubNub/Network/Parsers/PNChannelGroupAuditionParser.h"
+        },
+        {
+          'type': 'file',
+          'name': "PNChannelGroupModificationParser.h",
+          'external-contents': "/Users/lizzie/Desktop/piHeartRate/Pods/PubNub/PubNub/Network/Parsers/PNChannelGroupModificationParser.h"
+        },
+        {
+          'type': 'file',
+          'name': "PNClass.h",
+          'external-contents': "/Users/lizzie/Desktop/piHeartRate/Pods/PubNub/PubNub/Misc/Helpers/PNClass.h"
+        },
+        {
+          'type': 'file',
+          'name': "PNClientState.h",
+          'external-contents': "/Users/lizzie/Desktop/piHeartRate/Pods/PubNub/PubNub/Data/Managers/PNClientState.h"
+        },
+        {
+          'type': 'file',
+          'name': "PNClientStateParser.h",
+          'external-contents': "/Users/lizzie/Desktop/piHeartRate/Pods/PubNub/PubNub/Network/Parsers/PNClientStateParser.h"
+        },
+        {
+          'type': 'file',
+          'name': "PNConfiguration+Private.h",
+          'external-contents': "/Users/lizzie/Desktop/piHeartRate/Pods/PubNub/PubNub/Data/PNConfiguration+Private.h"
+        },
+        {
+          'type': 'file',
+          'name': "PNConstants.h",
+          'external-contents': "/Users/lizzie/Desktop/piHeartRate/Pods/PubNub/PubNub/Misc/PNConstants.h"
+        },
+        {
+          'type': 'file',
+          'name': "PNData.h",
+          'external-contents': "/Users/lizzie/Desktop/piHeartRate/Pods/PubNub/PubNub/Misc/Helpers/PNData.h"
+        },
+        {
+          'type': 'file',
+          'name': "PNDictionary.h",
+          'external-contents': "/Users/lizzie/Desktop/piHeartRate/Pods/PubNub/PubNub/Misc/Helpers/PNDictionary.h"
+        },
+        {
+          'type': 'file',
+          'name': "PNEnvelopeInformation.h",
+          'external-contents': "/Users/lizzie/Desktop/piHeartRate/Pods/PubNub/PubNub/Data/PNEnvelopeInformation.h"
+        },
+        {
+          'type': 'file',
+          'name': "PNErrorParser.h",
+          'external-contents': "/Users/lizzie/Desktop/piHeartRate/Pods/PubNub/PubNub/Network/Parsers/PNErrorParser.h"
+        },
+        {
+          'type': 'file',
+          'name': "PNErrorStatus+Private.h",
+          'external-contents': "/Users/lizzie/Desktop/piHeartRate/Pods/PubNub/PubNub/Data/Service Objects/PNErrorStatus+Private.h"
+        },
+        {
+          'type': 'file',
+          'name': "PNGZIP.h",
+          'external-contents': "/Users/lizzie/Desktop/piHeartRate/Pods/PubNub/PubNub/Misc/Helpers/PNGZIP.h"
+        },
+        {
+          'type': 'file',
+          'name': "PNHeartbeat.h",
+          'external-contents': "/Users/lizzie/Desktop/piHeartRate/Pods/PubNub/PubNub/Data/Managers/PNHeartbeat.h"
+        },
+        {
+          'type': 'file',
+          'name': "PNHeartbeatParser.h",
+          'external-contents': "/Users/lizzie/Desktop/piHeartRate/Pods/PubNub/PubNub/Network/Parsers/PNHeartbeatParser.h"
+        },
+        {
+          'type': 'file',
+          'name': "PNHelpers.h",
+          'external-contents': "/Users/lizzie/Desktop/piHeartRate/Pods/PubNub/PubNub/Misc/Helpers/PNHelpers.h"
+        },
+        {
+          'type': 'file',
+          'name': "PNHistoryParser.h",
+          'external-contents': "/Users/lizzie/Desktop/piHeartRate/Pods/PubNub/PubNub/Network/Parsers/PNHistoryParser.h"
+        },
+        {
+          'type': 'file',
+          'name': "PNJSON.h",
+          'external-contents': "/Users/lizzie/Desktop/piHeartRate/Pods/PubNub/PubNub/Misc/Helpers/PNJSON.h"
+        },
+        {
+          'type': 'file',
+          'name': "PNKeychain.h",
+          'external-contents': "/Users/lizzie/Desktop/piHeartRate/Pods/PubNub/PubNub/Data/PNKeychain.h"
+        },
+        {
+          'type': 'file',
+          'name': "PNLeaveParser.h",
+          'external-contents': "/Users/lizzie/Desktop/piHeartRate/Pods/PubNub/PubNub/Network/Parsers/PNLeaveParser.h"
+        },
+        {
+          'type': 'file',
+          'name': "PNLogFileManager.h",
+          'external-contents': "/Users/lizzie/Desktop/piHeartRate/Pods/PubNub/PubNub/Misc/Logger/PNLogFileManager.h"
+        },
+        {
+          'type': 'file',
+          'name': "PNLogMacro.h",
+          'external-contents': "/Users/lizzie/Desktop/piHeartRate/Pods/PubNub/PubNub/Misc/Logger/PNLogMacro.h"
+        },
+        {
+          'type': 'file',
+          'name': "PNLogger.h",
+          'external-contents': "/Users/lizzie/Desktop/piHeartRate/Pods/PubNub/PubNub/Misc/Logger/PNLogger.h"
+        },
+        {
+          'type': 'file',
+          'name': "PNMessagePublishParser.h",
+          'external-contents': "/Users/lizzie/Desktop/piHeartRate/Pods/PubNub/PubNub/Network/Parsers/PNMessagePublishParser.h"
+        },
+        {
+          'type': 'file',
+          'name': "PNNetwork.h",
+          'external-contents': "/Users/lizzie/Desktop/piHeartRate/Pods/PubNub/PubNub/Network/PNNetwork.h"
+        },
+        {
+          'type': 'file',
+          'name': "PNNetworkResponseSerializer.h",
+          'external-contents': "/Users/lizzie/Desktop/piHeartRate/Pods/PubNub/PubNub/Network/PNNetworkResponseSerializer.h"
+        },
+        {
+          'type': 'file',
+          'name': "PNNumber.h",
+          'external-contents': "/Users/lizzie/Desktop/piHeartRate/Pods/PubNub/PubNub/Misc/Helpers/PNNumber.h"
+        },
+        {
+          'type': 'file',
+          'name': "PNParser.h",
+          'external-contents': "/Users/lizzie/Desktop/piHeartRate/Pods/PubNub/PubNub/Misc/Protocols/PNParser.h"
+        },
+        {
+          'type': 'file',
+          'name': "PNPresenceHereNowParser.h",
+          'external-contents': "/Users/lizzie/Desktop/piHeartRate/Pods/PubNub/PubNub/Network/Parsers/PNPresenceHereNowParser.h"
+        },
+        {
+          'type': 'file',
+          'name': "PNPresenceWhereNowParser.h",
+          'external-contents': "/Users/lizzie/Desktop/piHeartRate/Pods/PubNub/PubNub/Network/Parsers/PNPresenceWhereNowParser.h"
+        },
+        {
+          'type': 'file',
+          'name': "PNPrivateStructures.h",
+          'external-contents': "/Users/lizzie/Desktop/piHeartRate/Pods/PubNub/PubNub/Misc/PNPrivateStructures.h"
+        },
+        {
+          'type': 'file',
+          'name': "PNPushNotificationsAuditParser.h",
+          'external-contents': "/Users/lizzie/Desktop/piHeartRate/Pods/PubNub/PubNub/Network/Parsers/PNPushNotificationsAuditParser.h"
+        },
+        {
+          'type': 'file',
+          'name': "PNPushNotificationsStateModificationParser.h",
+          'external-contents': "/Users/lizzie/Desktop/piHeartRate/Pods/PubNub/PubNub/Network/Parsers/PNPushNotificationsStateModificationParser.h"
+        },
+        {
+          'type': 'file',
+          'name': "PNReachability.h",
+          'external-contents': "/Users/lizzie/Desktop/piHeartRate/Pods/PubNub/PubNub/Network/PNReachability.h"
+        },
+        {
+          'type': 'file',
+          'name': "PNRequestParameters.h",
+          'external-contents': "/Users/lizzie/Desktop/piHeartRate/Pods/PubNub/PubNub/Network/PNRequestParameters.h"
+        },
+        {
+          'type': 'file',
+          'name': "PNResult+Private.h",
+          'external-contents': "/Users/lizzie/Desktop/piHeartRate/Pods/PubNub/PubNub/Data/Service Objects/PNResult+Private.h"
+        },
+        {
+          'type': 'file',
+          'name': "PNServiceData+Private.h",
+          'external-contents': "/Users/lizzie/Desktop/piHeartRate/Pods/PubNub/PubNub/Data/Service Objects/PNServiceData+Private.h"
+        },
+        {
+          'type': 'file',
+          'name': "PNStateListener.h",
+          'external-contents': "/Users/lizzie/Desktop/piHeartRate/Pods/PubNub/PubNub/Data/Managers/PNStateListener.h"
+        },
+        {
+          'type': 'file',
+          'name': "PNStatus+Private.h",
+          'external-contents': "/Users/lizzie/Desktop/piHeartRate/Pods/PubNub/PubNub/Data/Service Objects/PNStatus+Private.h"
+        },
+        {
+          'type': 'file',
+          'name': "PNString.h",
+          'external-contents': "/Users/lizzie/Desktop/piHeartRate/Pods/PubNub/PubNub/Misc/Helpers/PNString.h"
+        },
+        {
+          'type': 'file',
+          'name': "PNSubscribeParser.h",
+          'external-contents': "/Users/lizzie/Desktop/piHeartRate/Pods/PubNub/PubNub/Network/Parsers/PNSubscribeParser.h"
+        },
+        {
+          'type': 'file',
+          'name': "PNSubscribeStatus+Private.h",
+          'external-contents': "/Users/lizzie/Desktop/piHeartRate/Pods/PubNub/PubNub/Data/Service Objects/PNSubscribeStatus+Private.h"
+        },
+        {
+          'type': 'file',
+          'name': "PNSubscriber.h",
+          'external-contents': "/Users/lizzie/Desktop/piHeartRate/Pods/PubNub/PubNub/Data/Managers/PNSubscriber.h"
+        },
+        {
+          'type': 'file',
+          'name': "PNTimeParser.h",
+          'external-contents': "/Users/lizzie/Desktop/piHeartRate/Pods/PubNub/PubNub/Network/Parsers/PNTimeParser.h"
+        },
+        {
+          'type': 'file',
+          'name': "PNURLBuilder.h",
+          'external-contents': "/Users/lizzie/Desktop/piHeartRate/Pods/PubNub/PubNub/Network/PNURLBuilder.h"
+        },
+        {
+          'type': 'file',
+          'name': "PNURLRequest.h",
+          'external-contents': "/Users/lizzie/Desktop/piHeartRate/Pods/PubNub/PubNub/Misc/Helpers/PNURLRequest.h"
+        },
+        {
+          'type': 'file',
+          'name': "PubNub+CorePrivate.h",
+          'external-contents': "/Users/lizzie/Desktop/piHeartRate/Pods/PubNub/PubNub/Core/PubNub+CorePrivate.h"
+        },
+        {
+          'type': 'file',
+          'name': "PubNub+PresencePrivate.h",
+          'external-contents': "/Users/lizzie/Desktop/piHeartRate/Pods/PubNub/PubNub/Core/PubNub+PresencePrivate.h"
+        },
+        {
+          'type': 'file',
+          'name': "PubNub+SubscribePrivate.h",
+          'external-contents': "/Users/lizzie/Desktop/piHeartRate/Pods/PubNub/PubNub/Core/PubNub+SubscribePrivate.h"
+        }
+      ]
+    }
+  ]
+}
