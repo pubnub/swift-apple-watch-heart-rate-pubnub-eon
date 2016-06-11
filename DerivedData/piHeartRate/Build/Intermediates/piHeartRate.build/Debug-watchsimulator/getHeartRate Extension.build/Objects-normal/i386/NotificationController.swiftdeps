@@ -9,8 +9,8 @@ provides-dynamic-lookup:
 - "willActivate"
 - "didDeactivate"
 depends-top-level:
-- "NotificationController"
 - "WKUserNotificationInterfaceController"
+- "NotificationController"
 depends-member:
 - ["Ps9AnyObject", "didDeactivate"]
 - ["Ps9AnyObject", "init"]

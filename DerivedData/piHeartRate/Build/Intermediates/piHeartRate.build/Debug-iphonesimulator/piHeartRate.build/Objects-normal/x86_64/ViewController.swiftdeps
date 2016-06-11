@@ -7,23 +7,23 @@ provides-member:
 - ["C11piHeartRate14ViewController", ""]
 provides-dynamic-lookup:
 - "hrValLabel"
-- "session"
 - "someData"
+- "session"
+- "wrSesh"
 - "didReceiveMemoryWarning"
 - "viewDidLoad"
-- "wrSesh"
 depends-top-level:
 - "WCSessionDelegate"
-- "UIViewController"
 - "UILabel"
 - "StringLiteralType"
+- "WCSession"
+- "UIViewController"
+- "AnyObject"
+- "Void"
+- "ViewController"
 - "String"
 - !private "dispatch_async"
 - !private "dispatch_get_main_queue"
-- "Void"
-- "AnyObject"
-- "WCSession"
-- "ViewController"
 depends-member:
 - ["Ps9AnyObject", "String"]
 - !private ["Ps9AnyObject", "WCSession"]
@@ -688,4 +688,4 @@ depends-external:
 - "/Users/lizzie/Desktop/piHeartRate/DerivedData/piHeartRate/Build/Products/Debug-iphonesimulator/PubNub-iOS/PubNub.framework/Headers/PubNub+APNS.h"
 - "/Users/lizzie/Desktop/piHeartRate/DerivedData/piHeartRate/Build/Products/Debug-iphonesimulator/PubNub-iOS/PubNub.framework/Headers/PubNub-iOS-umbrella.h"
 - "/Users/lizzie/Desktop/piHeartRate/DerivedData/piHeartRate/Build/Products/Debug-iphonesimulator/PubNub-iOS/PubNub.framework/Modules/module.modulemap"
-interface-hash: "67b40fdaf7a8280133f467dcf7b403b1"
+interface-hash: "84cb6fde0815f31cce208eb283bc9db8"

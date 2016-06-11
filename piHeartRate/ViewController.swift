@@ -8,13 +8,14 @@
 
 import UIKit
 import WatchConnectivity // idkimportant
+import PubNub
 //subscribe from phone app -> see if can subscribe from Watch
 
 class ViewController: UIViewController, WCSessionDelegate {
     
     var someData = [String]()
     var wrSesh: WCSession!
-
+    
     @IBOutlet weak var hrValLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,7 +26,7 @@ class ViewController: UIViewController, WCSessionDelegate {
             wrSesh.activateSession()
         }
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -43,6 +44,7 @@ class ViewController: UIViewController, WCSessionDelegate {
             }
         }
     }
-
+    
 }
+
 

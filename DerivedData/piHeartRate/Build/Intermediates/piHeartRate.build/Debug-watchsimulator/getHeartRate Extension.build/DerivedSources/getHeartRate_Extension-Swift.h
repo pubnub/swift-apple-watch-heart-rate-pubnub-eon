@@ -93,6 +93,7 @@ typedef int swift_int4  __attribute__((__ext_vector_type__(4)));
 #endif
 #if defined(__has_feature) && __has_feature(modules)
 @import ObjectiveC;
+@import PubNub;
 @import WatchKit;
 @import HealthKit;
 @import WatchConnectivity;
@@ -100,9 +101,12 @@ typedef int swift_int4  __attribute__((__ext_vector_type__(4)));
 
 #pragma clang diagnostic ignored "-Wproperty-attribute-mismatch"
 #pragma clang diagnostic ignored "-Wduplicate-method-arg"
+@class PubNub;
 
 SWIFT_CLASS("_TtC22getHeartRate_Extension17ExtensionDelegate")
-@interface ExtensionDelegate : NSObject <WKExtensionDelegate>
+@interface ExtensionDelegate : NSObject <PNObjectEventListener, WKExtensionDelegate>
+@property (nonatomic, strong) PubNub * _Nullable client;
+@property (nonatomic, copy) NSString * _Nonnull channel;
 - (void)applicationDidFinishLaunching;
 - (void)applicationDidBecomeActive;
 - (void)applicationWillResignActive;
@@ -123,25 +127,35 @@ SWIFT_CLASS("_TtC22getHeartRate_Extension16GlanceController")
 @class WKInterfaceButton;
 @class HKHealthStore;
 @class WCSession;
+@class NSTimer;
 @class HKWorkoutSession;
 @class HKUnit;
 @class HKQueryAnchor;
 @class NSDate;
 @class NSError;
 @class HKQuery;
+@class PNMessageResult;
+@class PNStatus;
 @class HKSample;
 
 SWIFT_CLASS("_TtC22getHeartRate_Extension19InterfaceController")
-@interface InterfaceController : WKInterfaceController <HKWorkoutSessionDelegate, WCSessionDelegate>
+@interface InterfaceController : WKInterfaceController <HKWorkoutSessionDelegate, PNObjectEventListener, WKExtensionDelegate, WCSessionDelegate>
 @property (nonatomic, strong) IBOutlet WKInterfaceLabel * _Null_unspecified label;
 @property (nonatomic, strong) IBOutlet WKInterfaceImage * _Null_unspecified heart;
 @property (nonatomic, strong) IBOutlet WKInterfaceButton * _Null_unspecified startStopBtn;
+@property (nonatomic, strong) PubNub * _Nullable client;
 @property (nonatomic, readonly, strong) HKHealthStore * _Nonnull healthStore;
+@property (nonatomic) double hrVal;
+@property (nonatomic, readonly, strong) ExtensionDelegate * _Nonnull watchAppDel;
+@property (nonatomic, copy) NSString * _Nonnull channel;
 @property (nonatomic, strong) WCSession * _Null_unspecified wcSesh;
+@property (nonatomic, strong) NSTimer * _Nullable hrTimer;
+@property (nonatomic, readonly, copy) NSString * _Nullable userName;
 @property (nonatomic) BOOL currMoving;
 @property (nonatomic, strong) HKWorkoutSession * _Nullable workoutSesh;
 @property (nonatomic, readonly, strong) HKUnit * _Nonnull heartRateUnit;
 @property (nonatomic, strong) HKQueryAnchor * _Nonnull anchor;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 - (void)awakeWithContext:(id _Nullable)context;
 - (void)willActivate;
 - (void)displayUnallowed;
@@ -151,10 +165,10 @@ SWIFT_CLASS("_TtC22getHeartRate_Extension19InterfaceController")
 - (void)workoutDidEnd:(NSDate * _Nonnull)date;
 - (IBAction)startBtnTapped;
 - (void)beginWorkout;
-- (HKQuery * _Nullable)createHeartRateStreamingQuery:(NSDate * _Nonnull)workoutStartDate;
+- (HKQuery * _Nullable)makeHRStreamingQuery:(NSDate * _Nonnull)workoutStartDate;
+- (void)publishHeartRate;
+- (void)client:(PubNub * _Null_unspecified)client didReceiveMessage:(PNMessageResult * _Null_unspecified)message didReceiveStatus:(PNStatus * _Nonnull)status;
 - (void)updateHeartRate:(NSArray<HKSample *> * _Nullable)samples;
-- (void)animateHeart;
-- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
 

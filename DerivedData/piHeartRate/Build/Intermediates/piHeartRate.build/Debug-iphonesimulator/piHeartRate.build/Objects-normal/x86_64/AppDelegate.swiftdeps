@@ -6,41 +6,42 @@ provides-nominal:
 provides-member:
 - ["C11piHeartRate11AppDelegate", ""]
 provides-dynamic-lookup:
+- "window"
+- "applicationWillResignActive"
+- "config"
+- "applicationWillTerminate"
+- "applicationDidEnterBackground"
+- "applicationShouldRequestHealthAuthorization"
+- "channel"
+- "applicationWillEnterForeground"
+- "client"
+- "client"
 - "application"
 - "applicationDidBecomeActive"
-- "window"
-- "applicationWillTerminate"
-- "client"
-- "client"
-- "applicationWillEnterForeground"
-- "config"
 - "healthStore"
-- "applicationDidEnterBackground"
-- "channel"
-- "applicationWillResignActive"
-- "applicationShouldRequestHealthAuthorization"
 depends-top-level:
-- !private "!="
-- !private "+"
-- "UIResponder"
-- "UIWindow"
-- "PNMessageResult"
-- "AppDelegate"
-- "HKHealthStore"
-- "PubNub"
-- !private "BooleanLiteralType"
-- !private "print"
-- "UIApplicationDelegate"
-- "NSObject"
-- "PNConfiguration"
-- "UIApplication"
-- "PNObjectEventListener"
-- "StringLiteralType"
-- "AnyObject"
-- !private "Array"
 - !private "??"
 - "Bool"
+- "PubNub"
+- "UIResponder"
+- !private "print"
+- "UIApplication"
+- !private "Array"
+- !private "BooleanLiteralType"
+- "PNObjectEventListener"
+- "PNMessageResult"
+- "UIApplicationDelegate"
+- "AppDelegate"
 - "WCSessionDelegate"
+- "HKHealthStore"
+- "PNConfiguration"
+- !private "+"
+- "UIWindow"
+- "PNStatus"
+- "AnyObject"
+- "StringLiteralType"
+- "NSObject"
+- !private "!="
 depends-member:
 - !private ["Ps16AbsoluteValuable", "IntegerLiteralType"]
 - !private ["Ps16AbsoluteValuable", "Stride"]
@@ -67,13 +68,11 @@ depends-member:
 - !private ["Ps9AnyObject", "clientWithConfiguration"]
 - ["Ps9AnyObject", "config"]
 - !private ["Ps9AnyObject", "data"]
-- !private ["Ps9AnyObject", "deinit"]
 - !private ["Ps9AnyObject", "handleAuthorizationForExtensionWithCompletion"]
 - ["Ps9AnyObject", "healthStore"]
 - ["Ps9AnyObject", "init"]
 - !private ["Ps9AnyObject", "message"]
 - !private ["Ps9AnyObject", "print"]
-- !private ["Ps9AnyObject", "publish"]
 - ["Ps9AnyObject", "session"]
 - ["Ps9AnyObject", "sessionDidBecomeInactive"]
 - ["Ps9AnyObject", "sessionDidDeactivate"]
@@ -90,6 +89,7 @@ depends-member:
 - ["C11piHeartRate11AppDelegate", "NSObject"]
 - ["C11piHeartRate11AppDelegate", "PNConfiguration"]
 - ["C11piHeartRate11AppDelegate", "PNMessageResult"]
+- ["C11piHeartRate11AppDelegate", "PNStatus"]
 - ["C11piHeartRate11AppDelegate", "PubNub"]
 - ["C11piHeartRate11AppDelegate", "UIApplication"]
 - ["C11piHeartRate11AppDelegate", "UIWindow"]
@@ -168,7 +168,6 @@ depends-member:
 - ["Ps11CVarArgType", "init"]
 - !private ["Ps11CVarArgType", "message"]
 - !private ["Ps11CVarArgType", "print"]
-- !private ["Ps11CVarArgType", "publish"]
 - ["Ps11CVarArgType", "session"]
 - ["Ps11CVarArgType", "sessionDidBecomeInactive"]
 - ["Ps11CVarArgType", "sessionDidDeactivate"]
@@ -216,7 +215,6 @@ depends-member:
 - ["Ps28CustomDebugStringConvertible", "init"]
 - !private ["Ps28CustomDebugStringConvertible", "message"]
 - !private ["Ps28CustomDebugStringConvertible", "print"]
-- !private ["Ps28CustomDebugStringConvertible", "publish"]
 - ["Ps28CustomDebugStringConvertible", "session"]
 - ["Ps28CustomDebugStringConvertible", "sessionDidBecomeInactive"]
 - ["Ps28CustomDebugStringConvertible", "sessionDidDeactivate"]
@@ -260,7 +258,6 @@ depends-member:
 - ["Ps23CustomStringConvertible", "init"]
 - !private ["Ps23CustomStringConvertible", "message"]
 - !private ["Ps23CustomStringConvertible", "print"]
-- !private ["Ps23CustomStringConvertible", "publish"]
 - ["Ps23CustomStringConvertible", "session"]
 - ["Ps23CustomStringConvertible", "sessionDidBecomeInactive"]
 - ["Ps23CustomStringConvertible", "sessionDidDeactivate"]
@@ -307,7 +304,6 @@ depends-member:
 - ["Ps9Equatable", "init"]
 - !private ["Ps9Equatable", "message"]
 - !private ["Ps9Equatable", "print"]
-- !private ["Ps9Equatable", "publish"]
 - ["Ps9Equatable", "session"]
 - ["Ps9Equatable", "sessionDidBecomeInactive"]
 - ["Ps9Equatable", "sessionDidDeactivate"]
@@ -372,7 +368,6 @@ depends-member:
 - ["Ps8Hashable", "init"]
 - !private ["Ps8Hashable", "message"]
 - !private ["Ps8Hashable", "print"]
-- !private ["Ps8Hashable", "publish"]
 - ["Ps8Hashable", "session"]
 - ["Ps8Hashable", "sessionDidBecomeInactive"]
 - ["Ps8Hashable", "sessionDidDeactivate"]
@@ -432,6 +427,7 @@ depends-member:
 - ["CSo8NSObject", "NSObject"]
 - ["CSo8NSObject", "PNConfiguration"]
 - ["CSo8NSObject", "PNMessageResult"]
+- ["CSo8NSObject", "PNStatus"]
 - ["CSo8NSObject", "PubNub"]
 - ["CSo8NSObject", "UIApplication"]
 - ["CSo8NSObject", "UIWindow"]
@@ -459,7 +455,6 @@ depends-member:
 - ["CSo8NSObject", "init"]
 - !private ["CSo8NSObject", "message"]
 - !private ["CSo8NSObject", "print"]
-- !private ["CSo8NSObject", "publish"]
 - ["CSo8NSObject", "session"]
 - ["CSo8NSObject", "sessionDidBecomeInactive"]
 - ["CSo8NSObject", "sessionDidDeactivate"]
@@ -496,7 +491,6 @@ depends-member:
 - ["PSo16NSObjectProtocol", "init"]
 - !private ["PSo16NSObjectProtocol", "message"]
 - !private ["PSo16NSObjectProtocol", "print"]
-- !private ["PSo16NSObjectProtocol", "publish"]
 - ["PSo16NSObjectProtocol", "session"]
 - ["PSo16NSObjectProtocol", "sessionDidBecomeInactive"]
 - ["PSo16NSObjectProtocol", "sessionDidDeactivate"]
@@ -556,7 +550,6 @@ depends-member:
 - !private ["CSo16PNSubscriberData", "timetoken"]
 - !private ["CSo6PubNub", "addListener"]
 - !private ["CSo6PubNub", "clientWithConfiguration"]
-- !private ["CSo6PubNub", "publish"]
 - !private ["CSo6PubNub", "subscribeToChannels"]
 - !private ["Ps21RandomAccessIndexType", "Distance"]
 - !private ["Ps21RandomAccessIndexType", "IntegerLiteralType"]
@@ -616,6 +609,7 @@ depends-member:
 - ["CSo11UIResponder", "NSObject"]
 - ["CSo11UIResponder", "PNConfiguration"]
 - ["CSo11UIResponder", "PNMessageResult"]
+- ["CSo11UIResponder", "PNStatus"]
 - ["CSo11UIResponder", "PubNub"]
 - ["CSo11UIResponder", "UIApplication"]
 - ["CSo11UIResponder", "UIWindow"]
@@ -934,4 +928,4 @@ depends-external:
 - "/Users/lizzie/Desktop/piHeartRate/DerivedData/piHeartRate/Build/Products/Debug-iphonesimulator/PubNub-iOS/PubNub.framework/Headers/PubNub+APNS.h"
 - "/Users/lizzie/Desktop/piHeartRate/DerivedData/piHeartRate/Build/Products/Debug-iphonesimulator/PubNub-iOS/PubNub.framework/Headers/PubNub-iOS-umbrella.h"
 - "/Users/lizzie/Desktop/piHeartRate/DerivedData/piHeartRate/Build/Products/Debug-iphonesimulator/PubNub-iOS/PubNub.framework/Modules/module.modulemap"
-interface-hash: "89313a9b2784fdc0cab83c32871fa979"
+interface-hash: "69504fb74068f1aab1de6d5ddb7ed660"

@@ -6,24 +6,39 @@
 //  Copyright © 2016 Lizzie Siegle. All rights reserved.
 //
 
-import Foundation
+import Foundation //timer
 import HealthKit
 import WatchKit
 import WatchConnectivity
+import UIKit
+import PubNub
 
-
-class InterfaceController: WKInterfaceController, HKWorkoutSessionDelegate, WCSessionDelegate {
+class InterfaceController: WKInterfaceController, HKWorkoutSessionDelegate, WCSessionDelegate, WKExtensionDelegate, PNObjectEventListener {
     
     @IBOutlet var label: WKInterfaceLabel!
    
     @IBOutlet var heart: WKInterfaceImage!
 
     @IBOutlet var startStopBtn: WKInterfaceButton!
+    
+    var client: PubNub?
+    
     let healthStore = HKHealthStore()
     
-    var hrVal : Double? = 2.4 //will change
+    var hrVal : Double = 2.4 //will change
+    let watchAppDel = WKExtension.sharedExtension().delegate! as! ExtensionDelegate
+
+    var channel = "iWorkout"
     
     var wcSesh : WCSession!
+    
+    var hrTimer: NSTimer?
+    
+    var userName: String? {
+        get {
+            return self.hrTimer?.userInfo as? String
+        }
+    }
     
     //bool = workout state
     var currMoving = false //not working out
@@ -33,6 +48,15 @@ class InterfaceController: WKInterfaceController, HKWorkoutSessionDelegate, WCSe
     let heartRateUnit = HKUnit(fromString: "count/min")
     var anchor = HKQueryAnchor(fromValue: Int(HKAnchoredObjectQueryNoAnchor))
     
+    override init() {
+        let watchConfig = PNConfiguration(publishKey: "pub-c-1b5f6f38-34c4-45a8-81c7-7ef4c45fd608", subscribeKey: "sub-c-a3cf770a-2c3d-11e6-8b91-02ee2ddab7fe")
+        //client = PubNub.clientWithConfiguration(watchConfig)
+        watchAppDel.client = PubNub.clientWithConfiguration(watchConfig)
+
+        super.init()
+        watchAppDel.client?.addListener(self)
+        //watchAppDel.client?.joinChannel(channel)
+    }
     
     override func awakeWithContext(context: AnyObject?) {
         super.awakeWithContext(context)
@@ -106,7 +130,7 @@ class InterfaceController: WKInterfaceController, HKWorkoutSessionDelegate, WCSe
     }
     
     func workoutDidStart(date : NSDate) {
-        guard let query = createHeartRateStreamingQuery(date) else {
+        guard let query = makeHRStreamingQuery(date) else {
             label.setText("can't start🤕")
             return
         }
@@ -121,7 +145,7 @@ class InterfaceController: WKInterfaceController, HKWorkoutSessionDelegate, WCSe
     }
     
     func workoutDidEnd(date : NSDate) {
-        if let query = createHeartRateStreamingQuery(date) {
+        if let query = makeHRStreamingQuery(date) {
             healthStore.stopQuery(query)
             label.setText("---") //not running
         } else {
@@ -152,7 +176,7 @@ class InterfaceController: WKInterfaceController, HKWorkoutSessionDelegate, WCSe
         healthStore.startWorkoutSession(self.workoutSesh!)
     }
     
-    func createHeartRateStreamingQuery(workoutStartDate: NSDate) -> HKQuery? {
+    func makeHRStreamingQuery(workoutStartDate: NSDate) -> HKQuery? {
         
         guard let quantityType = HKObjectType.quantityTypeForIdentifier(HKQuantityTypeIdentifierHeartRate) else { return nil }
         
@@ -165,9 +189,56 @@ class InterfaceController: WKInterfaceController, HKWorkoutSessionDelegate, WCSe
         heartRateQuery.updateHandler = {(query, samples, deleteObjects, newAnchor, error) -> Void in
             self.anchor = newAnchor!
             self.updateHeartRate(samples)
+           
+            self.animateWithDuration(1.5) {
+                self.heart.setWidth(10)
+                self.heart.setHeight(15)
+            }
+            
+            let when = dispatch_time(DISPATCH_TIME_NOW, Int64(0.5 * double_t(NSEC_PER_SEC)))
+            let queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)
+            dispatch_after(when, queue) {
+                dispatch_async(dispatch_get_main_queue(), {
+                    self.animateWithDuration(0.5, animations: {
+                        self.heart.setWidth(20)
+                        self.heart.setHeight(30)
+                        self.heart.setTintColor(UIColor(red: 255, green: 150, blue: 100, alpha: 0.3))
+                        self.heart.setAlpha(0.9)
+                    })
+                })
+            }
         }
         return heartRateQuery
     }
+    
+    func publishHeartRate() {
+        watchAppDel.client?.publish(hrVal, toChannel: channel, withCompletion: { (status) -> Void in
+            if !status.error {
+                print("\(self.hrVal) has been published")
+            } //if
+
+            else {
+                print("\(self.hrVal) returns publish error hmm hmm ponder")
+            } //else
+        })
+    }
+    
+//    func publishTimer(interval: NSTimerInterval = 10.0, userName: String? = nil) {
+//        self.hrTimer = NSTimer.scheduledTimerWithTimeInterval(10.0, target: self, selector: #selector(InterfaceController.publishHeartRate), userInfo: nil, repeats: true)
+//    }
+    
+    func client(client: PubNub!, didReceiveMessage message: PNMessageResult!, didReceiveStatus status: PNStatus) {
+        print(message)
+        
+        guard message.data.actualChannel != nil else {
+            print(message.data)
+            return
+        }
+        print("Received message: \(message.data.message) on channel " +
+            "\((message.data.actualChannel ?? message.data.subscribedChannel)!) at " +
+            "\(message.data.timetoken)")
+    }
+
     
     func updateHeartRate(samples: [HKSample]?) {
         guard let heartRateSamples = samples as? [HKQuantitySample] else {return} //subclass of HKSample -> data like height, weight etc
@@ -178,13 +249,13 @@ class InterfaceController: WKInterfaceController, HKWorkoutSessionDelegate, WCSe
         dispatch_async(dispatch_get_main_queue()) {
             guard let sample = heartRateSamples.first else{return}
             self.hrVal = sample.quantity.doubleValueForUnit(self.heartRateUnit)
-            let lblTxt = String(self.hrVal!)
+            let lblTxt = String(self.hrVal)
             self.label.setText(lblTxt)
-            self.animateHeart()
+            self.publishHeartRate()
         } //dispatch_async
-        
-        let appData = ["heart rate value": String(hrVal)]
-        if let wcSesh = wcSesh where wcSesh.reachable {
+       
+        let appData = ["heart rate value": String(self.hrVal)]
+        if let wcSesh = self.wcSesh where wcSesh.reachable {
             wcSesh.sendMessage(appData, replyHandler: { replyData in
                 print(replyData)
             }, errorHandler: { error in
@@ -194,25 +265,5 @@ class InterfaceController: WKInterfaceController, HKWorkoutSessionDelegate, WCSe
             //when phone !connected via Bluetooth
             print("phone !connected via Bluetooth")
         } //else
-    }
-    
-    func animateHeart() {
-        self.animateWithDuration(1.5) {
-            self.heart.setWidth(20)
-            self.heart.setHeight(50)
-        }
-        
-        let when = dispatch_time(DISPATCH_TIME_NOW, Int64(0.5 * double_t(NSEC_PER_SEC)))
-        let queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)
-        dispatch_after(when, queue) {
-            dispatch_async(dispatch_get_main_queue(), {
-                self.animateWithDuration(0.5, animations: {
-                    self.heart.setWidth(30)
-                    self.heart.setHeight(60)
-                    self.heart.setTintColor(UIColor(red: 255, green: 4, blue: 100, alpha: 0.3))
-                    self.heart.setAlpha(0.3)
-                })
-            })
-        }
     }
 }

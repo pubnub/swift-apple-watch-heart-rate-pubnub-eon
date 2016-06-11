@@ -6,62 +6,97 @@ provides-nominal:
 provides-member:
 - ["C22getHeartRate_Extension17ExtensionDelegate", ""]
 provides-dynamic-lookup:
-- "applicationDidFinishLaunching"
-- "applicationDidBecomeActive"
 - "applicationWillResignActive"
+- "channel"
+- "applicationDidFinishLaunching"
+- "client"
+- "applicationDidBecomeActive"
 depends-top-level:
-- "NSObject"
+- !private "Array"
+- "StringLiteralType"
 - "ExtensionDelegate"
+- !private "BooleanLiteralType"
 - "WKExtensionDelegate"
+- "PNObjectEventListener"
+- "NSObject"
+- "PubNub"
 depends-member:
 - ["Ps9AnyObject", "applicationDidBecomeActive"]
 - ["Ps9AnyObject", "applicationDidFinishLaunching"]
 - ["Ps9AnyObject", "applicationWillResignActive"]
+- ["Ps9AnyObject", "channel"]
+- ["Ps9AnyObject", "client"]
 - ["Ps9AnyObject", "didReceiveLocalNotification"]
 - ["Ps9AnyObject", "didReceiveRemoteNotification"]
 - ["Ps9AnyObject", "handleActionWithIdentifier"]
 - ["Ps9AnyObject", "handleUserActivity"]
 - ["Ps9AnyObject", "init"]
+- !private ["Ps9AnyObject", "unsubscribeFromAll"]
+- !private ["Ps9AnyObject", "unsubscribeFromChannels"]
 - ["Ps9AnyObject", ""]
+- !private ["Sa", "Element"]
+- !private ["Ps23ArrayLiteralConvertible", "Element"]
 - ["Ps11CVarArgType", "applicationDidBecomeActive"]
 - ["Ps11CVarArgType", "applicationDidFinishLaunching"]
 - ["Ps11CVarArgType", "applicationWillResignActive"]
+- ["Ps11CVarArgType", "channel"]
+- ["Ps11CVarArgType", "client"]
 - ["Ps11CVarArgType", "didReceiveLocalNotification"]
 - ["Ps11CVarArgType", "didReceiveRemoteNotification"]
 - ["Ps11CVarArgType", "handleActionWithIdentifier"]
 - ["Ps11CVarArgType", "handleUserActivity"]
 - ["Ps11CVarArgType", "init"]
+- !private ["Ps11CVarArgType", "unsubscribeFromAll"]
+- !private ["Ps11CVarArgType", "unsubscribeFromChannels"]
 - ["Ps11CVarArgType", ""]
+- !private ["Ps14CollectionType", "Element"]
+- !private ["Ps28CustomDebugStringConvertible", "Element"]
 - ["Ps28CustomDebugStringConvertible", "applicationDidBecomeActive"]
 - ["Ps28CustomDebugStringConvertible", "applicationDidFinishLaunching"]
 - ["Ps28CustomDebugStringConvertible", "applicationWillResignActive"]
+- ["Ps28CustomDebugStringConvertible", "channel"]
+- ["Ps28CustomDebugStringConvertible", "client"]
 - ["Ps28CustomDebugStringConvertible", "didReceiveLocalNotification"]
 - ["Ps28CustomDebugStringConvertible", "didReceiveRemoteNotification"]
 - ["Ps28CustomDebugStringConvertible", "handleActionWithIdentifier"]
 - ["Ps28CustomDebugStringConvertible", "handleUserActivity"]
 - ["Ps28CustomDebugStringConvertible", "init"]
+- !private ["Ps28CustomDebugStringConvertible", "unsubscribeFromAll"]
+- !private ["Ps28CustomDebugStringConvertible", "unsubscribeFromChannels"]
 - ["Ps28CustomDebugStringConvertible", ""]
+- !private ["Ps23CustomStringConvertible", "Element"]
 - ["Ps23CustomStringConvertible", "applicationDidBecomeActive"]
 - ["Ps23CustomStringConvertible", "applicationDidFinishLaunching"]
 - ["Ps23CustomStringConvertible", "applicationWillResignActive"]
+- ["Ps23CustomStringConvertible", "channel"]
+- ["Ps23CustomStringConvertible", "client"]
 - ["Ps23CustomStringConvertible", "didReceiveLocalNotification"]
 - ["Ps23CustomStringConvertible", "didReceiveRemoteNotification"]
 - ["Ps23CustomStringConvertible", "handleActionWithIdentifier"]
 - ["Ps23CustomStringConvertible", "handleUserActivity"]
 - ["Ps23CustomStringConvertible", "init"]
+- !private ["Ps23CustomStringConvertible", "unsubscribeFromAll"]
+- !private ["Ps23CustomStringConvertible", "unsubscribeFromChannels"]
 - ["Ps23CustomStringConvertible", ""]
 - ["Ps9Equatable", "applicationDidBecomeActive"]
 - ["Ps9Equatable", "applicationDidFinishLaunching"]
 - ["Ps9Equatable", "applicationWillResignActive"]
+- ["Ps9Equatable", "channel"]
+- ["Ps9Equatable", "client"]
 - ["Ps9Equatable", "didReceiveLocalNotification"]
 - ["Ps9Equatable", "didReceiveRemoteNotification"]
 - ["Ps9Equatable", "handleActionWithIdentifier"]
 - ["Ps9Equatable", "handleUserActivity"]
 - ["Ps9Equatable", "init"]
+- !private ["Ps9Equatable", "unsubscribeFromAll"]
+- !private ["Ps9Equatable", "unsubscribeFromChannels"]
 - ["Ps9Equatable", ""]
+- ["C22getHeartRate_Extension17ExtensionDelegate", "PubNub"]
 - ["C22getHeartRate_Extension17ExtensionDelegate", "applicationDidBecomeActive"]
 - ["C22getHeartRate_Extension17ExtensionDelegate", "applicationDidFinishLaunching"]
 - ["C22getHeartRate_Extension17ExtensionDelegate", "applicationWillResignActive"]
+- ["C22getHeartRate_Extension17ExtensionDelegate", "channel"]
+- ["C22getHeartRate_Extension17ExtensionDelegate", "client"]
 - ["C22getHeartRate_Extension17ExtensionDelegate", "deinit"]
 - ["C22getHeartRate_Extension17ExtensionDelegate", "didReceiveLocalNotification"]
 - ["C22getHeartRate_Extension17ExtensionDelegate", "didReceiveRemoteNotification"]
@@ -71,49 +106,101 @@ depends-member:
 - ["Ps8Hashable", "applicationDidBecomeActive"]
 - ["Ps8Hashable", "applicationDidFinishLaunching"]
 - ["Ps8Hashable", "applicationWillResignActive"]
+- ["Ps8Hashable", "channel"]
+- ["Ps8Hashable", "client"]
 - ["Ps8Hashable", "didReceiveLocalNotification"]
 - ["Ps8Hashable", "didReceiveRemoteNotification"]
 - ["Ps8Hashable", "handleActionWithIdentifier"]
 - ["Ps8Hashable", "handleUserActivity"]
 - ["Ps8Hashable", "init"]
+- !private ["Ps8Hashable", "unsubscribeFromAll"]
+- !private ["Ps8Hashable", "unsubscribeFromChannels"]
 - ["Ps8Hashable", ""]
+- !private ["Ps9Indexable", "Element"]
+- !private ["Ps21MutableCollectionType", "Element"]
+- !private ["Ps16MutableIndexable", "Element"]
+- !private ["Ps16MutableSliceable", "Element"]
+- ["CSo8NSObject", "PubNub"]
 - ["CSo8NSObject", "applicationDidBecomeActive"]
 - ["CSo8NSObject", "applicationDidFinishLaunching"]
 - ["CSo8NSObject", "applicationWillResignActive"]
+- ["CSo8NSObject", "channel"]
+- ["CSo8NSObject", "client"]
 - ["CSo8NSObject", "didReceiveLocalNotification"]
 - ["CSo8NSObject", "didReceiveRemoteNotification"]
 - ["CSo8NSObject", "handleActionWithIdentifier"]
 - ["CSo8NSObject", "handleUserActivity"]
 - ["CSo8NSObject", "init"]
+- !private ["CSo8NSObject", "unsubscribeFromAll"]
+- !private ["CSo8NSObject", "unsubscribeFromChannels"]
 - ["CSo8NSObject", ""]
 - ["PSo16NSObjectProtocol", "applicationDidBecomeActive"]
 - ["PSo16NSObjectProtocol", "applicationDidFinishLaunching"]
 - ["PSo16NSObjectProtocol", "applicationWillResignActive"]
+- ["PSo16NSObjectProtocol", "channel"]
+- ["PSo16NSObjectProtocol", "client"]
 - ["PSo16NSObjectProtocol", "didReceiveLocalNotification"]
 - ["PSo16NSObjectProtocol", "didReceiveRemoteNotification"]
 - ["PSo16NSObjectProtocol", "handleActionWithIdentifier"]
 - ["PSo16NSObjectProtocol", "handleUserActivity"]
 - ["PSo16NSObjectProtocol", "init"]
+- !private ["PSo16NSObjectProtocol", "unsubscribeFromAll"]
+- !private ["PSo16NSObjectProtocol", "unsubscribeFromChannels"]
 - ["PSo16NSObjectProtocol", ""]
+- ["PSo21PNObjectEventListener", "applicationDidBecomeActive"]
+- ["PSo21PNObjectEventListener", "applicationDidFinishLaunching"]
+- ["PSo21PNObjectEventListener", "applicationWillResignActive"]
+- !private ["PSo21PNObjectEventListener", "channel"]
+- ["PSo21PNObjectEventListener", "client"]
+- ["PSo21PNObjectEventListener", "didReceiveLocalNotification"]
+- ["PSo21PNObjectEventListener", "didReceiveRemoteNotification"]
+- ["PSo21PNObjectEventListener", "handleActionWithIdentifier"]
+- ["PSo21PNObjectEventListener", "handleUserActivity"]
+- ["PSo21PNObjectEventListener", ""]
+- !private ["CSo6PubNub", "unsubscribeFromAll"]
+- !private ["CSo6PubNub", "unsubscribeFromChannels"]
+- !private ["Ps30RangeReplaceableCollectionType", "Element"]
+- !private ["Ps12SequenceType", "Element"]
 - ["PSo19WKExtensionDelegate", "applicationDidBecomeActive"]
 - ["PSo19WKExtensionDelegate", "applicationDidFinishLaunching"]
 - ["PSo19WKExtensionDelegate", "applicationWillResignActive"]
+- !private ["PSo19WKExtensionDelegate", "channel"]
+- ["PSo19WKExtensionDelegate", "client"]
 - ["PSo19WKExtensionDelegate", "didReceiveLocalNotification"]
 - ["PSo19WKExtensionDelegate", "didReceiveRemoteNotification"]
 - ["PSo19WKExtensionDelegate", "handleActionWithIdentifier"]
 - ["PSo19WKExtensionDelegate", "handleUserActivity"]
 - ["PSo19WKExtensionDelegate", ""]
+- !private ["Ps10_ArrayType", "Element"]
+- !private ["Ps24_DestructorSafeContainer", "Element"]
+- !private ["Ps21_ObjectiveCBridgeable", "Element"]
+- !private ["Ps12_Reflectable", "Element"]
 depends-nominal:
 - "Ps9AnyObject"
+- !private "Sa"
+- !private "Ps23ArrayLiteralConvertible"
 - "Ps11CVarArgType"
+- !private "Ps14CollectionType"
 - "Ps28CustomDebugStringConvertible"
 - "Ps23CustomStringConvertible"
 - "Ps9Equatable"
 - "C22getHeartRate_Extension17ExtensionDelegate"
 - "Ps8Hashable"
+- !private "Ps9Indexable"
+- !private "Ps21MutableCollectionType"
+- !private "Ps16MutableIndexable"
+- !private "Ps16MutableSliceable"
 - "CSo8NSObject"
 - "PSo16NSObjectProtocol"
+- "PSo21PNObjectEventListener"
+- !private "CSo6PubNub"
+- !private "Ps30RangeReplaceableCollectionType"
+- !private "Ps12SequenceType"
 - "PSo19WKExtensionDelegate"
+- !private "Ps10_ArrayType"
+- !private "Ps24_DestructorSafeContainer"
+- !private "Ps21_ObjectiveCBridgeable"
+- !private "Ps12_Reflectable"
 depends-dynamic-lookup:
 depends-external:
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/watchsimulator/i386/Swift.swiftmodule"
@@ -164,4 +251,4 @@ depends-external:
 - "/Users/lizzie/Desktop/piHeartRate/DerivedData/piHeartRate/Build/Products/Debug-watchsimulator/PubNub-watchOS/PubNub.framework/Headers/PubNub+APNS.h"
 - "/Users/lizzie/Desktop/piHeartRate/DerivedData/piHeartRate/Build/Products/Debug-watchsimulator/PubNub-watchOS/PubNub.framework/Headers/PubNub-watchOS-umbrella.h"
 - "/Users/lizzie/Desktop/piHeartRate/DerivedData/piHeartRate/Build/Products/Debug-watchsimulator/PubNub-watchOS/PubNub.framework/Modules/module.modulemap"
-interface-hash: "be7cd5e2a574f1f62c3c9a28a6f67747"
+interface-hash: "d5c1a32837ad5a9d3422cefd982bf226"

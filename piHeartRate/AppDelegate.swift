@@ -26,15 +26,28 @@ class AppDelegate: UIResponder, UIApplicationDelegate, WCSessionDelegate, PNObje
         config = PNConfiguration(publishKey: "pub-c-1b5f6f38-34c4-45a8-81c7-7ef4c45fd608", subscribeKey: "sub-c-a3cf770a-2c3d-11e6-8b91-02ee2ddab7fe")
         client = PubNub.clientWithConfiguration(config)
         client.subscribeToChannels([channel], withPresence: false)
-        client.publish("Swift+PubNub!", toChannel: "Your_Channel", compressed: false, withCompletion: nil)
-        
         super.init()
         client.addListener(self)
     }
     
     //handle new msg from 1 of channels client is subscribed to
-    func client(client: PubNub!, didReceiveMessage message: PNMessageResult!) {
+    func client(client: PubNub!, didReceiveMessage message: PNMessageResult!, didReceiveStatus status: PNStatus) {
         print(message)
+//        if status.category == .PNUnexpectedDisconnectCategory {
+//            print("radio/connectivity is lost")
+//        }
+//        else if status.category == .PNConnectedCategory {
+//            print("confirmed subscription for UI/internal notifications etc")
+//        }
+//        else if status.category == .PNReconnectedCategory {
+//            print("radio slash connectivity lost but back")
+//        }
+//        else if status.category == .PNDecryptionErrorCategory {
+//            print("sent plain text instead of expected encrypted msg")
+//        }
+//        else {
+//            print("i really don't know man")
+//        }
 //        if message.data.actualChannel != nil {
 //            //msg received on channel group, stored in message.data.subscribedChannel
 //        } //if
@@ -50,10 +63,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate, WCSessionDelegate, PNObje
             "\((message.data.actualChannel ?? message.data.subscribedChannel)!) at " +
             "\(message.data.timetoken)")
     }
-
+    
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
-        self.client.subscribeToChannels(["HeartRate","HeartRate2"], withPresence: false)
+        self.client.subscribeToChannels([channel], withPresence: false)
         return true
     }
     

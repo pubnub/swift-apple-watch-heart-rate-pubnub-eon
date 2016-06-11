@@ -104,6 +104,7 @@ typedef int swift_int4  __attribute__((__ext_vector_type__(4)));
 @class PubNub;
 @class PNConfiguration;
 @class PNMessageResult;
+@class PNStatus;
 @class UIApplication;
 @class NSObject;
 
@@ -115,7 +116,7 @@ SWIFT_CLASS("_TtC11piHeartRate11AppDelegate")
 @property (nonatomic, strong) PNConfiguration * _Nonnull config;
 @property (nonatomic, copy) NSString * _Nonnull channel;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
-- (void)client:(PubNub * _Null_unspecified)client didReceiveMessage:(PNMessageResult * _Null_unspecified)message;
+- (void)client:(PubNub * _Null_unspecified)client didReceiveMessage:(PNMessageResult * _Null_unspecified)message didReceiveStatus:(PNStatus * _Nonnull)status;
 - (BOOL)application:(UIApplication * _Nonnull)application didFinishLaunchingWithOptions:(NSDictionary * _Nullable)launchOptions;
 - (void)applicationWillResignActive:(UIApplication * _Nonnull)application;
 - (void)applicationDidEnterBackground:(UIApplication * _Nonnull)application;
