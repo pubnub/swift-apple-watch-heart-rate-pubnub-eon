@@ -7,12 +7,12 @@ provides-member:
 - ["C22getHeartRate_Extension16GlanceController", ""]
 provides-dynamic-lookup:
 - "willActivate"
-- "didDeactivate"
 - "awakeWithContext"
+- "didDeactivate"
 depends-top-level:
+- "GlanceController"
 - "AnyObject"
 - "WKInterfaceController"
-- "GlanceController"
 depends-member:
 - ["Ps9AnyObject", "awakeWithContext"]
 - ["Ps9AnyObject", "didDeactivate"]

@@ -146,6 +146,8 @@ SWIFT_CLASS("_TtC22getHeartRate_Extension19InterfaceController")
 @property (nonatomic, strong) PubNub * _Nullable client;
 @property (nonatomic, readonly, strong) HKHealthStore * _Nonnull healthStore;
 @property (nonatomic) double hrVal;
+@property (nonatomic, copy) NSString * _Nonnull channelSentFromPhone;
+@property (nonatomic, copy) NSArray<NSString *> * _Nonnull channelList;
 @property (nonatomic, readonly, strong) ExtensionDelegate * _Nonnull watchAppDel;
 @property (nonatomic, copy) NSString * _Nonnull channel;
 @property (nonatomic, strong) WCSession * _Null_unspecified wcSesh;
@@ -168,6 +170,7 @@ SWIFT_CLASS("_TtC22getHeartRate_Extension19InterfaceController")
 - (HKQuery * _Nullable)makeHRStreamingQuery:(NSDate * _Nonnull)workoutStartDate;
 - (void)publishHeartRate;
 - (void)client:(PubNub * _Null_unspecified)client didReceiveMessage:(PNMessageResult * _Null_unspecified)message didReceiveStatus:(PNStatus * _Nonnull)status;
+- (void)session:(WCSession * _Nonnull)wrSesh didReceiveMessage:(NSDictionary<NSString *, id> * _Nonnull)message replyHandler:(void (^ _Nonnull)(NSDictionary<NSString *, id> * _Nonnull))replyHandler;
 - (void)updateHeartRate:(NSArray<HKSample *> * _Nullable)samples;
 @end
 

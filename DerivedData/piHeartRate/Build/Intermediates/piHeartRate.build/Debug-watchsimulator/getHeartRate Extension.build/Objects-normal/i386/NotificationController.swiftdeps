@@ -6,11 +6,11 @@ provides-nominal:
 provides-member:
 - ["C22getHeartRate_Extension22NotificationController", ""]
 provides-dynamic-lookup:
-- "willActivate"
 - "didDeactivate"
+- "willActivate"
 depends-top-level:
-- "WKUserNotificationInterfaceController"
 - "NotificationController"
+- "WKUserNotificationInterfaceController"
 depends-member:
 - ["Ps9AnyObject", "didDeactivate"]
 - ["Ps9AnyObject", "init"]

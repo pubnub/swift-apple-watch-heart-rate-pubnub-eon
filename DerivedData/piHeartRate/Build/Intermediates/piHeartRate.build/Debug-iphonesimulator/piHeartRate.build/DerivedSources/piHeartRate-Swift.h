@@ -127,9 +127,22 @@ SWIFT_CLASS("_TtC11piHeartRate11AppDelegate")
 @end
 
 @class WCSession;
-@class UILabel;
+@class UITextField;
 @class NSBundle;
 @class NSCoder;
+
+SWIFT_CLASS("_TtC11piHeartRate21ChannelViewController")
+@interface ChannelViewController : UIViewController <WCSessionDelegate>
+@property (nonatomic, strong) WCSession * _Null_unspecified wcPhoneSesh;
+@property (nonatomic, weak) UITextField * _Null_unspecified channelTextField;
+@property (nonatomic, copy) NSString * _Nonnull chanName;
+- (IBAction)channelButtonClicked:(id _Nonnull)sender;
+- (void)viewDidLoad;
+- (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+@class UILabel;
 
 SWIFT_CLASS("_TtC11piHeartRate14ViewController")
 @interface ViewController : UIViewController <WCSessionDelegate>

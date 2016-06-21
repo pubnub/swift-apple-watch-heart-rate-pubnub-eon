@@ -25,10 +25,12 @@ class InterfaceController: WKInterfaceController, HKWorkoutSessionDelegate, WCSe
     
     let healthStore = HKHealthStore()
     
-    var hrVal : Double = 2.4 //will change
+    var hrVal : Double = 0 //will change
+    var channelSentFromPhone: String = ""
+    var channelList = [String]()
     let watchAppDel = WKExtension.sharedExtension().delegate! as! ExtensionDelegate
 
-    var channel = "iWorkout"
+    var channel = ""
     
     var wcSesh : WCSession!
     
@@ -212,7 +214,7 @@ class InterfaceController: WKInterfaceController, HKWorkoutSessionDelegate, WCSe
     }
     
     func publishHeartRate() {
-        watchAppDel.client?.publish(hrVal, toChannel: channel, withCompletion: { (status) -> Void in
+        watchAppDel.client?.publish(hrVal, toChannel: channelSentFromPhone, withCompletion: { (status) -> Void in
             if !status.error {
                 print("\(self.hrVal) has been published")
             } //if
@@ -238,6 +240,22 @@ class InterfaceController: WKInterfaceController, HKWorkoutSessionDelegate, WCSe
             "\((message.data.actualChannel ?? message.data.subscribedChannel)!) at " +
             "\(message.data.timetoken)")
     }
+    
+    //get channel name from phone
+    func session(wrSesh: WCSession, didReceiveMessage message: [String : AnyObject], replyHandler: ([String : AnyObject]) -> Void) {
+        
+        //Use this to update the UI instantaneously (otherwise, takes a little while)
+        dispatch_async(dispatch_get_main_queue()) {
+            if let chanFromPhone = message["channel"] as? String {
+                self.channelList.append(chanFromPhone)
+                self.channelSentFromPhone = chanFromPhone
+                //PubNub
+                //self.hrValLabel.text = hrVal //val from HR on watch
+                //update with PubNub here
+            }
+        }
+    }
+
 
     
     func updateHeartRate(samples: [HKSample]?) {
