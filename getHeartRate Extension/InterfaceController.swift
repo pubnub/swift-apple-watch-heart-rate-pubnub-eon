@@ -1,3 +1,6 @@
+
+
+
 //
 //  InterfaceController.swift
 //  getHeartRate Extension
@@ -5,13 +8,6 @@
 //  Created by Elisabeth Siegle on 6/7/16.
 //  Copyright © 2016 Lizzie Siegle. All rights reserved.
 //
-
-import Foundation //timer
-import HealthKit
-import WatchKit
-import WatchConnectivity
-import UIKit
-import PubNub
 
 import Foundation //timer
 import HealthKit
@@ -37,7 +33,9 @@ class InterfaceController: WKInterfaceController, WKExtensionDelegate, PNObjectE
     var hrVal : Double = 0 //will change
     var channelSentFromPhone: String = ""
     var channelList = [String]()
-    let watchAppDel = WKExtension.sharedExtension() as! ExtensionDelegate //sharedExtension() was shared() before Swift 3
+    //let watchAppDel = WKExtension.shared() as! WKExtensionDelegate //sharedExtension() was shared() before Swift 3 IDK MAN IDK
+    //let watchAppDel = WKExtensionDelegate.self //idk man idk
+    let watchAppDel = WKExtension.shared().delegate as! ExtensionDelegate
     
     var channel = ""
     
@@ -56,7 +54,7 @@ class InterfaceController: WKInterfaceController, WKExtensionDelegate, PNObjectE
     
     // define the activity type and location
     var workoutSesh : HKWorkoutSession?
-    let heartRateUnit = HKUnit(fromString: "count/min")
+    let heartRateUnit = HKUnit(from: "count/min")
     var anchor = HKQueryAnchor(fromValue: Int(HKAnchoredObjectQueryNoAnchor))
     
     override init() {
@@ -64,13 +62,13 @@ class InterfaceController: WKInterfaceController, WKExtensionDelegate, PNObjectE
         //client = PubNub.client(with: watchConfig)
         //watchAppDel.client = PubNub.client(with: watchConfig)
         //watchAppDel.client = PubNub.
-        watchAppDel.client? = PubNub.clientWithConfiguration(watchConfig)
+        watchAppDel.client? = PubNub.client(with: watchConfig)
         
         super.init()
         //watchAppDel.client?.add(self)
         //watchAppDel.client?.add(self)
         //watchAppDel.client?.joinChannel(channel)
-        watchAppDel.client?.addListener(self)
+        watchAppDel.client?.add(self)
         
         randomName = genRandom()
     }
@@ -85,13 +83,13 @@ class InterfaceController: WKInterfaceController, WKExtensionDelegate, PNObjectE
             label.setText("unavailable🙀")
             return
         }
-        guard let quantityType = HKQuantityType.quantityTypeForIdentifier(HKQuantityTypeIdentifierHeartRate) else { //HKQuantityTypeIdentifier.heartRate) else {
+        guard let quantityType = HKQuantityType.quantityType(forIdentifier: HKQuantityTypeIdentifier.heartRate) else { //HKQuantityTypeIdentifier.heartRate) else {
             displayUnallowed() //only display if Heart Rate
             return
         }
         
         let dataTypes = Set(arrayLiteral: quantityType)
-        healthStore.requestAuthorizationToShareTypes(nil, readTypes: dataTypes, completion: { (success, error) -> Void in
+        healthStore.requestAuthorization(toShare: nil, read: dataTypes, completion: { (success, error) -> Void in
             //(toShare: nil, read: dataTypes, completion: { (success, error) -> Void in
             //(toShare: nil, read: dataTypes) { (success, error) -> Void in
             guard success == true else {
@@ -109,33 +107,35 @@ class InterfaceController: WKInterfaceController, WKExtensionDelegate, PNObjectE
     
     func workoutSession(workoutSession: HKWorkoutSession, didChangeTo toState: HKWorkoutSessionState, from fromState: HKWorkoutSessionState, date: NSDate) {
         switch toState {
-        case .Running:
-            workoutDidStart(date)
-        case .Ended:
-            workoutDidEnd(date)
+        case .running:
+            workoutDidStart(date: date)
+        case .ended:
+            workoutDidEnd(date: date)
         default:
             print("Unexpected state \(toState)😤")
         }
+   
     }
     
     func workoutSession(workoutSession: HKWorkoutSession, didFailWithError error: NSError) {
         // Do nothing for now
-        NSLog("Workout error: \(error.userInfo)")
+        NSLog("Workout error: \(error.userInfo)"
+        )
     }
     
     func workoutDidStart(date : NSDate) {
-        guard let query = makeHRStreamingQuery(date) else {
+        guard let query = makeHRStreamingQuery(workoutStartDate: date) else {
             label.setText("can't start🤕")
             return
         }
         //healthStore.execute(query)
-        healthStore.executeQuery(query)
+        healthStore.execute(query)
     }
     
     func workoutDidEnd(date : NSDate) {
-        if let query = makeHRStreamingQuery(date) {
+        if let query = makeHRStreamingQuery(workoutStartDate: date) {
             //healthStore.stop(query)
-            healthStore.stopQuery(query)
+            healthStore.stop(query)
             label.setText("---") //not running
         } else {
             label.setText("can't stop😓")
@@ -149,7 +149,7 @@ class InterfaceController: WKInterfaceController, WKExtensionDelegate, PNObjectE
             self.startStopBtn.setTitle("Start💪🏽")
             if let workout = self.workoutSesh {
                 //healthStore.end(workout)
-                healthStore.endWorkoutSession(workout)
+                healthStore.end(workout)
             }
         } else {
             //start a new workout
@@ -161,26 +161,26 @@ class InterfaceController: WKInterfaceController, WKExtensionDelegate, PNObjectE
     }
     
     func beginWorkout() {
-        self.workoutSesh = HKWorkoutSession(activityType: .Hiking, locationType: HKWorkoutSessionLocationType.Indoor)
+        self.workoutSesh = HKWorkoutSession(activityType: .hiking, locationType: HKWorkoutSessionLocationType.indoor)
         //self.workoutSesh?.delegate = self
         //healthStore.start(self.workoutSesh!)
-        healthStore.startWorkoutSession(self.workoutSesh!)
+        healthStore.start(self.workoutSesh!)
     }
     
     func makeHRStreamingQuery(workoutStartDate: NSDate) -> HKQuery? {
         
-        guard let quantityType = HKQuantityType.quantityTypeForIdentifier(HKQuantityTypeIdentifierHeartRate) else { return nil }
+        guard let quantityType = HKQuantityType.quantityType(forIdentifier: HKQuantityTypeIdentifier.heartRate) else { return nil }
         
         let heartRateQuery = HKAnchoredObjectQuery(type: quantityType, predicate: nil, anchor: anchor, limit: Int(HKObjectQueryNoLimit)) { (query, sampleObjects, deletedObjects, newAnchor, error) -> Void in
             guard let newAnchor = newAnchor else {return}
             self.anchor = newAnchor
-            self.updateUserActivity(HKQuantityTypeIdentifierHeartRate, userInfo: nil, webpageURL: nil)//(sampleObjects) //HKQuantityTypeIdentifierHeartRate.rawValue ???
+            self.updateUserActivity(HKQuantityTypeIdentifier.heartRate.rawValue, userInfo: nil, webpageURL: nil)//(sampleObjects) //HKQuantityTypeIdentifierHeartRate.rawValue ???
         }
         
         heartRateQuery.updateHandler = {(query, samples, deleteObjects, newAnchor, error) -> Void in
             self.anchor = newAnchor!
             //self.updateHeartRate(samples)
-            self.updateUserActivity(HKQuantityTypeIdentifierHeartRate, userInfo: nil, webpageURL: nil) //userInfo: sampleObjects returns err but idk man
+            self.updateUserActivity(HKQuantityTypeIdentifier.heartRate.rawValue, userInfo: nil, webpageURL: nil) //userInfo: sampleObjects returns err but idk man
             //}
         }
         return heartRateQuery
@@ -191,7 +191,7 @@ class InterfaceController: WKInterfaceController, WKExtensionDelegate, PNObjectE
         let hrValToPublish = [randomName: "\(self.hrVal)"]
         print("hrValToPublish: \(hrValToPublish)")
         watchAppDel.client?.publish(hrValToPublish, toChannel: "yee", withCompletion: { (status) -> Void in
-            if !status.error { //isError
+            if !status.isError { //isError
                 print("\(self.hrVal) has been published")
                 print("\(hrValToPublish) has been published")
                 
@@ -249,7 +249,7 @@ class InterfaceController: WKInterfaceController, WKExtensionDelegate, PNObjectE
         //Grand Central Dispatch = run complex tasks in background = concurrent code execution
         //DispatchQueue.main.async {
         guard let sample = heartRateSamples.first else{return}
-        self.hrVal = sample.quantity.doubleValueForUnit(self.heartRateUnit)//sample.quantity.doubleValue(for: self.heartRateUnit)
+        self.hrVal = sample.quantity.doubleValue(for:self.heartRateUnit)//sample.quantity.doubleValue(for: self.heartRateUnit)
         let lblTxt = String(self.hrVal)
         self.label.setText(lblTxt)
         self.publishHeartRate()

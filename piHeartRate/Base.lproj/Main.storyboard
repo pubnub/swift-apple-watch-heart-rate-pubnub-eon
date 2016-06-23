@@ -17,8 +17,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="❤️" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="syd-1a-T6V">
-                                <frame key="frameInset" minX="176" minY="-2" width="22" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="❤️" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="syd-1a-T6V">
+                                <frame key="frameInset" minX="176" minY="317" width="22" height="33"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -26,7 +26,8 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="syd-1a-T6V" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Inw-I9-Y29"/>
+                            <constraint firstItem="syd-1a-T6V" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="HhU-by-Rbv"/>
+                            <constraint firstItem="syd-1a-T6V" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="YCy-OQ-HvV"/>
                         </constraints>
                     </view>
                     <connections>
@@ -35,7 +36,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="190" y="-120"/>
+            <point key="canvasLocation" x="178.40000000000001" y="-63.418290854572717"/>
         </scene>
     </scenes>
 </document>

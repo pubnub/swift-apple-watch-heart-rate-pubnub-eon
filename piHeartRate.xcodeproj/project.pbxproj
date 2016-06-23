@@ -20,8 +20,6 @@
 		6A41875E1D1C7F61006A79C6 /* CocoaLumberjack.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A41875D1D1C7F61006A79C6 /* CocoaLumberjack.framework */; };
 		6A41875F1D1C7F82006A79C6 /* PubNub.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A41875B1D1C7F54006A79C6 /* PubNub.framework */; };
 		6A4187611D1C7F98006A79C6 /* PubNub.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A4187601D1C7F98006A79C6 /* PubNub.framework */; };
-		6A4187631D1C7FBC006A79C6 /* Pods_getHeartRate_Extension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A4187621D1C7FBC006A79C6 /* Pods_getHeartRate_Extension.framework */; };
-		6A4187651D1C7FC2006A79C6 /* Pods_getHeartRate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A4187641D1C7FC2006A79C6 /* Pods_getHeartRate.framework */; };
 		6AB2456F1D0A219C00031A1E /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A20160A1D0756A6000E3AFE /* HealthKit.framework */; };
 		6AE1DC7F1D07338D00C24422 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AE1DC7E1D07338D00C24422 /* AppDelegate.swift */; };
 		6AE1DC811D07338D00C24422 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AE1DC801D07338D00C24422 /* ViewController.swift */; };
@@ -157,8 +155,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6A4187651D1C7FC2006A79C6 /* Pods_getHeartRate.framework in Frameworks */,
-				6A4187631D1C7FBC006A79C6 /* Pods_getHeartRate_Extension.framework in Frameworks */,
 				6A4187611D1C7F98006A79C6 /* PubNub.framework in Frameworks */,
 				6AE5ED651D1C631500D7C4D1 /* HealthKit.framework in Frameworks */,
 				13969F70212C6AA7CBAECC2E /* Pods_piHeartRate.framework in Frameworks */,
@@ -961,7 +957,7 @@
 				INFOPLIST_FILE = piHeartRate/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = lizziedev24.piHeartRate;
+				PRODUCT_BUNDLE_IDENTIFIER = com.lizziedev24.piHeartRate;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 3.0;
@@ -987,7 +983,7 @@
 				INFOPLIST_FILE = piHeartRate/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = lizziedev24.piHeartRate;
+				PRODUCT_BUNDLE_IDENTIFIER = com.lizziedev24.piHeartRate;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 3.0;

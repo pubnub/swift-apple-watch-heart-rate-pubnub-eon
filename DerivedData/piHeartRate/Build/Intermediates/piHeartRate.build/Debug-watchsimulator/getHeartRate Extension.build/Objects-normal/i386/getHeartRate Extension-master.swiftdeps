@@ -1,6 +1,6 @@
 version: "Apple Swift version 3.0 (swiftlang-800.0.30 clang-800.0.24)"
 options: "1f9ea4eddbc82753fe19a33748633a82"
-build_time: [520031294, 929092000]
+build_time: [520040432, 584704000]
 inputs:
   "/Users/lizzie/Desktop/piHeartRate/getHeartRate Extension/ExtensionDelegate.swift": [520029524, 0]
-  "/Users/lizzie/Desktop/piHeartRate/getHeartRate Extension/InterfaceController.swift": !dirty [520031002, 0]
+  "/Users/lizzie/Desktop/piHeartRate/getHeartRate Extension/InterfaceController.swift": [520039293, 0]

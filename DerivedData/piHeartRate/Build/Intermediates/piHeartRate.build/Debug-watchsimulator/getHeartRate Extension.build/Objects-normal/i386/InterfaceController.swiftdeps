@@ -6,94 +6,94 @@ provides-nominal:
 provides-member:
 - ["C22getHeartRate_Extension19InterfaceController", ""]
 provides-dynamic-lookup:
-- "heartRateUnit"
-- "label"
-- "workoutDidEnd"
-- "updateHeartRate"
 - "randomName"
+- "workoutSession"
+- "workoutSession"
 - "watchAppDel"
-- "wcSesh"
-- "heart"
-- "workoutDidStart"
-- "hrVal"
-- "workoutSession"
-- "workoutSession"
-- "workoutSesh"
-- "makeHRStreamingQuery"
-- "healthStore"
-- "anchor"
-- "client"
-- "client"
-- "genRandom"
-- "beginWorkout"
-- "currMoving"
-- "channelList"
-- "publishHeartRate"
-- "session"
-- "startBtnTapped"
-- "channelSentFromPhone"
-- "willActivate"
-- "startStopBtn"
-- "displayUnallowed"
 - "channel"
+- "willActivate"
+- "heart"
+- "startBtnTapped"
+- "displayUnallowed"
+- "label"
+- "currMoving"
+- "publishHeartRate"
+- "hrVal"
+- "workoutDidStart"
+- "anchor"
+- "session"
+- "genRandom"
+- "client"
+- "client"
+- "beginWorkout"
+- "makeHRStreamingQuery"
+- "channelList"
+- "workoutSesh"
+- "healthStore"
+- "startStopBtn"
+- "updateHeartRate"
+- "channelSentFromPhone"
+- "heartRateUnit"
+- "wcSesh"
+- "workoutDidEnd"
 depends-top-level:
-- "StringLiteralType"
-- "NSError"
-- !private "UnicodeScalarType"
-- "WKInterfaceController"
-- "PNStatus"
-- !private "!="
-- "HKWorkoutSession"
-- !private "Array"
-- "WKExtension"
-- "HKQuery"
-- !private "Set"
-- "WKInterfaceImage"
-- "HKSample"
-- !private "HKQuantityType"
-- "HKHealthStore"
-- "InterfaceController"
-- "HKWorkoutSessionState"
-- !private "HKQuantityTypeIdentifierHeartRate"
-- "String"
-- !private "HKWorkoutSessionLocationType"
-- "HKUnit"
-- "WCSession"
-- "AnyObject"
-- "Double"
-- "ExtensionDelegate"
-- !private "arc4random_uniform"
-- !private "HKQuantitySample"
-- !private "??"
-- !private "UInt32"
-- "WKInterfaceButton"
-- "Int"
-- !private "Dictionary"
-- "HKAnchoredObjectQueryNoAnchor"
-- "HKQueryAnchor"
-- "PNObjectEventListener"
 - !private "+"
+- "WKInterfaceController"
+- "HKSample"
+- "HKUnit"
+- !private "UnicodeScalarType"
+- "StringLiteralType"
+- !private "Dictionary"
+- "WKInterfaceImage"
+- "PubNub"
+- !private "HKWorkoutSessionLocationType"
 - "NSDate"
-- "WKExtensionDelegate"
+- "NSError"
+- !private "!"
+- "HKHealthStore"
+- !private "HKQuantityTypeIdentifier"
+- !private "print"
+- "HKWorkoutSession"
+- "BooleanLiteralType"
+- !private "HKObjectQueryNoLimit"
+- "InterfaceController"
 - !private "HKAnchoredObjectQuery"
 - "Void"
-- !private "print"
+- "HKWorkoutSessionState"
+- !private "arc4random_uniform"
+- !private "HKQuantityType"
+- "AnyObject"
+- !private "UInt32"
 - "PNMessageResult"
-- !private "=="
-- "PubNub"
-- "WKInterfaceLabel"
-- !private "PNConfiguration"
-- !private "HKObjectQueryNoLimit"
-- !private "!"
-- "BooleanLiteralType"
 - !private "NSLog"
+- !private "=="
+- "String"
+- !private "HKQuantitySample"
+- !private "Array"
+- "HKQuery"
+- !private "!="
+- "PNStatus"
+- "Double"
+- "WCSession"
+- "WKInterfaceButton"
+- "PNObjectEventListener"
+- "WKExtensionDelegate"
+- "WKInterfaceLabel"
+- "HKQueryAnchor"
+- "HKAnchoredObjectQueryNoAnchor"
+- "Int"
+- !private "Set"
+- "WKExtension"
+- !private "PNConfiguration"
+- !private "??"
+- "ExtensionDelegate"
 depends-member:
 - !private ["Ps9AnyObject", "HKAnchoredObjectQuery"]
 - ["Ps9AnyObject", "HKAnchoredObjectQueryNoAnchor"]
 - ["Ps9AnyObject", "HKHealthStore"]
 - !private ["Ps9AnyObject", "HKObjectQueryNoLimit"]
 - !private ["Ps9AnyObject", "HKQuantityType"]
-- !private ["Ps9AnyObject", "HKQuantityTypeIdentifierHeartRate"]
+- !private ["Ps9AnyObject", "HKQuantityTypeIdentifier"]
 - ["Ps9AnyObject", "HKQueryAnchor"]
 - ["Ps9AnyObject", "HKUnit"]
 - !private ["Ps9AnyObject", "HKWorkoutSession"]
@@ -107,7 +107,7 @@ depends-member:
 - !private ["Ps9AnyObject", "UInt32"]
 - ["Ps9AnyObject", "WKExtension"]
 - !private ["Ps9AnyObject", "actualChannel"]
-- !private ["Ps9AnyObject", "addListener"]
+- !private ["Ps9AnyObject", "add"]
 - ["Ps9AnyObject", "anchor"]
 - ["Ps9AnyObject", "applicationDidBecomeActive"]
 - ["Ps9AnyObject", "applicationDidEnterBackground"]
@@ -120,18 +120,17 @@ depends-member:
 - ["Ps9AnyObject", "channelList"]
 - ["Ps9AnyObject", "channelSentFromPhone"]
 - ["Ps9AnyObject", "client"]
-- !private ["Ps9AnyObject", "clientWithConfiguration"]
 - ["Ps9AnyObject", "currMoving"]
 - !private ["Ps9AnyObject", "data"]
 - !private ["Ps9AnyObject", "debugDescription"]
+- ["Ps9AnyObject", "delegate"]
 - ["Ps9AnyObject", "didReceive"]
 - ["Ps9AnyObject", "didReceiveLocalNotification"]
 - ["Ps9AnyObject", "didReceiveRemoteNotification"]
 - ["Ps9AnyObject", "displayUnallowed"]
-- !private ["Ps9AnyObject", "doubleValueForUnit"]
-- !private ["Ps9AnyObject", "endWorkoutSession"]
-- !private ["Ps9AnyObject", "error"]
-- !private ["Ps9AnyObject", "executeQuery"]
+- !private ["Ps9AnyObject", "doubleValue"]
+- !private ["Ps9AnyObject", "end"]
+- !private ["Ps9AnyObject", "execute"]
 - ["Ps9AnyObject", "genRandom"]
 - ["Ps9AnyObject", "handle"]
 - ["Ps9AnyObject", "handleAction"]
@@ -144,6 +143,7 @@ depends-member:
 - ["Ps9AnyObject", "heartRateUnit"]
 - ["Ps9AnyObject", "hrVal"]
 - ["Ps9AnyObject", "init"]
+- !private ["Ps9AnyObject", "isError"]
 - !private ["Ps9AnyObject", "isHealthDataAvailable"]
 - ["Ps9AnyObject", "label"]
 - ["Ps9AnyObject", "makeHRStreamingQuery"]
@@ -152,18 +152,18 @@ depends-member:
 - !private ["Ps9AnyObject", "publish"]
 - ["Ps9AnyObject", "publishHeartRate"]
 - !private ["Ps9AnyObject", "quantity"]
-- !private ["Ps9AnyObject", "quantityTypeForIdentifier"]
+- !private ["Ps9AnyObject", "quantityType"]
 - ["Ps9AnyObject", "randomName"]
-- !private ["Ps9AnyObject", "requestAuthorizationToShareTypes"]
+- !private ["Ps9AnyObject", "requestAuthorization"]
 - !private ["Ps9AnyObject", "sendMessage"]
 - ["Ps9AnyObject", "session"]
 - !private ["Ps9AnyObject", "setText"]
 - !private ["Ps9AnyObject", "setTitle"]
-- ["Ps9AnyObject", "sharedExtension"]
+- ["Ps9AnyObject", "shared"]
+- !private ["Ps9AnyObject", "start"]
 - ["Ps9AnyObject", "startBtnTapped"]
 - ["Ps9AnyObject", "startStopBtn"]
-- !private ["Ps9AnyObject", "startWorkoutSession"]
-- !private ["Ps9AnyObject", "stopQuery"]
+- !private ["Ps9AnyObject", "stop"]
 - !private ["Ps9AnyObject", "subscribedChannel"]
 - !private ["Ps9AnyObject", "timetoken"]
 - !private ["Ps9AnyObject", "updateHandler"]
@@ -239,7 +239,7 @@ depends-member:
 - ["Ps7CVarArg", "HKHealthStore"]
 - !private ["Ps7CVarArg", "HKObjectQueryNoLimit"]
 - !private ["Ps7CVarArg", "HKQuantityType"]
-- !private ["Ps7CVarArg", "HKQuantityTypeIdentifierHeartRate"]
+- !private ["Ps7CVarArg", "HKQuantityTypeIdentifier"]
 - ["Ps7CVarArg", "HKQueryAnchor"]
 - ["Ps7CVarArg", "HKUnit"]
 - !private ["Ps7CVarArg", "HKWorkoutSession"]
@@ -256,7 +256,7 @@ depends-member:
 - ["Ps7CVarArg", "WKExtension"]
 - !private ["Ps7CVarArg", "_DisabledRangeIndex"]
 - !private ["Ps7CVarArg", "actualChannel"]
-- !private ["Ps7CVarArg", "addListener"]
+- !private ["Ps7CVarArg", "add"]
 - ["Ps7CVarArg", "anchor"]
 - ["Ps7CVarArg", "applicationDidBecomeActive"]
 - ["Ps7CVarArg", "applicationDidEnterBackground"]
@@ -269,18 +269,17 @@ depends-member:
 - ["Ps7CVarArg", "channelList"]
 - ["Ps7CVarArg", "channelSentFromPhone"]
 - ["Ps7CVarArg", "client"]
-- !private ["Ps7CVarArg", "clientWithConfiguration"]
 - ["Ps7CVarArg", "currMoving"]
 - !private ["Ps7CVarArg", "data"]
 - !private ["Ps7CVarArg", "debugDescription"]
+- ["Ps7CVarArg", "delegate"]
 - ["Ps7CVarArg", "didReceive"]
 - ["Ps7CVarArg", "didReceiveLocalNotification"]
 - ["Ps7CVarArg", "didReceiveRemoteNotification"]
 - ["Ps7CVarArg", "displayUnallowed"]
-- !private ["Ps7CVarArg", "doubleValueForUnit"]
-- !private ["Ps7CVarArg", "endWorkoutSession"]
-- !private ["Ps7CVarArg", "error"]
-- !private ["Ps7CVarArg", "executeQuery"]
+- !private ["Ps7CVarArg", "doubleValue"]
+- !private ["Ps7CVarArg", "end"]
+- !private ["Ps7CVarArg", "execute"]
 - ["Ps7CVarArg", "genRandom"]
 - ["Ps7CVarArg", "handle"]
 - ["Ps7CVarArg", "handleAction"]
@@ -293,6 +292,7 @@ depends-member:
 - ["Ps7CVarArg", "heartRateUnit"]
 - ["Ps7CVarArg", "hrVal"]
 - ["Ps7CVarArg", "init"]
+- !private ["Ps7CVarArg", "isError"]
 - !private ["Ps7CVarArg", "isHealthDataAvailable"]
 - ["Ps7CVarArg", "label"]
 - ["Ps7CVarArg", "makeHRStreamingQuery"]
@@ -301,18 +301,18 @@ depends-member:
 - !private ["Ps7CVarArg", "publish"]
 - ["Ps7CVarArg", "publishHeartRate"]
 - !private ["Ps7CVarArg", "quantity"]
-- !private ["Ps7CVarArg", "quantityTypeForIdentifier"]
+- !private ["Ps7CVarArg", "quantityType"]
 - ["Ps7CVarArg", "randomName"]
-- !private ["Ps7CVarArg", "requestAuthorizationToShareTypes"]
+- !private ["Ps7CVarArg", "requestAuthorization"]
 - !private ["Ps7CVarArg", "sendMessage"]
 - ["Ps7CVarArg", "session"]
 - !private ["Ps7CVarArg", "setText"]
 - !private ["Ps7CVarArg", "setTitle"]
-- ["Ps7CVarArg", "sharedExtension"]
+- ["Ps7CVarArg", "shared"]
+- !private ["Ps7CVarArg", "start"]
 - ["Ps7CVarArg", "startBtnTapped"]
 - ["Ps7CVarArg", "startStopBtn"]
-- !private ["Ps7CVarArg", "startWorkoutSession"]
-- !private ["Ps7CVarArg", "stopQuery"]
+- !private ["Ps7CVarArg", "stop"]
 - !private ["Ps7CVarArg", "subscribedChannel"]
 - !private ["Ps7CVarArg", "timetoken"]
 - !private ["Ps7CVarArg", "updateHandler"]
@@ -347,14 +347,16 @@ depends-member:
 - !private ["Ps10Comparable", "Stride"]
 - !private ["Ps10Comparable", "_DisabledRangeIndex"]
 - !private ["Ps10Comparable", "_Element"]
+- !private ["Ps10Comparable", "heartRate"]
 - ["Ps10Comparable", "init"]
+- !private ["Ps10Comparable", "rawValue"]
 - !private ["Ps28CustomDebugStringConvertible", "Element"]
 - !private ["Ps28CustomDebugStringConvertible", "HKAnchoredObjectQuery"]
 - ["Ps28CustomDebugStringConvertible", "HKAnchoredObjectQueryNoAnchor"]
 - ["Ps28CustomDebugStringConvertible", "HKHealthStore"]
 - !private ["Ps28CustomDebugStringConvertible", "HKObjectQueryNoLimit"]
 - !private ["Ps28CustomDebugStringConvertible", "HKQuantityType"]
-- !private ["Ps28CustomDebugStringConvertible", "HKQuantityTypeIdentifierHeartRate"]
+- !private ["Ps28CustomDebugStringConvertible", "HKQuantityTypeIdentifier"]
 - ["Ps28CustomDebugStringConvertible", "HKQueryAnchor"]
 - ["Ps28CustomDebugStringConvertible", "HKUnit"]
 - !private ["Ps28CustomDebugStringConvertible", "HKWorkoutSession"]
@@ -375,7 +377,7 @@ depends-member:
 - ["Ps28CustomDebugStringConvertible", "WKExtension"]
 - !private ["Ps28CustomDebugStringConvertible", "_Element"]
 - !private ["Ps28CustomDebugStringConvertible", "actualChannel"]
-- !private ["Ps28CustomDebugStringConvertible", "addListener"]
+- !private ["Ps28CustomDebugStringConvertible", "add"]
 - ["Ps28CustomDebugStringConvertible", "anchor"]
 - !private ["Ps28CustomDebugStringConvertible", "append"]
 - ["Ps28CustomDebugStringConvertible", "applicationDidBecomeActive"]
@@ -389,19 +391,18 @@ depends-member:
 - ["Ps28CustomDebugStringConvertible", "channelList"]
 - ["Ps28CustomDebugStringConvertible", "channelSentFromPhone"]
 - ["Ps28CustomDebugStringConvertible", "client"]
-- !private ["Ps28CustomDebugStringConvertible", "clientWithConfiguration"]
 - !private ["Ps28CustomDebugStringConvertible", "count"]
 - ["Ps28CustomDebugStringConvertible", "currMoving"]
 - !private ["Ps28CustomDebugStringConvertible", "data"]
 - !private ["Ps28CustomDebugStringConvertible", "debugDescription"]
+- ["Ps28CustomDebugStringConvertible", "delegate"]
 - ["Ps28CustomDebugStringConvertible", "didReceive"]
 - ["Ps28CustomDebugStringConvertible", "didReceiveLocalNotification"]
 - ["Ps28CustomDebugStringConvertible", "didReceiveRemoteNotification"]
 - ["Ps28CustomDebugStringConvertible", "displayUnallowed"]
-- !private ["Ps28CustomDebugStringConvertible", "doubleValueForUnit"]
-- !private ["Ps28CustomDebugStringConvertible", "endWorkoutSession"]
-- !private ["Ps28CustomDebugStringConvertible", "error"]
-- !private ["Ps28CustomDebugStringConvertible", "executeQuery"]
+- !private ["Ps28CustomDebugStringConvertible", "doubleValue"]
+- !private ["Ps28CustomDebugStringConvertible", "end"]
+- !private ["Ps28CustomDebugStringConvertible", "execute"]
 - !private ["Ps28CustomDebugStringConvertible", "first"]
 - ["Ps28CustomDebugStringConvertible", "genRandom"]
 - ["Ps28CustomDebugStringConvertible", "handle"]
@@ -415,6 +416,7 @@ depends-member:
 - ["Ps28CustomDebugStringConvertible", "heartRateUnit"]
 - ["Ps28CustomDebugStringConvertible", "hrVal"]
 - ["Ps28CustomDebugStringConvertible", "init"]
+- !private ["Ps28CustomDebugStringConvertible", "isError"]
 - !private ["Ps28CustomDebugStringConvertible", "isHealthDataAvailable"]
 - ["Ps28CustomDebugStringConvertible", "label"]
 - ["Ps28CustomDebugStringConvertible", "makeHRStreamingQuery"]
@@ -423,19 +425,19 @@ depends-member:
 - !private ["Ps28CustomDebugStringConvertible", "publish"]
 - ["Ps28CustomDebugStringConvertible", "publishHeartRate"]
 - !private ["Ps28CustomDebugStringConvertible", "quantity"]
-- !private ["Ps28CustomDebugStringConvertible", "quantityTypeForIdentifier"]
+- !private ["Ps28CustomDebugStringConvertible", "quantityType"]
 - ["Ps28CustomDebugStringConvertible", "randomName"]
-- !private ["Ps28CustomDebugStringConvertible", "requestAuthorizationToShareTypes"]
+- !private ["Ps28CustomDebugStringConvertible", "requestAuthorization"]
 - !private ["Ps28CustomDebugStringConvertible", "sendMessage"]
 - ["Ps28CustomDebugStringConvertible", "session"]
 - !private ["Ps28CustomDebugStringConvertible", "setText"]
 - !private ["Ps28CustomDebugStringConvertible", "setTitle"]
-- ["Ps28CustomDebugStringConvertible", "sharedExtension"]
+- ["Ps28CustomDebugStringConvertible", "shared"]
 - ["Ps28CustomDebugStringConvertible", "some"]
+- !private ["Ps28CustomDebugStringConvertible", "start"]
 - ["Ps28CustomDebugStringConvertible", "startBtnTapped"]
 - ["Ps28CustomDebugStringConvertible", "startStopBtn"]
-- !private ["Ps28CustomDebugStringConvertible", "startWorkoutSession"]
-- !private ["Ps28CustomDebugStringConvertible", "stopQuery"]
+- !private ["Ps28CustomDebugStringConvertible", "stop"]
 - !private ["Ps28CustomDebugStringConvertible", "subscribedChannel"]
 - !private ["Ps28CustomDebugStringConvertible", "subscript"]
 - !private ["Ps28CustomDebugStringConvertible", "timetoken"]
@@ -480,7 +482,7 @@ depends-member:
 - ["Ps23CustomStringConvertible", "HKHealthStore"]
 - !private ["Ps23CustomStringConvertible", "HKObjectQueryNoLimit"]
 - !private ["Ps23CustomStringConvertible", "HKQuantityType"]
-- !private ["Ps23CustomStringConvertible", "HKQuantityTypeIdentifierHeartRate"]
+- !private ["Ps23CustomStringConvertible", "HKQuantityTypeIdentifier"]
 - ["Ps23CustomStringConvertible", "HKQueryAnchor"]
 - ["Ps23CustomStringConvertible", "HKUnit"]
 - !private ["Ps23CustomStringConvertible", "HKWorkoutSession"]
@@ -505,7 +507,7 @@ depends-member:
 - !private ["Ps23CustomStringConvertible", "_Element"]
 - !private ["Ps23CustomStringConvertible", "_getBuiltinLogicValue"]
 - !private ["Ps23CustomStringConvertible", "actualChannel"]
-- !private ["Ps23CustomStringConvertible", "addListener"]
+- !private ["Ps23CustomStringConvertible", "add"]
 - ["Ps23CustomStringConvertible", "anchor"]
 - !private ["Ps23CustomStringConvertible", "append"]
 - ["Ps23CustomStringConvertible", "applicationDidBecomeActive"]
@@ -519,19 +521,18 @@ depends-member:
 - ["Ps23CustomStringConvertible", "channelList"]
 - ["Ps23CustomStringConvertible", "channelSentFromPhone"]
 - ["Ps23CustomStringConvertible", "client"]
-- !private ["Ps23CustomStringConvertible", "clientWithConfiguration"]
 - !private ["Ps23CustomStringConvertible", "count"]
 - ["Ps23CustomStringConvertible", "currMoving"]
 - !private ["Ps23CustomStringConvertible", "data"]
 - !private ["Ps23CustomStringConvertible", "debugDescription"]
+- ["Ps23CustomStringConvertible", "delegate"]
 - ["Ps23CustomStringConvertible", "didReceive"]
 - ["Ps23CustomStringConvertible", "didReceiveLocalNotification"]
 - ["Ps23CustomStringConvertible", "didReceiveRemoteNotification"]
 - ["Ps23CustomStringConvertible", "displayUnallowed"]
-- !private ["Ps23CustomStringConvertible", "doubleValueForUnit"]
-- !private ["Ps23CustomStringConvertible", "endWorkoutSession"]
-- !private ["Ps23CustomStringConvertible", "error"]
-- !private ["Ps23CustomStringConvertible", "executeQuery"]
+- !private ["Ps23CustomStringConvertible", "doubleValue"]
+- !private ["Ps23CustomStringConvertible", "end"]
+- !private ["Ps23CustomStringConvertible", "execute"]
 - !private ["Ps23CustomStringConvertible", "first"]
 - ["Ps23CustomStringConvertible", "genRandom"]
 - ["Ps23CustomStringConvertible", "handle"]
@@ -545,6 +546,7 @@ depends-member:
 - ["Ps23CustomStringConvertible", "heartRateUnit"]
 - ["Ps23CustomStringConvertible", "hrVal"]
 - ["Ps23CustomStringConvertible", "init"]
+- !private ["Ps23CustomStringConvertible", "isError"]
 - !private ["Ps23CustomStringConvertible", "isHealthDataAvailable"]
 - ["Ps23CustomStringConvertible", "label"]
 - ["Ps23CustomStringConvertible", "makeHRStreamingQuery"]
@@ -553,18 +555,18 @@ depends-member:
 - !private ["Ps23CustomStringConvertible", "publish"]
 - ["Ps23CustomStringConvertible", "publishHeartRate"]
 - !private ["Ps23CustomStringConvertible", "quantity"]
-- !private ["Ps23CustomStringConvertible", "quantityTypeForIdentifier"]
+- !private ["Ps23CustomStringConvertible", "quantityType"]
 - ["Ps23CustomStringConvertible", "randomName"]
-- !private ["Ps23CustomStringConvertible", "requestAuthorizationToShareTypes"]
+- !private ["Ps23CustomStringConvertible", "requestAuthorization"]
 - !private ["Ps23CustomStringConvertible", "sendMessage"]
 - ["Ps23CustomStringConvertible", "session"]
 - !private ["Ps23CustomStringConvertible", "setText"]
 - !private ["Ps23CustomStringConvertible", "setTitle"]
-- ["Ps23CustomStringConvertible", "sharedExtension"]
+- ["Ps23CustomStringConvertible", "shared"]
+- !private ["Ps23CustomStringConvertible", "start"]
 - ["Ps23CustomStringConvertible", "startBtnTapped"]
 - ["Ps23CustomStringConvertible", "startStopBtn"]
-- !private ["Ps23CustomStringConvertible", "startWorkoutSession"]
-- !private ["Ps23CustomStringConvertible", "stopQuery"]
+- !private ["Ps23CustomStringConvertible", "stop"]
 - !private ["Ps23CustomStringConvertible", "subscribedChannel"]
 - !private ["Ps23CustomStringConvertible", "subscript"]
 - !private ["Ps23CustomStringConvertible", "timetoken"]
@@ -604,26 +606,22 @@ depends-member:
 - !private ["V8Dispatch16DispatchWallTime", "deinit"]
 - !private ["Sd", "deinit"]
 - !private ["Ps9Equatable", "Element"]
-- ["Ps9Equatable", "Ended"]
 - !private ["Ps9Equatable", "HKAnchoredObjectQuery"]
 - ["Ps9Equatable", "HKAnchoredObjectQueryNoAnchor"]
 - ["Ps9Equatable", "HKHealthStore"]
 - !private ["Ps9Equatable", "HKObjectQueryNoLimit"]
 - !private ["Ps9Equatable", "HKQuantityType"]
-- !private ["Ps9Equatable", "HKQuantityTypeIdentifierHeartRate"]
+- !private ["Ps9Equatable", "HKQuantityTypeIdentifier"]
 - ["Ps9Equatable", "HKQueryAnchor"]
 - ["Ps9Equatable", "HKUnit"]
 - !private ["Ps9Equatable", "HKWorkoutSession"]
 - !private ["Ps9Equatable", "HKWorkoutSessionLocationType"]
-- !private ["Ps9Equatable", "Hiking"]
-- !private ["Ps9Equatable", "Indoor"]
 - ["Ps9Equatable", "Int"]
 - !private ["Ps9Equatable", "IntegerLiteralType"]
 - !private ["Ps9Equatable", "Iterator"]
 - !private ["Ps9Equatable", "NSLog"]
 - !private ["Ps9Equatable", "PNConfiguration"]
 - !private ["Ps9Equatable", "PubNub"]
-- ["Ps9Equatable", "Running"]
 - !private ["Ps9Equatable", "Set"]
 - !private ["Ps9Equatable", "Stride"]
 - ["Ps9Equatable", "String"]
@@ -633,7 +631,7 @@ depends-member:
 - !private ["Ps9Equatable", "_Element"]
 - !private ["Ps9Equatable", "_getBuiltinLogicValue"]
 - !private ["Ps9Equatable", "actualChannel"]
-- !private ["Ps9Equatable", "addListener"]
+- !private ["Ps9Equatable", "add"]
 - ["Ps9Equatable", "anchor"]
 - ["Ps9Equatable", "applicationDidBecomeActive"]
 - ["Ps9Equatable", "applicationDidEnterBackground"]
@@ -646,18 +644,18 @@ depends-member:
 - ["Ps9Equatable", "channelList"]
 - ["Ps9Equatable", "channelSentFromPhone"]
 - ["Ps9Equatable", "client"]
-- !private ["Ps9Equatable", "clientWithConfiguration"]
 - ["Ps9Equatable", "currMoving"]
 - !private ["Ps9Equatable", "data"]
 - !private ["Ps9Equatable", "debugDescription"]
+- ["Ps9Equatable", "delegate"]
 - ["Ps9Equatable", "didReceive"]
 - ["Ps9Equatable", "didReceiveLocalNotification"]
 - ["Ps9Equatable", "didReceiveRemoteNotification"]
 - ["Ps9Equatable", "displayUnallowed"]
-- !private ["Ps9Equatable", "doubleValueForUnit"]
-- !private ["Ps9Equatable", "endWorkoutSession"]
-- !private ["Ps9Equatable", "error"]
-- !private ["Ps9Equatable", "executeQuery"]
+- !private ["Ps9Equatable", "doubleValue"]
+- !private ["Ps9Equatable", "end"]
+- ["Ps9Equatable", "ended"]
+- !private ["Ps9Equatable", "execute"]
 - ["Ps9Equatable", "genRandom"]
 - ["Ps9Equatable", "handle"]
 - ["Ps9Equatable", "handleAction"]
@@ -667,9 +665,13 @@ depends-member:
 - ["Ps9Equatable", "handleWorkoutConfiguration"]
 - ["Ps9Equatable", "healthStore"]
 - ["Ps9Equatable", "heart"]
+- !private ["Ps9Equatable", "heartRate"]
 - ["Ps9Equatable", "heartRateUnit"]
+- !private ["Ps9Equatable", "hiking"]
 - ["Ps9Equatable", "hrVal"]
+- !private ["Ps9Equatable", "indoor"]
 - ["Ps9Equatable", "init"]
+- !private ["Ps9Equatable", "isError"]
 - !private ["Ps9Equatable", "isHealthDataAvailable"]
 - ["Ps9Equatable", "label"]
 - ["Ps9Equatable", "makeHRStreamingQuery"]
@@ -678,18 +680,20 @@ depends-member:
 - !private ["Ps9Equatable", "publish"]
 - ["Ps9Equatable", "publishHeartRate"]
 - !private ["Ps9Equatable", "quantity"]
-- !private ["Ps9Equatable", "quantityTypeForIdentifier"]
+- !private ["Ps9Equatable", "quantityType"]
 - ["Ps9Equatable", "randomName"]
-- !private ["Ps9Equatable", "requestAuthorizationToShareTypes"]
+- !private ["Ps9Equatable", "rawValue"]
+- !private ["Ps9Equatable", "requestAuthorization"]
+- ["Ps9Equatable", "running"]
 - !private ["Ps9Equatable", "sendMessage"]
 - ["Ps9Equatable", "session"]
 - !private ["Ps9Equatable", "setText"]
 - !private ["Ps9Equatable", "setTitle"]
-- ["Ps9Equatable", "sharedExtension"]
+- ["Ps9Equatable", "shared"]
+- !private ["Ps9Equatable", "start"]
 - ["Ps9Equatable", "startBtnTapped"]
 - ["Ps9Equatable", "startStopBtn"]
-- !private ["Ps9Equatable", "startWorkoutSession"]
-- !private ["Ps9Equatable", "stopQuery"]
+- !private ["Ps9Equatable", "stop"]
 - !private ["Ps9Equatable", "subscribedChannel"]
 - !private ["Ps9Equatable", "timetoken"]
 - !private ["Ps9Equatable", "updateHandler"]
@@ -712,51 +716,48 @@ depends-member:
 - !private ["Vs7Float80", "deinit"]
 - !private ["CSo21HKAnchoredObjectQuery", "init"]
 - !private ["CSo21HKAnchoredObjectQuery", "updateHandler"]
-- !private ["CSo13HKHealthStore", "endWorkoutSession"]
-- !private ["CSo13HKHealthStore", "executeQuery"]
+- !private ["CSo13HKHealthStore", "end"]
+- !private ["CSo13HKHealthStore", "execute"]
 - ["CSo13HKHealthStore", "init"]
 - !private ["CSo13HKHealthStore", "isHealthDataAvailable"]
-- !private ["CSo13HKHealthStore", "requestAuthorizationToShareTypes"]
-- !private ["CSo13HKHealthStore", "startWorkoutSession"]
-- !private ["CSo13HKHealthStore", "stopQuery"]
+- !private ["CSo13HKHealthStore", "requestAuthorization"]
+- !private ["CSo13HKHealthStore", "start"]
+- !private ["CSo13HKHealthStore", "stop"]
 - !private ["CSo8HKObject", "quantity"]
-- !private ["CSo12HKObjectType", "quantityTypeForIdentifier"]
-- !private ["CSo10HKQuantity", "doubleValueForUnit"]
+- !private ["CSo12HKObjectType", "quantityType"]
+- !private ["CSo10HKQuantity", "doubleValue"]
 - !private ["CSo16HKQuantitySample", "quantity"]
-- !private ["CSo14HKQuantityType", "quantityTypeForIdentifier"]
-- !private ["VSC24HKQuantityTypeIdentifier", "deinit"]
+- !private ["CSo14HKQuantityType", "quantityType"]
+- !private ["VSC24HKQuantityTypeIdentifier", "heartRate"]
+- !private ["VSC24HKQuantityTypeIdentifier", "rawValue"]
 - !private ["CSo7HKQuery", "init"]
 - !private ["CSo7HKQuery", "updateHandler"]
 - ["CSo13HKQueryAnchor", "init"]
 - !private ["CSo8HKSample", "quantity"]
-- !private ["CSo12HKSampleType", "quantityTypeForIdentifier"]
+- !private ["CSo12HKSampleType", "quantityType"]
 - ["CSo6HKUnit", "init"]
-- !private ["OSC21HKWorkoutActivityType", "Hiking"]
+- !private ["OSC21HKWorkoutActivityType", "hiking"]
 - !private ["CSo16HKWorkoutSession", "init"]
-- !private ["OSC28HKWorkoutSessionLocationType", "Indoor"]
-- ["OSC21HKWorkoutSessionState", "Ended"]
-- ["OSC21HKWorkoutSessionState", "Running"]
+- !private ["OSC28HKWorkoutSessionLocationType", "indoor"]
+- ["OSC21HKWorkoutSessionState", "ended"]
+- ["OSC21HKWorkoutSessionState", "running"]
 - !private ["Ps8Hashable", "Element"]
-- ["Ps8Hashable", "Ended"]
 - !private ["Ps8Hashable", "HKAnchoredObjectQuery"]
 - ["Ps8Hashable", "HKAnchoredObjectQueryNoAnchor"]
 - ["Ps8Hashable", "HKHealthStore"]
 - !private ["Ps8Hashable", "HKObjectQueryNoLimit"]
 - !private ["Ps8Hashable", "HKQuantityType"]
-- !private ["Ps8Hashable", "HKQuantityTypeIdentifierHeartRate"]
+- !private ["Ps8Hashable", "HKQuantityTypeIdentifier"]
 - ["Ps8Hashable", "HKQueryAnchor"]
 - ["Ps8Hashable", "HKUnit"]
 - !private ["Ps8Hashable", "HKWorkoutSession"]
 - !private ["Ps8Hashable", "HKWorkoutSessionLocationType"]
-- !private ["Ps8Hashable", "Hiking"]
-- !private ["Ps8Hashable", "Indoor"]
 - ["Ps8Hashable", "Int"]
 - !private ["Ps8Hashable", "IntegerLiteralType"]
 - !private ["Ps8Hashable", "Iterator"]
 - !private ["Ps8Hashable", "NSLog"]
 - !private ["Ps8Hashable", "PNConfiguration"]
 - !private ["Ps8Hashable", "PubNub"]
-- ["Ps8Hashable", "Running"]
 - !private ["Ps8Hashable", "Set"]
 - !private ["Ps8Hashable", "Stride"]
 - ["Ps8Hashable", "String"]
@@ -766,7 +767,7 @@ depends-member:
 - !private ["Ps8Hashable", "_Element"]
 - !private ["Ps8Hashable", "_getBuiltinLogicValue"]
 - !private ["Ps8Hashable", "actualChannel"]
-- !private ["Ps8Hashable", "addListener"]
+- !private ["Ps8Hashable", "add"]
 - ["Ps8Hashable", "anchor"]
 - ["Ps8Hashable", "applicationDidBecomeActive"]
 - ["Ps8Hashable", "applicationDidEnterBackground"]
@@ -779,18 +780,18 @@ depends-member:
 - ["Ps8Hashable", "channelList"]
 - ["Ps8Hashable", "channelSentFromPhone"]
 - ["Ps8Hashable", "client"]
-- !private ["Ps8Hashable", "clientWithConfiguration"]
 - ["Ps8Hashable", "currMoving"]
 - !private ["Ps8Hashable", "data"]
 - !private ["Ps8Hashable", "debugDescription"]
+- ["Ps8Hashable", "delegate"]
 - ["Ps8Hashable", "didReceive"]
 - ["Ps8Hashable", "didReceiveLocalNotification"]
 - ["Ps8Hashable", "didReceiveRemoteNotification"]
 - ["Ps8Hashable", "displayUnallowed"]
-- !private ["Ps8Hashable", "doubleValueForUnit"]
-- !private ["Ps8Hashable", "endWorkoutSession"]
-- !private ["Ps8Hashable", "error"]
-- !private ["Ps8Hashable", "executeQuery"]
+- !private ["Ps8Hashable", "doubleValue"]
+- !private ["Ps8Hashable", "end"]
+- ["Ps8Hashable", "ended"]
+- !private ["Ps8Hashable", "execute"]
 - ["Ps8Hashable", "genRandom"]
 - ["Ps8Hashable", "handle"]
 - ["Ps8Hashable", "handleAction"]
@@ -800,9 +801,13 @@ depends-member:
 - ["Ps8Hashable", "handleWorkoutConfiguration"]
 - ["Ps8Hashable", "healthStore"]
 - ["Ps8Hashable", "heart"]
+- !private ["Ps8Hashable", "heartRate"]
 - ["Ps8Hashable", "heartRateUnit"]
+- !private ["Ps8Hashable", "hiking"]
 - ["Ps8Hashable", "hrVal"]
+- !private ["Ps8Hashable", "indoor"]
 - ["Ps8Hashable", "init"]
+- !private ["Ps8Hashable", "isError"]
 - !private ["Ps8Hashable", "isHealthDataAvailable"]
 - ["Ps8Hashable", "label"]
 - ["Ps8Hashable", "makeHRStreamingQuery"]
@@ -811,18 +816,20 @@ depends-member:
 - !private ["Ps8Hashable", "publish"]
 - ["Ps8Hashable", "publishHeartRate"]
 - !private ["Ps8Hashable", "quantity"]
-- !private ["Ps8Hashable", "quantityTypeForIdentifier"]
+- !private ["Ps8Hashable", "quantityType"]
 - ["Ps8Hashable", "randomName"]
-- !private ["Ps8Hashable", "requestAuthorizationToShareTypes"]
+- !private ["Ps8Hashable", "rawValue"]
+- !private ["Ps8Hashable", "requestAuthorization"]
+- ["Ps8Hashable", "running"]
 - !private ["Ps8Hashable", "sendMessage"]
 - ["Ps8Hashable", "session"]
 - !private ["Ps8Hashable", "setText"]
 - !private ["Ps8Hashable", "setTitle"]
-- ["Ps8Hashable", "sharedExtension"]
+- ["Ps8Hashable", "shared"]
+- !private ["Ps8Hashable", "start"]
 - ["Ps8Hashable", "startBtnTapped"]
 - ["Ps8Hashable", "startStopBtn"]
-- !private ["Ps8Hashable", "startWorkoutSession"]
-- !private ["Ps8Hashable", "stopQuery"]
+- !private ["Ps8Hashable", "stop"]
 - !private ["Ps8Hashable", "subscribedChannel"]
 - !private ["Ps8Hashable", "timetoken"]
 - !private ["Ps8Hashable", "updateHandler"]
@@ -898,7 +905,7 @@ depends-member:
 - !private ["C22getHeartRate_Extension19InterfaceController", "HKObjectQueryNoLimit"]
 - !private ["C22getHeartRate_Extension19InterfaceController", "HKQuantitySample"]
 - !private ["C22getHeartRate_Extension19InterfaceController", "HKQuantityType"]
-- !private ["C22getHeartRate_Extension19InterfaceController", "HKQuantityTypeIdentifierHeartRate"]
+- !private ["C22getHeartRate_Extension19InterfaceController", "HKQuantityTypeIdentifier"]
 - ["C22getHeartRate_Extension19InterfaceController", "HKQuery"]
 - ["C22getHeartRate_Extension19InterfaceController", "HKQueryAnchor"]
 - ["C22getHeartRate_Extension19InterfaceController", "HKSample"]
@@ -998,14 +1005,14 @@ depends-member:
 - !private ["Ps16MutableIndexable", "first"]
 - ["Ps16MutableIndexable", "init"]
 - !private ["Ps16MutableIndexable", "subscript"]
-- !private ["PSo8NSCoding", "doubleValueForUnit"]
+- !private ["PSo8NSCoding", "doubleValue"]
 - ["PSo8NSCoding", "init"]
 - !private ["PSo8NSCoding", "quantity"]
-- !private ["PSo8NSCoding", "quantityTypeForIdentifier"]
+- !private ["PSo8NSCoding", "quantityType"]
 - !private ["PSo8NSCoding", "userInfo"]
-- !private ["PSo9NSCopying", "doubleValueForUnit"]
+- !private ["PSo9NSCopying", "doubleValue"]
 - ["PSo9NSCopying", "init"]
-- !private ["PSo9NSCopying", "quantityTypeForIdentifier"]
+- !private ["PSo9NSCopying", "quantityType"]
 - !private ["PSo9NSCopying", "userInfo"]
 - !private ["CSo7NSError", "userInfo"]
 - !private ["PSo16NSMutableCopying", "init"]
@@ -1018,7 +1025,7 @@ depends-member:
 - !private ["CSo8NSObject", "HKObjectQueryNoLimit"]
 - !private ["CSo8NSObject", "HKQuantitySample"]
 - !private ["CSo8NSObject", "HKQuantityType"]
-- !private ["CSo8NSObject", "HKQuantityTypeIdentifierHeartRate"]
+- !private ["CSo8NSObject", "HKQuantityTypeIdentifier"]
 - ["CSo8NSObject", "HKQuery"]
 - ["CSo8NSObject", "HKQueryAnchor"]
 - ["CSo8NSObject", "HKSample"]
@@ -1044,7 +1051,7 @@ depends-member:
 - ["CSo8NSObject", "WKInterfaceImage"]
 - ["CSo8NSObject", "WKInterfaceLabel"]
 - !private ["CSo8NSObject", "actualChannel"]
-- !private ["CSo8NSObject", "addListener"]
+- !private ["CSo8NSObject", "add"]
 - ["CSo8NSObject", "anchor"]
 - ["CSo8NSObject", "applicationDidBecomeActive"]
 - ["CSo8NSObject", "applicationDidEnterBackground"]
@@ -1057,18 +1064,17 @@ depends-member:
 - ["CSo8NSObject", "channelList"]
 - ["CSo8NSObject", "channelSentFromPhone"]
 - ["CSo8NSObject", "client"]
-- !private ["CSo8NSObject", "clientWithConfiguration"]
 - ["CSo8NSObject", "currMoving"]
 - !private ["CSo8NSObject", "data"]
 - !private ["CSo8NSObject", "debugDescription"]
+- ["CSo8NSObject", "delegate"]
 - ["CSo8NSObject", "didReceive"]
 - ["CSo8NSObject", "didReceiveLocalNotification"]
 - ["CSo8NSObject", "didReceiveRemoteNotification"]
 - ["CSo8NSObject", "displayUnallowed"]
-- !private ["CSo8NSObject", "doubleValueForUnit"]
-- !private ["CSo8NSObject", "endWorkoutSession"]
-- !private ["CSo8NSObject", "error"]
-- !private ["CSo8NSObject", "executeQuery"]
+- !private ["CSo8NSObject", "doubleValue"]
+- !private ["CSo8NSObject", "end"]
+- !private ["CSo8NSObject", "execute"]
 - ["CSo8NSObject", "genRandom"]
 - ["CSo8NSObject", "handle"]
 - ["CSo8NSObject", "handleAction"]
@@ -1081,6 +1087,7 @@ depends-member:
 - ["CSo8NSObject", "heartRateUnit"]
 - ["CSo8NSObject", "hrVal"]
 - ["CSo8NSObject", "init"]
+- !private ["CSo8NSObject", "isError"]
 - !private ["CSo8NSObject", "isHealthDataAvailable"]
 - ["CSo8NSObject", "label"]
 - ["CSo8NSObject", "makeHRStreamingQuery"]
@@ -1089,18 +1096,18 @@ depends-member:
 - !private ["CSo8NSObject", "publish"]
 - ["CSo8NSObject", "publishHeartRate"]
 - !private ["CSo8NSObject", "quantity"]
-- !private ["CSo8NSObject", "quantityTypeForIdentifier"]
+- !private ["CSo8NSObject", "quantityType"]
 - ["CSo8NSObject", "randomName"]
-- !private ["CSo8NSObject", "requestAuthorizationToShareTypes"]
+- !private ["CSo8NSObject", "requestAuthorization"]
 - !private ["CSo8NSObject", "sendMessage"]
 - ["CSo8NSObject", "session"]
 - !private ["CSo8NSObject", "setText"]
 - !private ["CSo8NSObject", "setTitle"]
-- ["CSo8NSObject", "sharedExtension"]
+- ["CSo8NSObject", "shared"]
+- !private ["CSo8NSObject", "start"]
 - ["CSo8NSObject", "startBtnTapped"]
 - ["CSo8NSObject", "startStopBtn"]
-- !private ["CSo8NSObject", "startWorkoutSession"]
-- !private ["CSo8NSObject", "stopQuery"]
+- !private ["CSo8NSObject", "stop"]
 - !private ["CSo8NSObject", "subscribedChannel"]
 - !private ["CSo8NSObject", "timetoken"]
 - !private ["CSo8NSObject", "updateHandler"]
@@ -1119,7 +1126,7 @@ depends-member:
 - ["PSo16NSObjectProtocol", "HKHealthStore"]
 - !private ["PSo16NSObjectProtocol", "HKObjectQueryNoLimit"]
 - !private ["PSo16NSObjectProtocol", "HKQuantityType"]
-- !private ["PSo16NSObjectProtocol", "HKQuantityTypeIdentifierHeartRate"]
+- !private ["PSo16NSObjectProtocol", "HKQuantityTypeIdentifier"]
 - ["PSo16NSObjectProtocol", "HKQueryAnchor"]
 - ["PSo16NSObjectProtocol", "HKUnit"]
 - !private ["PSo16NSObjectProtocol", "HKWorkoutSession"]
@@ -1133,7 +1140,7 @@ depends-member:
 - !private ["PSo16NSObjectProtocol", "UInt32"]
 - ["PSo16NSObjectProtocol", "WKExtension"]
 - !private ["PSo16NSObjectProtocol", "actualChannel"]
-- !private ["PSo16NSObjectProtocol", "addListener"]
+- !private ["PSo16NSObjectProtocol", "add"]
 - ["PSo16NSObjectProtocol", "anchor"]
 - ["PSo16NSObjectProtocol", "applicationDidBecomeActive"]
 - ["PSo16NSObjectProtocol", "applicationDidEnterBackground"]
@@ -1146,18 +1153,17 @@ depends-member:
 - ["PSo16NSObjectProtocol", "channelList"]
 - ["PSo16NSObjectProtocol", "channelSentFromPhone"]
 - ["PSo16NSObjectProtocol", "client"]
-- !private ["PSo16NSObjectProtocol", "clientWithConfiguration"]
 - ["PSo16NSObjectProtocol", "currMoving"]
 - !private ["PSo16NSObjectProtocol", "data"]
 - !private ["PSo16NSObjectProtocol", "debugDescription"]
+- ["PSo16NSObjectProtocol", "delegate"]
 - ["PSo16NSObjectProtocol", "didReceive"]
 - ["PSo16NSObjectProtocol", "didReceiveLocalNotification"]
 - ["PSo16NSObjectProtocol", "didReceiveRemoteNotification"]
 - ["PSo16NSObjectProtocol", "displayUnallowed"]
-- !private ["PSo16NSObjectProtocol", "doubleValueForUnit"]
-- !private ["PSo16NSObjectProtocol", "endWorkoutSession"]
-- !private ["PSo16NSObjectProtocol", "error"]
-- !private ["PSo16NSObjectProtocol", "executeQuery"]
+- !private ["PSo16NSObjectProtocol", "doubleValue"]
+- !private ["PSo16NSObjectProtocol", "end"]
+- !private ["PSo16NSObjectProtocol", "execute"]
 - ["PSo16NSObjectProtocol", "genRandom"]
 - ["PSo16NSObjectProtocol", "handle"]
 - ["PSo16NSObjectProtocol", "handleAction"]
@@ -1170,6 +1176,7 @@ depends-member:
 - ["PSo16NSObjectProtocol", "heartRateUnit"]
 - ["PSo16NSObjectProtocol", "hrVal"]
 - ["PSo16NSObjectProtocol", "init"]
+- !private ["PSo16NSObjectProtocol", "isError"]
 - !private ["PSo16NSObjectProtocol", "isHealthDataAvailable"]
 - ["PSo16NSObjectProtocol", "label"]
 - ["PSo16NSObjectProtocol", "makeHRStreamingQuery"]
@@ -1178,18 +1185,18 @@ depends-member:
 - !private ["PSo16NSObjectProtocol", "publish"]
 - ["PSo16NSObjectProtocol", "publishHeartRate"]
 - !private ["PSo16NSObjectProtocol", "quantity"]
-- !private ["PSo16NSObjectProtocol", "quantityTypeForIdentifier"]
+- !private ["PSo16NSObjectProtocol", "quantityType"]
 - ["PSo16NSObjectProtocol", "randomName"]
-- !private ["PSo16NSObjectProtocol", "requestAuthorizationToShareTypes"]
+- !private ["PSo16NSObjectProtocol", "requestAuthorization"]
 - !private ["PSo16NSObjectProtocol", "sendMessage"]
 - ["PSo16NSObjectProtocol", "session"]
 - !private ["PSo16NSObjectProtocol", "setText"]
 - !private ["PSo16NSObjectProtocol", "setTitle"]
-- ["PSo16NSObjectProtocol", "sharedExtension"]
+- ["PSo16NSObjectProtocol", "shared"]
+- !private ["PSo16NSObjectProtocol", "start"]
 - ["PSo16NSObjectProtocol", "startBtnTapped"]
 - ["PSo16NSObjectProtocol", "startStopBtn"]
-- !private ["PSo16NSObjectProtocol", "startWorkoutSession"]
-- !private ["PSo16NSObjectProtocol", "stopQuery"]
+- !private ["PSo16NSObjectProtocol", "stop"]
 - !private ["PSo16NSObjectProtocol", "subscribedChannel"]
 - !private ["PSo16NSObjectProtocol", "timetoken"]
 - !private ["PSo16NSObjectProtocol", "updateHandler"]
@@ -1204,22 +1211,22 @@ depends-member:
 - ["PSo16NSObjectProtocol", "workoutSesh"]
 - ["PSo16NSObjectProtocol", "workoutSession"]
 - ["PSo16NSObjectProtocol", ""]
-- !private ["PSo14NSSecureCoding", "doubleValueForUnit"]
+- !private ["PSo14NSSecureCoding", "doubleValue"]
 - ["PSo14NSSecureCoding", "init"]
 - !private ["PSo14NSSecureCoding", "quantity"]
-- !private ["PSo14NSSecureCoding", "quantityTypeForIdentifier"]
+- !private ["PSo14NSSecureCoding", "quantityType"]
 - !private ["PSo14NSSecureCoding", "userInfo"]
 - !private ["CSo8NSString", "deinit"]
 - !private ["CSo8NSString", "init"]
 - ["Ps21NilLiteralConvertible", "some"]
-- !private ["Sq", "deinit"]
+- ["Sq", "deinit"]
 - ["Sq", "some"]
 - !private ["Ps12OutputStream", "init"]
 - !private ["CSo22PNAcknowledgmentStatus", "debugDescription"]
-- !private ["CSo22PNAcknowledgmentStatus", "error"]
+- !private ["CSo22PNAcknowledgmentStatus", "isError"]
 - !private ["CSo15PNConfiguration", "init"]
 - !private ["CSo13PNErrorStatus", "debugDescription"]
-- !private ["CSo13PNErrorStatus", "error"]
+- !private ["CSo13PNErrorStatus", "isError"]
 - !private ["CSo13PNMessageData", "actualChannel"]
 - !private ["CSo13PNMessageData", "message"]
 - !private ["CSo13PNMessageData", "subscribedChannel"]
@@ -1230,7 +1237,7 @@ depends-member:
 - ["PSo21PNObjectEventListener", "HKHealthStore"]
 - !private ["PSo21PNObjectEventListener", "HKObjectQueryNoLimit"]
 - !private ["PSo21PNObjectEventListener", "HKQuantityType"]
-- !private ["PSo21PNObjectEventListener", "HKQuantityTypeIdentifierHeartRate"]
+- !private ["PSo21PNObjectEventListener", "HKQuantityTypeIdentifier"]
 - ["PSo21PNObjectEventListener", "HKQueryAnchor"]
 - ["PSo21PNObjectEventListener", "HKUnit"]
 - !private ["PSo21PNObjectEventListener", "HKWorkoutSession"]
@@ -1283,22 +1290,22 @@ depends-member:
 - !private ["PSo21PNObjectEventListener", "workoutSesh"]
 - ["PSo21PNObjectEventListener", ""]
 - !private ["CSo15PNPublishStatus", "debugDescription"]
-- !private ["CSo15PNPublishStatus", "error"]
+- !private ["CSo15PNPublishStatus", "isError"]
 - !private ["CSo8PNResult", "data"]
 - !private ["CSo8PNResult", "debugDescription"]
-- !private ["CSo8PNResult", "error"]
+- !private ["CSo8PNResult", "isError"]
 - !private ["CSo13PNServiceData", "actualChannel"]
 - !private ["CSo13PNServiceData", "message"]
 - !private ["CSo13PNServiceData", "subscribedChannel"]
 - !private ["CSo13PNServiceData", "timetoken"]
 - !private ["CSo8PNStatus", "debugDescription"]
-- !private ["CSo8PNStatus", "error"]
+- !private ["CSo8PNStatus", "isError"]
 - !private ["CSo16PNSubscriberData", "actualChannel"]
 - !private ["CSo16PNSubscriberData", "message"]
 - !private ["CSo16PNSubscriberData", "subscribedChannel"]
 - !private ["CSo16PNSubscriberData", "timetoken"]
-- !private ["CSo6PubNub", "addListener"]
-- !private ["CSo6PubNub", "clientWithConfiguration"]
+- !private ["CSo6PubNub", "add"]
+- !private ["CSo6PubNub", "client"]
 - !private ["CSo6PubNub", "publish"]
 - !private ["Ps22RandomAccessCollection", "Element"]
 - !private ["Ps22RandomAccessCollection", "Index"]
@@ -1352,10 +1359,12 @@ depends-member:
 - !private ["Ps25RangeReplaceableIndexable", "first"]
 - ["Ps25RangeReplaceableIndexable", "init"]
 - !private ["Ps25RangeReplaceableIndexable", "subscript"]
-- ["Ps16RawRepresentable", "Ended"]
-- !private ["Ps16RawRepresentable", "Hiking"]
-- !private ["Ps16RawRepresentable", "Indoor"]
-- ["Ps16RawRepresentable", "Running"]
+- ["Ps16RawRepresentable", "ended"]
+- !private ["Ps16RawRepresentable", "heartRate"]
+- !private ["Ps16RawRepresentable", "hiking"]
+- !private ["Ps16RawRepresentable", "indoor"]
+- !private ["Ps16RawRepresentable", "rawValue"]
+- ["Ps16RawRepresentable", "running"]
 - !private ["P10Foundation20ReferenceConvertible", "Iterator"]
 - !private ["P10Foundation20ReferenceConvertible", "_Element"]
 - !private ["Ps8Sequence", "Element"]
@@ -1405,18 +1414,21 @@ depends-member:
 - !private ["Vs5UInt8", "deinit"]
 - !private ["Sc", "deinit"]
 - !private ["Ps31UnicodeScalarLiteralConvertible", "init"]
+- ["OCSo13MassFormatter4Unit", "deinit"]
+- ["OCSo15EnergyFormatter4Unit", "deinit"]
+- ["OCSo15LengthFormatter4Unit", "deinit"]
 - !private ["Sp", "deinit"]
 - !private ["SP", "deinit"]
 - !private ["Ps15UnsignedInteger", "init"]
 - !private ["CSo9WCSession", "sendMessage"]
-- ["CSo11WKExtension", "deinit"]
-- ["CSo11WKExtension", "sharedExtension"]
+- ["CSo11WKExtension", "delegate"]
+- ["CSo11WKExtension", "shared"]
 - !private ["PSo19WKExtensionDelegate", "HKAnchoredObjectQuery"]
 - ["PSo19WKExtensionDelegate", "HKAnchoredObjectQueryNoAnchor"]
 - ["PSo19WKExtensionDelegate", "HKHealthStore"]
 - !private ["PSo19WKExtensionDelegate", "HKObjectQueryNoLimit"]
 - !private ["PSo19WKExtensionDelegate", "HKQuantityType"]
-- !private ["PSo19WKExtensionDelegate", "HKQuantityTypeIdentifierHeartRate"]
+- !private ["PSo19WKExtensionDelegate", "HKQuantityTypeIdentifier"]
 - ["PSo19WKExtensionDelegate", "HKQueryAnchor"]
 - ["PSo19WKExtensionDelegate", "HKUnit"]
 - !private ["PSo19WKExtensionDelegate", "HKWorkoutSession"]
@@ -1478,7 +1490,7 @@ depends-member:
 - !private ["CSo21WKInterfaceController", "HKObjectQueryNoLimit"]
 - !private ["CSo21WKInterfaceController", "HKQuantitySample"]
 - !private ["CSo21WKInterfaceController", "HKQuantityType"]
-- !private ["CSo21WKInterfaceController", "HKQuantityTypeIdentifierHeartRate"]
+- !private ["CSo21WKInterfaceController", "HKQuantityTypeIdentifier"]
 - ["CSo21WKInterfaceController", "HKQuery"]
 - ["CSo21WKInterfaceController", "HKQueryAnchor"]
 - ["CSo21WKInterfaceController", "HKSample"]
@@ -1612,7 +1624,9 @@ depends-member:
 - !private ["Ps21_ObjectiveCBridgeable", "append"]
 - !private ["Ps21_ObjectiveCBridgeable", "count"]
 - !private ["Ps21_ObjectiveCBridgeable", "first"]
+- !private ["Ps21_ObjectiveCBridgeable", "heartRate"]
 - ["Ps21_ObjectiveCBridgeable", "init"]
+- !private ["Ps21_ObjectiveCBridgeable", "rawValue"]
 - !private ["Ps21_ObjectiveCBridgeable", "subscript"]
 - !private ["Vs26_OptionalNilComparisonType", "deinit"]
 - !private ["Ps14_SignedInteger", "IntegerLiteralType"]
@@ -1623,6 +1637,8 @@ depends-member:
 - !private ["Ps11_Strideable", "Stride"]
 - !private ["Ps11_Strideable", "_DisabledRangeIndex"]
 - ["Ps11_Strideable", "init"]
+- !private ["Ps20_SwiftNewtypeWrapper", "heartRate"]
+- !private ["Ps20_SwiftNewtypeWrapper", "rawValue"]
 - !private ["V4simd7double2", "deinit"]
 - !private ["V4simd9double2x2", "deinit"]
 - !private ["V4simd9double2x3", "deinit"]
@@ -1764,6 +1780,9 @@ depends-nominal:
 - !private "Vs5UInt8"
 - !private "Sc"
 - !private "Ps31UnicodeScalarLiteralConvertible"
+- "OCSo13MassFormatter4Unit"
+- "OCSo15EnergyFormatter4Unit"
+- "OCSo15LengthFormatter4Unit"
 - !private "Sp"
 - !private "SP"
 - !private "Ps15UnsignedInteger"
@@ -1790,6 +1809,7 @@ depends-nominal:
 - !private "Vs26_OptionalNilComparisonType"
 - "Ps14_SignedInteger"
 - "Ps11_Strideable"
+- !private "Ps20_SwiftNewtypeWrapper"
 - !private "V4simd7double2"
 - !private "V4simd9double2x2"
 - !private "V4simd9double2x3"
@@ -1869,4 +1889,4 @@ depends-external:
 - "/Users/lizzie/Desktop/piHeartRate/DerivedData/piHeartRate/Build/Products/Debug-watchsimulator/PubNub-watchOS/PubNub.framework/Headers/PubNub-watchOS-umbrella.h"
 - "/Users/lizzie/Desktop/piHeartRate/DerivedData/piHeartRate/Build/Products/Debug-watchsimulator/PubNub-watchOS/PubNub.framework/Modules/module.modulemap"
 - "/Users/lizzie/Downloads/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/watchsimulator/i386/WatchConnectivity.swiftmodule"
-interface-hash: "fffedd9ac96693e7be36af10e12b0ba5"
+interface-hash: "089f39fc1a99cfee3efec8920f507e3b"

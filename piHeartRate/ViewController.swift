@@ -11,7 +11,7 @@ import WatchConnectivity // idkimportant
 import PubNub
 //subscribe from phone app -> see if can subscribe from Watch
 
-class ViewController: UIViewController, WCSessionDelegate {
+class ViewController: UIViewController { //does not conform to protocol WCSessionDelegate like go home
     
     var someData = [String]()
     var wrSesh: WCSession!
@@ -21,11 +21,14 @@ class ViewController: UIViewController, WCSessionDelegate {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         if(WCSession.isSupported()) {
-            wrSesh = WCSession.defaultSession()
-            wrSesh.delegate = self
+            wrSesh = WCSession.default()
+            //wrSesh.delegate = self.wrSesh?
             //wrSesh.activate()
             //wrSesh.activationState
-            wrSesh.activateSession()
+            wrSesh.activate()
+        }
+        else {
+            print("wcSesssion not supported")
         }
     }
     
@@ -38,14 +41,14 @@ class ViewController: UIViewController, WCSessionDelegate {
         
         //Use this to update the UI instantaneously (otherwise, takes a little while)
         //DispatchQueue.main.async {
-        dispatch_async(dispatch_get_main_queue()) {
+        //dispatch_async(dispatchMain()) {
             if let hrVal = message["heart rate value"] as? String {
                 self.someData.append(hrVal)
                 //PubNub
                 self.hrValLabel.text = hrVal //val from HR on watch
                 //update with PubNub here
             }
-        }
+       // }
     }
     
 }
