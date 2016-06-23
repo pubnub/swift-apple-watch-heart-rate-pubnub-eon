@@ -6,212 +6,252 @@ provides-nominal:
 provides-member:
 - ["C22getHeartRate_Extension17ExtensionDelegate", ""]
 provides-dynamic-lookup:
-- "client"
 - "applicationDidBecomeActive"
 - "channel"
-- "applicationWillResignActive"
+- "client"
 - "applicationDidFinishLaunching"
+- "applicationWillResignActive"
 depends-top-level:
-- "NSObject"
-- "PNObjectEventListener"
-- "WKExtensionDelegate"
-- !private "Array"
-- "StringLiteralType"
 - "PubNub"
+- "StringLiteralType"
+- "NSObject"
+- "WKExtensionDelegate"
+- "PNObjectEventListener"
 - "ExtensionDelegate"
-- !private "BooleanLiteralType"
 depends-member:
 - ["Ps9AnyObject", "applicationDidBecomeActive"]
+- ["Ps9AnyObject", "applicationDidEnterBackground"]
 - ["Ps9AnyObject", "applicationDidFinishLaunching"]
+- ["Ps9AnyObject", "applicationWillEnterForeground"]
 - ["Ps9AnyObject", "applicationWillResignActive"]
 - ["Ps9AnyObject", "channel"]
 - ["Ps9AnyObject", "client"]
+- ["Ps9AnyObject", "didReceive"]
 - ["Ps9AnyObject", "didReceiveLocalNotification"]
 - ["Ps9AnyObject", "didReceiveRemoteNotification"]
+- ["Ps9AnyObject", "handle"]
+- ["Ps9AnyObject", "handleAction"]
 - ["Ps9AnyObject", "handleActionWithIdentifier"]
+- ["Ps9AnyObject", "handleBackgroundTasks"]
 - ["Ps9AnyObject", "handleUserActivity"]
+- ["Ps9AnyObject", "handleWorkoutConfiguration"]
 - ["Ps9AnyObject", "init"]
 - !private ["Ps9AnyObject", "unsubscribeFromAll"]
-- !private ["Ps9AnyObject", "unsubscribeFromChannels"]
 - ["Ps9AnyObject", ""]
-- !private ["Sa", "Element"]
-- !private ["Ps23ArrayLiteralConvertible", "Element"]
-- ["Ps11CVarArgType", "applicationDidBecomeActive"]
-- ["Ps11CVarArgType", "applicationDidFinishLaunching"]
-- ["Ps11CVarArgType", "applicationWillResignActive"]
-- ["Ps11CVarArgType", "channel"]
-- ["Ps11CVarArgType", "client"]
-- ["Ps11CVarArgType", "didReceiveLocalNotification"]
-- ["Ps11CVarArgType", "didReceiveRemoteNotification"]
-- ["Ps11CVarArgType", "handleActionWithIdentifier"]
-- ["Ps11CVarArgType", "handleUserActivity"]
-- ["Ps11CVarArgType", "init"]
-- !private ["Ps11CVarArgType", "unsubscribeFromAll"]
-- !private ["Ps11CVarArgType", "unsubscribeFromChannels"]
-- ["Ps11CVarArgType", ""]
-- !private ["Ps14CollectionType", "Element"]
-- !private ["Ps28CustomDebugStringConvertible", "Element"]
+- ["Ps7CVarArg", "applicationDidBecomeActive"]
+- ["Ps7CVarArg", "applicationDidEnterBackground"]
+- ["Ps7CVarArg", "applicationDidFinishLaunching"]
+- ["Ps7CVarArg", "applicationWillEnterForeground"]
+- ["Ps7CVarArg", "applicationWillResignActive"]
+- ["Ps7CVarArg", "channel"]
+- ["Ps7CVarArg", "client"]
+- ["Ps7CVarArg", "didReceive"]
+- ["Ps7CVarArg", "didReceiveLocalNotification"]
+- ["Ps7CVarArg", "didReceiveRemoteNotification"]
+- ["Ps7CVarArg", "handle"]
+- ["Ps7CVarArg", "handleAction"]
+- ["Ps7CVarArg", "handleActionWithIdentifier"]
+- ["Ps7CVarArg", "handleBackgroundTasks"]
+- ["Ps7CVarArg", "handleUserActivity"]
+- ["Ps7CVarArg", "handleWorkoutConfiguration"]
+- ["Ps7CVarArg", "init"]
+- !private ["Ps7CVarArg", "unsubscribeFromAll"]
+- ["Ps7CVarArg", ""]
 - ["Ps28CustomDebugStringConvertible", "applicationDidBecomeActive"]
+- ["Ps28CustomDebugStringConvertible", "applicationDidEnterBackground"]
 - ["Ps28CustomDebugStringConvertible", "applicationDidFinishLaunching"]
+- ["Ps28CustomDebugStringConvertible", "applicationWillEnterForeground"]
 - ["Ps28CustomDebugStringConvertible", "applicationWillResignActive"]
 - ["Ps28CustomDebugStringConvertible", "channel"]
 - ["Ps28CustomDebugStringConvertible", "client"]
+- ["Ps28CustomDebugStringConvertible", "didReceive"]
 - ["Ps28CustomDebugStringConvertible", "didReceiveLocalNotification"]
 - ["Ps28CustomDebugStringConvertible", "didReceiveRemoteNotification"]
+- ["Ps28CustomDebugStringConvertible", "handle"]
+- ["Ps28CustomDebugStringConvertible", "handleAction"]
 - ["Ps28CustomDebugStringConvertible", "handleActionWithIdentifier"]
+- ["Ps28CustomDebugStringConvertible", "handleBackgroundTasks"]
 - ["Ps28CustomDebugStringConvertible", "handleUserActivity"]
+- ["Ps28CustomDebugStringConvertible", "handleWorkoutConfiguration"]
 - ["Ps28CustomDebugStringConvertible", "init"]
 - !private ["Ps28CustomDebugStringConvertible", "unsubscribeFromAll"]
-- !private ["Ps28CustomDebugStringConvertible", "unsubscribeFromChannels"]
 - ["Ps28CustomDebugStringConvertible", ""]
-- !private ["Ps23CustomStringConvertible", "Element"]
 - ["Ps23CustomStringConvertible", "applicationDidBecomeActive"]
+- ["Ps23CustomStringConvertible", "applicationDidEnterBackground"]
 - ["Ps23CustomStringConvertible", "applicationDidFinishLaunching"]
+- ["Ps23CustomStringConvertible", "applicationWillEnterForeground"]
 - ["Ps23CustomStringConvertible", "applicationWillResignActive"]
 - ["Ps23CustomStringConvertible", "channel"]
 - ["Ps23CustomStringConvertible", "client"]
+- ["Ps23CustomStringConvertible", "didReceive"]
 - ["Ps23CustomStringConvertible", "didReceiveLocalNotification"]
 - ["Ps23CustomStringConvertible", "didReceiveRemoteNotification"]
+- ["Ps23CustomStringConvertible", "handle"]
+- ["Ps23CustomStringConvertible", "handleAction"]
 - ["Ps23CustomStringConvertible", "handleActionWithIdentifier"]
+- ["Ps23CustomStringConvertible", "handleBackgroundTasks"]
 - ["Ps23CustomStringConvertible", "handleUserActivity"]
+- ["Ps23CustomStringConvertible", "handleWorkoutConfiguration"]
 - ["Ps23CustomStringConvertible", "init"]
 - !private ["Ps23CustomStringConvertible", "unsubscribeFromAll"]
-- !private ["Ps23CustomStringConvertible", "unsubscribeFromChannels"]
 - ["Ps23CustomStringConvertible", ""]
 - ["Ps9Equatable", "applicationDidBecomeActive"]
+- ["Ps9Equatable", "applicationDidEnterBackground"]
 - ["Ps9Equatable", "applicationDidFinishLaunching"]
+- ["Ps9Equatable", "applicationWillEnterForeground"]
 - ["Ps9Equatable", "applicationWillResignActive"]
 - ["Ps9Equatable", "channel"]
 - ["Ps9Equatable", "client"]
+- ["Ps9Equatable", "didReceive"]
 - ["Ps9Equatable", "didReceiveLocalNotification"]
 - ["Ps9Equatable", "didReceiveRemoteNotification"]
+- ["Ps9Equatable", "handle"]
+- ["Ps9Equatable", "handleAction"]
 - ["Ps9Equatable", "handleActionWithIdentifier"]
+- ["Ps9Equatable", "handleBackgroundTasks"]
 - ["Ps9Equatable", "handleUserActivity"]
+- ["Ps9Equatable", "handleWorkoutConfiguration"]
 - ["Ps9Equatable", "init"]
 - !private ["Ps9Equatable", "unsubscribeFromAll"]
-- !private ["Ps9Equatable", "unsubscribeFromChannels"]
 - ["Ps9Equatable", ""]
 - ["C22getHeartRate_Extension17ExtensionDelegate", "PubNub"]
 - ["C22getHeartRate_Extension17ExtensionDelegate", "applicationDidBecomeActive"]
+- ["C22getHeartRate_Extension17ExtensionDelegate", "applicationDidEnterBackground"]
 - ["C22getHeartRate_Extension17ExtensionDelegate", "applicationDidFinishLaunching"]
+- ["C22getHeartRate_Extension17ExtensionDelegate", "applicationWillEnterForeground"]
 - ["C22getHeartRate_Extension17ExtensionDelegate", "applicationWillResignActive"]
 - ["C22getHeartRate_Extension17ExtensionDelegate", "channel"]
 - ["C22getHeartRate_Extension17ExtensionDelegate", "client"]
 - ["C22getHeartRate_Extension17ExtensionDelegate", "deinit"]
+- ["C22getHeartRate_Extension17ExtensionDelegate", "didReceive"]
 - ["C22getHeartRate_Extension17ExtensionDelegate", "didReceiveLocalNotification"]
 - ["C22getHeartRate_Extension17ExtensionDelegate", "didReceiveRemoteNotification"]
+- ["C22getHeartRate_Extension17ExtensionDelegate", "handle"]
+- ["C22getHeartRate_Extension17ExtensionDelegate", "handleAction"]
 - ["C22getHeartRate_Extension17ExtensionDelegate", "handleActionWithIdentifier"]
+- ["C22getHeartRate_Extension17ExtensionDelegate", "handleBackgroundTasks"]
 - ["C22getHeartRate_Extension17ExtensionDelegate", "handleUserActivity"]
+- ["C22getHeartRate_Extension17ExtensionDelegate", "handleWorkoutConfiguration"]
 - ["C22getHeartRate_Extension17ExtensionDelegate", "init"]
 - ["Ps8Hashable", "applicationDidBecomeActive"]
+- ["Ps8Hashable", "applicationDidEnterBackground"]
 - ["Ps8Hashable", "applicationDidFinishLaunching"]
+- ["Ps8Hashable", "applicationWillEnterForeground"]
 - ["Ps8Hashable", "applicationWillResignActive"]
 - ["Ps8Hashable", "channel"]
 - ["Ps8Hashable", "client"]
+- ["Ps8Hashable", "didReceive"]
 - ["Ps8Hashable", "didReceiveLocalNotification"]
 - ["Ps8Hashable", "didReceiveRemoteNotification"]
+- ["Ps8Hashable", "handle"]
+- ["Ps8Hashable", "handleAction"]
 - ["Ps8Hashable", "handleActionWithIdentifier"]
+- ["Ps8Hashable", "handleBackgroundTasks"]
 - ["Ps8Hashable", "handleUserActivity"]
+- ["Ps8Hashable", "handleWorkoutConfiguration"]
 - ["Ps8Hashable", "init"]
 - !private ["Ps8Hashable", "unsubscribeFromAll"]
-- !private ["Ps8Hashable", "unsubscribeFromChannels"]
 - ["Ps8Hashable", ""]
-- !private ["Ps9Indexable", "Element"]
-- !private ["Ps21MutableCollectionType", "Element"]
-- !private ["Ps16MutableIndexable", "Element"]
-- !private ["Ps16MutableSliceable", "Element"]
 - ["CSo8NSObject", "PubNub"]
 - ["CSo8NSObject", "applicationDidBecomeActive"]
+- ["CSo8NSObject", "applicationDidEnterBackground"]
 - ["CSo8NSObject", "applicationDidFinishLaunching"]
+- ["CSo8NSObject", "applicationWillEnterForeground"]
 - ["CSo8NSObject", "applicationWillResignActive"]
 - ["CSo8NSObject", "channel"]
 - ["CSo8NSObject", "client"]
+- ["CSo8NSObject", "didReceive"]
 - ["CSo8NSObject", "didReceiveLocalNotification"]
 - ["CSo8NSObject", "didReceiveRemoteNotification"]
+- ["CSo8NSObject", "handle"]
+- ["CSo8NSObject", "handleAction"]
 - ["CSo8NSObject", "handleActionWithIdentifier"]
+- ["CSo8NSObject", "handleBackgroundTasks"]
 - ["CSo8NSObject", "handleUserActivity"]
+- ["CSo8NSObject", "handleWorkoutConfiguration"]
 - ["CSo8NSObject", "init"]
 - !private ["CSo8NSObject", "unsubscribeFromAll"]
-- !private ["CSo8NSObject", "unsubscribeFromChannels"]
 - ["CSo8NSObject", ""]
 - ["PSo16NSObjectProtocol", "applicationDidBecomeActive"]
+- ["PSo16NSObjectProtocol", "applicationDidEnterBackground"]
 - ["PSo16NSObjectProtocol", "applicationDidFinishLaunching"]
+- ["PSo16NSObjectProtocol", "applicationWillEnterForeground"]
 - ["PSo16NSObjectProtocol", "applicationWillResignActive"]
 - ["PSo16NSObjectProtocol", "channel"]
 - ["PSo16NSObjectProtocol", "client"]
+- ["PSo16NSObjectProtocol", "didReceive"]
 - ["PSo16NSObjectProtocol", "didReceiveLocalNotification"]
 - ["PSo16NSObjectProtocol", "didReceiveRemoteNotification"]
+- ["PSo16NSObjectProtocol", "handle"]
+- ["PSo16NSObjectProtocol", "handleAction"]
 - ["PSo16NSObjectProtocol", "handleActionWithIdentifier"]
+- ["PSo16NSObjectProtocol", "handleBackgroundTasks"]
 - ["PSo16NSObjectProtocol", "handleUserActivity"]
+- ["PSo16NSObjectProtocol", "handleWorkoutConfiguration"]
 - ["PSo16NSObjectProtocol", "init"]
 - !private ["PSo16NSObjectProtocol", "unsubscribeFromAll"]
-- !private ["PSo16NSObjectProtocol", "unsubscribeFromChannels"]
 - ["PSo16NSObjectProtocol", ""]
 - ["PSo21PNObjectEventListener", "applicationDidBecomeActive"]
+- ["PSo21PNObjectEventListener", "applicationDidEnterBackground"]
 - ["PSo21PNObjectEventListener", "applicationDidFinishLaunching"]
+- ["PSo21PNObjectEventListener", "applicationWillEnterForeground"]
 - ["PSo21PNObjectEventListener", "applicationWillResignActive"]
-- !private ["PSo21PNObjectEventListener", "channel"]
 - ["PSo21PNObjectEventListener", "client"]
+- ["PSo21PNObjectEventListener", "didReceive"]
 - ["PSo21PNObjectEventListener", "didReceiveLocalNotification"]
 - ["PSo21PNObjectEventListener", "didReceiveRemoteNotification"]
+- ["PSo21PNObjectEventListener", "handle"]
+- ["PSo21PNObjectEventListener", "handleAction"]
 - ["PSo21PNObjectEventListener", "handleActionWithIdentifier"]
+- ["PSo21PNObjectEventListener", "handleBackgroundTasks"]
 - ["PSo21PNObjectEventListener", "handleUserActivity"]
+- ["PSo21PNObjectEventListener", "handleWorkoutConfiguration"]
 - ["PSo21PNObjectEventListener", ""]
 - !private ["CSo6PubNub", "unsubscribeFromAll"]
-- !private ["CSo6PubNub", "unsubscribeFromChannels"]
-- !private ["Ps30RangeReplaceableCollectionType", "Element"]
-- !private ["Ps12SequenceType", "Element"]
 - ["PSo19WKExtensionDelegate", "applicationDidBecomeActive"]
+- ["PSo19WKExtensionDelegate", "applicationDidEnterBackground"]
 - ["PSo19WKExtensionDelegate", "applicationDidFinishLaunching"]
+- ["PSo19WKExtensionDelegate", "applicationWillEnterForeground"]
 - ["PSo19WKExtensionDelegate", "applicationWillResignActive"]
-- !private ["PSo19WKExtensionDelegate", "channel"]
 - ["PSo19WKExtensionDelegate", "client"]
+- ["PSo19WKExtensionDelegate", "didReceive"]
 - ["PSo19WKExtensionDelegate", "didReceiveLocalNotification"]
 - ["PSo19WKExtensionDelegate", "didReceiveRemoteNotification"]
+- ["PSo19WKExtensionDelegate", "handle"]
+- ["PSo19WKExtensionDelegate", "handleAction"]
 - ["PSo19WKExtensionDelegate", "handleActionWithIdentifier"]
+- ["PSo19WKExtensionDelegate", "handleBackgroundTasks"]
 - ["PSo19WKExtensionDelegate", "handleUserActivity"]
+- ["PSo19WKExtensionDelegate", "handleWorkoutConfiguration"]
 - ["PSo19WKExtensionDelegate", ""]
-- !private ["Ps10_ArrayType", "Element"]
-- !private ["Ps24_DestructorSafeContainer", "Element"]
-- !private ["Ps21_ObjectiveCBridgeable", "Element"]
-- !private ["Ps12_Reflectable", "Element"]
 depends-nominal:
 - "Ps9AnyObject"
-- !private "Sa"
-- !private "Ps23ArrayLiteralConvertible"
-- "Ps11CVarArgType"
-- !private "Ps14CollectionType"
+- "Ps7CVarArg"
 - "Ps28CustomDebugStringConvertible"
 - "Ps23CustomStringConvertible"
 - "Ps9Equatable"
 - "C22getHeartRate_Extension17ExtensionDelegate"
 - "Ps8Hashable"
-- !private "Ps9Indexable"
-- !private "Ps21MutableCollectionType"
-- !private "Ps16MutableIndexable"
-- !private "Ps16MutableSliceable"
 - "CSo8NSObject"
 - "PSo16NSObjectProtocol"
 - "PSo21PNObjectEventListener"
 - !private "CSo6PubNub"
-- !private "Ps30RangeReplaceableCollectionType"
-- !private "Ps12SequenceType"
 - "PSo19WKExtensionDelegate"
-- !private "Ps10_ArrayType"
-- !private "Ps24_DestructorSafeContainer"
-- !private "Ps21_ObjectiveCBridgeable"
-- !private "Ps12_Reflectable"
 depends-dynamic-lookup:
 depends-external:
-- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/watchsimulator/i386/Swift.swiftmodule"
-- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/watchsimulator/i386/WatchKit.swiftmodule"
-- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/watchsimulator/i386/Foundation.swiftmodule"
-- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/watchsimulator/i386/Darwin.swiftmodule"
-- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/watchsimulator/i386/Dispatch.swiftmodule"
-- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/watchsimulator/i386/ObjectiveC.swiftmodule"
-- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/watchsimulator/i386/CoreGraphics.swiftmodule"
-- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/watchsimulator/i386/UIKit.swiftmodule"
-- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/watchsimulator/i386/CoreLocation.swiftmodule"
+- "/Users/lizzie/Downloads/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/watchsimulator/i386/Swift.swiftmodule"
+- "/Users/lizzie/Downloads/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/watchsimulator/i386/SwiftOnoneSupport.swiftmodule"
+- "/Users/lizzie/Downloads/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/watchsimulator/i386/UIKit.swiftmodule"
+- "/Users/lizzie/Downloads/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/watchsimulator/i386/Foundation.swiftmodule"
+- "/Users/lizzie/Downloads/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/watchsimulator/i386/Darwin.swiftmodule"
+- "/Users/lizzie/Downloads/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/watchsimulator/i386/Dispatch.swiftmodule"
+- "/Users/lizzie/Downloads/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/watchsimulator/i386/ObjectiveC.swiftmodule"
+- "/Users/lizzie/Downloads/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/watchsimulator/i386/CoreGraphics.swiftmodule"
+- "/Users/lizzie/Downloads/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/watchsimulator/i386/WatchKit.swiftmodule"
+- "/Users/lizzie/Downloads/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/watchsimulator/i386/HomeKit.swiftmodule"
+- "/Users/lizzie/Downloads/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/watchsimulator/i386/SceneKit.swiftmodule"
+- "/Users/lizzie/Downloads/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/watchsimulator/i386/simd.swiftmodule"
+- "/Users/lizzie/Downloads/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/watchsimulator/i386/CoreLocation.swiftmodule"
 - "/Users/lizzie/Desktop/piHeartRate/DerivedData/piHeartRate/Build/Products/Debug-watchsimulator/PubNub-watchOS/PubNub.framework/Headers/PubNub.h"
 - "/Users/lizzie/Desktop/piHeartRate/DerivedData/piHeartRate/Build/Products/Debug-watchsimulator/PubNub-watchOS/PubNub.framework/Headers/PNObjectEventListener.h"
 - "/Users/lizzie/Desktop/piHeartRate/DerivedData/piHeartRate/Build/Products/Debug-watchsimulator/PubNub-watchOS/PubNub.framework/Headers/PNErrorCodes.h"
@@ -251,4 +291,5 @@ depends-external:
 - "/Users/lizzie/Desktop/piHeartRate/DerivedData/piHeartRate/Build/Products/Debug-watchsimulator/PubNub-watchOS/PubNub.framework/Headers/PubNub+APNS.h"
 - "/Users/lizzie/Desktop/piHeartRate/DerivedData/piHeartRate/Build/Products/Debug-watchsimulator/PubNub-watchOS/PubNub.framework/Headers/PubNub-watchOS-umbrella.h"
 - "/Users/lizzie/Desktop/piHeartRate/DerivedData/piHeartRate/Build/Products/Debug-watchsimulator/PubNub-watchOS/PubNub.framework/Modules/module.modulemap"
+- "/Users/lizzie/Downloads/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/watchsimulator/i386/WatchConnectivity.swiftmodule"
 interface-hash: "d5c1a32837ad5a9d3422cefd982bf226"

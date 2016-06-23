@@ -1,7 +1,6 @@
 version: "Apple Swift version 2.2 (swiftlang-703.0.18.8 clang-703.0.31)"
-options: "a3d6f02928393a69d4b771289b91f4ba"
-build_time: [520014027, 183373000]
+options: "da90d514a66ea5c27bb5fbf08b2165e5"
+build_time: [520031253, 288875000]
 inputs:
-  "/Users/lizzie/Desktop/piHeartRate/piHeartRate/ViewController.swift": [519952546, 0]
-  "/Users/lizzie/Desktop/piHeartRate/piHeartRate/ChannelViewController.swift": [519979515, 0]
-  "/Users/lizzie/Desktop/piHeartRate/piHeartRate/AppDelegate.swift": [519955031, 0]
+  "/Users/lizzie/Desktop/piHeartRate/piHeartRate/ViewController.swift": [520031002, 0]
+  "/Users/lizzie/Desktop/piHeartRate/piHeartRate/AppDelegate.swift": [520031244, 0]

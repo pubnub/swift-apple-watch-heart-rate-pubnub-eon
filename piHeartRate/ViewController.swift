@@ -23,6 +23,8 @@ class ViewController: UIViewController, WCSessionDelegate {
         if(WCSession.isSupported()) {
             wrSesh = WCSession.defaultSession()
             wrSesh.delegate = self
+            //wrSesh.activate()
+            //wrSesh.activationState
             wrSesh.activateSession()
         }
     }
@@ -35,6 +37,7 @@ class ViewController: UIViewController, WCSessionDelegate {
     func session(wrSesh: WCSession, didReceiveMessage message: [String : AnyObject], replyHandler: ([String : AnyObject]) -> Void) {
         
         //Use this to update the UI instantaneously (otherwise, takes a little while)
+        //DispatchQueue.main.async {
         dispatch_async(dispatch_get_main_queue()) {
             if let hrVal = message["heart rate value"] as? String {
                 self.someData.append(hrVal)

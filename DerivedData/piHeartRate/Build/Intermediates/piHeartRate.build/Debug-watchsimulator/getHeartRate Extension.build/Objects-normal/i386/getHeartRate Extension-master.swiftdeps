@@ -1,8 +1,6 @@
-version: "Apple Swift version 2.2 (swiftlang-703.0.18.8 clang-703.0.31)"
-options: "b5d26ec338fc86a670172cd084a87c2f"
-build_time: [520014025, 801596000]
+version: "Apple Swift version 3.0 (swiftlang-800.0.30 clang-800.0.24)"
+options: "1f9ea4eddbc82753fe19a33748633a82"
+build_time: [520031294, 929092000]
 inputs:
-  "/Users/lizzie/Desktop/piHeartRate/getHeartRate Extension/NotificationController.swift": [519857636, 0]
-  "/Users/lizzie/Desktop/piHeartRate/getHeartRate Extension/ExtensionDelegate.swift": [519952546, 0]
-  "/Users/lizzie/Desktop/piHeartRate/getHeartRate Extension/InterfaceController.swift": [520014014, 0]
-  "/Users/lizzie/Desktop/piHeartRate/getHeartRate Extension/GlanceController.swift": [519857636, 0]
+  "/Users/lizzie/Desktop/piHeartRate/getHeartRate Extension/ExtensionDelegate.swift": [520029524, 0]
+  "/Users/lizzie/Desktop/piHeartRate/getHeartRate Extension/InterfaceController.swift": !dirty [520031002, 0]

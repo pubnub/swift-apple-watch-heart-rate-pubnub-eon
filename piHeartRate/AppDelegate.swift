@@ -96,7 +96,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, WCSessionDelegate, PNObje
     func applicationShouldRequestHealthAuthorization(application: UIApplication) {
         
         self.healthStore.handleAuthorizationForExtensionWithCompletion { success, error in
-            
+        
         }
     }
     

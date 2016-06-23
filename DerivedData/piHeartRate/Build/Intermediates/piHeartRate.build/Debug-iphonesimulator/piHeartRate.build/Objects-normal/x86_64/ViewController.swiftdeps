@@ -6,23 +6,23 @@ provides-nominal:
 provides-member:
 - ["C11piHeartRate14ViewController", ""]
 provides-dynamic-lookup:
-- "didReceiveMemoryWarning"
-- "someData"
-- "viewDidLoad"
-- "hrValLabel"
 - "session"
+- "someData"
+- "hrValLabel"
+- "viewDidLoad"
 - "wrSesh"
+- "didReceiveMemoryWarning"
 depends-top-level:
-- "AnyObject"
-- "Void"
 - "UIViewController"
-- !private "dispatch_async"
-- !private "dispatch_get_main_queue"
-- "WCSessionDelegate"
-- "StringLiteralType"
-- "String"
-- "UILabel"
+- "AnyObject"
 - "WCSession"
+- "UILabel"
+- "WCSessionDelegate"
+- !private "dispatch_get_main_queue"
+- !private "dispatch_async"
+- "StringLiteralType"
+- "Void"
+- "String"
 - "ViewController"
 depends-member:
 - ["Ps9AnyObject", "String"]

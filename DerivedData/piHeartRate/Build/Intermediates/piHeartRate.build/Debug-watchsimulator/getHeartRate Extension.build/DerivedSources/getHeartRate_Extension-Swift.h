@@ -96,7 +96,6 @@ typedef int swift_int4  __attribute__((__ext_vector_type__(4)));
 @import PubNub;
 @import WatchKit;
 @import HealthKit;
-@import WatchConnectivity;
 #endif
 
 #pragma clang diagnostic ignored "-Wproperty-attribute-mismatch"
@@ -113,21 +112,11 @@ SWIFT_CLASS("_TtC22getHeartRate_Extension17ExtensionDelegate")
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
-
-SWIFT_CLASS("_TtC22getHeartRate_Extension16GlanceController")
-@interface GlanceController : WKInterfaceController
-- (void)awakeWithContext:(id _Nullable)context;
-- (void)willActivate;
-- (void)didDeactivate;
-- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
-@end
-
 @class WKInterfaceLabel;
 @class WKInterfaceImage;
 @class WKInterfaceButton;
 @class HKHealthStore;
 @class WCSession;
-@class NSTimer;
 @class HKWorkoutSession;
 @class HKUnit;
 @class HKQueryAnchor;
@@ -139,11 +128,12 @@ SWIFT_CLASS("_TtC22getHeartRate_Extension16GlanceController")
 @class HKSample;
 
 SWIFT_CLASS("_TtC22getHeartRate_Extension19InterfaceController")
-@interface InterfaceController : WKInterfaceController <HKWorkoutSessionDelegate, PNObjectEventListener, WKExtensionDelegate, WCSessionDelegate>
+@interface InterfaceController : WKInterfaceController <PNObjectEventListener, WKExtensionDelegate>
 @property (nonatomic, strong) IBOutlet WKInterfaceLabel * _Null_unspecified label;
 @property (nonatomic, strong) IBOutlet WKInterfaceImage * _Null_unspecified heart;
 @property (nonatomic, strong) IBOutlet WKInterfaceButton * _Null_unspecified startStopBtn;
 @property (nonatomic, strong) PubNub * _Nullable client;
+@property (nonatomic, copy) NSString * _Nonnull randomName;
 @property (nonatomic, readonly, strong) HKHealthStore * _Nonnull healthStore;
 @property (nonatomic) double hrVal;
 @property (nonatomic, copy) NSString * _Nonnull channelSentFromPhone;
@@ -151,17 +141,14 @@ SWIFT_CLASS("_TtC22getHeartRate_Extension19InterfaceController")
 @property (nonatomic, readonly, strong) ExtensionDelegate * _Nonnull watchAppDel;
 @property (nonatomic, copy) NSString * _Nonnull channel;
 @property (nonatomic, strong) WCSession * _Null_unspecified wcSesh;
-@property (nonatomic, strong) NSTimer * _Nullable hrTimer;
-@property (nonatomic, readonly, copy) NSString * _Nullable userName;
 @property (nonatomic) BOOL currMoving;
 @property (nonatomic, strong) HKWorkoutSession * _Nullable workoutSesh;
 @property (nonatomic, readonly, strong) HKUnit * _Nonnull heartRateUnit;
 @property (nonatomic, strong) HKQueryAnchor * _Nonnull anchor;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
-- (void)awakeWithContext:(id _Nullable)context;
 - (void)willActivate;
 - (void)displayUnallowed;
-- (void)workoutSession:(HKWorkoutSession * _Nonnull)workoutSession didChangeToState:(HKWorkoutSessionState)toState fromState:(HKWorkoutSessionState)fromState date:(NSDate * _Nonnull)date;
+- (void)workoutSession:(HKWorkoutSession * _Nonnull)workoutSession didChangeTo:(HKWorkoutSessionState)toState from:(HKWorkoutSessionState)fromState date:(NSDate * _Nonnull)date;
 - (void)workoutSession:(HKWorkoutSession * _Nonnull)workoutSession didFailWithError:(NSError * _Nonnull)error;
 - (void)workoutDidStart:(NSDate * _Nonnull)date;
 - (void)workoutDidEnd:(NSDate * _Nonnull)date;
@@ -171,15 +158,8 @@ SWIFT_CLASS("_TtC22getHeartRate_Extension19InterfaceController")
 - (void)publishHeartRate;
 - (void)client:(PubNub * _Null_unspecified)client didReceiveMessage:(PNMessageResult * _Null_unspecified)message didReceiveStatus:(PNStatus * _Nonnull)status;
 - (void)session:(WCSession * _Nonnull)wrSesh didReceiveMessage:(NSDictionary<NSString *, id> * _Nonnull)message replyHandler:(void (^ _Nonnull)(NSDictionary<NSString *, id> * _Nonnull))replyHandler;
+- (NSString * _Nonnull)genRandom;
 - (void)updateHeartRate:(NSArray<HKSample *> * _Nullable)samples;
-@end
-
-
-SWIFT_CLASS("_TtC22getHeartRate_Extension22NotificationController")
-@interface NotificationController : WKUserNotificationInterfaceController
-- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
-- (void)willActivate;
-- (void)didDeactivate;
 @end
 
 #pragma clang diagnostic pop
