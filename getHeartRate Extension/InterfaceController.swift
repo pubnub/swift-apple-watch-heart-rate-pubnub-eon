@@ -21,6 +21,8 @@ class InterfaceController: WKInterfaceController, HKWorkoutSessionDelegate, WCSe
 
     @IBOutlet var startStopBtn: WKInterfaceButton!
     
+    var randomName : String = ""
+    
     var client: PubNub?
     
     let healthStore = HKHealthStore()
@@ -58,6 +60,8 @@ class InterfaceController: WKInterfaceController, HKWorkoutSessionDelegate, WCSe
         super.init()
         watchAppDel.client?.addListener(self)
         //watchAppDel.client?.joinChannel(channel)
+        
+        randomName = genRandom()
     }
     
     override func awakeWithContext(context: AnyObject?) {
@@ -70,28 +74,10 @@ class InterfaceController: WKInterfaceController, HKWorkoutSessionDelegate, WCSe
             label.setText("unavailable🙀")
             return
         }
-        
-//        //could also be
-//        if(HKHealthStore.isHealthDataAvailable() == true) {
-//            label.setText("available😼")
-//            return
-//        }
-//        else {
-//            label.setText("unavailable🙀")
-//        }
-        
         guard let quantityType = HKQuantityType.quantityTypeForIdentifier(HKQuantityTypeIdentifierHeartRate) else {
             displayUnallowed() //only display if Heart Rate
             return
         }
-        
-        //could also be
-//        if (quantityType == HKQuantityType.quantityTypeForIdentifier(HKQuantityTypeIdentifierHeartRate)) {
-//            return
-//        }
-//        else {
-//            displayUnallowed()
-//        }
         
         let dataTypes = Set(arrayLiteral: quantityType)
         healthStore.requestAuthorizationToShareTypes(nil, readTypes: dataTypes) { (success, error) -> Void in
@@ -137,13 +123,6 @@ class InterfaceController: WKInterfaceController, HKWorkoutSessionDelegate, WCSe
             return
         }
         healthStore.executeQuery(query)
-        
-        //with if let?
-//        if let query = createHeartRateStreamingQuery(date) {
-//            healthStore.executeQuery(query)
-//        } else {
-//            label.setText("can't start🤕")
-//        }
     }
     
     func workoutDidEnd(date : NSDate) {
@@ -214,20 +193,23 @@ class InterfaceController: WKInterfaceController, HKWorkoutSessionDelegate, WCSe
     }
     
     func publishHeartRate() {
-        watchAppDel.client?.publish(hrVal, toChannel: channelSentFromPhone, withCompletion: { (status) -> Void in
+        //        let hrValToPublish: [String : Double] = [self.uuidSentFromPhone: hrVal]
+        let hrValToPublish = [randomName: "\(hrVal)"]
+        print("hrValToPublish: \(hrValToPublish)")
+        watchAppDel.client?.publish(hrValToPublish, toChannel: "yee", withCompletion: { (status) -> Void in
             if !status.error {
                 print("\(self.hrVal) has been published")
+                print("\(hrValToPublish) has been published")
+                
             } //if
-
+                
             else {
+                print(status.debugDescription)
                 print("\(self.hrVal) returns publish error hmm hmm ponder")
+                print("\(hrValToPublish) has not been published err")
             } //else
         })
     }
-    
-//    func publishTimer(interval: NSTimerInterval = 10.0, userName: String? = nil) {
-//        self.hrTimer = NSTimer.scheduledTimerWithTimeInterval(10.0, target: self, selector: #selector(InterfaceController.publishHeartRate), userInfo: nil, repeats: true)
-//    }
     
     func client(client: PubNub!, didReceiveMessage message: PNMessageResult!, didReceiveStatus status: PNStatus) {
         print(message)
@@ -254,6 +236,13 @@ class InterfaceController: WKInterfaceController, HKWorkoutSessionDelegate, WCSe
                 //update with PubNub here
             }
         }
+    }
+    
+    func genRandom() -> String {
+        var possNames = ["Tomomi", "Bhavana", "Stephen", "EmmaRose", "Keith", "Sleepy", "Olaf", "R2D2", "Wendy", "PubNub", "PingPong", "chess"]
+        let randIndex = Int(arc4random_uniform(UInt32(possNames.count)))
+        return possNames[randIndex]
+        
     }
 
 

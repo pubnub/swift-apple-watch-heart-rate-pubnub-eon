@@ -6,20 +6,20 @@ provides-nominal:
 provides-member:
 - ["C22getHeartRate_Extension17ExtensionDelegate", ""]
 provides-dynamic-lookup:
-- "applicationWillResignActive"
 - "client"
-- "applicationDidFinishLaunching"
 - "applicationDidBecomeActive"
 - "channel"
+- "applicationWillResignActive"
+- "applicationDidFinishLaunching"
 depends-top-level:
-- !private "BooleanLiteralType"
-- "PubNub"
+- "NSObject"
 - "PNObjectEventListener"
 - "WKExtensionDelegate"
-- "NSObject"
-- "StringLiteralType"
-- "ExtensionDelegate"
 - !private "Array"
+- "StringLiteralType"
+- "PubNub"
+- "ExtensionDelegate"
+- !private "BooleanLiteralType"
 depends-member:
 - ["Ps9AnyObject", "applicationDidBecomeActive"]
 - ["Ps9AnyObject", "applicationDidFinishLaunching"]

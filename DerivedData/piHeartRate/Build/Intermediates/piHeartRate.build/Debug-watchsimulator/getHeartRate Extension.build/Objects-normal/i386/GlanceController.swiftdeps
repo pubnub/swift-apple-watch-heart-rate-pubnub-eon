@@ -6,12 +6,12 @@ provides-nominal:
 provides-member:
 - ["C22getHeartRate_Extension16GlanceController", ""]
 provides-dynamic-lookup:
-- "willActivate"
-- "awakeWithContext"
 - "didDeactivate"
+- "awakeWithContext"
+- "willActivate"
 depends-top-level:
-- "GlanceController"
 - "AnyObject"
+- "GlanceController"
 - "WKInterfaceController"
 depends-member:
 - ["Ps9AnyObject", "awakeWithContext"]
