@@ -6,47 +6,50 @@ provides-nominal:
 provides-member:
 - ["C11piHeartRate11AppDelegate", ""]
 provides-dynamic-lookup:
-- "applicationWillResignActive"
-- "channel"
+- "applicationShouldRequestHealthAuthorization"
+- "config"
 - "applicationWillEnterForeground"
+- "applicationDidEnterBackground"
+- "client"
+- "client"
+- "window"
+- "applicationWillResignActive"
+- "applicationDidBecomeActive"
 - "healthStore"
 - "application"
-- "applicationDidBecomeActive"
-- "config"
 - "applicationWillTerminate"
-- "window"
-- "applicationDidEnterBackground"
-- "applicationShouldRequestHealthAuthorization"
-- "client"
-- "client"
+- "channel"
 depends-top-level:
-- "UIWindow"
 - "PubNub"
-- !private "!="
-- !private "+"
 - "AppDelegate"
-- "HKHealthStore"
-- "Bool"
-- "PNMessageResult"
-- "PNObjectEventListener"
 - !private "BooleanLiteralType"
+- !private "Array"
+- "UIWindow"
+- !private "+"
+- "NSObject"
+- !private "!="
+- "UIApplication"
+- "UIResponder"
+- !private "??"
+- "PNObjectEventListener"
 - "StringLiteralType"
-- "UIApplicationDelegate"
+- "HKHealthStore"
 - "PNStatus"
 - "PNConfiguration"
-- !private "print"
 - "AnyObject"
-- !private "Array"
-- "UIResponder"
-- "NSObject"
-- "UIApplication"
-- !private "??"
+- !private "print"
+- "Bool"
+- "UIApplicationDelegate"
+- "PNMessageResult"
 depends-member:
+- !private ["Ps16AbsoluteValuable", "IntegerLiteralType"]
+- !private ["Ps16AbsoluteValuable", "Stride"]
+- !private ["Ps16AbsoluteValuable", "init"]
 - ["Ps9AnyObject", "HKHealthStore"]
 - !private ["Ps9AnyObject", "PNConfiguration"]
 - !private ["Ps9AnyObject", "PubNub"]
 - !private ["Ps9AnyObject", "actualChannel"]
-- !private ["Ps9AnyObject", "add"]
+- !private ["Ps9AnyObject", "addListener"]
 - ["Ps9AnyObject", "application"]
 - ["Ps9AnyObject", "applicationDidBecomeActive"]
 - ["Ps9AnyObject", "applicationDidEnterBackground"]
@@ -61,14 +64,15 @@ depends-member:
 - ["Ps9AnyObject", "applicationWillTerminate"]
 - ["Ps9AnyObject", "channel"]
 - ["Ps9AnyObject", "client"]
+- !private ["Ps9AnyObject", "clientWithConfiguration"]
 - ["Ps9AnyObject", "config"]
 - !private ["Ps9AnyObject", "data"]
-- !private ["Ps9AnyObject", "handleAuthorizationForExtension"]
+- !private ["Ps9AnyObject", "handleAuthorizationForExtensionWithCompletion"]
 - ["Ps9AnyObject", "healthStore"]
 - ["Ps9AnyObject", "init"]
 - !private ["Ps9AnyObject", "message"]
 - !private ["Ps9AnyObject", "print"]
-- !private ["Ps9AnyObject", "subscribe"]
+- !private ["Ps9AnyObject", "subscribeToChannels"]
 - !private ["Ps9AnyObject", "subscribedChannel"]
 - !private ["Ps9AnyObject", "timetoken"]
 - ["Ps9AnyObject", "window"]
@@ -105,65 +109,74 @@ depends-member:
 - ["C11piHeartRate11AppDelegate", "window"]
 - !private ["Sa", "Element"]
 - !private ["Ps23ArrayLiteralConvertible", "Element"]
-- !private ["Ps23ArrayLiteralConvertible", "Iterator"]
-- !private ["Ps23ArrayLiteralConvertible", "_Element"]
-- !private ["Ps23BidirectionalCollection", "Element"]
-- !private ["Ps23BidirectionalCollection", "Iterator"]
-- !private ["Ps23BidirectionalCollection", "_Element"]
-- !private ["Ps22BidirectionalIndexable", "Element"]
-- !private ["Ps22BidirectionalIndexable", "Iterator"]
-- !private ["Ps22BidirectionalIndexable", "_Element"]
+- !private ["Ps22BidirectionalIndexType", "Distance"]
+- !private ["Ps22BidirectionalIndexType", "IntegerLiteralType"]
+- !private ["Ps22BidirectionalIndexType", "Stride"]
+- !private ["Ps22BidirectionalIndexType", "_DisallowMixedSignArithmetic"]
+- !private ["Ps22BidirectionalIndexType", "init"]
+- !private ["Ps21BitwiseOperationsType", "Distance"]
+- !private ["Ps21BitwiseOperationsType", "IntegerLiteralType"]
+- !private ["Ps21BitwiseOperationsType", "Stride"]
+- !private ["Ps21BitwiseOperationsType", "_DisallowMixedSignArithmetic"]
+- !private ["Ps21BitwiseOperationsType", "init"]
 - !private ["Sb", "_getBuiltinLogicValue"]
 - !private ["Sb", "deinit"]
-- !private ["Ps7Boolean", "_getBuiltinLogicValue"]
 - !private ["Ps25BooleanLiteralConvertible", "_getBuiltinLogicValue"]
+- !private ["Ps11BooleanType", "_getBuiltinLogicValue"]
+- !private ["V12CoreGraphics7CGFloat", "IntegerLiteralType"]
+- !private ["V12CoreGraphics7CGFloat", "Stride"]
 - !private ["V12CoreGraphics7CGFloat", "deinit"]
-- ["Ps7CVarArg", "HKHealthStore"]
-- !private ["Ps7CVarArg", "PNConfiguration"]
-- !private ["Ps7CVarArg", "PubNub"]
-- !private ["Ps7CVarArg", "actualChannel"]
-- !private ["Ps7CVarArg", "add"]
-- ["Ps7CVarArg", "application"]
-- ["Ps7CVarArg", "applicationDidBecomeActive"]
-- ["Ps7CVarArg", "applicationDidEnterBackground"]
-- ["Ps7CVarArg", "applicationDidFinishLaunching"]
-- ["Ps7CVarArg", "applicationDidReceiveMemoryWarning"]
-- ["Ps7CVarArg", "applicationProtectedDataDidBecomeAvailable"]
-- ["Ps7CVarArg", "applicationProtectedDataWillBecomeUnavailable"]
-- ["Ps7CVarArg", "applicationShouldRequestHealthAuthorization"]
-- ["Ps7CVarArg", "applicationSignificantTimeChange"]
-- ["Ps7CVarArg", "applicationWillEnterForeground"]
-- ["Ps7CVarArg", "applicationWillResignActive"]
-- ["Ps7CVarArg", "applicationWillTerminate"]
-- ["Ps7CVarArg", "channel"]
-- ["Ps7CVarArg", "client"]
-- ["Ps7CVarArg", "config"]
-- !private ["Ps7CVarArg", "data"]
-- !private ["Ps7CVarArg", "handleAuthorizationForExtension"]
-- ["Ps7CVarArg", "healthStore"]
-- ["Ps7CVarArg", "init"]
-- !private ["Ps7CVarArg", "message"]
-- !private ["Ps7CVarArg", "print"]
-- !private ["Ps7CVarArg", "subscribe"]
-- !private ["Ps7CVarArg", "subscribedChannel"]
-- !private ["Ps7CVarArg", "timetoken"]
-- ["Ps7CVarArg", "window"]
-- ["Ps7CVarArg", ""]
+- !private ["Ps11CVarArgType", "Distance"]
+- ["Ps11CVarArgType", "HKHealthStore"]
+- !private ["Ps11CVarArgType", "IntegerLiteralType"]
+- !private ["Ps11CVarArgType", "PNConfiguration"]
+- !private ["Ps11CVarArgType", "PubNub"]
+- !private ["Ps11CVarArgType", "Stride"]
+- !private ["Ps11CVarArgType", "_DisallowMixedSignArithmetic"]
+- !private ["Ps11CVarArgType", "actualChannel"]
+- !private ["Ps11CVarArgType", "addListener"]
+- ["Ps11CVarArgType", "application"]
+- ["Ps11CVarArgType", "applicationDidBecomeActive"]
+- ["Ps11CVarArgType", "applicationDidEnterBackground"]
+- ["Ps11CVarArgType", "applicationDidFinishLaunching"]
+- ["Ps11CVarArgType", "applicationDidReceiveMemoryWarning"]
+- ["Ps11CVarArgType", "applicationProtectedDataDidBecomeAvailable"]
+- ["Ps11CVarArgType", "applicationProtectedDataWillBecomeUnavailable"]
+- ["Ps11CVarArgType", "applicationShouldRequestHealthAuthorization"]
+- ["Ps11CVarArgType", "applicationSignificantTimeChange"]
+- ["Ps11CVarArgType", "applicationWillEnterForeground"]
+- ["Ps11CVarArgType", "applicationWillResignActive"]
+- ["Ps11CVarArgType", "applicationWillTerminate"]
+- ["Ps11CVarArgType", "channel"]
+- ["Ps11CVarArgType", "client"]
+- !private ["Ps11CVarArgType", "clientWithConfiguration"]
+- ["Ps11CVarArgType", "config"]
+- !private ["Ps11CVarArgType", "data"]
+- !private ["Ps11CVarArgType", "handleAuthorizationForExtensionWithCompletion"]
+- ["Ps11CVarArgType", "healthStore"]
+- ["Ps11CVarArgType", "init"]
+- !private ["Ps11CVarArgType", "message"]
+- !private ["Ps11CVarArgType", "print"]
+- !private ["Ps11CVarArgType", "subscribeToChannels"]
+- !private ["Ps11CVarArgType", "subscribedChannel"]
+- !private ["Ps11CVarArgType", "timetoken"]
+- ["Ps11CVarArgType", "window"]
+- ["Ps11CVarArgType", ""]
 - !private ["Vs9Character", "deinit"]
-- !private ["Ps10Collection", "Element"]
-- !private ["Ps10Collection", "Iterator"]
-- !private ["Ps10Collection", "_Element"]
-- !private ["Ps10Comparable", "Iterator"]
-- !private ["Ps10Comparable", "_Element"]
+- !private ["Ps14CollectionType", "Element"]
+- !private ["Ps10Comparable", "Distance"]
+- !private ["Ps10Comparable", "IntegerLiteralType"]
+- !private ["Ps10Comparable", "Stride"]
+- !private ["Ps10Comparable", "_DisallowMixedSignArithmetic"]
 - !private ["Ps10Comparable", "init"]
 - !private ["Ps28CustomDebugStringConvertible", "Element"]
 - ["Ps28CustomDebugStringConvertible", "HKHealthStore"]
-- !private ["Ps28CustomDebugStringConvertible", "Iterator"]
+- !private ["Ps28CustomDebugStringConvertible", "IntegerLiteralType"]
 - !private ["Ps28CustomDebugStringConvertible", "PNConfiguration"]
 - !private ["Ps28CustomDebugStringConvertible", "PubNub"]
-- !private ["Ps28CustomDebugStringConvertible", "_Element"]
+- !private ["Ps28CustomDebugStringConvertible", "Stride"]
 - !private ["Ps28CustomDebugStringConvertible", "actualChannel"]
-- !private ["Ps28CustomDebugStringConvertible", "add"]
+- !private ["Ps28CustomDebugStringConvertible", "addListener"]
 - ["Ps28CustomDebugStringConvertible", "application"]
 - ["Ps28CustomDebugStringConvertible", "applicationDidBecomeActive"]
 - ["Ps28CustomDebugStringConvertible", "applicationDidEnterBackground"]
@@ -178,32 +191,30 @@ depends-member:
 - ["Ps28CustomDebugStringConvertible", "applicationWillTerminate"]
 - ["Ps28CustomDebugStringConvertible", "channel"]
 - ["Ps28CustomDebugStringConvertible", "client"]
+- !private ["Ps28CustomDebugStringConvertible", "clientWithConfiguration"]
 - ["Ps28CustomDebugStringConvertible", "config"]
 - !private ["Ps28CustomDebugStringConvertible", "data"]
-- !private ["Ps28CustomDebugStringConvertible", "handleAuthorizationForExtension"]
+- !private ["Ps28CustomDebugStringConvertible", "handleAuthorizationForExtensionWithCompletion"]
 - ["Ps28CustomDebugStringConvertible", "healthStore"]
 - ["Ps28CustomDebugStringConvertible", "init"]
 - !private ["Ps28CustomDebugStringConvertible", "message"]
 - !private ["Ps28CustomDebugStringConvertible", "print"]
-- !private ["Ps28CustomDebugStringConvertible", "subscribe"]
+- !private ["Ps28CustomDebugStringConvertible", "subscribeToChannels"]
 - !private ["Ps28CustomDebugStringConvertible", "subscribedChannel"]
 - !private ["Ps28CustomDebugStringConvertible", "timetoken"]
 - ["Ps28CustomDebugStringConvertible", "window"]
 - ["Ps28CustomDebugStringConvertible", ""]
-- !private ["Ps29CustomPlaygroundQuickLookable", "_getBuiltinLogicValue"]
-- !private ["Ps29CustomPlaygroundQuickLookable", "init"]
-- !private ["Ps17CustomReflectable", "Element"]
-- !private ["Ps17CustomReflectable", "_getBuiltinLogicValue"]
-- !private ["Ps17CustomReflectable", "init"]
+- !private ["Ps23CustomStringConvertible", "Distance"]
 - !private ["Ps23CustomStringConvertible", "Element"]
 - ["Ps23CustomStringConvertible", "HKHealthStore"]
-- !private ["Ps23CustomStringConvertible", "Iterator"]
+- !private ["Ps23CustomStringConvertible", "IntegerLiteralType"]
 - !private ["Ps23CustomStringConvertible", "PNConfiguration"]
 - !private ["Ps23CustomStringConvertible", "PubNub"]
-- !private ["Ps23CustomStringConvertible", "_Element"]
+- !private ["Ps23CustomStringConvertible", "Stride"]
+- !private ["Ps23CustomStringConvertible", "_DisallowMixedSignArithmetic"]
 - !private ["Ps23CustomStringConvertible", "_getBuiltinLogicValue"]
 - !private ["Ps23CustomStringConvertible", "actualChannel"]
-- !private ["Ps23CustomStringConvertible", "add"]
+- !private ["Ps23CustomStringConvertible", "addListener"]
 - ["Ps23CustomStringConvertible", "application"]
 - ["Ps23CustomStringConvertible", "applicationDidBecomeActive"]
 - ["Ps23CustomStringConvertible", "applicationDidEnterBackground"]
@@ -218,32 +229,33 @@ depends-member:
 - ["Ps23CustomStringConvertible", "applicationWillTerminate"]
 - ["Ps23CustomStringConvertible", "channel"]
 - ["Ps23CustomStringConvertible", "client"]
+- !private ["Ps23CustomStringConvertible", "clientWithConfiguration"]
 - ["Ps23CustomStringConvertible", "config"]
 - !private ["Ps23CustomStringConvertible", "data"]
-- !private ["Ps23CustomStringConvertible", "handleAuthorizationForExtension"]
+- !private ["Ps23CustomStringConvertible", "handleAuthorizationForExtensionWithCompletion"]
 - ["Ps23CustomStringConvertible", "healthStore"]
 - ["Ps23CustomStringConvertible", "init"]
 - !private ["Ps23CustomStringConvertible", "message"]
 - !private ["Ps23CustomStringConvertible", "print"]
-- !private ["Ps23CustomStringConvertible", "subscribe"]
+- !private ["Ps23CustomStringConvertible", "subscribeToChannels"]
 - !private ["Ps23CustomStringConvertible", "subscribedChannel"]
 - !private ["Ps23CustomStringConvertible", "timetoken"]
 - ["Ps23CustomStringConvertible", "window"]
 - ["Ps23CustomStringConvertible", ""]
-- !private ["V10Foundation4Date", "deinit"]
-- !private ["VSC7Decimal", "deinit"]
-- !private ["V8Dispatch12DispatchTime", "Iterator"]
-- !private ["V8Dispatch12DispatchTime", "deinit"]
-- !private ["V8Dispatch16DispatchWallTime", "deinit"]
+- !private ["Sd", "IntegerLiteralType"]
+- !private ["Sd", "Stride"]
 - !private ["Sd", "deinit"]
+- !private ["Sd", "init"]
+- !private ["Ps9Equatable", "Distance"]
 - ["Ps9Equatable", "HKHealthStore"]
-- !private ["Ps9Equatable", "Iterator"]
+- !private ["Ps9Equatable", "IntegerLiteralType"]
 - !private ["Ps9Equatable", "PNConfiguration"]
 - !private ["Ps9Equatable", "PubNub"]
-- !private ["Ps9Equatable", "_Element"]
+- !private ["Ps9Equatable", "Stride"]
+- !private ["Ps9Equatable", "_DisallowMixedSignArithmetic"]
 - !private ["Ps9Equatable", "_getBuiltinLogicValue"]
 - !private ["Ps9Equatable", "actualChannel"]
-- !private ["Ps9Equatable", "add"]
+- !private ["Ps9Equatable", "addListener"]
 - ["Ps9Equatable", "application"]
 - ["Ps9Equatable", "applicationDidBecomeActive"]
 - ["Ps9Equatable", "applicationDidEnterBackground"]
@@ -258,31 +270,51 @@ depends-member:
 - ["Ps9Equatable", "applicationWillTerminate"]
 - ["Ps9Equatable", "channel"]
 - ["Ps9Equatable", "client"]
+- !private ["Ps9Equatable", "clientWithConfiguration"]
 - ["Ps9Equatable", "config"]
 - !private ["Ps9Equatable", "data"]
-- !private ["Ps9Equatable", "handleAuthorizationForExtension"]
+- !private ["Ps9Equatable", "handleAuthorizationForExtensionWithCompletion"]
 - ["Ps9Equatable", "healthStore"]
 - ["Ps9Equatable", "init"]
 - !private ["Ps9Equatable", "message"]
 - !private ["Ps9Equatable", "print"]
-- !private ["Ps9Equatable", "subscribe"]
+- !private ["Ps9Equatable", "subscribeToChannels"]
 - !private ["Ps9Equatable", "subscribedChannel"]
 - !private ["Ps9Equatable", "timetoken"]
 - ["Ps9Equatable", "window"]
 - ["Ps9Equatable", ""]
 - !private ["Ps41ExtendedGraphemeClusterLiteralConvertible", "init"]
+- !private ["Sf", "IntegerLiteralType"]
+- !private ["Sf", "Stride"]
 - !private ["Sf", "deinit"]
+- !private ["Sf", "init"]
+- !private ["Vs7Float80", "IntegerLiteralType"]
+- !private ["Vs7Float80", "Stride"]
 - !private ["Vs7Float80", "deinit"]
-- !private ["CSo13HKHealthStore", "handleAuthorizationForExtension"]
+- !private ["Vs7Float80", "init"]
+- !private ["Ps23FloatLiteralConvertible", "IntegerLiteralType"]
+- !private ["Ps23FloatLiteralConvertible", "Stride"]
+- !private ["Ps23FloatLiteralConvertible", "init"]
+- !private ["Ps17FloatingPointType", "IntegerLiteralType"]
+- !private ["Ps17FloatingPointType", "Stride"]
+- !private ["Ps17FloatingPointType", "init"]
+- !private ["Ps16ForwardIndexType", "Distance"]
+- !private ["Ps16ForwardIndexType", "IntegerLiteralType"]
+- !private ["Ps16ForwardIndexType", "Stride"]
+- !private ["Ps16ForwardIndexType", "_DisallowMixedSignArithmetic"]
+- !private ["Ps16ForwardIndexType", "init"]
+- !private ["CSo13HKHealthStore", "handleAuthorizationForExtensionWithCompletion"]
 - ["CSo13HKHealthStore", "init"]
+- !private ["Ps8Hashable", "Distance"]
 - ["Ps8Hashable", "HKHealthStore"]
-- !private ["Ps8Hashable", "Iterator"]
+- !private ["Ps8Hashable", "IntegerLiteralType"]
 - !private ["Ps8Hashable", "PNConfiguration"]
 - !private ["Ps8Hashable", "PubNub"]
-- !private ["Ps8Hashable", "_Element"]
+- !private ["Ps8Hashable", "Stride"]
+- !private ["Ps8Hashable", "_DisallowMixedSignArithmetic"]
 - !private ["Ps8Hashable", "_getBuiltinLogicValue"]
 - !private ["Ps8Hashable", "actualChannel"]
-- !private ["Ps8Hashable", "add"]
+- !private ["Ps8Hashable", "addListener"]
 - ["Ps8Hashable", "application"]
 - ["Ps8Hashable", "applicationDidBecomeActive"]
 - ["Ps8Hashable", "applicationDidEnterBackground"]
@@ -297,41 +329,59 @@ depends-member:
 - ["Ps8Hashable", "applicationWillTerminate"]
 - ["Ps8Hashable", "channel"]
 - ["Ps8Hashable", "client"]
+- !private ["Ps8Hashable", "clientWithConfiguration"]
 - ["Ps8Hashable", "config"]
 - !private ["Ps8Hashable", "data"]
-- !private ["Ps8Hashable", "handleAuthorizationForExtension"]
+- !private ["Ps8Hashable", "handleAuthorizationForExtensionWithCompletion"]
 - ["Ps8Hashable", "healthStore"]
 - ["Ps8Hashable", "init"]
 - !private ["Ps8Hashable", "message"]
 - !private ["Ps8Hashable", "print"]
-- !private ["Ps8Hashable", "subscribe"]
+- !private ["Ps8Hashable", "subscribeToChannels"]
 - !private ["Ps8Hashable", "subscribedChannel"]
 - !private ["Ps8Hashable", "timetoken"]
 - ["Ps8Hashable", "window"]
 - ["Ps8Hashable", ""]
-- !private ["V10Foundation9IndexPath", "Iterator"]
-- !private ["V10Foundation9IndexPath", "_Element"]
 - !private ["Ps9Indexable", "Element"]
-- !private ["Ps9Indexable", "Iterator"]
-- !private ["Ps9Indexable", "_Element"]
-- !private ["Ps13IndexableBase", "Element"]
-- !private ["Ps13IndexableBase", "Iterator"]
-- !private ["Ps13IndexableBase", "_Element"]
-- !private ["Vs16IndexingIterator", "Element"]
+- !private ["Si", "Distance"]
+- !private ["Si", "IntegerLiteralType"]
+- !private ["Si", "Stride"]
 - !private ["Si", "deinit"]
+- !private ["Si", "init"]
+- !private ["Vs5Int16", "Stride"]
 - !private ["Vs5Int16", "deinit"]
+- !private ["Vs5Int16", "init"]
+- !private ["Vs5Int32", "Stride"]
 - !private ["Vs5Int32", "deinit"]
+- !private ["Vs5Int32", "init"]
+- !private ["Vs5Int64", "Stride"]
 - !private ["Vs5Int64", "deinit"]
+- !private ["Vs5Int64", "init"]
+- !private ["Vs4Int8", "Stride"]
 - !private ["Vs4Int8", "deinit"]
-- !private ["Ps16IteratorProtocol", "Element"]
-- !private ["V10Foundation11Measurement", "deinit"]
-- !private ["Ps10MirrorPath", "init"]
-- !private ["Ps17MutableCollection", "Element"]
-- !private ["Ps17MutableCollection", "Iterator"]
-- !private ["Ps17MutableCollection", "_Element"]
+- !private ["Vs4Int8", "init"]
+- !private ["Ps21IntegerArithmeticType", "Distance"]
+- !private ["Ps21IntegerArithmeticType", "IntegerLiteralType"]
+- !private ["Ps21IntegerArithmeticType", "Stride"]
+- !private ["Ps21IntegerArithmeticType", "_DisallowMixedSignArithmetic"]
+- !private ["Ps21IntegerArithmeticType", "init"]
+- !private ["Ps25IntegerLiteralConvertible", "Distance"]
+- !private ["Ps25IntegerLiteralConvertible", "IntegerLiteralType"]
+- !private ["Ps25IntegerLiteralConvertible", "Stride"]
+- !private ["Ps25IntegerLiteralConvertible", "_DisallowMixedSignArithmetic"]
+- !private ["Ps25IntegerLiteralConvertible", "init"]
+- !private ["Ps11IntegerType", "Distance"]
+- !private ["Ps11IntegerType", "IntegerLiteralType"]
+- !private ["Ps11IntegerType", "Stride"]
+- !private ["Ps11IntegerType", "_DisallowMixedSignArithmetic"]
+- !private ["Ps11IntegerType", "init"]
+- !private ["Ps14MirrorPathType", "Distance"]
+- !private ["Ps14MirrorPathType", "IntegerLiteralType"]
+- !private ["Ps14MirrorPathType", "Stride"]
+- !private ["Ps14MirrorPathType", "init"]
+- !private ["Ps21MutableCollectionType", "Element"]
 - !private ["Ps16MutableIndexable", "Element"]
-- !private ["Ps16MutableIndexable", "Iterator"]
-- !private ["Ps16MutableIndexable", "_Element"]
+- !private ["Ps16MutableSliceable", "Element"]
 - !private ["PSo8NSCoding", "init"]
 - !private ["PSo9NSCopying", "init"]
 - !private ["PSo16NSMutableCopying", "init"]
@@ -346,7 +396,7 @@ depends-member:
 - ["CSo8NSObject", "UIApplication"]
 - ["CSo8NSObject", "UIWindow"]
 - !private ["CSo8NSObject", "actualChannel"]
-- !private ["CSo8NSObject", "add"]
+- !private ["CSo8NSObject", "addListener"]
 - ["CSo8NSObject", "application"]
 - ["CSo8NSObject", "applicationDidBecomeActive"]
 - ["CSo8NSObject", "applicationDidEnterBackground"]
@@ -361,14 +411,15 @@ depends-member:
 - ["CSo8NSObject", "applicationWillTerminate"]
 - ["CSo8NSObject", "channel"]
 - ["CSo8NSObject", "client"]
+- !private ["CSo8NSObject", "clientWithConfiguration"]
 - ["CSo8NSObject", "config"]
 - !private ["CSo8NSObject", "data"]
-- !private ["CSo8NSObject", "handleAuthorizationForExtension"]
+- !private ["CSo8NSObject", "handleAuthorizationForExtensionWithCompletion"]
 - ["CSo8NSObject", "healthStore"]
 - ["CSo8NSObject", "init"]
 - !private ["CSo8NSObject", "message"]
 - !private ["CSo8NSObject", "print"]
-- !private ["CSo8NSObject", "subscribe"]
+- !private ["CSo8NSObject", "subscribeToChannels"]
 - !private ["CSo8NSObject", "subscribedChannel"]
 - !private ["CSo8NSObject", "timetoken"]
 - ["CSo8NSObject", "window"]
@@ -376,7 +427,7 @@ depends-member:
 - !private ["PSo16NSObjectProtocol", "PNConfiguration"]
 - !private ["PSo16NSObjectProtocol", "PubNub"]
 - !private ["PSo16NSObjectProtocol", "actualChannel"]
-- !private ["PSo16NSObjectProtocol", "add"]
+- !private ["PSo16NSObjectProtocol", "addListener"]
 - ["PSo16NSObjectProtocol", "application"]
 - ["PSo16NSObjectProtocol", "applicationDidBecomeActive"]
 - ["PSo16NSObjectProtocol", "applicationDidEnterBackground"]
@@ -391,22 +442,24 @@ depends-member:
 - ["PSo16NSObjectProtocol", "applicationWillTerminate"]
 - ["PSo16NSObjectProtocol", "channel"]
 - ["PSo16NSObjectProtocol", "client"]
+- !private ["PSo16NSObjectProtocol", "clientWithConfiguration"]
 - ["PSo16NSObjectProtocol", "config"]
 - !private ["PSo16NSObjectProtocol", "data"]
-- !private ["PSo16NSObjectProtocol", "handleAuthorizationForExtension"]
+- !private ["PSo16NSObjectProtocol", "handleAuthorizationForExtensionWithCompletion"]
 - ["PSo16NSObjectProtocol", "healthStore"]
 - ["PSo16NSObjectProtocol", "init"]
 - !private ["PSo16NSObjectProtocol", "message"]
 - !private ["PSo16NSObjectProtocol", "print"]
-- !private ["PSo16NSObjectProtocol", "subscribe"]
+- !private ["PSo16NSObjectProtocol", "subscribeToChannels"]
 - !private ["PSo16NSObjectProtocol", "subscribedChannel"]
 - !private ["PSo16NSObjectProtocol", "timetoken"]
 - ["PSo16NSObjectProtocol", "window"]
 - ["PSo16NSObjectProtocol", ""]
 - !private ["PSo14NSSecureCoding", "init"]
+- !private ["CSo8NSString", "deinit"]
 - !private ["CSo8NSString", "init"]
 - !private ["Sq", "deinit"]
-- !private ["Ps12OutputStream", "init"]
+- !private ["Ps16OutputStreamType", "init"]
 - !private ["CSo15PNConfiguration", "init"]
 - !private ["CSo13PNMessageData", "actualChannel"]
 - !private ["CSo13PNMessageData", "message"]
@@ -444,23 +497,30 @@ depends-member:
 - !private ["CSo16PNSubscriberData", "message"]
 - !private ["CSo16PNSubscriberData", "subscribedChannel"]
 - !private ["CSo16PNSubscriberData", "timetoken"]
-- !private ["CSo6PubNub", "add"]
-- !private ["CSo6PubNub", "client"]
-- !private ["CSo6PubNub", "subscribe"]
-- !private ["Ps22RandomAccessCollection", "Element"]
-- !private ["Ps22RandomAccessCollection", "Iterator"]
-- !private ["Ps22RandomAccessCollection", "_Element"]
-- !private ["Ps21RandomAccessIndexable", "Element"]
-- !private ["Ps21RandomAccessIndexable", "Iterator"]
-- !private ["Ps21RandomAccessIndexable", "_Element"]
-- !private ["Ps26RangeReplaceableCollection", "Element"]
-- !private ["Ps25RangeReplaceableIndexable", "Element"]
-- !private ["P10Foundation20ReferenceConvertible", "Iterator"]
-- !private ["P10Foundation20ReferenceConvertible", "_Element"]
-- !private ["Ps8Sequence", "Element"]
-- !private ["Ps8Sequence", "Iterator"]
-- !private ["Ps8Sequence", "_Element"]
+- !private ["CSo6PubNub", "addListener"]
+- !private ["CSo6PubNub", "clientWithConfiguration"]
+- !private ["CSo6PubNub", "subscribeToChannels"]
+- !private ["Ps21RandomAccessIndexType", "Distance"]
+- !private ["Ps21RandomAccessIndexType", "IntegerLiteralType"]
+- !private ["Ps21RandomAccessIndexType", "Stride"]
+- !private ["Ps21RandomAccessIndexType", "_DisallowMixedSignArithmetic"]
+- !private ["Ps21RandomAccessIndexType", "init"]
+- !private ["Ps30RangeReplaceableCollectionType", "Element"]
+- !private ["Ps12SequenceType", "Element"]
+- !private ["Ps17SignedIntegerType", "Distance"]
+- !private ["Ps17SignedIntegerType", "IntegerLiteralType"]
+- !private ["Ps17SignedIntegerType", "Stride"]
+- !private ["Ps17SignedIntegerType", "init"]
+- !private ["Ps16SignedNumberType", "Distance"]
+- !private ["Ps16SignedNumberType", "IntegerLiteralType"]
+- !private ["Ps16SignedNumberType", "Stride"]
+- !private ["Ps16SignedNumberType", "init"]
 - !private ["Ps10Streamable", "init"]
+- !private ["Ps10Strideable", "Distance"]
+- !private ["Ps10Strideable", "IntegerLiteralType"]
+- !private ["Ps10Strideable", "Stride"]
+- !private ["Ps10Strideable", "_DisallowMixedSignArithmetic"]
+- !private ["Ps10Strideable", "init"]
 - !private ["SS", "deinit"]
 - !private ["SS", "init"]
 - !private ["Ps30StringInterpolationConvertible", "init"]
@@ -517,72 +577,158 @@ depends-member:
 - !private ["CSo11UIResponder", "print"]
 - ["CSo11UIResponder", "window"]
 - ["CSo11UIResponder", ""]
+- !private ["Su", "Distance"]
+- !private ["Su", "IntegerLiteralType"]
+- !private ["Su", "Stride"]
+- !private ["Su", "_DisallowMixedSignArithmetic"]
 - !private ["Su", "deinit"]
+- !private ["Su", "init"]
+- !private ["Vs6UInt16", "Distance"]
+- !private ["Vs6UInt16", "IntegerLiteralType"]
+- !private ["Vs6UInt16", "Stride"]
+- !private ["Vs6UInt16", "_DisallowMixedSignArithmetic"]
 - !private ["Vs6UInt16", "deinit"]
+- !private ["Vs6UInt16", "init"]
+- !private ["Vs6UInt32", "Distance"]
+- !private ["Vs6UInt32", "IntegerLiteralType"]
+- !private ["Vs6UInt32", "Stride"]
+- !private ["Vs6UInt32", "_DisallowMixedSignArithmetic"]
 - !private ["Vs6UInt32", "deinit"]
+- !private ["Vs6UInt32", "init"]
+- !private ["Vs6UInt64", "Distance"]
+- !private ["Vs6UInt64", "IntegerLiteralType"]
+- !private ["Vs6UInt64", "Stride"]
+- !private ["Vs6UInt64", "_DisallowMixedSignArithmetic"]
 - !private ["Vs6UInt64", "deinit"]
+- !private ["Vs6UInt64", "init"]
+- !private ["Vs5UInt8", "Distance"]
+- !private ["Vs5UInt8", "IntegerLiteralType"]
+- !private ["Vs5UInt8", "Stride"]
+- !private ["Vs5UInt8", "_DisallowMixedSignArithmetic"]
 - !private ["Vs5UInt8", "deinit"]
+- !private ["Vs5UInt8", "init"]
 - !private ["Sc", "deinit"]
 - !private ["Ps31UnicodeScalarLiteralConvertible", "init"]
 - !private ["Sp", "deinit"]
 - !private ["SP", "deinit"]
-- !private ["Ps14_ArrayProtocol", "Element"]
+- !private ["Ps19UnsignedIntegerType", "Distance"]
+- !private ["Ps19UnsignedIntegerType", "IntegerLiteralType"]
+- !private ["Ps19UnsignedIntegerType", "Stride"]
+- !private ["Ps19UnsignedIntegerType", "_DisallowMixedSignArithmetic"]
+- !private ["Ps19UnsignedIntegerType", "init"]
+- !private ["Ps10_ArrayType", "Element"]
 - !private ["Ps33_BuiltinBooleanLiteralConvertible", "_getBuiltinLogicValue"]
 - !private ["Ps49_BuiltinExtendedGraphemeClusterLiteralConvertible", "init"]
+- !private ["Ps31_BuiltinFloatLiteralConvertible", "IntegerLiteralType"]
+- !private ["Ps31_BuiltinFloatLiteralConvertible", "Stride"]
+- !private ["Ps31_BuiltinFloatLiteralConvertible", "init"]
+- !private ["Ps33_BuiltinIntegerLiteralConvertible", "Distance"]
+- !private ["Ps33_BuiltinIntegerLiteralConvertible", "IntegerLiteralType"]
+- !private ["Ps33_BuiltinIntegerLiteralConvertible", "Stride"]
+- !private ["Ps33_BuiltinIntegerLiteralConvertible", "_DisallowMixedSignArithmetic"]
+- !private ["Ps33_BuiltinIntegerLiteralConvertible", "init"]
 - !private ["Ps32_BuiltinStringLiteralConvertible", "init"]
 - !private ["Ps37_BuiltinUTF16StringLiteralConvertible", "init"]
 - !private ["Ps39_BuiltinUnicodeScalarLiteralConvertible", "init"]
+- !private ["Ps19_CVarArgAlignedType", "Distance"]
+- !private ["Ps19_CVarArgAlignedType", "IntegerLiteralType"]
+- !private ["Ps19_CVarArgAlignedType", "Stride"]
+- !private ["Ps19_CVarArgAlignedType", "_DisallowMixedSignArithmetic"]
+- !private ["Ps19_CVarArgAlignedType", "init"]
+- !private ["Ps22_CVarArgPassedAsDouble", "IntegerLiteralType"]
+- !private ["Ps22_CVarArgPassedAsDouble", "Stride"]
+- !private ["Ps22_CVarArgPassedAsDouble", "init"]
 - !private ["Ps24_DestructorSafeContainer", "Element"]
+- !private ["Ps28_DisallowMixedSignArithmetic", "Distance"]
+- !private ["Ps28_DisallowMixedSignArithmetic", "IntegerLiteralType"]
+- !private ["Ps28_DisallowMixedSignArithmetic", "Stride"]
+- !private ["Ps28_DisallowMixedSignArithmetic", "_DisallowMixedSignArithmetic"]
+- !private ["Ps28_DisallowMixedSignArithmetic", "init"]
+- !private ["Ps14_Incrementable", "Distance"]
+- !private ["Ps14_Incrementable", "IntegerLiteralType"]
+- !private ["Ps14_Incrementable", "Stride"]
+- !private ["Ps14_Incrementable", "_DisallowMixedSignArithmetic"]
+- !private ["Ps14_Incrementable", "init"]
+- !private ["Ps22_IntegerArithmeticType", "Distance"]
+- !private ["Ps22_IntegerArithmeticType", "IntegerLiteralType"]
+- !private ["Ps22_IntegerArithmeticType", "Stride"]
+- !private ["Ps22_IntegerArithmeticType", "_DisallowMixedSignArithmetic"]
+- !private ["Ps22_IntegerArithmeticType", "init"]
+- !private ["Ps12_IntegerType", "Distance"]
+- !private ["Ps12_IntegerType", "IntegerLiteralType"]
+- !private ["Ps12_IntegerType", "Stride"]
+- !private ["Ps12_IntegerType", "_DisallowMixedSignArithmetic"]
+- !private ["Ps12_IntegerType", "init"]
+- !private ["Ps21_ObjectiveCBridgeable", "Distance"]
 - !private ["Ps21_ObjectiveCBridgeable", "Element"]
-- !private ["Ps21_ObjectiveCBridgeable", "Iterator"]
-- !private ["Ps21_ObjectiveCBridgeable", "_Element"]
+- !private ["Ps21_ObjectiveCBridgeable", "IntegerLiteralType"]
+- !private ["Ps21_ObjectiveCBridgeable", "Stride"]
+- !private ["Ps21_ObjectiveCBridgeable", "_DisallowMixedSignArithmetic"]
 - !private ["Ps21_ObjectiveCBridgeable", "_getBuiltinLogicValue"]
 - !private ["Ps21_ObjectiveCBridgeable", "init"]
 - !private ["Vs26_OptionalNilComparisonType", "deinit"]
+- !private ["Ps22_RandomAccessAmbiguity", "Distance"]
+- !private ["Ps22_RandomAccessAmbiguity", "IntegerLiteralType"]
+- !private ["Ps22_RandomAccessAmbiguity", "Stride"]
+- !private ["Ps22_RandomAccessAmbiguity", "_DisallowMixedSignArithmetic"]
+- !private ["Ps22_RandomAccessAmbiguity", "init"]
+- !private ["Ps12_Reflectable", "Distance"]
+- !private ["Ps12_Reflectable", "Element"]
+- !private ["Ps12_Reflectable", "IntegerLiteralType"]
+- !private ["Ps12_Reflectable", "Stride"]
+- !private ["Ps12_Reflectable", "_DisallowMixedSignArithmetic"]
+- !private ["Ps12_Reflectable", "_getBuiltinLogicValue"]
+- !private ["Ps12_Reflectable", "init"]
+- !private ["Ps18_SignedIntegerType", "Distance"]
+- !private ["Ps18_SignedIntegerType", "IntegerLiteralType"]
+- !private ["Ps18_SignedIntegerType", "Stride"]
+- !private ["Ps18_SignedIntegerType", "init"]
+- !private ["Ps18_StringElementType", "Distance"]
+- !private ["Ps18_StringElementType", "IntegerLiteralType"]
+- !private ["Ps18_StringElementType", "Stride"]
+- !private ["Ps18_StringElementType", "_DisallowMixedSignArithmetic"]
+- !private ["Ps18_StringElementType", "init"]
 depends-nominal:
+- !private "Ps16AbsoluteValuable"
 - "Ps9AnyObject"
 - "C11piHeartRate11AppDelegate"
 - !private "Sa"
 - !private "Ps23ArrayLiteralConvertible"
-- !private "Ps23BidirectionalCollection"
-- !private "Ps22BidirectionalIndexable"
+- !private "Ps22BidirectionalIndexType"
+- !private "Ps21BitwiseOperationsType"
 - !private "Sb"
-- !private "Ps7Boolean"
 - !private "Ps25BooleanLiteralConvertible"
+- !private "Ps11BooleanType"
 - !private "V12CoreGraphics7CGFloat"
-- "Ps7CVarArg"
+- "Ps11CVarArgType"
 - !private "Vs9Character"
-- !private "Ps10Collection"
+- !private "Ps14CollectionType"
 - !private "Ps10Comparable"
 - "Ps28CustomDebugStringConvertible"
-- !private "Ps29CustomPlaygroundQuickLookable"
-- !private "Ps17CustomReflectable"
 - "Ps23CustomStringConvertible"
-- !private "V10Foundation4Date"
-- !private "VSC7Decimal"
-- !private "V8Dispatch12DispatchTime"
-- !private "V8Dispatch16DispatchWallTime"
 - !private "Sd"
 - "Ps9Equatable"
 - !private "Ps41ExtendedGraphemeClusterLiteralConvertible"
 - !private "Sf"
 - !private "Vs7Float80"
+- !private "Ps23FloatLiteralConvertible"
+- !private "Ps17FloatingPointType"
+- !private "Ps16ForwardIndexType"
 - "CSo13HKHealthStore"
 - "Ps8Hashable"
-- !private "V10Foundation9IndexPath"
 - !private "Ps9Indexable"
-- !private "Ps13IndexableBase"
-- !private "Vs16IndexingIterator"
 - !private "Si"
 - !private "Vs5Int16"
 - !private "Vs5Int32"
 - !private "Vs5Int64"
 - !private "Vs4Int8"
-- !private "Ps16IteratorProtocol"
-- !private "V10Foundation11Measurement"
-- !private "Ps10MirrorPath"
-- !private "Ps17MutableCollection"
+- !private "Ps21IntegerArithmeticType"
+- !private "Ps25IntegerLiteralConvertible"
+- !private "Ps11IntegerType"
+- !private "Ps14MirrorPathType"
+- !private "Ps21MutableCollectionType"
 - !private "Ps16MutableIndexable"
+- !private "Ps16MutableSliceable"
 - !private "PSo8NSCoding"
 - !private "PSo9NSCopying"
 - !private "PSo16NSMutableCopying"
@@ -591,7 +737,7 @@ depends-nominal:
 - !private "PSo14NSSecureCoding"
 - !private "CSo8NSString"
 - !private "Sq"
-- !private "Ps12OutputStream"
+- !private "Ps16OutputStreamType"
 - !private "CSo15PNConfiguration"
 - !private "CSo13PNMessageData"
 - !private "CSo15PNMessageResult"
@@ -600,13 +746,13 @@ depends-nominal:
 - !private "CSo13PNServiceData"
 - !private "CSo16PNSubscriberData"
 - !private "CSo6PubNub"
-- !private "Ps22RandomAccessCollection"
-- !private "Ps21RandomAccessIndexable"
-- !private "Ps26RangeReplaceableCollection"
-- !private "Ps25RangeReplaceableIndexable"
-- !private "P10Foundation20ReferenceConvertible"
-- !private "Ps8Sequence"
+- !private "Ps21RandomAccessIndexType"
+- !private "Ps30RangeReplaceableCollectionType"
+- !private "Ps12SequenceType"
+- !private "Ps17SignedIntegerType"
+- !private "Ps16SignedNumberType"
 - !private "Ps10Streamable"
+- !private "Ps10Strideable"
 - !private "SS"
 - !private "Ps30StringInterpolationConvertible"
 - !private "Ps24StringLiteralConvertible"
@@ -621,27 +767,39 @@ depends-nominal:
 - !private "Ps31UnicodeScalarLiteralConvertible"
 - !private "Sp"
 - !private "SP"
-- !private "Ps14_ArrayProtocol"
+- !private "Ps19UnsignedIntegerType"
+- !private "Ps10_ArrayType"
 - !private "Ps33_BuiltinBooleanLiteralConvertible"
 - !private "Ps49_BuiltinExtendedGraphemeClusterLiteralConvertible"
+- !private "Ps31_BuiltinFloatLiteralConvertible"
+- !private "Ps33_BuiltinIntegerLiteralConvertible"
 - !private "Ps32_BuiltinStringLiteralConvertible"
 - !private "Ps37_BuiltinUTF16StringLiteralConvertible"
 - !private "Ps39_BuiltinUnicodeScalarLiteralConvertible"
+- !private "Ps19_CVarArgAlignedType"
+- !private "Ps22_CVarArgPassedAsDouble"
 - !private "Ps24_DestructorSafeContainer"
+- !private "Ps28_DisallowMixedSignArithmetic"
+- !private "Ps14_Incrementable"
+- !private "Ps22_IntegerArithmeticType"
+- !private "Ps12_IntegerType"
 - !private "Ps21_ObjectiveCBridgeable"
 - !private "Vs26_OptionalNilComparisonType"
+- !private "Ps22_RandomAccessAmbiguity"
+- !private "Ps12_Reflectable"
+- !private "Ps18_SignedIntegerType"
+- !private "Ps18_StringElementType"
 depends-dynamic-lookup:
 depends-external:
-- "/Users/lizzie/Downloads/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Swift.swiftmodule"
-- "/Users/lizzie/Downloads/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/SwiftOnoneSupport.swiftmodule"
-- "/Users/lizzie/Downloads/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/UIKit.swiftmodule"
-- "/Users/lizzie/Downloads/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Foundation.swiftmodule"
-- "/Users/lizzie/Downloads/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Darwin.swiftmodule"
-- "/Users/lizzie/Downloads/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Dispatch.swiftmodule"
-- "/Users/lizzie/Downloads/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/ObjectiveC.swiftmodule"
-- "/Users/lizzie/Downloads/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreGraphics.swiftmodule"
-- "/Users/lizzie/Downloads/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreImage.swiftmodule"
-- "/Users/lizzie/Downloads/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/WatchConnectivity.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Swift.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/UIKit.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Foundation.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Darwin.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Dispatch.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/ObjectiveC.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreGraphics.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreImage.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/WatchConnectivity.swiftmodule"
 - "/Users/lizzie/Desktop/piHeartRate/DerivedData/piHeartRate/Build/Products/Debug-iphonesimulator/PubNub-iOS/PubNub.framework/Headers/PubNub.h"
 - "/Users/lizzie/Desktop/piHeartRate/DerivedData/piHeartRate/Build/Products/Debug-iphonesimulator/PubNub-iOS/PubNub.framework/Headers/PNObjectEventListener.h"
 - "/Users/lizzie/Desktop/piHeartRate/DerivedData/piHeartRate/Build/Products/Debug-iphonesimulator/PubNub-iOS/PubNub.framework/Headers/PNErrorCodes.h"
@@ -681,4 +839,4 @@ depends-external:
 - "/Users/lizzie/Desktop/piHeartRate/DerivedData/piHeartRate/Build/Products/Debug-iphonesimulator/PubNub-iOS/PubNub.framework/Headers/PubNub+APNS.h"
 - "/Users/lizzie/Desktop/piHeartRate/DerivedData/piHeartRate/Build/Products/Debug-iphonesimulator/PubNub-iOS/PubNub.framework/Headers/PubNub-iOS-umbrella.h"
 - "/Users/lizzie/Desktop/piHeartRate/DerivedData/piHeartRate/Build/Products/Debug-iphonesimulator/PubNub-iOS/PubNub.framework/Modules/module.modulemap"
-interface-hash: "73f087bf64edb495c4f20cf6216496b4"
+interface-hash: "90683fca482fa5101fb63f84148bd07d"

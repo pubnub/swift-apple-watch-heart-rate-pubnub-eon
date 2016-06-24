@@ -33,42 +33,29 @@ class InterfaceController: WKInterfaceController, WKExtensionDelegate, PNObjectE
     var hrVal : Double = 0 //will change
     var channelSentFromPhone: String = ""
     var channelList = [String]()
-    //let watchAppDel = WKExtension.shared() as! WKExtensionDelegate //sharedExtension() was shared() before Swift 3 IDK MAN IDK
-    //let watchAppDel = WKExtensionDelegate.self //idk man idk
-    let watchAppDel = WKExtension.shared().delegate as! ExtensionDelegate
+    let watchAppDel = WKExtension.sharedExtension().delegate as! ExtensionDelegate
     
     var channel = ""
     
     var wcSesh : WCSession!
     
-    //var hrTimer: Timer?
-    
-    //    var userName: String? {
-    //        get {
-    //            return self.hrTimer?.userInfo as? String
-    //        }
-    //    }
-    
-    //bool = workout state
     var currMoving = false //not working out
     
     // define the activity type and location
     var workoutSesh : HKWorkoutSession?
-    let heartRateUnit = HKUnit(from: "count/min")
+    let heartRateUnit = HKUnit(fromString: "count/min")
     var anchor = HKQueryAnchor(fromValue: Int(HKAnchoredObjectQueryNoAnchor))
     
     override init() {
         let watchConfig = PNConfiguration(publishKey: "pub-c-1b5f6f38-34c4-45a8-81c7-7ef4c45fd608", subscribeKey: "sub-c-a3cf770a-2c3d-11e6-8b91-02ee2ddab7fe")
         //client = PubNub.client(with: watchConfig)
-        //watchAppDel.client = PubNub.client(with: watchConfig)
-        //watchAppDel.client = PubNub.
-        watchAppDel.client? = PubNub.client(with: watchConfig)
+        watchAppDel.client? = PubNub.clientWithConfiguration(watchConfig)
         
         super.init()
         //watchAppDel.client?.add(self)
         //watchAppDel.client?.add(self)
         //watchAppDel.client?.joinChannel(channel)
-        watchAppDel.client?.add(self)
+        watchAppDel.client?.addListener(self)
         
         randomName = genRandom()
     }
@@ -83,13 +70,13 @@ class InterfaceController: WKInterfaceController, WKExtensionDelegate, PNObjectE
             label.setText("unavailable🙀")
             return
         }
-        guard let quantityType = HKQuantityType.quantityType(forIdentifier: HKQuantityTypeIdentifier.heartRate) else { //HKQuantityTypeIdentifier.heartRate) else {
+        guard let quantityType = HKObjectType.quantityTypeForIdentifier(HKQuantityTypeIdentifierHeartRate) else { //HKQuantityTypeIdentifier.heartRate) else {
             displayUnallowed() //only display if Heart Rate
             return
         }
         
         let dataTypes = Set(arrayLiteral: quantityType)
-        healthStore.requestAuthorization(toShare: nil, read: dataTypes, completion: { (success, error) -> Void in
+        healthStore.requestAuthorizationToShareTypes(nil, readTypes: dataTypes, completion: { (success, error) -> Void in
             //(toShare: nil, read: dataTypes, completion: { (success, error) -> Void in
             //(toShare: nil, read: dataTypes) { (success, error) -> Void in
             guard success == true else {
@@ -107,10 +94,10 @@ class InterfaceController: WKInterfaceController, WKExtensionDelegate, PNObjectE
     
     func workoutSession(workoutSession: HKWorkoutSession, didChangeTo toState: HKWorkoutSessionState, from fromState: HKWorkoutSessionState, date: NSDate) {
         switch toState {
-        case .running:
-            workoutDidStart(date: date)
-        case .ended:
-            workoutDidEnd(date: date)
+        case .Running:
+            workoutDidStart(date)
+        case .Ended:
+            workoutDidEnd(date)
         default:
             print("Unexpected state \(toState)😤")
         }
@@ -124,18 +111,18 @@ class InterfaceController: WKInterfaceController, WKExtensionDelegate, PNObjectE
     }
     
     func workoutDidStart(date : NSDate) {
-        guard let query = makeHRStreamingQuery(workoutStartDate: date) else {
+        guard let query = makeHRStreamingQuery(date) else {
             label.setText("can't start🤕")
             return
         }
         //healthStore.execute(query)
-        healthStore.execute(query)
+        healthStore.executeQuery(query)
     }
     
     func workoutDidEnd(date : NSDate) {
-        if let query = makeHRStreamingQuery(workoutStartDate: date) {
+        if let query = makeHRStreamingQuery(date) {
             //healthStore.stop(query)
-            healthStore.stop(query)
+            healthStore.stopQuery(query)
             label.setText("---") //not running
         } else {
             label.setText("can't stop😓")
@@ -149,7 +136,7 @@ class InterfaceController: WKInterfaceController, WKExtensionDelegate, PNObjectE
             self.startStopBtn.setTitle("Start💪🏽")
             if let workout = self.workoutSesh {
                 //healthStore.end(workout)
-                healthStore.end(workout)
+                healthStore.endWorkoutSession(workout)
             }
         } else {
             //start a new workout
@@ -161,26 +148,26 @@ class InterfaceController: WKInterfaceController, WKExtensionDelegate, PNObjectE
     }
     
     func beginWorkout() {
-        self.workoutSesh = HKWorkoutSession(activityType: .hiking, locationType: HKWorkoutSessionLocationType.indoor)
+        self.workoutSesh = HKWorkoutSession(activityType: .Hiking, locationType: HKWorkoutSessionLocationType.Indoor)
         //self.workoutSesh?.delegate = self
         //healthStore.start(self.workoutSesh!)
-        healthStore.start(self.workoutSesh!)
+        healthStore.startWorkoutSession(self.workoutSesh!)
     }
     
     func makeHRStreamingQuery(workoutStartDate: NSDate) -> HKQuery? {
         
-        guard let quantityType = HKQuantityType.quantityType(forIdentifier: HKQuantityTypeIdentifier.heartRate) else { return nil }
+        guard let quantityType = HKObjectType.quantityTypeForIdentifier(HKQuantityTypeIdentifierHeartRate) else { return nil }
         
         let heartRateQuery = HKAnchoredObjectQuery(type: quantityType, predicate: nil, anchor: anchor, limit: Int(HKObjectQueryNoLimit)) { (query, sampleObjects, deletedObjects, newAnchor, error) -> Void in
             guard let newAnchor = newAnchor else {return}
             self.anchor = newAnchor
-            self.updateUserActivity(HKQuantityTypeIdentifier.heartRate.rawValue, userInfo: nil, webpageURL: nil)//(sampleObjects) //HKQuantityTypeIdentifierHeartRate.rawValue ???
+            self.updateHeartRate(sampleObjects)//(sampleObjects) //HKQuantityTypeIdentifierHeartRate.rawValue ???
         }
         
         heartRateQuery.updateHandler = {(query, samples, deleteObjects, newAnchor, error) -> Void in
             self.anchor = newAnchor!
             //self.updateHeartRate(samples)
-            self.updateUserActivity(HKQuantityTypeIdentifier.heartRate.rawValue, userInfo: nil, webpageURL: nil) //userInfo: sampleObjects returns err but idk man
+            self.updateHeartRate(samples) //userInfo: sampleObjects returns err but idk man
             //}
         }
         return heartRateQuery
@@ -191,7 +178,7 @@ class InterfaceController: WKInterfaceController, WKExtensionDelegate, PNObjectE
         let hrValToPublish = [randomName: "\(self.hrVal)"]
         print("hrValToPublish: \(hrValToPublish)")
         watchAppDel.client?.publish(hrValToPublish, toChannel: "yee", withCompletion: { (status) -> Void in
-            if !status.isError { //isError
+            if !status.error { //isError
                 print("\(self.hrVal) has been published")
                 print("\(hrValToPublish) has been published")
                 
@@ -249,7 +236,7 @@ class InterfaceController: WKInterfaceController, WKExtensionDelegate, PNObjectE
         //Grand Central Dispatch = run complex tasks in background = concurrent code execution
         //DispatchQueue.main.async {
         guard let sample = heartRateSamples.first else{return}
-        self.hrVal = sample.quantity.doubleValue(for:self.heartRateUnit)//sample.quantity.doubleValue(for: self.heartRateUnit)
+        self.hrVal = sample.quantity.doubleValueForUnit(self.heartRateUnit)//sample.quantity.doubleValue(for: self.heartRateUnit)
         let lblTxt = String(self.hrVal)
         self.label.setText(lblTxt)
         self.publishHeartRate()
