@@ -401,7 +401,7 @@
 					};
 					6A2015E91D073CDD000E3AFE = {
 						CreatedOnToolsVersion = 7.3.1;
-						DevelopmentTeam = KM8FC9L4K5;
+						DevelopmentTeam = 6NUB37727Z;
 						LastSwiftMigration = 0800;
 						SystemCapabilities = {
 							com.apple.HealthKit = {
@@ -756,6 +756,7 @@
 			baseConfigurationReference = 1141F4E921D15D1DD0BA0DF4 /* Pods-getHeartRate Extension.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = "getHeartRate Extension/getHeartRate Extension.entitlements";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/build/Debug-iphoneos/CocoaLumberjack",
@@ -779,6 +780,7 @@
 			baseConfigurationReference = 0A339833FE35895EA97F77E2 /* Pods-getHeartRate Extension.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = "getHeartRate Extension/getHeartRate Extension.entitlements";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/build/Debug-iphoneos/CocoaLumberjack",

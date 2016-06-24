@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>application-identifier</key>
-	<string>KM8FC9L4K5.lsie.piHeartRate.watchkitapp.watchkitextension</string>
+	<string>6NUB37727Z.lsie.piHeartRate.watchkitapp.watchkitextension</string>
 	<key>com.apple.developer.healthkit</key>
 	<true/>
 </dict>

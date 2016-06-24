@@ -100,6 +100,7 @@ typedef int swift_int4  __attribute__((__ext_vector_type__(4)));
 #pragma clang diagnostic ignored "-Wproperty-attribute-mismatch"
 #pragma clang diagnostic ignored "-Wduplicate-method-arg"
 @class UIWindow;
+@class WCSession;
 @class HKHealthStore;
 @class PubNub;
 @class PNConfiguration;
@@ -111,10 +112,12 @@ typedef int swift_int4  __attribute__((__ext_vector_type__(4)));
 SWIFT_CLASS("_TtC11piHeartRate11AppDelegate")
 @interface AppDelegate : UIResponder <PNObjectEventListener, UIApplicationDelegate>
 @property (nonatomic, strong) UIWindow * _Nullable window;
+@property (nonatomic, strong) WCSession * _Nullable session;
 @property (nonatomic, readonly, strong) HKHealthStore * _Nonnull healthStore;
 @property (nonatomic, strong) PubNub * _Nonnull client;
 @property (nonatomic, strong) PNConfiguration * _Nonnull config;
 @property (nonatomic, copy) NSString * _Nonnull channel;
+@property (nonatomic, copy) NSArray<NSString *> * _Nonnull someData;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 - (void)client:(PubNub * _Null_unspecified)client didReceiveMessage:(PNMessageResult * _Null_unspecified)message didReceiveStatus:(PNStatus * _Nonnull)status;
 - (BOOL)application:(UIApplication * _Nonnull)application didFinishLaunchingWithOptions:(NSDictionary * _Nullable)launchOptions;
@@ -126,7 +129,11 @@ SWIFT_CLASS("_TtC11piHeartRate11AppDelegate")
 - (void)applicationShouldRequestHealthAuthorization:(UIApplication * _Nonnull)application;
 @end
 
-@class WCSession;
+
+@interface AppDelegate (SWIFT_EXTENSION(piHeartRate)) <WCSessionDelegate>
+- (void)session:(WCSession * _Nonnull)session didReceiveMessage:(NSDictionary<NSString *, id> * _Nonnull)message replyHandler:(void (^ _Nonnull)(NSDictionary<NSString *, id> * _Nonnull))replyHandler;
+@end
+
 @class UILabel;
 @class NSBundle;
 @class NSCoder;

@@ -7,20 +7,20 @@ provides-member:
 - ["C11piHeartRate14ViewController", ""]
 provides-dynamic-lookup:
 - "wrSesh"
-- "viewDidLoad"
-- "someData"
-- "didReceiveMemoryWarning"
-- "hrValLabel"
 - "session"
+- "viewDidLoad"
+- "didReceiveMemoryWarning"
+- "someData"
+- "hrValLabel"
 depends-top-level:
+- "ViewController"
+- "AnyObject"
 - "String"
 - "UILabel"
-- "ViewController"
 - "Void"
+- "WCSessionDelegate"
 - "UIViewController"
 - "WCSession"
-- "AnyObject"
-- "WCSessionDelegate"
 depends-member:
 - ["Ps9AnyObject", "String"]
 - ["Ps9AnyObject", "didReceiveMemoryWarning"]

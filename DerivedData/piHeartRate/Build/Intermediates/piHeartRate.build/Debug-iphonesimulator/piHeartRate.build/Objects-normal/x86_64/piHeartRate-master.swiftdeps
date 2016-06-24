@@ -1,6 +1,6 @@
 version: "Apple Swift version 2.2 (swiftlang-703.0.18.8 clang-703.0.31)"
 options: "da90d514a66ea5c27bb5fbf08b2165e5"
-build_time: [520047525, 474995000]
+build_time: [520107180, 893500000]
 inputs:
-  "/Users/lizzie/Desktop/piHeartRate/piHeartRate/ViewController.swift": [520047489, 0]
-  "/Users/lizzie/Desktop/piHeartRate/piHeartRate/AppDelegate.swift": [520047489, 0]
+  "/Users/lizzie/Desktop/piHeartRate/piHeartRate/ViewController.swift": [520048208, 0]
+  "/Users/lizzie/Desktop/piHeartRate/piHeartRate/AppDelegate.swift": [520048238, 0]
