@@ -12,7 +12,7 @@ import WatchConnectivity
 import PubNub
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate, PNObjectEventListener {
+class AppDelegate: UIResponder, UIApplicationDelegate, PNObjectEventListener, WCSessionDelegate {
     
     var window: UIWindow?
     
@@ -27,36 +27,37 @@ class AppDelegate: UIResponder, UIApplicationDelegate, PNObjectEventListener {
     
     let healthStore = HKHealthStore()
     
-    var client : PubNub
-    var config : PNConfiguration
+    //var client : PubNub
+    //var config : PNConfiguration
     var channel = "yee"
     
     var someData = [String]()
     
     override init() {
-        config = PNConfiguration(publishKey: "pub-c-1b5f6f38-34c4-45a8-81c7-7ef4c45fd608", subscribeKey: "sub-c-a3cf770a-2c3d-11e6-8b91-02ee2ddab7fe")
-        client = PubNub.clientWithConfiguration(config)
-        client.subscribeToChannels([channel], withPresence: false)
+//        config = PNConfiguration(publishKey: "pub-c-1b5f6f38-34c4-45a8-81c7-7ef4c45fd608", subscribeKey: "sub-c-a3cf770a-2c3d-11e6-8b91-02ee2ddab7fe")
+//        client = PubNub.clientWithConfiguration(config)
+//        client.subscribeToChannels([channel], withPresence: false)
         super.init()
-        client.addListener(self)
+        //client.addListener(self)
     }
     
     //handle new msg from 1 of channels client is subscribed to
-    func client(client: PubNub!, didReceiveMessage message: PNMessageResult!, didReceiveStatus status: PNStatus) {
-        print(message)
-        
-        guard message.data.actualChannel != nil else {
-            print(message.data)
-            return
-        }
-        print("Received message: \(message.data.message) on channel " +
-            "\((message.data.actualChannel ?? message.data.subscribedChannel)!) at " +
-            "\(message.data.timetoken)")
-    }
+    //not needed if publishing+subscribing from Watch??
+//    func client(client: PubNub!, didReceiveMessage message: PNMessageResult!, didReceiveStatus status: PNStatus) {
+//        print(message)
+//        
+//        guard message.data.actualChannel != nil else {
+//            print(message.data)
+//            return
+//        }
+//        print("Received message: \(message.data.message) on channel " +
+//            "\((message.data.actualChannel ?? message.data.subscribedChannel)!) at " +
+//            "\(message.data.timetoken)")
+//    }
     
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
-        self.client.subscribeToChannels([channel], withPresence: false)
+        //self.client.subscribeToChannels([channel], withPresence: false)
         if WCSession.isSupported() {
             session = WCSession.defaultSession()
             session!.delegate = self
@@ -67,6 +68,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate, PNObjectEventListener {
         }
         return true
     }
+    
+    func session(session: WCSession, didReceiveMessage message: [String : AnyObject], replyHandler: ([String : AnyObject]) -> Void) {
+        
+        if let hrVal = message["heart rate value"] as? String {
+            self.someData.append(hrVal)
+            //PubNub
+            //self.hrValLabel.text = hrVal //val from HR on watch
+            //update with PubNub here
+        }
+        
+    }
+
     
     func applicationWillResignActive(application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
@@ -102,18 +115,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate, PNObjectEventListener {
     
 }
 
-extension AppDelegate: WCSessionDelegate {
+//extension AppDelegate: WCSessionDelegate {
     
-    func session(session: WCSession, didReceiveMessage message: [String : AnyObject], replyHandler: ([String : AnyObject]) -> Void) {
-        
-        if let hrVal = message["heart rate value"] as? String {
-            self.someData.append(hrVal)
-            //PubNub
-            //self.hrValLabel.text = hrVal //val from HR on watch
-            //update with PubNub here
-        }
-
-    }
+//    func session(session: WCSession, didReceiveMessage message: [String : AnyObject], replyHandler: ([String : AnyObject]) -> Void) {
+//        
+//        if let hrVal = message["heart rate value"] as? String {
+//            self.someData.append(hrVal)
+//            //PubNub
+//            //self.hrValLabel.text = hrVal //val from HR on watch
+//            //update with PubNub here
+//        }
+//
+//    }
     
-}
+//}
 
