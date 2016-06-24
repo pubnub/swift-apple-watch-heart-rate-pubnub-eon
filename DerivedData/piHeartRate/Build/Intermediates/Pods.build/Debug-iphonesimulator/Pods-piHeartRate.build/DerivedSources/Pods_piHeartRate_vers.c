@@ -1,1 +1,0 @@
- const unsigned char Pods_piHeartRateVersionString[] __attribute__ ((used)) = "@(#)PROGRAM:Pods_piHeartRate  PROJECT:Pods-1" "\n"; const double Pods_piHeartRateVersionNumber __attribute__ ((used)) = (double)1.;
