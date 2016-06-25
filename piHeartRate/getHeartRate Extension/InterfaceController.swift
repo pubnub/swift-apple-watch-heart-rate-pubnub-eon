@@ -31,11 +31,11 @@ class InterfaceController: WKInterfaceController, HKWorkoutSessionDelegate, WCSe
     var channelList = [String]()
     let watchAppDel = WKExtension.sharedExtension().delegate! as! ExtensionDelegate
     
-    var channel = ""
+//    var channel = ""
     
     var wcSesh : WCSession!
     
-    var hrTimer: NSTimer?
+//    var hrTimer: NSTimer?
     
 //    var userName: String? {
 //        get {
@@ -193,10 +193,10 @@ class InterfaceController: WKInterfaceController, HKWorkoutSessionDelegate, WCSe
     }
     
     func publishHeartRate() {
-        //        let hrValToPublish: [String : Double] = [self.uuidSentFromPhone: hrVal]
-        let hrValToPublish = [randomName: "\(hrVal)"]
+                //let hrValToPublish: [String : Double] = [self.uuidSentFromPhone: hrVal]
+        let hrValToPublish = ["Lizzie": "\(hrVal)"]
         print("hrValToPublish: \(hrValToPublish)")
-        watchAppDel.client?.publish(hrValToPublish, toChannel: "yee", withCompletion: { (status) -> Void in
+        watchAppDel.client?.publish(hrValToPublish, toChannel: channelSentFromPhone, withCompletion: { (status) -> Void in
             if !status.error {
                 print("\(self.hrVal) has been published")
                 print("\(hrValToPublish) has been published")
@@ -225,18 +225,27 @@ class InterfaceController: WKInterfaceController, HKWorkoutSessionDelegate, WCSe
     
     //get channel name from phone
     func session(wrSesh: WCSession, didReceiveMessage message: [String : AnyObject], replyHandler: ([String : AnyObject]) -> Void) {
-        
-        //Use this to update the UI instantaneously (otherwise, takes a little while)
-        dispatch_async(dispatch_get_main_queue()) {
-            if let chanFromPhone = message["channel"] as? String {
-                self.channelList.append(chanFromPhone)
-                self.channelSentFromPhone = chanFromPhone
-                //PubNub
-                //self.hrValLabel.text = hrVal //val from HR on watch
-                //update with PubNub here
+        //let chanPickerOptions = ["PubNub", "Hamilton", "Hermione", "Olaf", "PiedPiper"
+        if let checkingChanFromPhone = message["channel"] as? String {
+            self.channelList.append(chanFromPhone)
+            self.channelSentFromPhone = chanFromPhone
+            if checkingChanFromPhone == "PubNub" {
+                channelSentFromPhone = "PubNub"
             }
-        }
-    }
+            else if checkingChanFromPhone == "Hamilton" {
+                channelSentFromPhone = "Hamilton"
+            }
+            else if checkingChanFromPhone == "Hermione" {
+                channelSentFromPhone = "Hermione"
+            }
+            else if checkingChanFromPhone == "Olaf" {
+                channelSentFromPhone = "Olaf"
+            }
+            else if checkingChanFromPhone == "PiedPiper" {
+                channelSentFromPhone = "PiedPiper"
+            }
+        } //let checking
+    } //session WatchConnectivity
     
     func updateHeartRate(samples: [HKSample]?) {
         guard let heartRateSamples = samples as? [HKQuantitySample] else {return} //subclass of HKSample -> data like height, weight etc
@@ -250,26 +259,30 @@ class InterfaceController: WKInterfaceController, HKWorkoutSessionDelegate, WCSe
             let lblTxt = String(self.hrVal)
             self.label.setText(lblTxt)
             self.publishHeartRate()
+            
+            //send message to phone, not even publish -> emojis as label
+            let hrData = ["heart rate value": self.hrVal]
+            if let wcSesh = self.wcSesh where wcSesh.reachable {
+                wcSesh.sendMessage(hrData, replyHandler: { replyData in
+                    print(replyData)
+                    }, errorHandler: { error in
+                        print(error)
+                })
+            } else {
+                //when phone !connected via Bluetooth
+                print("phone !connected via Bluetooth")
+            } //else
         } //dispatch_async
-        
-        //send message to phone, not even publish
-        let appData = ["heart rate value": String(self.hrVal)]
-        if let wcSesh = self.wcSesh where wcSesh.reachable {
-            wcSesh.sendMessage(appData, replyHandler: { replyData in
-                print(replyData)
-                }, errorHandler: { error in
-                    print(error)
-            })
-        } else {
-            //when phone !connected via Bluetooth
-            print("phone !connected via Bluetooth")
-        } //else
     }
     
-    func genRandom() -> String {
-        var possNames = ["Tomomi", "Bhavana", "Stephen", "EmmaRose", "Keith", "Sleepy", "Olaf", "R2D2", "Wendy", "PubNub", "PingPong", "chess"]
-        let randIndex = Int(arc4random_uniform(UInt32(possNames.count)))
-        return possNames[randIndex]
-    }
+//    func getChannel() {
+//        //let chanPickerOptions = ["PubNub", "Hamilton", "Hermione", "Olaf", "PiedPiper"]
+//        if let channelReceivedFromPhone = message["channel"] as? String {
+//            if channelReceivedFromPhone == "PubNub" {
+//                
+//            } //if channelReceived...is PubNub
+//        
+//        } //get message if statement
+//    } //getChannel
 
 }

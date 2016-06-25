@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Nd0-3W-jjf">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -17,8 +17,26 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PaO-lA-ZOe">
-                                <rect key="frame" x="279" y="289" width="42" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="HRLabel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PaO-lA-ZOe">
+                                <rect key="frame" x="256" y="289" width="65" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0Sc-T2-gv9">
+                                <rect key="frame" x="-10" y="0.0" width="600" height="44"/>
+                                <items>
+                                    <navigationItem title="Heart Rate" id="fXs-S4-YNL">
+                                        <barButtonItem key="leftBarButtonItem" title="Back" id="FJW-QE-bib">
+                                            <connections>
+                                                <segue destination="Nd0-3W-jjf" kind="presentation" id="oni-op-lTY"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Tm-3M-sao">
+                                <rect key="frame" x="267" y="357" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -31,11 +49,62 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="channelLabel" destination="2Tm-3M-sao" id="xHd-wb-9H6"/>
                         <outlet property="hrValLabel" destination="PaO-lA-ZOe" id="hF3-P0-LPM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="773" y="486"/>
+        </scene>
+        <!--Channel View Controller-->
+        <scene sceneID="fNf-td-3da">
+            <objects>
+                <viewController id="Nd0-3W-jjf" customClass="ChannelViewController" customModule="piHeartRate" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="owE-dn-h4g"/>
+                        <viewControllerLayoutGuide type="bottom" id="auw-xc-Hx4"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8rv-9V-a6B">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <pickerView contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tDZ-LW-k29">
+                                <rect key="frame" x="20" y="210" width="600" height="216"/>
+                            </pickerView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Selected" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZIl-Ul-gl6">
+                                <rect key="frame" x="310" y="429" width="68" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dTc-D1-O6G">
+                                <rect key="frame" x="341" y="472" width="37" height="30"/>
+                                <state key="normal" title="Enter"/>
+                                <connections>
+                                    <action selector="enterButtonClicked:" destination="Nd0-3W-jjf" eventType="touchUpInside" id="Ixf-ql-ytt"/>
+                                    <segue destination="BYZ-38-t0r" kind="presentation" id="vu6-tM-UP1"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="ZIl-Ul-gl6" firstAttribute="centerX" secondItem="8rv-9V-a6B" secondAttribute="centerX" id="6NS-Dm-9j0"/>
+                            <constraint firstItem="ZIl-Ul-gl6" firstAttribute="top" secondItem="tDZ-LW-k29" secondAttribute="bottom" constant="20" id="R0L-F5-yG8"/>
+                            <constraint firstItem="tDZ-LW-k29" firstAttribute="centerY" secondItem="8rv-9V-a6B" secondAttribute="centerY" id="e2K-aO-Wcv"/>
+                            <constraint firstItem="dTc-D1-O6G" firstAttribute="top" secondItem="ZIl-Ul-gl6" secondAttribute="bottom" constant="20" id="ie0-MR-7Va"/>
+                            <constraint firstItem="dTc-D1-O6G" firstAttribute="centerX" secondItem="8rv-9V-a6B" secondAttribute="centerX" id="jKe-1m-aCe"/>
+                            <constraint firstItem="tDZ-LW-k29" firstAttribute="centerX" secondItem="8rv-9V-a6B" secondAttribute="centerX" id="qdz-Nl-N91"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="channelLabel" destination="ZIl-Ul-gl6" id="THo-1V-fOi"/>
+                        <outlet property="channelPicker" destination="tDZ-LW-k29" id="tzh-kp-gnN"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3dM-AL-jco" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="144" y="486"/>
         </scene>
     </scenes>
 </document>

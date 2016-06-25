@@ -15,35 +15,8 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate, PNObjectEventListener {
     var client: PubNub?
     //    var client : PubNub
     //    var config : PNConfiguration
-    var channel = "iWorkout"
-    //
-    //    override init() {
-    //        config = PNConfiguration(publishKey: "pub-c-1b5f6f38-34c4-45a8-81c7-7ef4c45fd608", subscribeKey: "sub-c-a3cf770a-2c3d-11e6-8b91-02ee2ddab7fe")
-    //        client = PubNub.clientWithConfiguration(config)
-    //        client.subscribeToChannels([channel], withPresence: false)
-    //        super.init()
-    //        client.addListener(self)
-    //
-    //    }
-    
-    //handle new msg from 1 of channels client is subscribed to
-    //    func client(client: PubNub!, didReceiveMessage message: PNMessageResult!) {
-    //        print(message)
-    //        if message.data.actualChannel != nil {
-    //            //msg received on channel group, stored in message.data.subscribedChannel
-    //        } //if
-    //        else {
-    //            //msg received on channel, stored in same place
-    //        }
-    
-    //        guard message.data.actualChannel != nil else {
-    //            print(message.data)
-    //            return
-    //        }
-    //        print("Received message: \(message.data.message) on channel " +
-    //            "\((message.data.actualChannel ?? message.data.subscribedChannel)!) at " +
-    //            "\(message.data.timetoken)")
-    //    }
+    //var channel = "iWorkout"
+
     
     func applicationDidFinishLaunching() {
         // Perform any final initialization of your application.

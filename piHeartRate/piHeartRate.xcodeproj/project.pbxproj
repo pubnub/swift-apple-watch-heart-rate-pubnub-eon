@@ -22,6 +22,7 @@
 		6A0B50C81D1DDC2800EDC0FB /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A0B50C71D1DDC2800EDC0FB /* HealthKit.framework */; };
 		6A0B50CC1D1DDC3300EDC0FB /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A0B50CB1D1DDC3300EDC0FB /* HealthKit.framework */; };
 		6A0B50CD1D1DDE7400EDC0FB /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A0B50CB1D1DDC3300EDC0FB /* HealthKit.framework */; };
+		6A0B50CF1D1E697B00EDC0FB /* ChannelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A0B50CE1D1E697B00EDC0FB /* ChannelViewController.swift */; };
 		90C9C7EB47DE6FCE3919EA2E /* Pods_piHeartRate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6531CBF0B9E371BB5E4B7A8B /* Pods_piHeartRate.framework */; };
 		D4F79C9764E19A5DB32C3680 /* Pods_getHeartRate_Extension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FACEA7402FC0DEA18ECF5A21 /* Pods_getHeartRate_Extension.framework */; };
 		F934861D20F0B768E2A63C74 /* Pods_getHeartRate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F0F80B3E8B7244119DA2265 /* Pods_getHeartRate.framework */; };
@@ -95,6 +96,7 @@
 		6A0B50C91D1DDC2800EDC0FB /* piHeartRate.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = piHeartRate.entitlements; sourceTree = "<group>"; };
 		6A0B50CA1D1DDC3300EDC0FB /* getHeartRate Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "getHeartRate Extension.entitlements"; sourceTree = "<group>"; };
 		6A0B50CB1D1DDC3300EDC0FB /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS2.2.sdk/System/Library/Frameworks/HealthKit.framework; sourceTree = DEVELOPER_DIR; };
+		6A0B50CE1D1E697B00EDC0FB /* ChannelViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChannelViewController.swift; sourceTree = "<group>"; };
 		7244D1D81D83C0D3C6420687 /* Pods-piHeartRate.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-piHeartRate.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-piHeartRate/Pods-piHeartRate.debug.xcconfig"; sourceTree = "<group>"; };
 		DD6030FD86778B9FA5076406 /* Pods-piHeartRate.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-piHeartRate.release.xcconfig"; path = "../Pods/Target Support Files/Pods-piHeartRate/Pods-piHeartRate.release.xcconfig"; sourceTree = "<group>"; };
 		DE63EABEDE5BC4DFA4EF6302 /* Pods-getHeartRate Extension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-getHeartRate Extension.release.xcconfig"; path = "../Pods/Target Support Files/Pods-getHeartRate Extension/Pods-getHeartRate Extension.release.xcconfig"; sourceTree = "<group>"; };
@@ -172,6 +174,7 @@
 				6A0B50C91D1DDC2800EDC0FB /* piHeartRate.entitlements */,
 				6A0B50901D1DD20800EDC0FB /* AppDelegate.swift */,
 				6A0B50921D1DD20800EDC0FB /* ViewController.swift */,
+				6A0B50CE1D1E697B00EDC0FB /* ChannelViewController.swift */,
 				6A0B50941D1DD20800EDC0FB /* Main.storyboard */,
 				6A0B50971D1DD20800EDC0FB /* Assets.xcassets */,
 				6A0B50991D1DD20800EDC0FB /* LaunchScreen.storyboard */,
@@ -493,6 +496,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6A0B50931D1DD20800EDC0FB /* ViewController.swift in Sources */,
+				6A0B50CF1D1E697B00EDC0FB /* ChannelViewController.swift in Sources */,
 				6A0B50911D1DD20800EDC0FB /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
