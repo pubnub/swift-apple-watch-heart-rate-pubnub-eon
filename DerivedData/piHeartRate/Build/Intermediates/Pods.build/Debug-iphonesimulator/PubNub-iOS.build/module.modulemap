@@ -1,6 +1,0 @@
-framework module PubNub {
-  umbrella header "PubNub-iOS-umbrella.h"
-
-  export *
-  module * { export * }
-}

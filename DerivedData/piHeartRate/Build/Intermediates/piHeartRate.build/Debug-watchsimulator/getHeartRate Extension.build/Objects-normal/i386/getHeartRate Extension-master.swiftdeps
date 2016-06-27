@@ -1,6 +1,0 @@
-version: "Apple Swift version 2.2 (swiftlang-703.0.18.8 clang-703.0.31)"
-options: "d4f39a1be7887f1a1120cacbc618e28d"
-build_time: [520107174, 561955000]
-inputs:
-  "/Users/lizzie/Desktop/piHeartRate/getHeartRate Extension/ExtensionDelegate.swift": [520029524, 0]
-  "/Users/lizzie/Desktop/piHeartRate/getHeartRate Extension/InterfaceController.swift": [520046119, 0]

@@ -1,1 +1,0 @@
- const unsigned char Pods_getHeartRate_ExtensionVersionString[] __attribute__ ((used)) = "@(#)PROGRAM:Pods_getHeartRate_Extension  PROJECT:Pods-1" "\n"; const double Pods_getHeartRate_ExtensionVersionNumber __attribute__ ((used)) = (double)1.;

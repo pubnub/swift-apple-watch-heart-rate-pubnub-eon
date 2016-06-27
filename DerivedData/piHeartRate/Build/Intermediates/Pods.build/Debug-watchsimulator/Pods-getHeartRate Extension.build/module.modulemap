@@ -1,6 +1,0 @@
-framework module Pods_getHeartRate_Extension {
-  umbrella header "Pods-getHeartRate Extension-umbrella.h"
-
-  export *
-  module * { export * }
-}
