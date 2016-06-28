@@ -13,6 +13,9 @@ import WatchConnectivity
 import UIKit
 import PubNub
 
+// guard let quantityType = HKQuantityType.quantityTypeForIdentifier(HKQuantityTypeIdentifierHeartRate) could do StepCount
+//step count matters at end of day. heart rate is more real-time, quick, short-period-of-time
+
 class InterfaceController: WKInterfaceController, HKWorkoutSessionDelegate, WCSessionDelegate, WKExtensionDelegate, PNObjectEventListener {
     
     @IBOutlet var bpmLabel: WKInterfaceLabel!
@@ -26,26 +29,17 @@ class InterfaceController: WKInterfaceController, HKWorkoutSessionDelegate, WCSe
     
     let healthStore = HKHealthStore()
     
+    var publishTimer = NSTimer()
+    
     var hrVal : Double = 0 //will change
     var channelSentFromPhone: String = ""
     var channelList = [String]()
     let watchAppDel = WKExtension.sharedExtension().delegate! as! ExtensionDelegate
     
-//    var channel = ""
-    
     var wcSesh : WCSession!
     
-//    var hrTimer: NSTimer?
-    
-//    var userName: String? {
-//        get {
-//            return self.hrTimer?.userInfo as? String
-//        }
-//    }
-    var randomName: String = ""
-    
     //bool = workout state
-    var currMoving = false //not working out
+    var currMoving:Bool = false //not working out, starting at false
     
     // define the activity type and location
     var workoutSesh : HKWorkoutSession?
@@ -54,13 +48,11 @@ class InterfaceController: WKInterfaceController, HKWorkoutSessionDelegate, WCSe
     
     override init() {
         let watchConfig = PNConfiguration(publishKey: "pub-c-1b5f6f38-34c4-45a8-81c7-7ef4c45fd608", subscribeKey: "sub-c-a3cf770a-2c3d-11e6-8b91-02ee2ddab7fe")
-        //client = PubNub.clientWithConfiguration(watchConfig)
+
         watchAppDel.client = PubNub.clientWithConfiguration(watchConfig)
         
         super.init()
         watchAppDel.client?.addListener(self)
-        randomName = genRandom()
-        //watchAppDel.client?.joinChannel(channel)
     }
     
     override func awakeWithContext(context: AnyObject?) {
@@ -92,7 +84,6 @@ class InterfaceController: WKInterfaceController, HKWorkoutSessionDelegate, WCSe
             wcSesh = WCSession.defaultSession()
             wcSesh.delegate = self
             wcSesh.activateSession()
-            
         }
         //reloadData()
     }
@@ -134,7 +125,7 @@ class InterfaceController: WKInterfaceController, HKWorkoutSessionDelegate, WCSe
         }
     }
     
-    @IBAction func startBtnTapped() {
+    @IBAction func startBtnTapped() { //start at false
         if (self.currMoving) {
             //finish curr workout
             self.currMoving = false
@@ -142,6 +133,7 @@ class InterfaceController: WKInterfaceController, HKWorkoutSessionDelegate, WCSe
             if let workout = self.workoutSesh {
                 healthStore.endWorkoutSession(workout)
             }
+            //publishTimerFunc()
         } else {
             //start a new workout
             self.currMoving = true
@@ -193,12 +185,12 @@ class InterfaceController: WKInterfaceController, HKWorkoutSessionDelegate, WCSe
     }
     
     func publishHeartRate() {
-                //let hrValToPublish: [String : Double] = [self.uuidSentFromPhone: hrVal]
-        let hrValToPublish = ["Lizzie": "\(hrVal)"]
+        //let hrValToPublish: [String : Double] = [self.uuidSentFromPhone: hrVal]
+        let hrValToPublish = [self.channelSentFromPhone: "\(self.hrVal)"]
+        
         print("hrValToPublish: \(hrValToPublish)")
-        watchAppDel.client?.publish(hrValToPublish, toChannel: channelSentFromPhone, withCompletion: { (status) -> Void in
+        watchAppDel.client?.publish(hrValToPublish, toChannel: "Olaf", withCompletion: { (status) -> Void in
             if !status.error {
-                print("\(self.hrVal) has been published")
                 print("\(hrValToPublish) has been published")
                 
             } //if
@@ -211,6 +203,9 @@ class InterfaceController: WKInterfaceController, HKWorkoutSessionDelegate, WCSe
         })
     }
     
+    func publishTimerFunc() {
+        publishTimer = NSTimer.scheduledTimerWithTimeInterval(10.0, target: self, selector: Selector("publishHeartRate"), userInfo: nil, repeats: true)
+    }
     func client(client: PubNub!, didReceiveMessage message: PNMessageResult!, didReceiveStatus status: PNStatus) {
         print(message)
         
@@ -223,27 +218,12 @@ class InterfaceController: WKInterfaceController, HKWorkoutSessionDelegate, WCSe
             "\(message.data.timetoken)")
     }
     
-    //get channel name from phone
+    //get username from phone
     func session(wrSesh: WCSession, didReceiveMessage message: [String : AnyObject], replyHandler: ([String : AnyObject]) -> Void) {
         //let chanPickerOptions = ["PubNub", "Hamilton", "Hermione", "Olaf", "PiedPiper"
-        if let checkingChanFromPhone = message["channel"] as? String {
-            self.channelList.append(chanFromPhone)
-            self.channelSentFromPhone = chanFromPhone
-            if checkingChanFromPhone == "PubNub" {
-                channelSentFromPhone = "PubNub"
-            }
-            else if checkingChanFromPhone == "Hamilton" {
-                channelSentFromPhone = "Hamilton"
-            }
-            else if checkingChanFromPhone == "Hermione" {
-                channelSentFromPhone = "Hermione"
-            }
-            else if checkingChanFromPhone == "Olaf" {
-                channelSentFromPhone = "Olaf"
-            }
-            else if checkingChanFromPhone == "PiedPiper" {
-                channelSentFromPhone = "PiedPiper"
-            }
+        if let checkingNameFromPhone = message["UName"] as? String {
+            self.channelList.append(checkingNameFromPhone)
+            self.channelSentFromPhone = checkingNameFromPhone
         } //let checking
     } //session WatchConnectivity
     
@@ -258,7 +238,12 @@ class InterfaceController: WKInterfaceController, HKWorkoutSessionDelegate, WCSe
             self.hrVal = sample.quantity.doubleValueForUnit(self.heartRateUnit)
             let lblTxt = String(self.hrVal)
             self.label.setText(lblTxt)
-            self.publishHeartRate()
+            repeat {
+                self.publishTimerFunc()
+            } while(self.currMoving == false)
+            //self.publishHeartRate()
+            //self.publishTimerFunc()
+            
             
             //send message to phone, not even publish -> emojis as label
             let hrData = ["heart rate value": self.hrVal]
@@ -275,14 +260,4 @@ class InterfaceController: WKInterfaceController, HKWorkoutSessionDelegate, WCSe
         } //dispatch_async
     }
     
-//    func getChannel() {
-//        //let chanPickerOptions = ["PubNub", "Hamilton", "Hermione", "Olaf", "PiedPiper"]
-//        if let channelReceivedFromPhone = message["channel"] as? String {
-//            if channelReceivedFromPhone == "PubNub" {
-//                
-//            } //if channelReceived...is PubNub
-//        
-//        } //get message if statement
-//    } //getChannel
-
 }

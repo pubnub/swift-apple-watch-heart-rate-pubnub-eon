@@ -9,18 +9,19 @@
 import UIKit
 import WatchConnectivity
 
-class ChannelViewController: UIViewController, UIPickerViewDataSource, WCSessionDelegate, UIPickerViewDelegate {
+class UserNameViewController: UIViewController, UIPickerViewDataSource, WCSessionDelegate, UIPickerViewDelegate {
     
     var wrSesh: WCSession!
+    var selPick:String = ""
     
-    @IBOutlet weak var channelPicker: UIPickerView!
-    @IBOutlet weak var channelLabel: UILabel!
-    let chanPickerOptions = ["PubNub", "Hamilton", "Hermione", "Olaf", "PiedPiper"]
+    @IBOutlet weak var uNamePicker: UIPickerView!
+    @IBOutlet weak var uNameLabel: UILabel!
+    let uNamePickerOptions = ["PubNub", "Hamilton", "Hermione", "Olaf", "PiedPiper"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        channelPicker.delegate = self
-        channelPicker.dataSource = self
+        uNamePicker.delegate = self
+        uNamePicker.dataSource = self
         
         // Do any additional setup after loading the view, typically from a nib.
         if(WCSession.isSupported()) {
@@ -30,22 +31,23 @@ class ChannelViewController: UIViewController, UIPickerViewDataSource, WCSession
         }
     }
     @IBAction func enterButtonClicked(sender: AnyObject) {
-        
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
         if (segue.identifier == "btnSubmitSegue") {
-            var svc = segue.destinationViewController as! ViewController;
+            var svc = segue.destinationViewController as! HRViewController;
             //var dataPassed = channelLabel.text
-            svc.dataPassedFromChannelViewController = channelLabel.text
+            svc.dataPassedFromChannelViewController = selPick
         }
+        sendChannel()
     }
 
     func sendChannel() {
         //send message to phone, not even publish
-        let channel = ["channel": String("channel")]
+        let sendingUName = ["UName": selPick]
+        print("sending" + selPick)
         if let wrSesh = self.wrSesh where wrSesh.reachable {
-            wrSesh.sendMessage(channel, replyHandler: { replyData in
+            wrSesh.sendMessage(sendingUName, replyHandler: { replyData in
                 print(replyData)
                 }, errorHandler: { error in
                     print(error)
@@ -61,15 +63,16 @@ class ChannelViewController: UIViewController, UIPickerViewDataSource, WCSession
         return 1
     } //numberOfComponentsInPickerView
     func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return chanPickerOptions.count
+        return uNamePickerOptions.count
     } //pickerView
     
     func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return chanPickerOptions[row]
+        return uNamePickerOptions[row]
     } //pickerView
     
     func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        channelLabel.text = chanPickerOptions[row]
+        uNameLabel.text = uNamePickerOptions[row]
+        selPick = uNamePickerOptions[row]
     } //pickerView text
 
     func pickerView(pickerView: UIPickerView, widthForComponent component: Int) -> CGFloat {
@@ -85,15 +88,15 @@ class ChannelViewController: UIViewController, UIPickerViewDataSource, WCSession
         if view == nil {  //if no label there yet
             pickLabel = UILabel()
             //color the label's background
-            let pickOptionColor = CGFloat(row)/CGFloat(chanPickerOptions.count)
+            let pickOptionColor = CGFloat(row)/CGFloat(uNamePickerOptions.count)
             pickLabel.backgroundColor = UIColor(hue: pickOptionColor, saturation: 1.0, brightness: 0.7, alpha: 0.5)
         }
-        let eachOptionName = chanPickerOptions[row]
+        let eachOptionName = uNamePickerOptions[row]
         let pickerOptionName = NSAttributedString(string: eachOptionName, attributes: [NSFontAttributeName:UIFont(name: "Georgia", size: 24.0)!,NSForegroundColorAttributeName:UIColor.redColor()])
         pickLabel!.attributedText = pickerOptionName
         pickLabel!.textAlignment = .Center
         
-        channelLabel.text = chanPickerOptions[row]
+        uNameLabel.text = uNamePickerOptions[row]
         return pickLabel
         
     }

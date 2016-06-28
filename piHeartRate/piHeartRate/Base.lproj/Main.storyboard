@@ -8,7 +8,7 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="piHeartRate" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="HRViewController" customModule="piHeartRate" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -17,8 +17,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="HRLabel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PaO-lA-ZOe">
-                                <rect key="frame" x="256" y="289" width="65" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PaO-lA-ZOe">
+                                <rect key="frame" x="316" y="289" width="5" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -35,8 +35,8 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Tm-3M-sao">
-                                <rect key="frame" x="267" y="357" width="42" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text=":)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VBy-Gw-eoI">
+                                <rect key="frame" x="328" y="356" width="32" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -49,18 +49,18 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="channelLabel" destination="2Tm-3M-sao" id="xHd-wb-9H6"/>
                         <outlet property="hrValLabel" destination="PaO-lA-ZOe" id="hF3-P0-LPM"/>
+                        <outlet property="userNameLabel" destination="VBy-Gw-eoI" id="6O0-WQ-hvp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="773" y="486"/>
         </scene>
-        <!--Channel View Controller-->
+        <!--User Name View Controller-->
         <scene sceneID="fNf-td-3da">
             <objects>
-                <viewController id="Nd0-3W-jjf" customClass="ChannelViewController" customModule="piHeartRate" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Nd0-3W-jjf" customClass="UserNameViewController" customModule="piHeartRate" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="owE-dn-h4g"/>
                         <viewControllerLayoutGuide type="bottom" id="auw-xc-Hx4"/>
@@ -98,8 +98,8 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="channelLabel" destination="ZIl-Ul-gl6" id="THo-1V-fOi"/>
-                        <outlet property="channelPicker" destination="tDZ-LW-k29" id="tzh-kp-gnN"/>
+                        <outlet property="uNameLabel" destination="ZIl-Ul-gl6" id="wtd-Va-JWK"/>
+                        <outlet property="uNamePicker" destination="tDZ-LW-k29" id="bJa-sc-LnB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3dM-AL-jco" userLabel="First Responder" sceneMemberID="firstResponder"/>

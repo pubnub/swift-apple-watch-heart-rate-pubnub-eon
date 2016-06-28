@@ -19,7 +19,7 @@
                             </items>
                         </group>
                         <label alignment="center" text="--" textAlignment="justified" id="j6O-V0-NEJ"/>
-                        <button width="1" alignment="left" verticalAlignment="center" title="Button" id="K2p-7C-GOW">
+                        <button width="1" alignment="left" verticalAlignment="center" title="Start" id="K2p-7C-GOW">
                             <connections>
                                 <action selector="startBtnTapped" destination="AgC-eL-Hgc" id="BDI-Y4-b2y"/>
                             </connections>
