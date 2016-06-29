@@ -18,6 +18,9 @@ import UIKit
 import HealthKit
 import WatchConnectivity
 import PubNub
+import Fabric
+import TwitterKit
+
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, PNObjectEventListener {
@@ -64,7 +67,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, PNObjectEventListener {
     
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        Fabric.with([Twitter.self])
         self.client.subscribeToChannels([channel], withPresence: false)
+
         if WCSession.isSupported() {
             session = WCSession.defaultSession()
             session!.delegate = self

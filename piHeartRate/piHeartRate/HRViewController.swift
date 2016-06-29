@@ -8,12 +8,14 @@
 
 import UIKit
 import WatchConnectivity
+import TwitterKit
 //import PubNub
 //subscribe from phone app -> see if can subscribe from Watch
 
 class HRViewController: UIViewController, WCSessionDelegate {
     var userName: String = ""
     var dataPassedFromChannelViewController: String = ""
+    let composer = TWTRComposer()
     
     @IBOutlet weak var userNameLabel: UILabel!
     var wcSesh : WCSession!
@@ -30,6 +32,15 @@ class HRViewController: UIViewController, WCSessionDelegate {
             wrSesh.activateSession()
         }
         
+        composer.showFromViewController(self) { result in
+            if (result == TWTRComposerResult.Cancelled) {
+                print("Tweet composition cancelled")
+            }
+            else {
+                print("Sending tweet!")
+            }
+        }
+
         sendChannelData()
         // Do any additional setup after loading the view, typically from a nib.
     }
@@ -96,9 +107,11 @@ class HRViewController: UIViewController, WCSessionDelegate {
                 }
                 else if hrVal > 80 {
                     self.hrValLabel.text = "🙀"
+                    self.composer.setText("My heart rate is " + String(self.hrVal))
                 }
                 else {
                     self.hrValLabel.text = "❤️"
+                   
                 }
             }
         }

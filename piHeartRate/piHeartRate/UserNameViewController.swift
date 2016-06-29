@@ -9,6 +9,8 @@
 import UIKit
 import WatchConnectivity
 
+import TwitterKit
+
 class UserNameViewController: UIViewController, UIPickerViewDataSource, WCSessionDelegate, UIPickerViewDelegate {
     
     var wrSesh: WCSession!
@@ -20,6 +22,7 @@ class UserNameViewController: UIViewController, UIPickerViewDataSource, WCSessio
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
         uNamePicker.delegate = self
         uNamePicker.dataSource = self
         
@@ -33,9 +36,11 @@ class UserNameViewController: UIViewController, UIPickerViewDataSource, WCSessio
     @IBAction func enterButtonClicked(sender: AnyObject) {
     }
     
+    
+    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
         if (segue.identifier == "btnSubmitSegue") {
-            var svc = segue.destinationViewController as! HRViewController;
+            var svc = segue.destinationViewController as! HRViewController; //pass to HRViewController
             //var dataPassed = channelLabel.text
             svc.dataPassedFromChannelViewController = selPick
         }
