@@ -1,4 +1,6 @@
 source 'https://github.com/CocoaPods/Specs.git'
+workspace 'HeartRate'
+project 'piHeartRate/piHeartRate'
 use_frameworks!
 
 #platform :ios, '8.0'

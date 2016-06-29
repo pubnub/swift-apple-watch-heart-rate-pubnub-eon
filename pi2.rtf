@@ -1,0 +1,55 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1404\cocoasubrtf470
+{\fonttbl\f0\fnil\fcharset0 Menlo-Regular;}
+{\colortbl;\red255\green255\blue255;\red65\green182\blue69;}
+\margl1440\margr1440\vieww10800\viewh8400\viewkind0
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+
+\f0\fs22 \cf0 \CocoaLigature0 import sys\
+import time\
+from pubnub import Pubnub\
+\
+pubnub = Pubnub(publish_key=publish_key, subscribe_key=subscribe_key,\
+                secret_key=secret_key, cipher_key=cipher_key, ssl_on=ssl_on, daemon=True)\
+    \
+#channel = 'yee'\
+\pard\tx529\pardeftab529\pardirnatural\partightenfactor0
+\cf2 #let chanPickerOptions = ["PubNub", "Hamilton", "Her]mione", "Olaf", "PiedPiper"\cf0 \
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+\cf0     \
+# Asynchronous usage\
+def callback(message, channel):\
+    valToPython = message['Lizzie']\
+    if float(valToPython) < 20.0:\
+        print('eh')\
+    elif float(valToPython) > 20 and float(valToPython) < 45:\
+        print('not bad')\
+    elif float(valToPython) > 45 and float(valToPython) < 60:\
+        print('better')\
+    elif float(valToPython) > 60 and float(valToPython) < 75:\
+        print('there we go')\
+    elif float(valToPython) > 75 and float(valToPython) < 90:\
+        print('daaang')\
+    else:\
+        print('idk what you are doing')\
+\
+def error(message):\
+    print("ERROR : " + str(message))\
+\
+def connect(message):\
+    print("CONNECTED")\
+\
+def reconnect(message):\
+    print("RECONNECTED")\
+\
+def disconnect(message):\
+    print('DISCONNECTED')\
+\
+pubnub.subscribe(channels="PubNub, Hamilton, Hermione, Olaf, PiedPiper", callback=callback, error=callback,\
+                 connect=connect, reconnect=reconnect, disconnect=disconnect)\
+\
+try:\
+    while 1:\
+        pass\
+except KeyboardInterrupt:\
+    GPIO.cleanup()\
+    sys.exit(1)}
