@@ -21,19 +21,50 @@
                                 <rect key="frame" x="-10" y="0.0" width="600" height="44"/>
                                 <items>
                                     <navigationItem title="Heart Rate" id="fXs-S4-YNL">
-                                        <barButtonItem key="leftBarButtonItem" title="Back" id="FJW-QE-bib"/>
+                                        <barButtonItem key="leftBarButtonItem" title="Back" id="FJW-QE-bib">
+                                            <connections>
+                                                <action selector="back:" destination="BYZ-38-t0r" id="Tg1-eF-ysx"/>
+                                            </connections>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="n2p-1y-fBJ">
-                                <rect key="frame" x="9" y="266" width="240" height="128"/>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="T6p-jl-PFM">
+                                <rect key="frame" x="192" y="109" width="240" height="128"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jCS-gM-qUN">
+                                <rect key="frame" x="269" y="306" width="97" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" fixedFrame="YES" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="ejS-14-3Ex">
+                                <rect key="frame" x="230" y="504" width="150" height="2"/>
+                            </progressView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <toolbarItems>
+                        <barButtonItem id="Ga0-U0-4Wm"/>
+                        <barButtonItem title="Forward" id="lgq-eJ-7xR">
+                            <connections>
+                                <action selector="forward:" destination="BYZ-38-t0r" id="R0y-iv-bbg"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem title="Reload" id="o6T-7r-wHh">
+                            <connections>
+                                <action selector="reload:" destination="BYZ-38-t0r" id="lFO-lY-dEv"/>
+                            </connections>
+                        </barButtonItem>
+                    </toolbarItems>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="containerView" destination="n2p-1y-fBJ" id="9RA-e3-2VA"/>
+                        <outlet property="backButton" destination="FJW-QE-bib" id="t0c-A5-CRb"/>
+                        <outlet property="barView" destination="T6p-jl-PFM" id="tvA-GP-9xb"/>
+                        <outlet property="forwardButton" destination="lgq-eJ-7xR" id="RKU-dq-k4o"/>
+                        <outlet property="progressView" destination="ejS-14-3Ex" id="5WJ-lf-g1p"/>
+                        <outlet property="reloadButton" destination="o6T-7r-wHh" id="Gb6-pk-mS5"/>
+                        <outlet property="urlField" destination="jCS-gM-qUN" id="A9y-QB-ian"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

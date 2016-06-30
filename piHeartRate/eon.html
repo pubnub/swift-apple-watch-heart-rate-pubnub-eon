@@ -14,7 +14,7 @@
         <meta charset="UTF-8">
         </head>
     <body>
-        <h1>WKWebView Test</h1>
+        <h1>Heart Rate with EON.js in WKWebView</h1>
         <div id="chart"></div>
         <script>
             var pbIOSWeb = PUBNUB.init({publish_key: 'pub-c-1b5f6f38-34c4-45a8-81c7-7ef4c45fd608',
@@ -25,85 +25,37 @@
                       pubnub: pbIOSWeb,
                       channel: chan,
                       generate: {
-                      bindto: '#chart',
-                      data: {
-                      type: 'gauge'
-                      }
+                            bindto: '#chart',
+                            data: {
+                                type: 'gauge'
+                            },
+                            gauge: {
+                                min: 0,
+                                max: 100
+                            },
+                      
+                            color: {
+                                pattern: ['#FF0000', '#F6C600', '#60B044'],
+                                threshold: {
+                                values: [30, 60, 90]
+                                }
+                            }
                       },
-                      transform: function(message) {
+                      transform: function(m) {
+                      return {
+                      eon: {
+                            'Hermione': m.Hermione
                       }
-                      });
+                      }
+                      }
+                });
                    
 
-            function callNativeApp () {
-                try {
-                    webkit.messageHandlers.callbackHandler.postMessage("Hello from JavaScript");
-                } catch(err) {
-                    console.log('The native context does not exist yet');
-                }
-            }
-        
-        setTimeout(function () {
-                   callNativeApp();
-                   }, 5000);
-                   
-                   function pubStuff() {
-                            pbIOSWeb.publish({
-                                             channel: chan,
-                                             message: {
-                                             eon: {
-                                             'data': Math.random() * 99
-                                             }
-                                        }
-                            })
-                    
-                    
-                            }
 
                    </script>
                 <script>
-                    //function publishPls() {
-
-                                //}
-                
-
             </script>
-<!--        <h1>Hello</h1>-->
-<!--        <div id="messages_from_java">Count is 0</div>-->
-<!--        <button onclick = "sendCount()">Click Me</button>-->
     </body>
 </html>
 
 
-<!--<html>-->
-<!--    <head>-->
-<!--        -->
-<!--        -->
-<!--    </head>-->
-<!--    <body>-->
-<!--pbIOSWeb.publish({-->
-<!--channel: chan,-->
-<!--message: {-->
-<!--eon: {-->
-<!--'Austin': Math.floor(Math.random() * 99)-->
-<!--}-->
-<!--}-->
-<!--});-->
-
-
-<!--        <h1>Hello</h1>-->
-<!--        <div id="messages_from_java">Count is 0</div>-->
-<!--        <button onclick = "sendCount()">Click Me</button>-->
-<!--        var clicks = 0-->
-<!--        function sendCount(){-->
-<!--            -->
-<!--            var message = {"cmd":"increment","count":clicks,"callbackFunc":function(responseAsJSON){-->
-<!--                var response = JSON.parse(responseAsJSON)-->
-<!--                clicks = response['count']-->
-<!--                document.querySelector("#messages_from_java").innerText = "Count is "+clicks-->
-<!--            }.toString()}-->
-<!--            native.postMessage(message)-->
-<!--        }-->
-<!--            </script>-->
-<!--    </body>-->
-<!--</html>-->

@@ -15,6 +15,7 @@ class TwitterViewController: UIViewController {
     @IBOutlet var twitterIDLabel: UILabel!
     @IBOutlet var maxNumToTweet: UIView!
     var twitterUName: String = ""
+    var dataPassedFromTwitterViewController: String!
     
     override func viewDidLoad() {
         let logInButton = TWTRLogInButton { (session, error) in

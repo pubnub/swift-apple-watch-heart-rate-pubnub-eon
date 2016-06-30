@@ -187,6 +187,7 @@ class InterfaceController: WKInterfaceController, HKWorkoutSessionDelegate, WCSe
     func publishHeartRate() {
         //let hrValToPublish: [String : Double] = [self.uuidSentFromPhone: hrVal]
         let hrValToPublish = ["Hermione": "\(self.hrVal)"]
+        //let hrValToPublish = self.hrVal
         
         print("hrValToPublish: \(hrValToPublish)")
         watchAppDel.client?.publish(hrValToPublish, toChannel: "Olaf", withCompletion: { (status) -> Void in
