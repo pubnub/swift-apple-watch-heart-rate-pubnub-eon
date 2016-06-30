@@ -40,7 +40,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, PNObjectEventListener {
     
     var client : PubNub
     var config : PNConfiguration
-    var channel = "yee"
+    var channel = "Olaf"
     
     var someData = [String]()
     

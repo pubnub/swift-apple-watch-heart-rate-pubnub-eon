@@ -17,45 +17,28 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PaO-lA-ZOe">
-                                <rect key="frame" x="316" y="289" width="5" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0Sc-T2-gv9">
                                 <rect key="frame" x="-10" y="0.0" width="600" height="44"/>
                                 <items>
                                     <navigationItem title="Heart Rate" id="fXs-S4-YNL">
-                                        <barButtonItem key="leftBarButtonItem" title="Back" id="FJW-QE-bib">
-                                            <connections>
-                                                <segue destination="Nd0-3W-jjf" kind="presentation" id="oni-op-lTY"/>
-                                            </connections>
-                                        </barButtonItem>
+                                        <barButtonItem key="leftBarButtonItem" title="Back" id="FJW-QE-bib"/>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text=":)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VBy-Gw-eoI">
-                                <rect key="frame" x="328" y="356" width="32" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="n2p-1y-fBJ">
+                                <rect key="frame" x="9" y="266" width="240" height="128"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="PaO-lA-ZOe" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="VDP-Ct-Sbl"/>
-                            <constraint firstItem="PaO-lA-ZOe" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="mRA-FX-fWs"/>
-                        </constraints>
                     </view>
                     <connections>
-                        <outlet property="hrValLabel" destination="PaO-lA-ZOe" id="hF3-P0-LPM"/>
-                        <outlet property="userNameLabel" destination="VBy-Gw-eoI" id="6O0-WQ-hvp"/>
+                        <outlet property="containerView" destination="n2p-1y-fBJ" id="9RA-e3-2VA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="773" y="486"/>
+            <point key="canvasLocation" x="408" y="503"/>
         </scene>
         <!--Twitter View Controller-->
         <scene sceneID="1J0-T6-GrE">
@@ -69,92 +52,34 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="E8u-me-E8i">
-                                <rect key="frame" x="252" y="431" width="97" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="250" id="3g5-Mq-NTA"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2qQ-dv-V6I">
-                                <rect key="frame" x="282" y="497" width="37" height="30"/>
-                                <state key="normal" title="Enter"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Welcome!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bWg-xz-fAV">
+                                <rect key="frame" x="295" y="306" width="76" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uZh-5b-UAB">
+                                <rect key="frame" x="313" y="384" width="41" height="30"/>
+                                <state key="normal" title="Done!"/>
                                 <connections>
-                                    <action selector="enterButtonClicked:" destination="xC4-Y0-UPP" eventType="touchUpInside" id="E6c-Ea-UnD"/>
-                                    <segue destination="Nd0-3W-jjf" kind="show" id="8e8-CD-9Nh"/>
+                                    <segue destination="BYZ-38-t0r" kind="presentation" identifier="sendTwitterName" id="kfj-E5-4qm"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="2qQ-dv-V6I" firstAttribute="centerX" secondItem="Hcr-pT-ZZf" secondAttribute="centerX" id="C41-W5-FdC"/>
-                            <constraint firstItem="E8u-me-E8i" firstAttribute="top" secondItem="epD-rp-Snf" secondAttribute="bottom" constant="124" id="Vf2-dU-9UI"/>
-                            <constraint firstItem="E8u-me-E8i" firstAttribute="centerX" secondItem="Hcr-pT-ZZf" secondAttribute="centerX" id="a9m-bo-sE1"/>
-                            <constraint firstItem="2qQ-dv-V6I" firstAttribute="top" secondItem="E8u-me-E8i" secondAttribute="bottom" constant="20" id="tfD-by-Rvy"/>
+                            <constraint firstItem="uZh-5b-UAB" firstAttribute="centerX" secondItem="Hcr-pT-ZZf" secondAttribute="centerX" id="Zgy-uO-JpP"/>
+                            <constraint firstItem="bWg-xz-fAV" firstAttribute="centerX" secondItem="Hcr-pT-ZZf" secondAttribute="centerX" id="rdL-Vy-fqN"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="enterButton" destination="2qQ-dv-V6I" id="W0l-Bj-cJt"/>
                         <outlet property="maxNumToTweet" destination="Hcr-pT-ZZf" id="HnJ-Un-6pp"/>
-                        <outlet property="twitterTextField" destination="E8u-me-E8i" id="7Wg-iz-lT8"/>
+                        <outlet property="twitterIDLabel" destination="bWg-xz-fAV" id="eMN-qJ-EU1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1DO-sQ-tYk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-214" y="508"/>
-        </scene>
-        <!--User Name View Controller-->
-        <scene sceneID="fNf-td-3da">
-            <objects>
-                <viewController id="Nd0-3W-jjf" customClass="UserNameViewController" customModule="piHeartRate" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="owE-dn-h4g"/>
-                        <viewControllerLayoutGuide type="bottom" id="auw-xc-Hx4"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="8rv-9V-a6B">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <pickerView contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tDZ-LW-k29">
-                                <rect key="frame" x="20" y="210" width="600" height="216"/>
-                            </pickerView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Selected" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZIl-Ul-gl6">
-                                <rect key="frame" x="310" y="429" width="68" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dTc-D1-O6G">
-                                <rect key="frame" x="341" y="472" width="37" height="30"/>
-                                <state key="normal" title="Enter"/>
-                                <connections>
-                                    <action selector="enterButtonClicked:" destination="Nd0-3W-jjf" eventType="touchUpInside" id="Ixf-ql-ytt"/>
-                                    <segue destination="BYZ-38-t0r" kind="presentation" id="vu6-tM-UP1"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="ZIl-Ul-gl6" firstAttribute="centerX" secondItem="8rv-9V-a6B" secondAttribute="centerX" id="6NS-Dm-9j0"/>
-                            <constraint firstItem="ZIl-Ul-gl6" firstAttribute="top" secondItem="tDZ-LW-k29" secondAttribute="bottom" constant="20" id="R0L-F5-yG8"/>
-                            <constraint firstItem="tDZ-LW-k29" firstAttribute="centerY" secondItem="8rv-9V-a6B" secondAttribute="centerY" id="e2K-aO-Wcv"/>
-                            <constraint firstItem="dTc-D1-O6G" firstAttribute="top" secondItem="ZIl-Ul-gl6" secondAttribute="bottom" constant="20" id="ie0-MR-7Va"/>
-                            <constraint firstItem="dTc-D1-O6G" firstAttribute="centerX" secondItem="8rv-9V-a6B" secondAttribute="centerX" id="jKe-1m-aCe"/>
-                            <constraint firstItem="tDZ-LW-k29" firstAttribute="centerX" secondItem="8rv-9V-a6B" secondAttribute="centerX" id="qdz-Nl-N91"/>
-                        </constraints>
-                    </view>
-                    <connections>
-                        <outlet property="uNameLabel" destination="ZIl-Ul-gl6" id="wtd-Va-JWK"/>
-                        <outlet property="uNamePicker" destination="tDZ-LW-k29" id="bJa-sc-LnB"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="3dM-AL-jco" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="401" y="493"/>
+            <point key="canvasLocation" x="-267" y="508"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="8e8-CD-9Nh"/>
-    </inferredMetricsTieBreakers>
 </document>

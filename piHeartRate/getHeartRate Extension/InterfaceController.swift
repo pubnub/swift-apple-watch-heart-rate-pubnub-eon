@@ -186,7 +186,7 @@ class InterfaceController: WKInterfaceController, HKWorkoutSessionDelegate, WCSe
     
     func publishHeartRate() {
         //let hrValToPublish: [String : Double] = [self.uuidSentFromPhone: hrVal]
-        let hrValToPublish = [self.channelSentFromPhone: "\(self.hrVal)"]
+        let hrValToPublish = ["Hermione": "\(self.hrVal)"]
         
         print("hrValToPublish: \(hrValToPublish)")
         watchAppDel.client?.publish(hrValToPublish, toChannel: "Olaf", withCompletion: { (status) -> Void in
@@ -218,14 +218,14 @@ class InterfaceController: WKInterfaceController, HKWorkoutSessionDelegate, WCSe
             "\(message.data.timetoken)")
     }
     
-    //get username from phone
-    func session(wrSesh: WCSession, didReceiveMessage message: [String : AnyObject], replyHandler: ([String : AnyObject]) -> Void) {
-        //let chanPickerOptions = ["PubNub", "Hamilton", "Hermione", "Olaf", "PiedPiper"
-        if let checkingNameFromPhone = message["UName"] as? String {
-            self.channelList.append(checkingNameFromPhone)
-            self.channelSentFromPhone = checkingNameFromPhone
-        } //let checking
-    } //session WatchConnectivity
+//    //get username from phone
+//    func session(wrSesh: WCSession, didReceiveMessage message: [String : AnyObject], replyHandler: ([String : AnyObject]) -> Void) {
+//        //let chanPickerOptions = ["PubNub", "Hamilton", "Hermione", "Olaf", "PiedPiper"
+//        if let checkingNameFromPhone = message["UName"] as? String {
+//            self.channelList.append(checkingNameFromPhone)
+//            self.channelSentFromPhone = checkingNameFromPhone
+//        } //let checking
+//    } //session WatchConnectivity
     
     func updateHeartRate(samples: [HKSample]?) {
         guard let heartRateSamples = samples as? [HKQuantitySample] else {return} //subclass of HKSample -> data like height, weight etc
@@ -245,18 +245,18 @@ class InterfaceController: WKInterfaceController, HKWorkoutSessionDelegate, WCSe
             //self.publishTimerFunc()
             
             
-            //send message to phone, not even publish -> emojis as label
-            let hrData = ["heart rate value": self.hrVal]
-            if let wcSesh = self.wcSesh where wcSesh.reachable {
-                wcSesh.sendMessage(hrData, replyHandler: { replyData in
-                    print(replyData)
-                    }, errorHandler: { error in
-                        print(error)
-                })
-            } else {
-                //when phone !connected via Bluetooth
-                print("phone !connected via Bluetooth")
-            } //else
+//            //send message to phone, not even publish -> emojis as label
+//            let hrData = ["heart rate value": self.hrVal]
+//            if let wcSesh = self.wcSesh where wcSesh.reachable {
+//                wcSesh.sendMessage(hrData, replyHandler: { replyData in
+//                    print(replyData)
+//                    }, errorHandler: { error in
+//                        print(error)
+//                })
+//            } else {
+//                //when phone !connected via Bluetooth
+//                print("phone !connected via Bluetooth")
+//            } //else
         } //dispatch_async
     }
     

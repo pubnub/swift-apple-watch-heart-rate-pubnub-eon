@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+    <head>
+                <script type="text/javascript" src="http://pubnub.github.io/eon/v/eon/0.0.11/eon.js"></script>
+                <link type="text/css" rel="stylesheet" href="http://pubnub.github.io/eon/v/eon/0.0.11/eon.css" />
+                 <script type="text/javascript" src="inter.js" charset="utf-8"></script>
+
+        <style type="text/css">
+            body {
+                padding-top: 40px;
+            }
+        </style>
+        <title>WKWebView</title>
+        <meta charset="UTF-8">
+        </head>
+    <body>
+        <h1>WKWebView Test</h1>
+        <div id="chart"></div>
+        <script>
+            var pbIOSWeb = PUBNUB.init({publish_key: 'pub-c-1b5f6f38-34c4-45a8-81c7-7ef4c45fd608',
+                                       subscribe_key: 'sub-c-a3cf770a-2c3d-11e6-8b91-02ee2ddab7fe'
+                                       });
+            var chan = "Olaf";
+            eon.chart({
+                      pubnub: pbIOSWeb,
+                      channel: chan,
+                      generate: {
+                      bindto: '#chart',
+                      data: {
+                      type: 'gauge'
+                      }
+                      },
+                      transform: function(message) {
+                      }
+                      });
+                   
+
+            function callNativeApp () {
+                try {
+                    webkit.messageHandlers.callbackHandler.postMessage("Hello from JavaScript");
+                } catch(err) {
+                    console.log('The native context does not exist yet');
+                }
+            }
+        
+        setTimeout(function () {
+                   callNativeApp();
+                   }, 5000);
+                   
+                   function pubStuff() {
+                            pbIOSWeb.publish({
+                                             channel: chan,
+                                             message: {
+                                             eon: {
+                                             'data': Math.random() * 99
+                                             }
+                                        }
+                            })
+                    
+                    
+                            }
+
+                   </script>
+                <script>
+                    //function publishPls() {
+
+                                //}
+                
+
+            </script>
+<!--        <h1>Hello</h1>-->
+<!--        <div id="messages_from_java">Count is 0</div>-->
+<!--        <button onclick = "sendCount()">Click Me</button>-->
+    </body>
+</html>
+
+
+<!--<html>-->
+<!--    <head>-->
+<!--        -->
+<!--        -->
+<!--    </head>-->
+<!--    <body>-->
+<!--pbIOSWeb.publish({-->
+<!--channel: chan,-->
+<!--message: {-->
+<!--eon: {-->
+<!--'Austin': Math.floor(Math.random() * 99)-->
+<!--}-->
+<!--}-->
+<!--});-->
+
+
+<!--        <h1>Hello</h1>-->
+<!--        <div id="messages_from_java">Count is 0</div>-->
+<!--        <button onclick = "sendCount()">Click Me</button>-->
+<!--        var clicks = 0-->
+<!--        function sendCount(){-->
+<!--            -->
+<!--            var message = {"cmd":"increment","count":clicks,"callbackFunc":function(responseAsJSON){-->
+<!--                var response = JSON.parse(responseAsJSON)-->
+<!--                clicks = response['count']-->
+<!--                document.querySelector("#messages_from_java").innerText = "Count is "+clicks-->
+<!--            }.toString()}-->
+<!--            native.postMessage(message)-->
+<!--        }-->
+<!--            </script>-->
+<!--    </body>-->
+<!--</html>-->

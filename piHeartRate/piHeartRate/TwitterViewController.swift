@@ -11,12 +11,16 @@ import TwitterKit
 
 class TwitterViewController: UIViewController {
     
-    @IBOutlet weak var twitterTextField: UITextField!
-    @IBOutlet weak var enterButton: UIButton!
+    
+    @IBOutlet var twitterIDLabel: UILabel!
     @IBOutlet var maxNumToTweet: UIView!
+    var twitterUName: String = ""
+    
     override func viewDidLoad() {
         let logInButton = TWTRLogInButton { (session, error) in
             if let unwrappedSession = session {
+                self.twitterIDLabel.text = unwrappedSession.userName
+                self.twitterUName = unwrappedSession.userName
                 let alert = UIAlertController(title: "Logged In",
                     message: "User \(unwrappedSession.userName) has logged in",
                     preferredStyle: UIAlertControllerStyle.Alert
@@ -26,7 +30,19 @@ class TwitterViewController: UIViewController {
             } else {
                 NSLog("Login error: %@", error!.localizedDescription);
             }
+            
         }
+        if let sesh = Twitter.sharedInstance().sessionStore.session() {
+            let client = TWTRAPIClient()
+            client.loadUserWithID(sesh.userID) { (user, error) -> Void in
+                if let user = user {
+                    self.twitterIDLabel.text = user.screenName
+                    print("@\(user.screenName)")
+                    self.twitterUName = user.screenName
+                }
+            }
+        }
+        
     
     // TODO: Change where the log in button is positioned in your view
         let xPos:CGFloat? = 48.0 //use your X position here
@@ -35,28 +51,14 @@ class TwitterViewController: UIViewController {
     logInButton.frame = CGRectMake(xPos!, yPos!, logInButton.frame.width, logInButton.frame.height)
     //logInButton.center = self.view.center
     self.view.addSubview(logInButton)
-        
-        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(TwitterViewController.dismissKeyboard))
-        view.addGestureRecognizer(tap)
-    }
-
-    func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool
-        
-    {
-        let numberOnly = NSCharacterSet.init(charactersInString: "0123456789")
-        
-        let stringFromTextField = NSCharacterSet.init(charactersInString: string)
-        
-        let strValid = numberOnly.isSupersetOfSet(stringFromTextField)
-        
-        return strValid
+    } //viewDidLoad
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
+        if (segue.identifier == "sendTwitterName") {
+            var svc = segue.destinationViewController as! HRViewController; //pass to HRViewController
+            //var dataPassed = channelLabel.text
+            svc.dataPassedFromTwitterViewController = self.twitterUName
+        }
     }
     
-    func dismissKeyboard() {
-        //Causes the view (or one of its embedded text fields) to resign the first responder status.
-        view.endEditing(true)
-    }
-
-    @IBAction func enterButtonClicked(sender: AnyObject) {
-    }
 }
