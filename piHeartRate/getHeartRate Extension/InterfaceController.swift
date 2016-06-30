@@ -25,6 +25,8 @@ class InterfaceController: WKInterfaceController, HKWorkoutSessionDelegate, WCSe
     
     @IBOutlet var startStopBtn: WKInterfaceButton!
     
+    var arrayOfHR = [Double]()
+    
     var client: PubNub?
     
     let healthStore = HKHealthStore()
@@ -133,6 +135,18 @@ class InterfaceController: WKInterfaceController, HKWorkoutSessionDelegate, WCSe
             if let workout = self.workoutSesh {
                 healthStore.endWorkoutSession(workout)
             }
+            //send message to phone, not even publish
+            let btnTapData = ["buttonTap": true]
+            if let wcSesh = self.wcSesh where wcSesh.reachable {
+                wcSesh.sendMessage(btnTapData, replyHandler: { replyData in
+                    print(replyData)
+                    }, errorHandler: { error in
+                        print(error)
+                })
+            } else {
+                //when phone !connected via Bluetooth
+                print("phone !connected via Bluetooth")
+            } //else
             //publishTimerFunc()
         } else {
             //start a new workout
@@ -186,7 +200,7 @@ class InterfaceController: WKInterfaceController, HKWorkoutSessionDelegate, WCSe
     
     func publishHeartRate() {
         //let hrValToPublish: [String : Double] = [self.uuidSentFromPhone: hrVal]
-        let hrValToPublish = ["Hermione": "\(self.hrVal)"]
+        let hrValToPublish = ["Hermione": "\(self.hrVal)"] //Hermione
         //let hrValToPublish = self.hrVal
         
         print("hrValToPublish: \(hrValToPublish)")
@@ -219,14 +233,14 @@ class InterfaceController: WKInterfaceController, HKWorkoutSessionDelegate, WCSe
             "\(message.data.timetoken)")
     }
     
-//    //get username from phone
-//    func session(wrSesh: WCSession, didReceiveMessage message: [String : AnyObject], replyHandler: ([String : AnyObject]) -> Void) {
-//        //let chanPickerOptions = ["PubNub", "Hamilton", "Hermione", "Olaf", "PiedPiper"
-//        if let checkingNameFromPhone = message["UName"] as? String {
-//            self.channelList.append(checkingNameFromPhone)
-//            self.channelSentFromPhone = checkingNameFromPhone
-//        } //let checking
-//    } //session WatchConnectivity
+    //get username from phone
+    func session(wrSesh: WCSession, didReceiveMessage message: [String : AnyObject], replyHandler: ([String : AnyObject]) -> Void) {
+        //let chanPickerOptions = ["PubNub", "Hamilton", "Hermione", "Olaf", "PiedPiper"
+        if let checkingNameFromPhone = message["twitterName"] as? String {
+            self.channelList.append(checkingNameFromPhone)
+            self.channelSentFromPhone = checkingNameFromPhone
+        } //let checking
+    } //session WatchConnectivity
     
     func updateHeartRate(samples: [HKSample]?) {
         guard let heartRateSamples = samples as? [HKQuantitySample] else {return} //subclass of HKSample -> data like height, weight etc
@@ -239,6 +253,7 @@ class InterfaceController: WKInterfaceController, HKWorkoutSessionDelegate, WCSe
             self.hrVal = sample.quantity.doubleValueForUnit(self.heartRateUnit)
             let lblTxt = String(self.hrVal)
             self.label.setText(lblTxt)
+            self.arrayOfHR.append(self.hrVal)
             repeat {
                 self.publishTimerFunc()
             } while(self.currMoving == false)
@@ -246,18 +261,18 @@ class InterfaceController: WKInterfaceController, HKWorkoutSessionDelegate, WCSe
             //self.publishTimerFunc()
             
             
-//            //send message to phone, not even publish -> emojis as label
-//            let hrData = ["heart rate value": self.hrVal]
-//            if let wcSesh = self.wcSesh where wcSesh.reachable {
-//                wcSesh.sendMessage(hrData, replyHandler: { replyData in
-//                    print(replyData)
-//                    }, errorHandler: { error in
-//                        print(error)
-//                })
-//            } else {
-//                //when phone !connected via Bluetooth
-//                print("phone !connected via Bluetooth")
-//            } //else
+            //send message to phone, not even publish
+            let hrData = ["heart rate value array": self.arrayOfHR]
+            if let wcSesh = self.wcSesh where wcSesh.reachable {
+                wcSesh.sendMessage(hrData, replyHandler: { replyData in
+                    print(replyData)
+                    }, errorHandler: { error in
+                        print(error)
+                })
+            } else {
+                //when phone !connected via Bluetooth
+                print("phone !connected via Bluetooth")
+            } //else
         } //dispatch_async
     }
     

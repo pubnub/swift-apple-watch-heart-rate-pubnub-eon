@@ -23,7 +23,6 @@
 		6A0B50CC1D1DDC3300EDC0FB /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A0B50CB1D1DDC3300EDC0FB /* HealthKit.framework */; };
 		6A0B50CD1D1DDE7400EDC0FB /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A0B50CB1D1DDC3300EDC0FB /* HealthKit.framework */; };
 		6A4EFF461D2440A90004B8F8 /* eon.html in Resources */ = {isa = PBXBuildFile; fileRef = 6A4EFF451D2440A90004B8F8 /* eon.html */; };
-		6A4EFF4E1D2480AA0004B8F8 /* SwiftlyHybrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A4EFF4D1D2480AA0004B8F8 /* SwiftlyHybrid.swift */; };
 		6A4EFF501D24824C0004B8F8 /* inter.js in Resources */ = {isa = PBXBuildFile; fileRef = 6A4EFF4F1D24824C0004B8F8 /* inter.js */; };
 		6A5996D81D23C48F0084CDFD /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A5996D41D23C48F0084CDFD /* Fabric.framework */; };
 		6A5996D91D23C48F0084CDFD /* TwitterKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A5996D51D23C48F0084CDFD /* TwitterKit.framework */; };
@@ -104,7 +103,6 @@
 		6A0B50CA1D1DDC3300EDC0FB /* getHeartRate Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "getHeartRate Extension.entitlements"; sourceTree = "<group>"; };
 		6A0B50CB1D1DDC3300EDC0FB /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS2.2.sdk/System/Library/Frameworks/HealthKit.framework; sourceTree = DEVELOPER_DIR; };
 		6A4EFF451D2440A90004B8F8 /* eon.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = eon.html; sourceTree = "<group>"; };
-		6A4EFF4D1D2480AA0004B8F8 /* SwiftlyHybrid.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftlyHybrid.swift; sourceTree = "<group>"; };
 		6A4EFF4F1D24824C0004B8F8 /* inter.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = inter.js; sourceTree = "<group>"; };
 		6A5996D41D23C48F0084CDFD /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
 		6A5996D51D23C48F0084CDFD /* TwitterKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TwitterKit.framework; sourceTree = "<group>"; };
@@ -197,7 +195,6 @@
 				6A0B50C91D1DDC2800EDC0FB /* piHeartRate.entitlements */,
 				6A0B50901D1DD20800EDC0FB /* AppDelegate.swift */,
 				6A0B50921D1DD20800EDC0FB /* HRViewController.swift */,
-				6A4EFF4D1D2480AA0004B8F8 /* SwiftlyHybrid.swift */,
 				6A5996DC1D23CA110084CDFD /* TwitterViewController.swift */,
 				6A0B50941D1DD20800EDC0FB /* Main.storyboard */,
 				6A0B50971D1DD20800EDC0FB /* Assets.xcassets */,
@@ -538,7 +535,6 @@
 			files = (
 				6A5996DD1D23CA110084CDFD /* TwitterViewController.swift in Sources */,
 				6A0B50931D1DD20800EDC0FB /* HRViewController.swift in Sources */,
-				6A4EFF4E1D2480AA0004B8F8 /* SwiftlyHybrid.swift in Sources */,
 				6A0B50911D1DD20800EDC0FB /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

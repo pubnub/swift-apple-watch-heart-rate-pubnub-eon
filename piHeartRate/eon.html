@@ -20,41 +20,34 @@
             var pbIOSWeb = PUBNUB.init({publish_key: 'pub-c-1b5f6f38-34c4-45a8-81c7-7ef4c45fd608',
                                        subscribe_key: 'sub-c-a3cf770a-2c3d-11e6-8b91-02ee2ddab7fe'
                                        });
-            var chan = "Olaf";
-            eon.chart({
-                      pubnub: pbIOSWeb,
-                      channel: chan,
-                      generate: {
-                            bindto: '#chart',
-                            data: {
-                                type: 'gauge'
-                            },
-                            gauge: {
-                                min: 0,
-                                max: 100
-                            },
-                      
-                            color: {
-                                pattern: ['#FF0000', '#F6C600', '#60B044'],
-                                threshold: {
-                                values: [30, 60, 90]
-                                }
-                            }
-                      },
-                      transform: function(m) {
-                      return {
-                      eon: {
-                            'Hermione': m.Hermione
-                      }
-                      }
-                      }
-                });
-                   
+                                       var chan = "Olaf";
+                                       eon.chart({
+                                                 pubnub: pbIOSWeb,
+                                                 channel: chan,
+                                                 generate: {
+                                                 bindto: '#chart',
+                                                 data: {
+                                                 type: 'spline'
+                                                 },
+                                                 axis : {
+                                                 x : {
+                                                 type : 'timeseries',
+                                                 tick : {
+                                                 format :'%M'
+                                                 }
+                                                 }
+                                                 }
+                                                },
+                                                 transform: function(m) {
+                                                 return {
+                                                 eon: {
+                                                 'Hermione': m.Hermione
+                                                 }
+                                                 }
+                                                 }
+                                                 });
 
-
-                   </script>
-                <script>
-            </script>
+                               </script>
     </body>
 </html>
 
