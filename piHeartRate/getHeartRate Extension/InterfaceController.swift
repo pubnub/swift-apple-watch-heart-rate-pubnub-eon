@@ -50,7 +50,7 @@ class InterfaceController: WKInterfaceController, HKWorkoutSessionDelegate, WCSe
     
     override init() {
         let watchConfig = PNConfiguration(publishKey: "pub-c-1b5f6f38-34c4-45a8-81c7-7ef4c45fd608", subscribeKey: "sub-c-a3cf770a-2c3d-11e6-8b91-02ee2ddab7fe")
-
+        
         watchAppDel.client = PubNub.clientWithConfiguration(watchConfig)
         
         super.init()
@@ -122,6 +122,7 @@ class InterfaceController: WKInterfaceController, HKWorkoutSessionDelegate, WCSe
         if let query = makeHRStreamingQuery(date) {
             healthStore.stopQuery(query)
             label.setText("---") //not running
+            self.currMoving = false
         } else {
             label.setText("can't stop😓")
         }

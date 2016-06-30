@@ -41,6 +41,13 @@
                             <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" fixedFrame="YES" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="ejS-14-3Ex">
                                 <rect key="frame" x="230" y="504" width="150" height="2"/>
                             </progressView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m9u-vh-bEb">
+                                <rect key="frame" x="303" y="394" width="46" height="30"/>
+                                <state key="normal" title="Tweet!"/>
+                                <connections>
+                                    <action selector="sendTweet:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9eS-iD-L8z"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>

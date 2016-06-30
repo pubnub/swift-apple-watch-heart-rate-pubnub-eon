@@ -18,11 +18,9 @@ class HRViewController: UIViewController, WCSessionDelegate, UITextViewDelegate,
     
     @IBOutlet weak var barView: UIView!
     @IBOutlet weak var urlField: UITextField!
-    var maxHeartRate: Double = 0 //will change
     @IBOutlet weak var backButton: UIBarButtonItem!
     @IBOutlet weak var forwardButton: UIBarButtonItem!
     @IBOutlet weak var reloadButton: UIBarButtonItem!
-    var timeToTweet : Bool = false
     
     @IBOutlet weak var progressView: UIProgressView!
     let composer = TWTRComposer()
@@ -40,17 +38,6 @@ class HRViewController: UIViewController, WCSessionDelegate, UITextViewDelegate,
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-//            composer.setText("working out, and my heart rate got to be: " + String(maxHeartRate))
-//            
-//            composer.showFromViewController(self) { result in
-//                if (result == TWTRComposerResult.Cancelled) {
-//                    print("Tweet composition cancelled")
-//                }
-//                else {
-//                    print("Sending tweet!")
-//                }
-//            }
-        
         barView.frame = CGRect(x:0, y: 0, width: view.frame.width, height: 30)
         
         view.insertSubview(webView, belowSubview: progressView)
@@ -76,19 +63,19 @@ class HRViewController: UIViewController, WCSessionDelegate, UITextViewDelegate,
             wcSesh.delegate = self
             wcSesh.activateSession()
          }
-//            print("userName is" + dataPassedFromTwitterViewController)
-//        let userNameData = ["twitterName": self.dataPassedFromTwitterViewController]
-//        if let wcSesh = self.wcSesh where wcSesh.reachable {
-//            wcSesh.sendMessage(userNameData, replyHandler: { replyData in
-//                print(replyData)
-//                }, errorHandler: { error in
-//                    print(error)
-//            })
-//        } else {
-//            //when phone !connected via Bluetooth
-//            print("phone !connected via Bluetooth")
-//        } //else
-       
+    }
+    @IBAction func sendTweet(sender: AnyObject) {
+                    //composer.setText("working out, and my heart rate got to be: " + String(maxHeartRate))
+        composer.setText("Getting my heart rate puumped #pubnub")
+        
+                    composer.showFromViewController(self) { result in
+                        if (result == TWTRComposerResult.Cancelled) {
+                            print("Tweet composition cancelled")
+                        }
+                        else {
+                            print("Sending tweet!")
+                        }
+                    }
     }
     
     override func didReceiveMemoryWarning() {
@@ -144,23 +131,22 @@ class HRViewController: UIViewController, WCSessionDelegate, UITextViewDelegate,
 
 }
 
+    var maxHeartRate: Double = 0 //will change
+    var timeToTweet : Bool = false
     
     //USE THIS FOR HR, set emojis but don't show #
 func session(wrSesh: WCSession, didReceiveMessage message: [String : AnyObject], replyHandler: ([String : AnyObject]) -> Void) {
-    //var arrayOfHRVal = [Double]() // willChange
-//    var maxHeartRate: Double
-//    var timeToTweet: Bool
-//    if let hrArrayFromWatch = message["heart rate value array"] as? [String] { //String?
-////        arrayOfHRVal = hrArrayFromWatch
-//        let doubleArrVal = hrArrayFromWatch.map { Double($0)! }
-//        maxHeartRate = doubleArrVal.maxElement()!
-//    }
-//    if let boolFromWatch = message["buttonTap"] as? Bool { //String?
-//        //        arrayOfHRVal = hrArrayFromWatch
-//        timeToTweet = boolFromWatch
-//    }
-//
-//    
+    if let hrArrayFromWatch = message["heart rate value array"] as? [String] { //String?
+//        arrayOfHRVal = hrArrayFromWatch
+        let doubleArrVal = hrArrayFromWatch.map { Double($0)! }
+        maxHeartRate = doubleArrVal.maxElement()!
+    }
+    if let boolFromWatch = message["buttonTap"] as? Bool { //String?
+        //        arrayOfHRVal = hrArrayFromWatch
+        timeToTweet = boolFromWatch
+    }
+
+    
 }
 
 

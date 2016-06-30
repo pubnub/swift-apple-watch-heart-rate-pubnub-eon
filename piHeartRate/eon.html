@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
     <head>
-                <script type="text/javascript" src="http://pubnub.github.io/eon/v/eon/0.0.11/eon.js"></script>
-                <link type="text/css" rel="stylesheet" href="http://pubnub.github.io/eon/v/eon/0.0.11/eon.css" />
-                 <script type="text/javascript" src="inter.js" charset="utf-8"></script>
-
+        <script type="text/javascript" src="http://pubnub.github.io/eon/v/eon/0.0.11/eon.js"></script>
+        <link type="text/css" rel="stylesheet" href="http://pubnub.github.io/eon/v/eon/0.0.11/eon.css" />
+        <script type="text/javascript" src="inter.js" charset="utf-8"></script>
+        
         <style type="text/css">
             body {
                 padding-top: 40px;
@@ -12,7 +12,7 @@
         </style>
         <title>WKWebView</title>
         <meta charset="UTF-8">
-        </head>
+            </head>
     <body>
         <h1>Heart Rate with EON.js in WKWebView</h1>
         <div id="chart"></div>
@@ -24,6 +24,8 @@
                                        eon.chart({
                                                  pubnub: pbIOSWeb,
                                                  channel: chan,
+                                                 history: false,
+                                                 flow: true,
                                                  generate: {
                                                  bindto: '#chart',
                                                  data: {
@@ -34,10 +36,14 @@
                                                  type : 'timeseries',
                                                  tick : {
                                                  format :'%M'
-                                                 }
-                                                 }
-                                                 }
-                                                },
+                                                 } //tick
+                                                 }, //x
+                                                 y : {
+                                                 max: 200,
+                                                 min: 10
+                                                 } //y
+                                                 } //axia
+                                                 }, //gen
                                                  transform: function(m) {
                                                  return {
                                                  eon: {
@@ -46,9 +52,6 @@
                                                  }
                                                  }
                                                  });
-
-                               </script>
+            </script>
     </body>
 </html>
-
-
