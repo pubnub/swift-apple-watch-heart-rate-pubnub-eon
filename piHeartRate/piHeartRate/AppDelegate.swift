@@ -67,6 +67,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, PNObjectEventListener {
     
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        UINavigationBar.appearance().barTintColor = UIColor(red: 204/255, green: 204/255, blue: 204/255, alpha: 1.0)
+        UIToolbar.appearance().barTintColor = UIColor(red: 204/255, green: 204/255, blue: 204/255, alpha: 1.0)
+        UITabBar.appearance().barTintColor = UIColor(red: 204/255, green: 204/255, blue: 204/255, alpha: 1.0)
         Fabric.with([Twitter.self])
         self.client.subscribeToChannels([channel], withPresence: false)
 
@@ -104,6 +107,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, PNObjectEventListener {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
     
+
+    
     // authorization from watch
     func applicationShouldRequestHealthAuthorization(application: UIApplication) {
         
@@ -111,8 +116,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, PNObjectEventListener {
             
         })
     }
-    
-    
 }
 
 extension AppDelegate: WCSessionDelegate {
@@ -121,11 +124,7 @@ extension AppDelegate: WCSessionDelegate {
         
         if let hrVal = message["heart rate value"] as? String {
             self.someData.append(hrVal)
-            //PubNub
-            //self.hrValLabel.text = hrVal //val from HR on watch
-            //update with PubNub here
         }
-        
     }
     
 }

@@ -33,16 +33,16 @@
                                 <rect key="frame" x="192" y="109" width="240" height="128"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jCS-gM-qUN">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jCS-gM-qUN">
                                 <rect key="frame" x="269" y="306" width="97" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" fixedFrame="YES" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="ejS-14-3Ex">
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" ambiguous="YES" misplaced="YES" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="ejS-14-3Ex">
                                 <rect key="frame" x="230" y="504" width="150" height="2"/>
                             </progressView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m9u-vh-bEb">
-                                <rect key="frame" x="303" y="394" width="46" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m9u-vh-bEb">
+                                <rect key="frame" x="282" y="394" width="46" height="30"/>
                                 <state key="normal" title="Tweet!"/>
                                 <connections>
                                     <action selector="sendTweet:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9eS-iD-L8z"/>
@@ -50,6 +50,12 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="m9u-vh-bEb" firstAttribute="top" secondItem="jCS-gM-qUN" secondAttribute="bottom" constant="20" id="6dX-10-PLj"/>
+                            <constraint firstItem="m9u-vh-bEb" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="SdQ-2X-S45"/>
+                            <constraint firstItem="ejS-14-3Ex" firstAttribute="top" secondItem="m9u-vh-bEb" secondAttribute="bottom" constant="5" id="etr-ce-pke"/>
+                            <constraint firstItem="ejS-14-3Ex" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="sTI-3c-dUx"/>
+                        </constraints>
                     </view>
                     <toolbarItems>
                         <barButtonItem id="Ga0-U0-4Wm"/>

@@ -37,7 +37,10 @@ class HRViewController: UIViewController, WCSessionDelegate, UITextViewDelegate,
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationController?.toolbarHidden = false
+        self.navigationController?.navigationBarHidden = false
         // Do any additional setup after loading the view, typically from a nib.
+        //UIToolbar.appearance().barTintColor = UIColor.grayColor();
         barView.frame = CGRect(x:0, y: 0, width: view.frame.width, height: 30)
         
         view.insertSubview(webView, belowSubview: progressView)

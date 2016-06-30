@@ -8,14 +8,18 @@
 
 import UIKit
 import TwitterKit
+import WatchConnectivity
 
-class TwitterViewController: UIViewController {
+class TwitterViewController: UIViewController, WCSessionDelegate {
     
     
     @IBOutlet var twitterIDLabel: UILabel!
     @IBOutlet var maxNumToTweet: UIView!
     var twitterUName: String = ""
+    var twitterUNameToWatch: String = ""
     var dataPassedFromTwitterViewController: String!
+    
+    var twitterWCSesh : WCSession!
     
     override func viewDidLoad() {
         let logInButton = TWTRLogInButton { (session, error) in
@@ -40,6 +44,7 @@ class TwitterViewController: UIViewController {
                     self.twitterIDLabel.text = user.screenName
                     print("@\(user.screenName)")
                     self.twitterUName = user.screenName
+                    self.twitterUNameToWatch = user.screenName
                 }
             }
         }
@@ -54,12 +59,22 @@ class TwitterViewController: UIViewController {
     self.view.addSubview(logInButton)
     } //viewDidLoad
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) { //send between vc's
         if (segue.identifier == "sendTwitterName") {
             var svc = segue.destinationViewController as! HRViewController; //pass to HRViewController
             //var dataPassed = channelLabel.text
             svc.dataPassedFromTwitterViewController = self.twitterUName
         }
+        let twitterHandleData = ["twitterHandle" : twitterUNameToWatch]
+        if let twitterWCSesh = self.twitterWCSesh where twitterWCSesh.reachable {
+            twitterWCSesh.sendMessage(twitterHandleData, replyHandler: { replyData in
+                print(replyData)
+                }, errorHandler: { error in
+                    print(error)
+            })
+        } else {
+            //when phone !connected via Bluetooth
+            print("phone !connected via Bluetooth")
+        } //else
     }
-    
 }

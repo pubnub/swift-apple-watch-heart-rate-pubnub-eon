@@ -177,31 +177,13 @@ class InterfaceController: WKInterfaceController, HKWorkoutSessionDelegate, WCSe
         heartRateQuery.updateHandler = {(query, samples, deleteObjects, newAnchor, error) -> Void in
             self.anchor = newAnchor!
             self.updateHeartRate(samples)
-            
-            self.animateWithDuration(1.5) {
-                self.heart.setWidth(10)
-                self.heart.setHeight(15)
-            }
-            
-            let when = dispatch_time(DISPATCH_TIME_NOW, Int64(0.5 * double_t(NSEC_PER_SEC)))
-            let queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)
-            dispatch_after(when, queue) {
-                dispatch_async(dispatch_get_main_queue(), {
-                    self.animateWithDuration(0.5, animations: {
-                        self.heart.setWidth(20)
-                        self.heart.setHeight(30)
-                        //self.heart.setTintColor(UIColor(red: 255, green: 150, blue: 100, alpha: 0.3))
-                        self.heart.setAlpha(0.9)
-                    })
-                })
-            }
         }
         return heartRateQuery
     }
     
     func publishHeartRate() {
         //let hrValToPublish: [String : Double] = [self.uuidSentFromPhone: hrVal]
-        let hrValToPublish = ["Hermione": "\(self.hrVal)"] //Hermione
+        let hrValToPublish = [ "Hermione" : "\(self.hrVal)"] //self.channelSentFromPhone
         //let hrValToPublish = self.hrVal
         
         print("hrValToPublish: \(hrValToPublish)")
@@ -220,7 +202,7 @@ class InterfaceController: WKInterfaceController, HKWorkoutSessionDelegate, WCSe
     }
     
     func publishTimerFunc() {
-        publishTimer = NSTimer.scheduledTimerWithTimeInterval(10.0, target: self, selector: Selector("publishHeartRate"), userInfo: nil, repeats: true)
+        publishTimer = NSTimer.scheduledTimerWithTimeInterval(10.0, target: self, selector: #selector(InterfaceController.publishHeartRate), userInfo: nil, repeats: true)
     }
     func client(client: PubNub!, didReceiveMessage message: PNMessageResult!, didReceiveStatus status: PNStatus) {
         print(message)
@@ -237,7 +219,7 @@ class InterfaceController: WKInterfaceController, HKWorkoutSessionDelegate, WCSe
     //get username from phone
     func session(wrSesh: WCSession, didReceiveMessage message: [String : AnyObject], replyHandler: ([String : AnyObject]) -> Void) {
         //let chanPickerOptions = ["PubNub", "Hamilton", "Hermione", "Olaf", "PiedPiper"
-        if let checkingNameFromPhone = message["twitterName"] as? String {
+        if let checkingNameFromPhone = message["twitterHandle"] as? String {
             self.channelList.append(checkingNameFromPhone)
             self.channelSentFromPhone = checkingNameFromPhone
         } //let checking
@@ -258,8 +240,6 @@ class InterfaceController: WKInterfaceController, HKWorkoutSessionDelegate, WCSe
             repeat {
                 self.publishTimerFunc()
             } while(self.currMoving == false)
-            //self.publishHeartRate()
-            //self.publishTimerFunc()
             
             
             //send message to phone, not even publish
