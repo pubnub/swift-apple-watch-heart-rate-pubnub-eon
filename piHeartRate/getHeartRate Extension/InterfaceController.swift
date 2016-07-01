@@ -21,6 +21,7 @@ class InterfaceController: WKInterfaceController, HKWorkoutSessionDelegate, WCSe
     @IBOutlet var bpmLabel: WKInterfaceLabel!
     @IBOutlet var label: WKInterfaceLabel!
     
+    @IBOutlet var twitterULabel: WKInterfaceLabel!
     @IBOutlet var heart: WKInterfaceLabel!
     
     @IBOutlet var startStopBtn: WKInterfaceButton!
@@ -177,13 +178,14 @@ class InterfaceController: WKInterfaceController, HKWorkoutSessionDelegate, WCSe
         heartRateQuery.updateHandler = {(query, samples, deleteObjects, newAnchor, error) -> Void in
             self.anchor = newAnchor!
             self.updateHeartRate(samples)
+            self.twitterULabel.setText(self.channelSentFromPhone)
         }
         return heartRateQuery
     }
     
     func publishHeartRate() {
         //let hrValToPublish: [String : Double] = [self.uuidSentFromPhone: hrVal]
-        let hrValToPublish = [ "Hermione" : "\(self.hrVal)"] //self.channelSentFromPhone
+        let hrValToPublish = [ self.channelSentFromPhone: "\(self.hrVal)"] //self.channelSentFromPhone
         //let hrValToPublish = self.hrVal
         
         print("hrValToPublish: \(hrValToPublish)")
@@ -217,11 +219,12 @@ class InterfaceController: WKInterfaceController, HKWorkoutSessionDelegate, WCSe
     }
     
     //get username from phone
-    func session(wrSesh: WCSession, didReceiveMessage message: [String : AnyObject], replyHandler: ([String : AnyObject]) -> Void) {
+    func session(wcSesh: WCSession, didReceiveMessage message: [String : AnyObject], replyHandler: ([String : AnyObject]) -> Void) {
         //let chanPickerOptions = ["PubNub", "Hamilton", "Hermione", "Olaf", "PiedPiper"
         if let checkingNameFromPhone = message["twitterHandle"] as? String {
             self.channelList.append(checkingNameFromPhone)
             self.channelSentFromPhone = checkingNameFromPhone
+            
         } //let checking
     } //session WatchConnectivity
     

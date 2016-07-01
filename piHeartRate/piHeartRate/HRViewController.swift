@@ -24,7 +24,7 @@ class HRViewController: UIViewController, WCSessionDelegate, UITextViewDelegate,
     
     @IBOutlet weak var progressView: UIProgressView!
     let composer = TWTRComposer()
-    var dataPassedFromTwitterViewController: String = ""
+    var dataPassedFromTwitterViewController: String!
     
     var hrVal : Double = 0 //will change
     var wcSesh: WCSession!
@@ -66,6 +66,17 @@ class HRViewController: UIViewController, WCSessionDelegate, UITextViewDelegate,
             wcSesh.delegate = self
             wcSesh.activateSession()
          }
+                let twitterHandleData = ["twitterHandle" : dataPassedFromTwitterViewController]
+                if let twitterWCSesh = self.wcSesh where twitterWCSesh.reachable {
+                    twitterWCSesh.sendMessage(twitterHandleData, replyHandler: { replyData in
+                        print(replyData)
+                        }, errorHandler: { error in
+                            print(error)
+                    })
+                } else {
+                    //when phone !connected via Bluetooth
+                    print("phone !connected via Bluetooth")
+                } //else
     }
     @IBAction func sendTweet(sender: AnyObject) {
                     //composer.setText("working out, and my heart rate got to be: " + String(maxHeartRate))

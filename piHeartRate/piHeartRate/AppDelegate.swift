@@ -79,7 +79,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, PNObjectEventListener {
             session?.activateSession()
         }
         else {
-            print("wcSesssion not supported")
+            print("wcSession not supported")
         }
         return true
     }

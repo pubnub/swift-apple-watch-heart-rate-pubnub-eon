@@ -15,13 +15,14 @@ class TwitterViewController: UIViewController, WCSessionDelegate {
     
     @IBOutlet var twitterIDLabel: UILabel!
     @IBOutlet var maxNumToTweet: UIView!
-    var twitterUName: String = ""
+    var twitterUName: String  = ""
     var twitterUNameToWatch: String = ""
     var dataPassedFromTwitterViewController: String!
     
     var twitterWCSesh : WCSession!
-    
     override func viewDidLoad() {
+        super.viewDidLoad()
+
         let logInButton = TWTRLogInButton { (session, error) in
             if let unwrappedSession = session {
                 self.twitterIDLabel.text = unwrappedSession.userName
@@ -36,6 +37,12 @@ class TwitterViewController: UIViewController, WCSessionDelegate {
                 NSLog("Login error: %@", error!.localizedDescription);
             }
             
+        }
+        
+        if(WCSession.isSupported()) {
+            twitterWCSesh = WCSession.defaultSession()
+            twitterWCSesh.delegate = self
+            twitterWCSesh.activateSession()
         }
         if let sesh = Twitter.sharedInstance().sessionStore.session() {
             let client = TWTRAPIClient()
@@ -57,15 +64,11 @@ class TwitterViewController: UIViewController, WCSessionDelegate {
     logInButton.frame = CGRectMake(xPos!, yPos!, logInButton.frame.width, logInButton.frame.height)
     //logInButton.center = self.view.center
     self.view.addSubview(logInButton)
+        //sendTwitterData()
     } //viewDidLoad
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) { //send between vc's
-        if (segue.identifier == "sendTwitterName") {
-            var svc = segue.destinationViewController as! HRViewController; //pass to HRViewController
-            //var dataPassed = channelLabel.text
-            svc.dataPassedFromTwitterViewController = self.twitterUName
-        }
-        let twitterHandleData = ["twitterHandle" : twitterUNameToWatch]
+    func sendTwitterData() {
+        let twitterHandleData = ["twitterHandle" : dataPassedFromTwitterViewController]
         if let twitterWCSesh = self.twitterWCSesh where twitterWCSesh.reachable {
             twitterWCSesh.sendMessage(twitterHandleData, replyHandler: { replyData in
                 print(replyData)
@@ -76,5 +79,14 @@ class TwitterViewController: UIViewController, WCSessionDelegate {
             //when phone !connected via Bluetooth
             print("phone !connected via Bluetooth")
         } //else
+
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) { //send between vc's
+        if (segue.identifier == "sendTwitterName") {
+            var svc = segue.destinationViewController as! HRViewController; //pass to HRViewController
+            //var dataPassed = channelLabel.text
+            svc.dataPassedFromTwitterViewController = self.twitterIDLabel.text!
+        }
     }
 }
