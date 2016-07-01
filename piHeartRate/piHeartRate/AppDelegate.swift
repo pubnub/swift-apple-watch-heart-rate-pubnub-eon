@@ -20,7 +20,7 @@ import WatchConnectivity
 import PubNub
 import Fabric
 import TwitterKit
-
+import Crashlytics
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, PNObjectEventListener {
@@ -71,6 +71,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, PNObjectEventListener {
         UIToolbar.appearance().barTintColor = UIColor(red: 204/255, green: 204/255, blue: 204/255, alpha: 1.0)
         UITabBar.appearance().barTintColor = UIColor(red: 204/255, green: 204/255, blue: 204/255, alpha: 1.0)
         Fabric.with([Twitter.self])
+        Fabric.with([Crashlytics()])
+//        Fabric.with([PubNub.self, Twitter.self, Crashlytics.self])
+
         self.client.subscribeToChannels([channel], withPresence: false)
 
         if WCSession.isSupported() {
@@ -81,7 +84,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate, PNObjectEventListener {
         else {
             print("wcSession not supported")
         }
+        self.logUser()
         return true
+    }
+    
+    func logUser() {
+        func logUser() {
+            // TODO: Use the current user's information
+//            // You can call any combination of these three methods
+//            Crashlytics.sharedInstance().setUserEmail("lizzie@pubnub.com")
+//            Crashlytics.sharedInstance().setUserIdentifier("12345")
+//            Crashlytics.sharedInstance().setUserName("lizziepika")
+        }
+
     }
     
     func applicationWillResignActive(application: UIApplication) {

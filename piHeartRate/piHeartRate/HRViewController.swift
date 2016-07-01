@@ -37,11 +37,19 @@ class HRViewController: UIViewController, WCSessionDelegate, UITextViewDelegate,
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.view.backgroundColor = UIColor.grayColor()
         self.navigationController?.toolbarHidden = false
         self.navigationController?.navigationBarHidden = false
         // Do any additional setup after loading the view, typically from a nib.
         //UIToolbar.appearance().barTintColor = UIColor.grayColor();
         barView.frame = CGRect(x:0, y: 0, width: view.frame.width, height: 30)
+        
+        let tweetButton = UIButton(frame: CGRect(x: self.view.frame.size.width/3.35, y: self.view.frame.size.height/2, width: self.view.frame.size.width/2.25, height: self.view.frame.size.height/8.5))
+        tweetButton.backgroundColor = .grayColor()
+        tweetButton.setTitle("Tweet progress", forState: .Normal)
+        tweetButton.addTarget(self, action: #selector(sendTweet), forControlEvents: .TouchUpInside)
+        
+        self.view.addSubview(tweetButton)
         
         view.insertSubview(webView, belowSubview: progressView)
         
@@ -78,13 +86,14 @@ class HRViewController: UIViewController, WCSessionDelegate, UITextViewDelegate,
                     print("phone !connected via Bluetooth")
                 } //else
     }
-    @IBAction func sendTweet(sender: AnyObject) {
-                    //composer.setText("working out, and my heart rate got to be: " + String(maxHeartRate))
-        composer.setText("Getting my heart rate puumped #pubnub")
+   func sendTweet(sender: UIButton) {
+        composer.setText("working out, and my heart rate got to be: " + String(maxHeartRate) + " #pubnub #fabric")
+        //composer.setText("Getting my heart rate puumped #pubnub")
         
                     composer.showFromViewController(self) { result in
                         if (result == TWTRComposerResult.Cancelled) {
                             print("Tweet composition cancelled")
+                            self.composer.setText("working out, and my heart rate got to be: " + String(maxHeartRate) + " #pubnub #fabric")
                         }
                         else {
                             print("Sending tweet!")

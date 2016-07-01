@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -17,7 +18,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0Sc-T2-gv9">
+                            <navigationBar contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0Sc-T2-gv9">
                                 <rect key="frame" x="-10" y="0.0" width="600" height="44"/>
                                 <items>
                                     <navigationItem title="Heart Rate" id="fXs-S4-YNL">
@@ -30,31 +31,30 @@
                                 </items>
                             </navigationBar>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="T6p-jl-PFM">
-                                <rect key="frame" x="192" y="109" width="240" height="128"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <rect key="frame" x="0.0" y="109" width="600" height="800"/>
+                                <color key="backgroundColor" red="0.47299893999999998" green="0.50364131430000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jCS-gM-qUN">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jCS-gM-qUN">
                                 <rect key="frame" x="269" y="306" width="97" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" ambiguous="YES" misplaced="YES" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="ejS-14-3Ex">
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" fixedFrame="YES" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="ejS-14-3Ex">
                                 <rect key="frame" x="230" y="504" width="150" height="2"/>
                             </progressView>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m9u-vh-bEb">
-                                <rect key="frame" x="282" y="394" width="46" height="30"/>
-                                <state key="normal" title="Tweet!"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nfE-YX-RPs">
+                                <rect key="frame" x="16" y="504" width="34" height="30"/>
+                                <state key="normal" title="Back"/>
                                 <connections>
-                                    <action selector="sendTweet:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9eS-iD-L8z"/>
+                                    <segue destination="xC4-Y0-UPP" kind="presentation" id="mps-em-Hsj"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="m9u-vh-bEb" firstAttribute="top" secondItem="jCS-gM-qUN" secondAttribute="bottom" constant="20" id="6dX-10-PLj"/>
-                            <constraint firstItem="m9u-vh-bEb" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="SdQ-2X-S45"/>
-                            <constraint firstItem="ejS-14-3Ex" firstAttribute="top" secondItem="m9u-vh-bEb" secondAttribute="bottom" constant="5" id="etr-ce-pke"/>
-                            <constraint firstItem="ejS-14-3Ex" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="sTI-3c-dUx"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="nfE-YX-RPs" secondAttribute="bottom" constant="10" id="RMw-sN-CKT"/>
+                            <constraint firstItem="nfE-YX-RPs" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="7" id="VQ1-aV-ZMc"/>
+                            <constraint firstItem="nfE-YX-RPs" firstAttribute="top" secondItem="0Sc-T2-gv9" secondAttribute="bottom" constant="200" id="sEf-aq-ZdB"/>
                         </constraints>
                     </view>
                     <toolbarItems>
@@ -71,6 +71,7 @@
                         </barButtonItem>
                     </toolbarItems>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
                     <connections>
                         <outlet property="backButton" destination="FJW-QE-bib" id="t0c-A5-CRb"/>
                         <outlet property="barView" destination="T6p-jl-PFM" id="tvA-GP-9xb"/>
@@ -96,13 +97,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Welcome!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bWg-xz-fAV">
-                                <rect key="frame" x="295" y="306" width="76" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uZh-5b-UAB">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uZh-5b-UAB">
                                 <rect key="frame" x="313" y="384" width="41" height="30"/>
                                 <state key="normal" title="Done!"/>
                                 <connections>
@@ -113,12 +108,11 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="uZh-5b-UAB" firstAttribute="centerX" secondItem="Hcr-pT-ZZf" secondAttribute="centerX" id="Zgy-uO-JpP"/>
-                            <constraint firstItem="bWg-xz-fAV" firstAttribute="centerX" secondItem="Hcr-pT-ZZf" secondAttribute="centerX" id="rdL-Vy-fqN"/>
+                            <constraint firstItem="uZh-5b-UAB" firstAttribute="top" secondItem="epD-rp-Snf" secondAttribute="bottom" constant="124" id="d4N-6u-Bs5"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="maxNumToTweet" destination="Hcr-pT-ZZf" id="HnJ-Un-6pp"/>
-                        <outlet property="twitterIDLabel" destination="bWg-xz-fAV" id="eMN-qJ-EU1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1DO-sQ-tYk" userLabel="First Responder" sceneMemberID="firstResponder"/>

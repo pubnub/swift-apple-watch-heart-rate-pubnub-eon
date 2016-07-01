@@ -24,14 +24,12 @@
                                 <action selector="startBtnTapped" destination="AgC-eL-Hgc" id="BDI-Y4-b2y"/>
                             </connections>
                         </button>
-                        <label alignment="left" text="Label" id="lcy-Jt-u28"/>
                     </items>
                     <connections>
                         <outlet property="bpmLabel" destination="ogW-hb-WcP" id="wn8-yH-fUP"/>
                         <outlet property="heart" destination="dwY-nL-vfY" id="4OU-aN-4Ak"/>
                         <outlet property="label" destination="j6O-V0-NEJ" id="Vi1-yj-UFd"/>
                         <outlet property="startStopBtn" destination="K2p-7C-GOW" id="tNv-6N-ReQ"/>
-                        <outlet property="twitterULabel" destination="lcy-Jt-u28" id="chS-TO-QXR"/>
                     </connections>
                 </controller>
             </objects>

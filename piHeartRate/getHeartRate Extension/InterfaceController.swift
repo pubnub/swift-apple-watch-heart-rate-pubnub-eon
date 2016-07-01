@@ -13,6 +13,7 @@ import WatchConnectivity
 import UIKit
 import PubNub
 
+
 // guard let quantityType = HKQuantityType.quantityTypeForIdentifier(HKQuantityTypeIdentifierHeartRate) could do StepCount
 //step count matters at end of day. heart rate is more real-time, quick, short-period-of-time
 
@@ -21,7 +22,6 @@ class InterfaceController: WKInterfaceController, HKWorkoutSessionDelegate, WCSe
     @IBOutlet var bpmLabel: WKInterfaceLabel!
     @IBOutlet var label: WKInterfaceLabel!
     
-    @IBOutlet var twitterULabel: WKInterfaceLabel!
     @IBOutlet var heart: WKInterfaceLabel!
     
     @IBOutlet var startStopBtn: WKInterfaceButton!
@@ -172,14 +172,18 @@ class InterfaceController: WKInterfaceController, HKWorkoutSessionDelegate, WCSe
         let heartRateQuery = HKAnchoredObjectQuery(type: quantityType, predicate: nil, anchor: anchor, limit: Int(HKObjectQueryNoLimit)) { (query, sampleObjects, deletedObjects, newAnchor, error) -> Void in
             guard let newAnchor = newAnchor else {return}
             self.anchor = newAnchor
-            self.updateHeartRate(sampleObjects)
+            if self.currMoving == true {
+                self.updateHeartRate(sampleObjects)
+            }
         }
         
         heartRateQuery.updateHandler = {(query, samples, deleteObjects, newAnchor, error) -> Void in
             self.anchor = newAnchor!
-            self.updateHeartRate(samples)
-            self.twitterULabel.setText(self.channelSentFromPhone)
+            if self.currMoving == true {
+                self.updateHeartRate(samples)
+            }
         }
+        self.arrayOfHR.append(self.hrVal)
         return heartRateQuery
     }
     
@@ -239,7 +243,7 @@ class InterfaceController: WKInterfaceController, HKWorkoutSessionDelegate, WCSe
             self.hrVal = sample.quantity.doubleValueForUnit(self.heartRateUnit)
             let lblTxt = String(self.hrVal)
             self.label.setText(lblTxt)
-            self.arrayOfHR.append(self.hrVal)
+//            self.arrayOfHR.append(self.hrVal)
             repeat {
                 self.publishTimerFunc()
             } while(self.currMoving == false)

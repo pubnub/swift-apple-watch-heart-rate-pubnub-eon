@@ -12,8 +12,6 @@ import WatchConnectivity
 
 class TwitterViewController: UIViewController, WCSessionDelegate {
     
-    
-    @IBOutlet var twitterIDLabel: UILabel!
     @IBOutlet var maxNumToTweet: UIView!
     var twitterUName: String  = ""
     var twitterUNameToWatch: String = ""
@@ -22,10 +20,10 @@ class TwitterViewController: UIViewController, WCSessionDelegate {
     var twitterWCSesh : WCSession!
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.view.backgroundColor = UIColor.grayColor()
         let logInButton = TWTRLogInButton { (session, error) in
             if let unwrappedSession = session {
-                self.twitterIDLabel.text = unwrappedSession.userName
+                //self.twitterIDLabel.text = "Welcome, " + unwrappedSession.userName
                 self.twitterUName = unwrappedSession.userName
                 let alert = UIAlertController(title: "Logged In",
                     message: "User \(unwrappedSession.userName) has logged in",
@@ -38,6 +36,8 @@ class TwitterViewController: UIViewController, WCSessionDelegate {
             }
             
         }
+        //Twitter color
+        decorateButton(logInButton, color: UIColor(red: 0.333, green: 0.675, blue: 0.933, alpha: 1))
         
         if(WCSession.isSupported()) {
             twitterWCSesh = WCSession.defaultSession()
@@ -48,7 +48,7 @@ class TwitterViewController: UIViewController, WCSessionDelegate {
             let client = TWTRAPIClient()
             client.loadUserWithID(sesh.userID) { (user, error) -> Void in
                 if let user = user {
-                    self.twitterIDLabel.text = user.screenName
+                    //self.twitterIDLabel.text = user.screenName
                     print("@\(user.screenName)")
                     self.twitterUName = user.screenName
                     self.twitterUNameToWatch = user.screenName
@@ -86,7 +86,15 @@ class TwitterViewController: UIViewController, WCSessionDelegate {
         if (segue.identifier == "sendTwitterName") {
             var svc = segue.destinationViewController as! HRViewController; //pass to HRViewController
             //var dataPassed = channelLabel.text
-            svc.dataPassedFromTwitterViewController = self.twitterIDLabel.text!
+            svc.dataPassedFromTwitterViewController = self.twitterUNameToWatch
         }
+    }
+    
+    private func decorateButton(button: UIButton, color: UIColor) {
+        // Draw the border around a button.
+        button.layer.masksToBounds = false
+        button.layer.borderColor = color.CGColor
+        button.layer.borderWidth = 2
+        button.layer.cornerRadius = 6
     }
 }
