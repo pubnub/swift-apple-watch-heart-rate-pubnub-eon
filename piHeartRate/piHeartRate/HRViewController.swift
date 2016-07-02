@@ -44,10 +44,17 @@ class HRViewController: UIViewController, WCSessionDelegate, UITextViewDelegate,
         //UIToolbar.appearance().barTintColor = UIColor.grayColor();
         barView.frame = CGRect(x:0, y: 0, width: view.frame.width, height: 30)
         
-        let tweetButton = UIButton(frame: CGRect(x: self.view.frame.size.width/3.35, y: self.view.frame.size.height/2, width: self.view.frame.size.width/2.25, height: self.view.frame.size.height/8.5))
+        //programmatically omg
+        let tweetButton = UIButton(frame: CGRect(x: self.view.frame.size.width/6, y: self.view.frame.size.height/2, width: self.view.frame.size.width/2.25, height: self.view.frame.size.height/8.5))
         tweetButton.backgroundColor = .grayColor()
         tweetButton.setTitle("Tweet progress", forState: .Normal)
         tweetButton.addTarget(self, action: #selector(sendTweet), forControlEvents: .TouchUpInside)
+        //font
+        tweetButton.titleLabel!.font = UIFont(name: "SanFranciscoRounded-Thin", size: 20)
+        
+        //rounded, not square
+        tweetButton.layer.cornerRadius = 5;
+        tweetButton.layer.masksToBounds = true
         
         self.view.addSubview(tweetButton)
         
@@ -161,6 +168,7 @@ class HRViewController: UIViewController, WCSessionDelegate, UITextViewDelegate,
 func session(wrSesh: WCSession, didReceiveMessage message: [String : AnyObject], replyHandler: ([String : AnyObject]) -> Void) {
     if let hrArrayFromWatch = message["heart rate value array"] as? [String] { //String?
 //        arrayOfHRVal = hrArrayFromWatch
+        print("here")
         let doubleArrVal = hrArrayFromWatch.map { Double($0)! }
         maxHeartRate = doubleArrVal.maxElement()!
     }

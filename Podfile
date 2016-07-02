@@ -10,6 +10,7 @@ use_frameworks!
 target 'piHeartRate' do
     platform :ios, '8.0'
     pod 'PubNub', '~>4.0'
+    pod 'Crashlytics'
 end
 
 target 'getHeartRate' do

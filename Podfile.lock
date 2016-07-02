@@ -7,6 +7,9 @@ PODS:
     - CocoaLumberjack/Core
   - CocoaLumberjack/Extensions (2.3.0):
     - CocoaLumberjack/Default
+  - Crashlytics (3.7.2):
+    - Fabric (~> 1.6.3)
+  - Fabric (1.6.7)
   - PubNub (4.3.3):
     - CocoaLumberjack (= 2.3.0)
     - PubNub/Core (= 4.3.3)
@@ -14,12 +17,15 @@ PODS:
     - CocoaLumberjack (= 2.3.0)
 
 DEPENDENCIES:
+  - Crashlytics
   - PubNub (~> 4.0)
 
 SPEC CHECKSUMS:
   CocoaLumberjack: 97fab7ee5f507fe54445cca7ea80f926729cfd15
+  Crashlytics: 130ab943f8c78cda7a814b434f270b2e2c8a3cba
+  Fabric: caf7580c725e64db144f610ac65cd60956911dc7
   PubNub: 51acd937c947d931a75d2caef654fd12f7573e09
 
-PODFILE CHECKSUM: c896f308cea3b3a48fdb0618cda4f7b7836c9fab
+PODFILE CHECKSUM: 6da8f41197e3407db37e43e80c8fca9231c676e1
 
 COCOAPODS: 1.0.1

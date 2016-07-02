@@ -12,15 +12,21 @@ import WatchConnectivity
 
 class TwitterViewController: UIViewController, WCSessionDelegate {
     
+    @IBOutlet weak var doneButtonThatSegues: UIButton!
     @IBOutlet var maxNumToTweet: UIView!
     var twitterUName: String  = ""
     var twitterUNameToWatch: String = ""
     var dataPassedFromTwitterViewController: String!
+    var loggedIn: Bool = false
     
     var twitterWCSesh : WCSession!
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = UIColor.grayColor()
+        self.view.backgroundColor = UIColor.grayColor() //eh
+        doneButtonThatSegues.layer.masksToBounds = false
+        doneButtonThatSegues.backgroundColor = UIColor(red: 0.333, green: 0.675, blue: 0.933, alpha: 1)
+        doneButtonThatSegues.layer.cornerRadius = 9
+        doneButtonThatSegues.titleLabel!.font = UIFont(name: "SanFranciscoRounded-Thin", size: 20)
         let logInButton = TWTRLogInButton { (session, error) in
             if let unwrappedSession = session {
                 //self.twitterIDLabel.text = "Welcome, " + unwrappedSession.userName
@@ -31,11 +37,12 @@ class TwitterViewController: UIViewController, WCSessionDelegate {
                 )
                 alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
                 self.presentViewController(alert, animated: true, completion: nil)
+                self.loggedIn = true
             } else {
                 NSLog("Login error: %@", error!.localizedDescription);
             }
-            
         }
+        
         //Twitter color
         decorateButton(logInButton, color: UIColor(red: 0.333, green: 0.675, blue: 0.933, alpha: 1))
         
@@ -52,14 +59,15 @@ class TwitterViewController: UIViewController, WCSessionDelegate {
                     print("@\(user.screenName)")
                     self.twitterUName = user.screenName
                     self.twitterUNameToWatch = user.screenName
+                    print("twitterUNameToWatch: " + self.twitterUNameToWatch)
                 }
             }
         }
         
     
-    // TODO: Change where the log in button is positioned in your view
-        let xPos:CGFloat? = 48.0 //use your X position here
-        let yPos:CGFloat? = 75.0 //use your Y position here
+    // pos of login button
+        let xPos:CGFloat? = 48.0
+        let yPos:CGFloat? = 75.0
         
     logInButton.frame = CGRectMake(xPos!, yPos!, logInButton.frame.width, logInButton.frame.height)
     //logInButton.center = self.view.center
@@ -86,15 +94,16 @@ class TwitterViewController: UIViewController, WCSessionDelegate {
         if (segue.identifier == "sendTwitterName") {
             var svc = segue.destinationViewController as! HRViewController; //pass to HRViewController
             //var dataPassed = channelLabel.text
-            svc.dataPassedFromTwitterViewController = self.twitterUNameToWatch
+            svc.dataPassedFromTwitterViewController = self.twitterUName
         }
+
     }
-    
     private func decorateButton(button: UIButton, color: UIColor) {
         // Draw the border around a button.
         button.layer.masksToBounds = false
         button.layer.borderColor = color.CGColor
         button.layer.borderWidth = 2
         button.layer.cornerRadius = 6
+        button.titleLabel!.font = UIFont(name: "SanFranciscoRounded-Thin", size: 20)
     }
 }

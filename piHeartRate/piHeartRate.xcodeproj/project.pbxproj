@@ -255,6 +255,7 @@
 				9836E2422C5CCA19E2A45644 /* [CP] Embed Pods Frameworks */,
 				C51E8C66107222799C7E31EE /* [CP] Copy Pods Resources */,
 				6A5996D31D23C4230084CDFD /* ShellScript */,
+				6AD92D611D26CD87000A424C /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -451,6 +452,19 @@
 			shellPath = /bin/sh;
 			shellScript = "";
 		};
+		6AD92D611D26CD87000A424C /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Fabric/run\" e512b82c982389b8fb26443c70939fcd01afaa06 1752de2232b1d47378840abf841e8bb852818f598204f97779f07400a6b6263b\n";
+		};
 		7EE3153D9CBD10163E578BEE /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -478,7 +492,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods-piHeartRate/Pods-piHeartRate-frameworks.sh\"\n\n./Fabric.framework/run e512b82c982389b8fb26443c70939fcd01afaa06 1752de2232b1d47378840abf841e8bb852818f598204f97779f07400a6b6263b";
+			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods-piHeartRate/Pods-piHeartRate-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		9C389FD4660FEA1E370E37B9 /* [CP] Copy Pods Resources */ = {

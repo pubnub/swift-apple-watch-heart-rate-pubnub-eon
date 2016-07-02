@@ -71,7 +71,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, PNObjectEventListener {
         UIToolbar.appearance().barTintColor = UIColor(red: 204/255, green: 204/255, blue: 204/255, alpha: 1.0)
         UITabBar.appearance().barTintColor = UIColor(red: 204/255, green: 204/255, blue: 204/255, alpha: 1.0)
         Fabric.with([Twitter.self])
-        Fabric.with([Crashlytics()])
+        Fabric.with([Crashlytics.self])
 //        Fabric.with([PubNub.self, Twitter.self, Crashlytics.self])
 
         self.client.subscribeToChannels([channel], withPresence: false)

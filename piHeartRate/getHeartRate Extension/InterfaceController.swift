@@ -17,6 +17,34 @@ import PubNub
 // guard let quantityType = HKQuantityType.quantityTypeForIdentifier(HKQuantityTypeIdentifierHeartRate) could do StepCount
 //step count matters at end of day. heart rate is more real-time, quick, short-period-of-time
 
+struct AnyKey: Hashable {
+    private let underlying: Any
+    private let hashValueFunc: () -> Int
+    private let equalityFunc: (Any) -> Bool
+    
+    init<T: Hashable>(_ key: T) {
+        underlying = key
+        // Capture the key's hashability and equatability using closures.
+        // The Key shares the hash of the underlying value.
+        hashValueFunc = { key.hashValue }
+        
+        // The Key is equal to a Key of the same underlying type,
+        // whose underlying value is "==" to ours.
+        equalityFunc = {
+            if let other = $0 as? T {
+                return key == other
+            }
+            return false
+        }
+    }
+    
+    var hashValue: Int { return hashValueFunc() }
+}
+
+func ==(x: AnyKey, y: AnyKey) -> Bool {
+    return x.equalityFunc(y.underlying)
+}
+
 class InterfaceController: WKInterfaceController, HKWorkoutSessionDelegate, WCSessionDelegate, WKExtensionDelegate, PNObjectEventListener {
     
     @IBOutlet var bpmLabel: WKInterfaceLabel!
@@ -29,12 +57,16 @@ class InterfaceController: WKInterfaceController, HKWorkoutSessionDelegate, WCSe
     var arrayOfHR = [Double]()
     
     var client: PubNub?
+
+    //let hrValToPublish = [ ["username" : self.channelSentFromPhone]: ["heart rate" : "\(self.deprecatedHRVal)"]] //self.hrVal
+    //var hrValToPublish = [ [String : String] : [String: String]]
     
     let healthStore = HKHealthStore()
     
     var publishTimer = NSTimer()
     
     var hrVal : Double = 0 //will change
+    var deprecatedHRVal : Double = 0 //round hrVal down a few digits precision
     var channelSentFromPhone: String = ""
     var channelList = [String]()
     let watchAppDel = WKExtension.sharedExtension().delegate! as! ExtensionDelegate
@@ -183,13 +215,13 @@ class InterfaceController: WKInterfaceController, HKWorkoutSessionDelegate, WCSe
                 self.updateHeartRate(samples)
             }
         }
-        self.arrayOfHR.append(self.hrVal)
+//        self.arrayOfHR.append(self.hrVal)
         return heartRateQuery
     }
     
     func publishHeartRate() {
         //let hrValToPublish: [String : Double] = [self.uuidSentFromPhone: hrVal]
-        let hrValToPublish = [ self.channelSentFromPhone: "\(self.hrVal)"] //self.channelSentFromPhone
+        let hrValToPublish = [ ["username" : self.channelSentFromPhone], ["heart rate" : "\(self.deprecatedHRVal)"]] //self.hrVal
         //let hrValToPublish = self.hrVal
         
         print("hrValToPublish: \(hrValToPublish)")
@@ -208,7 +240,7 @@ class InterfaceController: WKInterfaceController, HKWorkoutSessionDelegate, WCSe
     }
     
     func publishTimerFunc() {
-        publishTimer = NSTimer.scheduledTimerWithTimeInterval(10.0, target: self, selector: #selector(InterfaceController.publishHeartRate), userInfo: nil, repeats: true)
+        publishTimer = NSTimer.scheduledTimerWithTimeInterval(7.0, target: self, selector: #selector(InterfaceController.publishHeartRate), userInfo: nil, repeats: true)
     }
     func client(client: PubNub!, didReceiveMessage message: PNMessageResult!, didReceiveStatus status: PNStatus) {
         print(message)
@@ -228,7 +260,7 @@ class InterfaceController: WKInterfaceController, HKWorkoutSessionDelegate, WCSe
         if let checkingNameFromPhone = message["twitterHandle"] as? String {
             self.channelList.append(checkingNameFromPhone)
             self.channelSentFromPhone = checkingNameFromPhone
-            
+            print("got here, to channelSentFromPhone")
         } //let checking
     } //session WatchConnectivity
     
@@ -243,7 +275,9 @@ class InterfaceController: WKInterfaceController, HKWorkoutSessionDelegate, WCSe
             self.hrVal = sample.quantity.doubleValueForUnit(self.heartRateUnit)
             let lblTxt = String(self.hrVal)
             self.label.setText(lblTxt)
-//            self.arrayOfHR.append(self.hrVal)
+            self.deprecatedHRVal = Double(round(1000*self.hrVal)/1000)
+            self.arrayOfHR.append(self.deprecatedHRVal)
+            print("arrayOfHR: " + String(self.arrayOfHR))
             repeat {
                 self.publishTimerFunc()
             } while(self.currMoving == false)
@@ -262,6 +296,7 @@ class InterfaceController: WKInterfaceController, HKWorkoutSessionDelegate, WCSe
                 print("phone !connected via Bluetooth")
             } //else
         } //dispatch_async
+       
     }
     
 }

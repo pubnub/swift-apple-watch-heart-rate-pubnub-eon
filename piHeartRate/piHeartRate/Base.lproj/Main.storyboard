@@ -112,6 +112,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="doneButtonThatSegues" destination="uZh-5b-UAB" id="FHR-kO-K6W"/>
                         <outlet property="maxNumToTweet" destination="Hcr-pT-ZZf" id="HnJ-Un-6pp"/>
                     </connections>
                 </viewController>
