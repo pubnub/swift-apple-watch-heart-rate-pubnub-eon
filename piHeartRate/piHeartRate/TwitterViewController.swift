@@ -12,17 +12,21 @@ import WatchConnectivity
 
 class TwitterViewController: UIViewController, WCSessionDelegate {
     
+    @IBOutlet weak var pbfabricimg: UIImageView!
     @IBOutlet weak var doneButtonThatSegues: UIButton!
     @IBOutlet var maxNumToTweet: UIView!
     var twitterUName: String  = ""
     var twitterUNameToWatch: String = ""
     var dataPassedFromTwitterViewController: String!
     var loggedIn: Bool = false
-    
+    let screenSize: CGRect = UIScreen.mainScreen().bounds
     var twitterWCSesh : WCSession!
     override func viewDidLoad() {
+      
+        //pbfabricimg.frame = CGRectMake(0, 0, screenSize.width, 100)
+        self.view.backgroundColor = UIColor(red: 207, green: 207, blue: 196, alpha:150)
         super.viewDidLoad()
-        self.view.backgroundColor = UIColor.grayColor() //eh
+        doneButtonThatSegues.frame.origin.y = 400
         doneButtonThatSegues.layer.masksToBounds = false
         doneButtonThatSegues.backgroundColor = UIColor(red: 0.333, green: 0.675, blue: 0.933, alpha: 1)
         doneButtonThatSegues.layer.cornerRadius = 9
@@ -66,8 +70,8 @@ class TwitterViewController: UIViewController, WCSessionDelegate {
         
     
     // pos of login button
-        let xPos:CGFloat? = 48.0
-        let yPos:CGFloat? = 75.0
+        let xPos:CGFloat? = screenSize.width/7
+        let yPos:CGFloat? = screenSize.height/3
         
     logInButton.frame = CGRectMake(xPos!, yPos!, logInButton.frame.width, logInButton.frame.height)
     //logInButton.center = self.view.center
@@ -90,6 +94,7 @@ class TwitterViewController: UIViewController, WCSessionDelegate {
 
     }
     
+    //send to other viewcontroller
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) { //send between vc's
         if (segue.identifier == "sendTwitterName") {
             var svc = segue.destinationViewController as! HRViewController; //pass to HRViewController

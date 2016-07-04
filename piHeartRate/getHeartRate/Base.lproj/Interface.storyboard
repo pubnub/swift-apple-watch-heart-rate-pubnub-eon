@@ -24,11 +24,21 @@
                                 <action selector="startBtnTapped" destination="AgC-eL-Hgc" id="BDI-Y4-b2y"/>
                             </connections>
                         </button>
+                        <group width="1" alignment="center" verticalAlignment="bottom" id="hQz-vS-rL5">
+                            <items>
+                                <group width="1" alignment="right" verticalAlignment="center" id="m0U-a4-VKd">
+                                    <items>
+                                        <label alignment="center" verticalAlignment="bottom" text="Max:" baselineAdjustment="alignCenters" id="rcL-aF-bOc"/>
+                                    </items>
+                                </group>
+                            </items>
+                        </group>
                     </items>
                     <connections>
                         <outlet property="bpmLabel" destination="ogW-hb-WcP" id="wn8-yH-fUP"/>
                         <outlet property="heart" destination="dwY-nL-vfY" id="4OU-aN-4Ak"/>
                         <outlet property="label" destination="j6O-V0-NEJ" id="Vi1-yj-UFd"/>
+                        <outlet property="maxHRLabel" destination="rcL-aF-bOc" id="Oak-qC-BK3"/>
                         <outlet property="startStopBtn" destination="K2p-7C-GOW" id="tNv-6N-ReQ"/>
                     </connections>
                 </controller>

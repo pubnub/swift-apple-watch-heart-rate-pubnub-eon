@@ -8,6 +8,7 @@
         <style type="text/css">
             body {
                 padding-top: 40px;
+                background-color: #cfcfc4;
             }
         #chart {
             position:absolute;
@@ -27,6 +28,7 @@
                                        subscribe_key: 'sub-c-a3cf770a-2c3d-11e6-8b91-02ee2ddab7fe'
                                        });
                                        var chan = "Olaf";
+                                    
                                        eon.chart({
                                                  pubnub: pbIOSWeb,
                                                  channel: chan,
@@ -54,7 +56,7 @@
                                                  return {
                                                  eon: {
                                                  //hardcoded for my Twitter handle
-                                                 m["username"] : m.username
+                                                 'lizziepika': m.heartRate
                                                  }
                                                  }
                                                  }

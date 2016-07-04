@@ -13,8 +13,11 @@ import PubNub
 import WebKit
 //subscribe from phone app -> see if can subscribe from Watch
 
-class HRViewController: UIViewController, WCSessionDelegate, UITextViewDelegate, WKNavigationDelegate {
+class HRViewController: UIViewController, WCSessionDelegate, UITextViewDelegate, WKNavigationDelegate { //,TWTRComposerViewController {
     var webView: WKWebView
+    
+    var timeToTweet : Bool = false
+    var maxFromArr: Double = 0 //will change
     
     @IBOutlet weak var barView: UIView!
     @IBOutlet weak var urlField: UITextField!
@@ -37,15 +40,17 @@ class HRViewController: UIViewController, WCSessionDelegate, UITextViewDelegate,
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = UIColor.grayColor()
+        self.view.backgroundColor = UIColor(red: 207, green: 207, blue: 196, alpha:150)
         self.navigationController?.toolbarHidden = false
         self.navigationController?.navigationBarHidden = false
         // Do any additional setup after loading the view, typically from a nib.
         //UIToolbar.appearance().barTintColor = UIColor.grayColor();
         barView.frame = CGRect(x:0, y: 0, width: view.frame.width, height: 30)
         
-        //programmatically omg
-        let tweetButton = UIButton(frame: CGRect(x: self.view.frame.size.width/6, y: self.view.frame.size.height/2, width: self.view.frame.size.width/2.25, height: self.view.frame.size.height/8.5))
+        //programmatically set button omg
+        let tweetButton = UIButton(frame: CGRect(x: self.view.frame.size.width/2.6, y: self.view.frame.size.height/2.7, width: self.view.frame.size.width/2.8, height: self.view.frame.size.height/13))
+        tweetButton.center.x = self.view.center.x
+        tweetButton.center.y = self.view.center.y
         tweetButton.backgroundColor = .grayColor()
         tweetButton.setTitle("Tweet progress", forState: .Normal)
         tweetButton.addTarget(self, action: #selector(sendTweet), forControlEvents: .TouchUpInside)
@@ -81,31 +86,37 @@ class HRViewController: UIViewController, WCSessionDelegate, UITextViewDelegate,
             wcSesh.delegate = self
             wcSesh.activateSession()
          }
-                let twitterHandleData = ["twitterHandle" : dataPassedFromTwitterViewController]
-                if let twitterWCSesh = self.wcSesh where twitterWCSesh.reachable {
-                    twitterWCSesh.sendMessage(twitterHandleData, replyHandler: { replyData in
-                        print(replyData)
-                        }, errorHandler: { error in
-                            print(error)
-                    })
-                } else {
-                    //when phone !connected via Bluetooth
-                    print("phone !connected via Bluetooth")
-                } //else
+        //send Twitter handle from phone to Watch to publish to PubNub
+        let twitterHandleData = ["twitterHandle" : dataPassedFromTwitterViewController]
+        if let twitterWCSesh = self.wcSesh where twitterWCSesh.reachable {
+            twitterWCSesh.sendMessage(twitterHandleData, replyHandler: { replyData in
+                print(replyData)
+                }, errorHandler: { error in
+                    print(error)
+            })
+        } else {
+            //when phone !connected via Bluetooth
+            print("phone !connected via Bluetooth")
+        } //else
     }
+    
+    //publish Tweet on button tap. Button only works once, then have to go back to 1st viewController, then forward
    func sendTweet(sender: UIButton) {
-        composer.setText("working out, and my heart rate got to be: " + String(maxHeartRate) + " #pubnub #fabric")
-        //composer.setText("Getting my heart rate puumped #pubnub")
-        
-                    composer.showFromViewController(self) { result in
-                        if (result == TWTRComposerResult.Cancelled) {
+    //TWTRTweetView.appearance().theme = .Dark
+        self.composer.setText("working out and tracking my heart rate. #pubnub #fabric")
+    
+                    self.composer.showFromViewController(self) { result in
+                        if result == .Cancelled {
                             print("Tweet composition cancelled")
-                            self.composer.setText("working out, and my heart rate got to be: " + String(maxHeartRate) + " #pubnub #fabric")
+                        }
+                        else if result == .Done {
+                            print("Tweet result done")
                         }
                         else {
                             print("Sending tweet!")
                         }
                     }
+    
     }
     
     override func didReceiveMemoryWarning() {
@@ -159,26 +170,25 @@ class HRViewController: UIViewController, WCSessionDelegate, UITextViewDelegate,
         progressView.setProgress(0.0, animated: false)
     }
 
-}
 
-    var maxHeartRate: Double = 0 //will change
-    var timeToTweet : Bool = false
-    
     //USE THIS FOR HR, set emojis but don't show #
-func session(wrSesh: WCSession, didReceiveMessage message: [String : AnyObject], replyHandler: ([String : AnyObject]) -> Void) {
-    if let hrArrayFromWatch = message["heart rate value array"] as? [String] { //String?
-//        arrayOfHRVal = hrArrayFromWatch
-        print("here")
-        let doubleArrVal = hrArrayFromWatch.map { Double($0)! }
-        maxHeartRate = doubleArrVal.maxElement()!
+    func session(wcSesh: WCSession, didReceiveMessage message: [String : AnyObject], replyHandler: ([String : AnyObject]) -> Void) {
+//        if let hrArrMax = message["heartRateArray"] as? String { //String?
+//            maxFromArr = Double(hrArrMax)!
+//        }
+//        let hrArrMaxSesh = message["heartRateArray"] as? String
+//        dispatch_async(dispatch_get_main_queue()) {
+//            self.maxFromArr = Double(hrArrMaxSesh!)!
+//            print("maxFromArrSent: " + String(self.maxFromArr))
+//        }
+        if let boolFromWatch = message["buttonTap"] as? Bool { //String?
+            //        arrayOfHRVal = hrArrayFromWatch
+            timeToTweet = boolFromWatch
+        }
     }
-    if let boolFromWatch = message["buttonTap"] as? Bool { //String?
-        //        arrayOfHRVal = hrArrayFromWatch
-        timeToTweet = boolFromWatch
-    }
-
-    
 }
+
+
 
 
 
