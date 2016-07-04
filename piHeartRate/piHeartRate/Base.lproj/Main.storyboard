@@ -30,18 +30,31 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="T6p-jl-PFM">
+                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="T6p-jl-PFM">
                                 <rect key="frame" x="0.0" y="109" width="600" height="800"/>
+                                <subviews>
+                                    <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" fixedFrame="YES" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="ejS-14-3Ex">
+                                        <rect key="frame" x="225" y="163" width="150" height="2"/>
+                                    </progressView>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jCS-gM-qUN">
+                                        <rect key="frame" x="252" y="88" width="97" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" preservesSuperviewLayoutMargins="YES" image="pubnubLogo" highlighted="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Zgg-w8-p4U">
+                                        <rect key="frame" x="129" y="184" width="341" height="186"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="224" id="6OH-G6-Mnl"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
                                 <color key="backgroundColor" red="0.47299893999999998" green="0.50364131430000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="Zgg-w8-p4U" secondAttribute="bottom" constant="24" id="2z7-yd-LAC"/>
+                                    <constraint firstItem="Zgg-w8-p4U" firstAttribute="centerX" secondItem="T6p-jl-PFM" secondAttribute="centerX" id="dQc-4o-5jX"/>
+                                    <constraint firstAttribute="bottom" secondItem="Zgg-w8-p4U" secondAttribute="bottom" constant="200" id="dS1-vm-1Oc"/>
+                                </constraints>
                             </view>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jCS-gM-qUN">
-                                <rect key="frame" x="269" y="306" width="97" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" fixedFrame="YES" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="ejS-14-3Ex">
-                                <rect key="frame" x="230" y="504" width="150" height="2"/>
-                            </progressView>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nfE-YX-RPs">
                                 <rect key="frame" x="16" y="504" width="34" height="30"/>
                                 <state key="normal" title="Back"/>
@@ -77,6 +90,7 @@
                         <outlet property="barView" destination="T6p-jl-PFM" id="tvA-GP-9xb"/>
                         <outlet property="forwardButton" destination="lgq-eJ-7xR" id="RKU-dq-k4o"/>
                         <outlet property="progressView" destination="ejS-14-3Ex" id="5WJ-lf-g1p"/>
+                        <outlet property="pubnubLogo" destination="Zgg-w8-p4U" id="Oob-7o-A06"/>
                         <outlet property="reloadButton" destination="o6T-7r-wHh" id="Gb6-pk-mS5"/>
                         <outlet property="urlField" destination="jCS-gM-qUN" id="A9y-QB-ian"/>
                     </connections>
@@ -118,7 +132,8 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="tintColor" red="0.93666486921733139" green="0.74469534342499266" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="Ppf-yc-WGj" firstAttribute="top" secondItem="epD-rp-Snf" secondAttribute="bottom" constant="24" id="HRu-3y-oQE"/>
                             <constraint firstItem="I9e-uj-gdc" firstAttribute="centerX" secondItem="Hcr-pT-ZZf" secondAttribute="centerX" id="K5B-gn-wuP"/>
@@ -133,6 +148,7 @@
                     <connections>
                         <outlet property="doneButtonThatSegues" destination="uZh-5b-UAB" id="FHR-kO-K6W"/>
                         <outlet property="maxNumToTweet" destination="Hcr-pT-ZZf" id="HnJ-Un-6pp"/>
+                        <outlet property="pbfabricimg" destination="I9e-uj-gdc" id="4bP-an-hDy"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1DO-sQ-tYk" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -142,5 +158,6 @@
     </scenes>
     <resources>
         <image name="pubnub-twitter-fabric1" width="1380" height="600"/>
+        <image name="pubnubLogo" width="300" height="300"/>
     </resources>
 </document>

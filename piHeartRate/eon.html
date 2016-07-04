@@ -6,15 +6,24 @@
         <script type="text/javascript" src="inter.js" charset="utf-8"></script>
         
         <style type="text/css">
+            @import url(https://fonts.googleapis.com/css?family=Droid+Serif:700italic);
             body {
                 padding-top: 40px;
                 background-color: #cfcfc4;
+                font-family: 'Droid Serif', serif;
+               
             }
         #chart {
             position:absolute;
             top:0;
             bottom:65%;
             width:90%;
+        }
+        
+        #pubnubLogo img {
+            bottom: 10%;
+            display: block;
+            margin: 0 auto;
         }
         </style>
         <title>WKWebView</title>
@@ -56,10 +65,14 @@
                                                  return {
                                                  eon: {
                                                  //hardcoded for my Twitter handle
-                                                 'lizziepika': m.heartRate
+                                                 'lizziepika': 'lizziepika'.heartRate
                                                  }
                                                  }
                                                  }
                                                  });
-            </script>    </body>
+            </script>
+        <div id = "pubnubLogo">
+        <img src = "https://i.vimeocdn.com/portrait/7739513_300x300.jpg">
+            </div>
+    </body>
 </html>

@@ -25,6 +25,7 @@ class HRViewController: UIViewController, WCSessionDelegate, UITextViewDelegate,
     @IBOutlet weak var forwardButton: UIBarButtonItem!
     @IBOutlet weak var reloadButton: UIBarButtonItem!
     
+    @IBOutlet weak var pubnubLogo: UIImageView!
     @IBOutlet weak var progressView: UIProgressView!
     let composer = TWTRComposer()
     var dataPassedFromTwitterViewController: String!
@@ -42,20 +43,19 @@ class HRViewController: UIViewController, WCSessionDelegate, UITextViewDelegate,
         super.viewDidLoad()
         self.view.backgroundColor = UIColor(red: 207, green: 207, blue: 196, alpha:150)
         self.navigationController?.toolbarHidden = false
-        self.navigationController?.navigationBarHidden = false
-        // Do any additional setup after loading the view, typically from a nib.
-        //UIToolbar.appearance().barTintColor = UIColor.grayColor();
+       
         barView.frame = CGRect(x:0, y: 0, width: view.frame.width, height: 30)
-        
+       
         //programmatically set button omg
         let tweetButton = UIButton(frame: CGRect(x: self.view.frame.size.width/2.6, y: self.view.frame.size.height/2.7, width: self.view.frame.size.width/2.8, height: self.view.frame.size.height/13))
         tweetButton.center.x = self.view.center.x
         tweetButton.center.y = self.view.center.y
-        tweetButton.backgroundColor = .grayColor()
+        tweetButton.backgroundColor = .blackColor()
         tweetButton.setTitle("Tweet progress", forState: .Normal)
         tweetButton.addTarget(self, action: #selector(sendTweet), forControlEvents: .TouchUpInside)
         //font
         tweetButton.titleLabel!.font = UIFont(name: "SanFranciscoRounded-Thin", size: 20)
+        tweetButton.titleLabel?.textColor = UIColor.redColor()
         
         //rounded, not square
         tweetButton.layer.cornerRadius = 5;
@@ -63,6 +63,7 @@ class HRViewController: UIViewController, WCSessionDelegate, UITextViewDelegate,
         
         self.view.addSubview(tweetButton)
         
+        //webview
         view.insertSubview(webView, belowSubview: progressView)
         
         webView.translatesAutoresizingMaskIntoConstraints = false
@@ -81,6 +82,7 @@ class HRViewController: UIViewController, WCSessionDelegate, UITextViewDelegate,
         backButton.enabled = false
         forwardButton.enabled = false
         
+        //watchConnectivitySession
         if(WCSession.isSupported()) {
             wcSesh = WCSession.defaultSession()
             wcSesh.delegate = self
@@ -173,14 +175,6 @@ class HRViewController: UIViewController, WCSessionDelegate, UITextViewDelegate,
 
     //USE THIS FOR HR, set emojis but don't show #
     func session(wcSesh: WCSession, didReceiveMessage message: [String : AnyObject], replyHandler: ([String : AnyObject]) -> Void) {
-//        if let hrArrMax = message["heartRateArray"] as? String { //String?
-//            maxFromArr = Double(hrArrMax)!
-//        }
-//        let hrArrMaxSesh = message["heartRateArray"] as? String
-//        dispatch_async(dispatch_get_main_queue()) {
-//            self.maxFromArr = Double(hrArrMaxSesh!)!
-//            print("maxFromArrSent: " + String(self.maxFromArr))
-//        }
         if let boolFromWatch = message["buttonTap"] as? Bool { //String?
             //        arrayOfHRVal = hrArrayFromWatch
             timeToTweet = boolFromWatch

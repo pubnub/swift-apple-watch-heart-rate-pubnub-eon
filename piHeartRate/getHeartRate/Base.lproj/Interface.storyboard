@@ -12,10 +12,10 @@
                     <items>
                         <group width="1" alignment="left" id="Dap-3A-kg6">
                             <items>
-                                <label alignment="right" text="BPM" id="ogW-hb-WcP">
-                                    <color key="textColor" red="1" green="0.13610887996125898" blue="0.05554188477244526" alpha="1" colorSpace="calibratedRGB"/>
+                                <label alignment="right" text="❤️" id="dwY-nL-vfY">
+                                    <color key="textColor" red="1" green="0.24257524499999999" blue="0.1838392985" alpha="1" colorSpace="calibratedRGB"/>
                                 </label>
-                                <label alignment="left" text="❤️" id="dwY-nL-vfY"/>
+                                <imageView width="48" alignment="left" image="PubNub" contentMode="scaleAspectFit" id="yXe-NW-l2Q"/>
                             </items>
                         </group>
                         <label alignment="center" text="--" textAlignment="justified" id="j6O-V0-NEJ"/>
@@ -35,7 +35,6 @@
                         </group>
                     </items>
                     <connections>
-                        <outlet property="bpmLabel" destination="ogW-hb-WcP" id="wn8-yH-fUP"/>
                         <outlet property="heart" destination="dwY-nL-vfY" id="4OU-aN-4Ak"/>
                         <outlet property="label" destination="j6O-V0-NEJ" id="Vi1-yj-UFd"/>
                         <outlet property="maxHRLabel" destination="rcL-aF-bOc" id="Oak-qC-BK3"/>
