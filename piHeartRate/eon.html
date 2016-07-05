@@ -37,7 +37,6 @@
                                        subscribe_key: 'sub-c-a3cf770a-2c3d-11e6-8b91-02ee2ddab7fe'
                                        });
                                        var chan = "Olaf";
-                                    
                                        eon.chart({
                                                  pubnub: pbIOSWeb,
                                                  channel: chan,
@@ -56,16 +55,28 @@
                                                  } //tick
                                                  }, //x
                                                  y : {
-                                                 max: 200,
+                                                 max: 175,
                                                  min: 20
                                                  } //y
                                                  } //axis
                                                  }, //gen
                                                  transform: function(dataVal) {
+                                                 var dict = {};
+                                                 dict[dataVal.username] = dataVal.heartRate;
+                                                 if(dataVal.username == 'lizziepika') {
                                                  return {
                                                  eon: {
-                                                 //hardcoded for my Twitter handle
-                                                 'username': dataVal.heartRate
+                                                 'lizziepika': dataVal.heartRate,
+                                                 }
+                                                 }
+                                                 }
+                                                 else {
+                                                 if(dataVal.username == 'bastabayarea') {
+                                                 return {
+                                                 eon: {
+                                                 'bastabayarea' : dataVal.heartRate
+                                                 }
+                                                 }
                                                  }
                                                  }
                                                  }
