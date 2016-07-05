@@ -45,6 +45,8 @@ class HRViewController: UIViewController, WCSessionDelegate, UITextViewDelegate,
         self.navigationController?.toolbarHidden = false
        
         barView.frame = CGRect(x:0, y: 0, width: view.frame.width, height: 30)
+        
+        
        
         //programmatically set button omg
         let tweetButton = UIButton(frame: CGRect(x: self.view.frame.size.width/2.6, y: self.view.frame.size.height/2.7, width: self.view.frame.size.width/2.8, height: self.view.frame.size.height/13))
@@ -128,6 +130,7 @@ class HRViewController: UIViewController, WCSessionDelegate, UITextViewDelegate,
     
     override func viewWillTransitionToSize(size: CGSize, withTransitionCoordinator coordinator: UIViewControllerTransitionCoordinator) {
         barView.frame = CGRect(x:0, y: 0, width: size.width, height: 30)
+        barView.backgroundColor = UIColor.redColor()
     }
     
     func textFieldShouldReturn(textField: UITextField) -> Bool {
