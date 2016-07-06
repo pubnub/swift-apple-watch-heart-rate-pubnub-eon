@@ -25,7 +25,6 @@ class HRViewController: UIViewController, WCSessionDelegate, UITextViewDelegate,
     @IBOutlet weak var forwardButton: UIBarButtonItem!
     @IBOutlet weak var reloadButton: UIBarButtonItem!
     
-    @IBOutlet weak var pubnubLogo: UIImageView!
     @IBOutlet weak var progressView: UIProgressView!
     let composer = TWTRComposer()
     var dataPassedFromTwitterViewController: String!
@@ -45,29 +44,29 @@ class HRViewController: UIViewController, WCSessionDelegate, UITextViewDelegate,
         self.navigationController?.toolbarHidden = false
        
         barView.frame = CGRect(x:0, y: 0, width: view.frame.width, height: 30)
-        
-        
        
+        self.navigationController?.navigationBarHidden = false
+        //UIToolbar.appearance().barTintColor = UIColor.grayColor();
+        barView.frame = CGRect(x:0, y: 0, width: view.frame.width, height: 30)
+        
         //programmatically set button omg
-        let tweetButton = UIButton(frame: CGRect(x: self.view.frame.size.width/2.6, y: self.view.frame.size.height/2.7, width: self.view.frame.size.width/2.8, height: self.view.frame.size.height/13))
+        let tweetButton = UIButton(frame: CGRect(x: 0, y: 0, width: self.view.frame.size.width/2.8, height: self.view.frame.size.height/13))
         tweetButton.center.x = self.view.center.x
-        tweetButton.center.y = self.view.center.y
-        tweetButton.backgroundColor = .blackColor()
-        tweetButton.setTitle("Tweet progress", forState: .Normal)
+        tweetButton.center.y = self.view.center.y + 125
+        tweetButton.backgroundColor = UIColor(red: 0.333, green: 0.675, blue: 0.933, alpha: 1)
+        tweetButton.setTitle("Tweet!", forState: .Normal)
         tweetButton.addTarget(self, action: #selector(sendTweet), forControlEvents: .TouchUpInside)
         //font
         tweetButton.titleLabel!.font = UIFont(name: "SanFranciscoRounded-Thin", size: 20)
-        tweetButton.titleLabel?.textColor = UIColor.redColor()
         
         //rounded, not square
         tweetButton.layer.cornerRadius = 5;
         tweetButton.layer.masksToBounds = true
-        
+
         self.view.addSubview(tweetButton)
         
         //webview
         view.insertSubview(webView, belowSubview: progressView)
-        
         webView.translatesAutoresizingMaskIntoConstraints = false
         
         let height = NSLayoutConstraint(item: webView, attribute: .Height, relatedBy: .Equal, toItem: view, attribute: .Height, multiplier: 1, constant: -44)
@@ -76,6 +75,7 @@ class HRViewController: UIViewController, WCSessionDelegate, UITextViewDelegate,
         
         webView.addObserver(self, forKeyPath: "loading", options: .New, context: nil)
         webView.addObserver(self, forKeyPath: "estimatedProgress", options: .New, context: nil)
+        webView.addSubview(tweetButton)
         
         let localfilePath = NSBundle.mainBundle().URLForResource("eon", withExtension: "html");
         let request = NSURLRequest(URL: localfilePath!);
@@ -105,15 +105,31 @@ class HRViewController: UIViewController, WCSessionDelegate, UITextViewDelegate,
     }
     
     //publish Tweet on button tap. Button only works once, then have to go back to 1st viewController, then forward
+    @IBAction func sendTweetTapped(sender: AnyObject) {
+        self.composer.setText("working out and tracking my heart rate. #pubnub #fabric")
+        
+        self.composer.showFromViewController(self) { result in
+            if result == TWTRComposerResult.Cancelled {
+                print("Tweet composition cancelled")
+            }
+            else if result == TWTRComposerResult.Done {
+                print("Tweet result done")
+            }
+            else {
+                print("Sending tweet!")
+            }
+        }
+
+    }
    func sendTweet(sender: UIButton) {
     //TWTRTweetView.appearance().theme = .Dark
         self.composer.setText("working out and tracking my heart rate. #pubnub #fabric")
     
                     self.composer.showFromViewController(self) { result in
-                        if result == .Cancelled {
+                        if result == TWTRComposerResult.Cancelled {
                             print("Tweet composition cancelled")
                         }
-                        else if result == .Done {
+                        else if result == TWTRComposerResult.Done {
                             print("Tweet result done")
                         }
                         else {
@@ -128,6 +144,22 @@ class HRViewController: UIViewController, WCSessionDelegate, UITextViewDelegate,
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func tweetButtonStoryboardAction(sender: AnyObject) {
+        self.composer.setText("working out and tracking my heart rate. #pubnub #fabric")
+        
+        self.composer.showFromViewController(self) { result in
+            if result == TWTRComposerResult.Cancelled {
+                print("Tweet composition cancelled")
+            }
+            else if result == TWTRComposerResult.Done {
+                print("Tweet result done")
+            }
+            else {
+                print("Sending tweet!")
+            }
+        }
+
+    }
     override func viewWillTransitionToSize(size: CGSize, withTransitionCoordinator coordinator: UIViewControllerTransitionCoordinator) {
         barView.frame = CGRect(x:0, y: 0, width: size.width, height: 30)
         barView.backgroundColor = UIColor.redColor()
@@ -176,10 +208,9 @@ class HRViewController: UIViewController, WCSessionDelegate, UITextViewDelegate,
     }
 
 
-    //USE THIS FOR HR, set emojis but don't show #
+    //don't show HR
     func session(wcSesh: WCSession, didReceiveMessage message: [String : AnyObject], replyHandler: ([String : AnyObject]) -> Void) {
         if let boolFromWatch = message["buttonTap"] as? Bool { //String?
-            //        arrayOfHRVal = hrArrayFromWatch
             timeToTweet = boolFromWatch
         }
     }

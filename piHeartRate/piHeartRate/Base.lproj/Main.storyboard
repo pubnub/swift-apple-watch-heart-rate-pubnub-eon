@@ -35,10 +35,10 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="T6p-jl-PFM">
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="T6p-jl-PFM">
                                 <rect key="frame" x="0.0" y="109" width="600" height="800"/>
                                 <subviews>
-                                    <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" ambiguous="YES" misplaced="YES" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="ejS-14-3Ex">
+                                    <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" fixedFrame="YES" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="ejS-14-3Ex">
                                         <rect key="frame" x="225" y="163" width="150" height="2"/>
                                     </progressView>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jCS-gM-qUN">
@@ -46,21 +46,8 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" preservesSuperviewLayoutMargins="YES" image="pubnubLogo" highlighted="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Zgg-w8-p4U">
-                                        <rect key="frame" x="130" y="234" width="341" height="186"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="224" id="6OH-G6-Mnl"/>
-                                        </constraints>
-                                    </imageView>
                                 </subviews>
                                 <color key="backgroundColor" red="0.47299893999999998" green="0.50364131430000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="Zgg-w8-p4U" secondAttribute="bottom" constant="24" id="2z7-yd-LAC"/>
-                                    <constraint firstAttribute="bottom" secondItem="Zgg-w8-p4U" secondAttribute="bottom" constant="24" id="5qp-3c-7Ib"/>
-                                    <constraint firstItem="Zgg-w8-p4U" firstAttribute="centerX" secondItem="T6p-jl-PFM" secondAttribute="centerX" id="dQc-4o-5jX"/>
-                                    <constraint firstAttribute="bottom" secondItem="Zgg-w8-p4U" secondAttribute="bottom" constant="200" id="dS1-vm-1Oc"/>
-                                    <constraint firstItem="Zgg-w8-p4U" firstAttribute="top" secondItem="ejS-14-3Ex" secondAttribute="bottom" constant="124" id="rnC-MJ-OsL"/>
-                                </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nfE-YX-RPs">
                                 <rect key="frame" x="16" y="504" width="34" height="30"/>
@@ -97,14 +84,13 @@
                         <outlet property="barView" destination="T6p-jl-PFM" id="tvA-GP-9xb"/>
                         <outlet property="forwardButton" destination="lgq-eJ-7xR" id="RKU-dq-k4o"/>
                         <outlet property="progressView" destination="ejS-14-3Ex" id="5WJ-lf-g1p"/>
-                        <outlet property="pubnubLogo" destination="Zgg-w8-p4U" id="Oob-7o-A06"/>
                         <outlet property="reloadButton" destination="o6T-7r-wHh" id="Gb6-pk-mS5"/>
                         <outlet property="urlField" destination="jCS-gM-qUN" id="A9y-QB-ian"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="531" y="360"/>
+            <point key="canvasLocation" x="642" y="360"/>
         </scene>
         <!--Twitter View Controller-->
         <scene sceneID="1J0-T6-GrE">
@@ -133,7 +119,7 @@
                                     <segue destination="BYZ-38-t0r" kind="presentation" identifier="sendTwitterName" id="kfj-E5-4qm"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="pubnub-twitter-fabric1" translatesAutoresizingMaskIntoConstraints="NO" id="I9e-uj-gdc">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="pubnub-twitter-fabric1" translatesAutoresizingMaskIntoConstraints="NO" id="I9e-uj-gdc">
                                 <rect key="frame" x="97" y="347" width="430" height="177"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="200" id="GxU-Wh-o6c"/>
@@ -152,6 +138,7 @@
                             <constraint firstItem="I9e-uj-gdc" firstAttribute="top" secondItem="uZh-5b-UAB" secondAttribute="bottom" constant="200" id="QG8-Sx-c7P"/>
                             <constraint firstAttribute="trailingMargin" secondItem="xBK-ar-Q7Z" secondAttribute="trailing" constant="24" id="Y9a-K2-fun"/>
                             <constraint firstItem="Ppf-yc-WGj" firstAttribute="leading" secondItem="Hcr-pT-ZZf" secondAttribute="leadingMargin" constant="35" id="ZNg-81-BVc"/>
+                            <constraint firstItem="I9e-uj-gdc" firstAttribute="centerX" secondItem="Hcr-pT-ZZf" secondAttribute="centerX" id="ZOq-eg-t7F"/>
                             <constraint firstItem="I9e-uj-gdc" firstAttribute="top" secondItem="uZh-5b-UAB" secondAttribute="bottom" constant="45" id="dXp-aq-HhW"/>
                             <constraint firstItem="uZh-5b-UAB" firstAttribute="centerX" secondItem="Hcr-pT-ZZf" secondAttribute="centerX" id="l8x-LU-YMp"/>
                             <constraint firstItem="Ppf-yc-WGj" firstAttribute="centerX" secondItem="Hcr-pT-ZZf" secondAttribute="centerX" id="vYi-75-10e"/>

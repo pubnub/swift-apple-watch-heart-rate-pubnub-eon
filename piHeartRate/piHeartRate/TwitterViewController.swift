@@ -25,17 +25,22 @@ class TwitterViewController: UIViewController, WCSessionDelegate {
     var loggedIn: Bool = false
     let screenSize: CGRect = UIScreen.mainScreen().bounds
     var twitterWCSesh : WCSession!
+    var twitterColor = UIColor(red: 0.333, green: 0.675, blue: 0.933, alpha: 1)
+    
     override func viewDidLoad() {
         self.view.backgroundColor = UIColor(red: 207, green: 207, blue: 196, alpha:150)
         super.viewDidLoad()
-        //doneButtonThatSegues.frame.origin.y = 400
-//        doneButtonThatSegues.layer.masksToBounds = false
-//        doneButtonThatSegues.backgroundColor = UIColor(red: 0.333, green: 0.675, blue: 0.933, alpha: 1)
-//        doneButtonThatSegues.layer.cornerRadius = 9
-        doneButtonThatSegues.titleLabel!.font = UIFont(name: "SanFranciscoRounded-Thin", size: 20)
-        let logInButton = TWTRLogInButton { (session, error) in
-            if let unwrappedSession = session {
-                //self.twitterIDLabel.text = "Welcome, " + unwrappedSession.userName
+        animateHeart()
+        //when logged in, then segues to next VC and passes Twitter username to Watch
+        doneButtonThatSegues.frame.origin.y = 400
+        doneButtonThatSegues.layer.masksToBounds = false
+        doneButtonThatSegues.backgroundColor = twitterColor
+        doneButtonThatSegues.layer.cornerRadius = 9
+        doneButtonThatSegues.layer.borderColor = twitterColor.CGColor
+        
+        //Twitter login button
+               let logInButton = TWTRLogInButton { (session, error) in
+                    if let unwrappedSession = session {
                 self.twitterUName = unwrappedSession.userName
                 let alert = UIAlertController(title: "Logged In",
                     message: "User \(unwrappedSession.userName) has logged in",
@@ -49,26 +54,28 @@ class TwitterViewController: UIViewController, WCSessionDelegate {
             }
         }
         
-        //pbfabricimg
+        //pbfabricimg size of image
         pbfabricimg.frame = CGRectMake(200, 200, 200, 50)
         
-        //Twitter color
-        decorateButton(logInButton, color: UIColor(red: 0.333, green: 0.675, blue: 0.933, alpha: 1))
-        decorateButton(doneButtonThatSegues, color: UIColor(red: 0.4, green: 0.1, blue:0.6, alpha: 0.5))
-        // pos of login button
-        //let xPos:CGFloat? = screenSize.width/9
+        //Twitter color, etc
+        decorateButton(logInButton, color: twitterColor)
+        decorateButton(doneButtonThatSegues, color: twitterColor)
+
+        //y position of done button
         let yPos:CGFloat? = screenSize.height/3.5
         doneButtonThatSegues.frame = CGRectMake(0, yPos! - 240, screenSize.width/4, 24)
-        //doneButtonThatSegues.backgroundColor = UIColor(red: 0.4, green: 0.1, blue:0.6, alpha: 0.5)
         logInButton.frame = CGRectMake(0, yPos!, screenSize.width, logInButton.frame.height)
+        //add loginbutton to subview
         self.view.addSubview(logInButton)
 
         
+        //watchconnectivity session
         if(WCSession.isSupported()) {
             twitterWCSesh = WCSession.defaultSession()
             twitterWCSesh.delegate = self
             twitterWCSesh.activateSession()
         }
+        //get + set username
         if let sesh = Twitter.sharedInstance().sessionStore.session() {
             let client = TWTRAPIClient()
             client.loadUserWithID(sesh.userID) { (user, error) -> Void in
@@ -82,7 +89,6 @@ class TwitterViewController: UIViewController, WCSessionDelegate {
             }
         }
         //sendTwitterData()
-        animateHeart()
     } //viewDidLoad
     
     //if you want to send twitter login between VCs -> !needed to post to Twitter from other VC
@@ -104,11 +110,10 @@ class TwitterViewController: UIViewController, WCSessionDelegate {
         UIView.animateWithDuration(2.0, delay:0, options: [.Repeat, .Autoreverse], animations: {
             
             self.heartLabel.frame = CGRect(x: 120, y: 190, width: 100, height: 100)
-            //self.plainpubnubimg.frame = CGRect(x: 240, y: 224, width: 200, height: 10)
             
             }, completion: nil)
-        //self.plainpubnubimg.frame = CGRectMake(2, 2, 2, 2)
     }
+    
     //send to other viewcontroller
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) { //send between vc's
         if (segue.identifier == "sendTwitterName") {
@@ -121,9 +126,10 @@ class TwitterViewController: UIViewController, WCSessionDelegate {
     private func decorateButton(button: UIButton, color: UIColor) {
         // Draw the border around a button.
         button.layer.masksToBounds = false
-        button.layer.borderColor = color.CGColor
         button.layer.borderWidth = 2
+        button.layer.borderColor = color.CGColor
         button.layer.cornerRadius = 6
         button.titleLabel!.font = UIFont(name: "SanFranciscoRounded-Thin", size: 20)
+        button.setTitleColor(UIColor.whiteColor(), forState: .Normal)
     }
 }
