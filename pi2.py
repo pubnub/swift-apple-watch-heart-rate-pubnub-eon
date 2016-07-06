@@ -17,7 +17,7 @@ GPIO.setup(LIGHT, GPIO.OUT)
 redGpioMain = 9 #gpio9 = red
 greenGpioMain = 6
 blueGpioMain = 8
-plainGpio = 26
+plainGpio = 2
 GPIO.setup(redGpioMain, GPIO.OUT)
 GPIO.setup(greenGpioMain, GPIO.OUT)
 GPIO.setup(blueGpioMain, GPIO.OUT)
@@ -27,50 +27,44 @@ Freq = 100 #Hz
 
 # Asynchronous usage
 def callback(message, channel):
-    GPIO.output(redGpioMain, False)
+    dictOfTwitterUNames = dict()
     for key in message:
         print(message)
-        if key == "PubNub":
-            print("key is PubNub")
-            check(message[key], redGpioMain)
-        elif key == "PiedPiper":
-            print("key is PiedPiper")
-            check(message[key], greenGpioMain)
-        elif key == "Olaf":
-            check(message[key], blueGpioMain)
-            print("key is Olaf")
-        elif key == "Hamilton":
-            check(message[key], greenGpioMain)
-        elif key == "Hermione":
-            check(message[key], redGpioMain)
-        elif key == '':
-            check(message[key], blueGpioMain)
+        if key in dictOfTwitterUNames:
+            greenGpioMain = dictOfTwitterUNames[key]
         else:
-            print('check phone is sending username')
-
+            dictOfTwitterUNames[key] = plainGpio
+        #check(message.get("heartRate"), dictOfTwitterUNames[key])
+        if key == 'lizziepika' :
+            check(message.get("heartRate"), greenGpio)        
+elif key == 'bastabayarea' :
+            check(message.get("heartRate"), plainGpioMain)
+        elif key == '':
+            check(message.get("heartRate"), blueGpioMain)
+        print('hrVal: ' + str(message.get("heartRate")))
+        print('color: ' + str(dictOfTwitterUNames[key]))
 def check(hrVal, color):
-    if float(hrVal) < 70.0:
+    if float(hrVal) < 65.0:
         GPIO.output(color, True)
         time.sleep(0.7)
-         GPIO.output(color, False)
+        GPIO.output(color, False)
         time.sleep(0.7)
         GPIO.output(color, True)
         time.sleep(0.7)
         GPIO.output(color, False)
-    elif float(hrVal) > 65 and float(hrVal) < 90:
+    elif float(hrVal) > 65 and float(hrVal) < 80:
         GPIO.output(color, True)
         time.sleep(0.5)
         GPIO.output(color, False)
         time.sleep(0.5)
         #check(message[key])
-    elif float(hrVal) > 140:
+    elif float(hrVal) > 80:
         GPIO.output(color, True)
         time.sleep(0.1)
         GPIO.output(color, False)
         time.sleep(0.1)
     else:
         print('err re. checking float(hrVal)')
-
 def error(message):
     print("ERROR : " + str(message))
 
@@ -95,4 +89,3 @@ try:
 except KeyboardInterrupt:
     GPIO.cleanup()
     sys.exit(1)
-
