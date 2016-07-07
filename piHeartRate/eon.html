@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script type="text/javascript" src="http://pubnub.github.io/eon/v/eon/0.0.11/eon.js"></script>
+        <link type="text/css" rel="stylesheet" href="http://pubnub.github.io/eon/v/eon/0.0.11/eon.css" />
+        <script type="text/javascript" src="inter.js" charset="utf-8"></script>
+        
+        <style type="text/css">
+            @import url(https://fonts.googleapis.com/css?family=Droid+Serif:700italic);
+            body {
+                padding-top: 40px;
+                background-color: #cfcfc4;
+                font-family: 'Droid Serif', serif;
+               
+            }
+        #chart {
+            position:absolute;
+            top:0;
+            bottom:65%;
+            width:90%;
+        }
+        
+        #pubnubLogo img {
+            bottom: 10%;
+            display: block;
+            margin: 0 auto;
+        }
+        </style>
+        <title>WKWebView</title>
+        <meta charset="UTF-8">
+            </head>
+    <body>
+        <h1>Heart Rate with EON.js in WKWebView</h1>
+        <div id="chart"></div>
+<!--        <a class="twitter-share-button"-->
+<!--            href="https://twitter.com/intent/tweet?text=Working%out%and%tracking%my%heart%rate%#pubnub%#fabric"-->
+<!--            data-size="large">-->
+<!--            Tweet</a>-->
+        <script>
+            var pbIOSWeb = PUBNUB.init({publish_key: 'pub-c-1b5f6f38-34c4-45a8-81c7-7ef4c45fd608',
+                                       subscribe_key: 'sub-c-a3cf770a-2c3d-11e6-8b91-02ee2ddab7fe'
+                                       });
+                                       var chan = "Olaf";
+                                       eon.chart({
+                                                 pubnub: pbIOSWeb,
+                                                 channel: chan,
+                                                 history: false,
+                                                 flow: true,
+                                                 generate: {
+                                                 bindto: '#chart',
+                                                 data: {
+                                                 type: 'spline'
+                                                 },
+                                                 axis : {
+                                                 x : {
+                                                 type : 'timeseries',
+                                                 tick : {
+                                                 format :'%M'
+                                                 } //tick
+                                                 }, //x
+                                                 y : {
+                                                 max: 175,
+                                                 min: 20
+                                                 } //y
+                                                 } //axis
+                                                 }, //gen
+                                                 transform: function(dataVal) {
+                                                 var dict = {};
+                                                 dict[dataVal.username] = dataVal.heartRate;
+                                                 if(dataVal.username == 'lizziepika') {
+                                                 return {
+                                                 eon: {
+                                                 'lizziepika': dataVal.heartRate,
+                                                 }
+                                                 }
+                                                 }
+                                                 else {
+                                                 if(dataVal.username == 'bastabayarea') {
+                                                 return {
+                                                 eon: {
+                                                 'bastabayarea' : dataVal.heartRate
+                                                 }
+                                                 }
+                                                 }
+                                                 }
+                                                 }
+                                                 });
+            </script>
+        <div id = "pubnubLogo">
+        <img src = "https://i.vimeocdn.com/portrait/7739513_300x300.jpg">
+            </div>
+    </body>
+</html>
