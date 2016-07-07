@@ -1,4 +1,8 @@
 This demo uses the Watch’s HealthKit to access the user’s heart rate data, publish it to <a href="https://www.pubnub.com/" target="_blank">PubNub</a>, and then uses a <a href="https://www.raspberrypi.org/" target="_blank">Raspberry Pi</a> as a medium through which LEDs light up based on heart rate. The iPhone app displays a realtime <a href="/developers/eon/">EON</a> chart, and uses Twitter’s <a href="https://docs.fabric.io/apple/fabric/overview.html" trget="_blank">fabric</a> to use their <a href="https://dev.twitter.com/overview/documentation" target="_blank">API </a>as a way to login, use that Twitter handle as a unique ID, and let the user tweet at the end of a workout session (which must be instantiated in order to access heart rate data.)
+
+![apple-watch-heart-rate-monitor-raspberry-pi-eon](https://cloud.githubusercontent.com/assets/8932430/16638808/14ce8ce8-439f-11e6-9bd4-999ae4afb0d6.JPG)
+
+
 <h3>Installing PubNub with CocoaPods</h3>
 If you have never installed a Pod before, a really good tutorial on how to get started can be found on the CocoaPods official <a href="https://guides.cocoapods.org/using/using-cocoapods.html" target="_blank">website</a>. Once a podfile is setup, it should contain something like this:
 <pre class="EnlighterJSRAW" data-enlighter-language="raw">source 'https://github.com/CocoaPods/Specs.git'
@@ -24,6 +28,8 @@ end
 <h3>Setting up Fabric</h3>
 To set up Fabric for your app, follow the directions <a href="https://docs.fabric.io/apple/fabric/overview.html" target="_blank">here</a>. You can use Pods or download the Fabric OS X app.
 
+![compose-tweet-fabric-swift-ios](https://cloud.githubusercontent.com/assets/8932430/16638787/097d982a-439f-11e6-8806-00512ce99894.gif)
+
 <h2>Phone App</h2>
 
 <h3>AppDelegate</h3>
@@ -43,6 +49,10 @@ WCSession contains a property observer that, when triggered, tries to unwrap the
     }
 }
 </pre>
+
+<h3> Main.storyboard and TwitterViewController</h3>
+
+![animatedheart](https://cloud.githubusercontent.com/assets/8932430/16638795/0e8d5990-439f-11e6-9099-c28aa0b7d5ca.gif)
 
 To display a Twitter login button, paste this code into <em>viewDidLoad():</em>
 <pre class="EnlighterJSRAW" data-enlighter-language="raw">let logInButton = TWTRLogInButton { (session, error) in
@@ -70,7 +80,7 @@ Create a second <em>ViewController.</em> This <em>ViewController</em> is where t
     &lt;true/&gt;
   &lt;/dict&gt;</pre>
 		
-	To go more in depth with App Transport Security, check out this <a href="https://developer.apple.com/library/ios/documentation/General/Reference/InfoPlistKeyReference/Articles/CocoaKeys.html" target="_blank">Apple documentation</a>.
+<p>	To go more in depth with App Transport Security, check out this <a href="https://developer.apple.com/library/ios/documentation/General/Reference/InfoPlistKeyReference/Articles/CocoaKeys.html" target="_blank">Apple documentation</a>. </p>
 	
 	<h3><em>HTML Page for EON</em></h3>
 Create a new empty HTML file. This demo calls it <em>eon.html</em>, and has the following code in the head:
@@ -157,17 +167,21 @@ Whenever you need to use <em>HealthKit</em> data, you’ll need an instance of <
 Right after the global variables, initialize your PubNub Configuration:
 
 &nbsp;
-<pre class="EnlighterJSRAW" data-enlighter-language="raw">override init() {
+<pre class="EnlighterJSRAW" data-enlighter-language="raw">
+override init() {
         let watchConfig = PNConfiguration(publishKey: "your-pub-key", subscribeKey: "your-sub-key")
         
         watchAppDel.client = PubNub.clientWithConfiguration(watchConfig)
         
         super.init()
         watchAppDel.client?.addListener(self)
-    }</pre>
+    }
+    </pre>
+    
+  <p>  Create an override func <em>willActivate(), </em>which is also where you would check if a WatchConnectivity Session is supported (you used this code earlier, too, in the phone app). Based on what permissions your app has, different text will be displayed. That code would follow: </p>
 &nbsp;
 
-Create an override func <em>willActivate(), </em>which is also where you would check if a WatchConnectivity Session is supported (you used this code earlier, too, in the phone app). Based on what permissions your app has, different text will be displayed. That code would follow:
+
 
 &nbsp;
 <pre class="EnlighterJSRAW" data-enlighter-language="raw">guard HKHealthStore.isHealthDataAvailable() == true else { //err checking/handling
@@ -192,6 +206,8 @@ Create an override func <em>willActivate(), </em>which is also where you would c
 &nbsp;
 
 It checks that we have permission to get heart rate data, requests permission, and creates a WatchConnectivity Session that you will use later to send an array of heart rate data to the phone. This is extra to decide when to tweet -- if you want a less specific tweet, no <i>WatchConnectivity Session</i> is necessary because the EON chart receives its data from PubNub.
+
+![eon-data-visualization-ios-heart-rate-monitor-iphone-screen](https://cloud.githubusercontent.com/assets/8932430/16638804/11001eb0-439f-11e6-93fa-3f98aed42520.jpeg)
 
 &nbsp;
 
@@ -247,6 +263,8 @@ The code to publish this data should look something like this:
 </pre>
 &nbsp;
 
+![apple-watch-heart-rate-monitor-watch-face](https://cloud.githubusercontent.com/assets/8932430/16638809/16a8d532-439f-11e6-8358-7607f49a8f82.png)
+
 This is called from another function, the <em>publishTimerFunc() </em>function, because you do not need to publish heart rate data constantly; does it really matter if the value goes up by one or stays the same for a few seconds? That function contains just one line:
 <blockquote>
 <pre class="EnlighterJSRAW" data-enlighter-language="raw">publishTimer = NSTimer.scheduledTimerWithTimeInterval(10.0, target: self, selector: #selector(InterfaceController.publishHeartRate), userInfo: nil, repeats: true)
@@ -284,6 +302,7 @@ Here, the heart rate label on the Watch is updated, and an array is created of h
 <h2>Monitoring the Heart Rate with Raspberry Pi</h2>
 The final part of this project is the hardware. To get started, check out this <a href="/blog/2015-07-22-getting-started-with-raspberry-pi-2-and-pubnub-in-python-programming-language/">tutorial</a>. You need <em>4 M-F jumper wires</em>, a Common-cathode RGB-LED, 3 resistors, a breadboard, and a Raspberry Pi. First, hook up the Raspberry Pi to the breadboard with cables as shown below.
 
+![raspberry-pi-diagram](https://cloud.githubusercontent.com/assets/8932430/16638807/12f7324e-439f-11e6-8b23-9f5f53f947a8.png)
 &nbsp;
 
 Based on heart rate, the LED will flash on and off at different speeds.
