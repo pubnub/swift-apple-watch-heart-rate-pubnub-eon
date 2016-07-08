@@ -32,60 +32,43 @@
     <body>
         <h1>Heart Rate with EON.js in WKWebView</h1>
         <div id="chart"></div>
-<!--        <a class="twitter-share-button"-->
-<!--            href="https://twitter.com/intent/tweet?text=Working%out%and%tracking%my%heart%rate%#pubnub%#fabric"-->
-<!--            data-size="large">-->
-<!--            Tweet</a>-->
         <script>
             var pbIOSWeb = PUBNUB.init({publish_key: 'pub-c-1b5f6f38-34c4-45a8-81c7-7ef4c45fd608',
-                                       subscribe_key: 'sub-c-a3cf770a-2c3d-11e6-8b91-02ee2ddab7fe'
-                                       });
+                                       subscribe_key: 'sub-c-a3cf770a-2c3d-11e6-8b91-02ee2ddab7fe' });
                                        var chan = "Olaf";
                                        eon.chart({
                                                  pubnub: pbIOSWeb,
-                                                 channel: chan,
                                                  history: false,
-                                                 flow: true,
+                                                 channel: chan,
+                                                 limit: 100,
+                                                 rate: 10,
+                                                 ssl: true,
+                                                 debug: true,
                                                  generate: {
+                                                 transition: {
+                                                 duration: 3
+                                                 },
                                                  bindto: '#chart',
                                                  data: {
-                                                 type: 'spline'
+                                                 x: 'x'
                                                  },
-                                                 axis : {
-                                                 x : {
-                                                 type : 'timeseries',
-                                                 tick : {
-                                                 format :'%M'
-                                                 } //tick
-                                                 }, //x
-                                                 y : {
-                                                 max: 175,
-                                                 min: 20
-                                                 } //y
-                                                 } //axis
-                                                 }, //gen
+                                                 axis: {
+                                                 x: {
+                                                 type: 'timeseries',
+                                                 tick: {
+                                                 format: '%H:%m:%S'
+                                                 }
+                                                 }
+                                                 }
+                                                 },
                                                  transform: function(dataVal) {
-                                                 var dict = {};
-                                                 dict[dataVal.username] = dataVal.heartRate;
-                                                 if(dataVal.username == 'lizziepika') {
-                                                 return {
-                                                 eon: {
-                                                 'lizziepika': dataVal.heartRate,
-                                                 }
-                                                 }
-                                                 }
-                                                 else {
-                                                 if(dataVal.username == 'bastabayarea') {
-                                                 return {
-                                                 eon: {
-                                                 'bastabayarea' : dataVal.heartRate
-                                                 }
-                                                 }
-                                                 }
-                                                 }
+                                                 var eon = {}
+                                                 eon[dataVal.username] = dataVal.heartRate;
+                                                 return eon;
                                                  }
                                                  });
-            </script>
+        
+        </script>
         <div id = "pubnubLogo">
         <img src = "https://i.vimeocdn.com/portrait/7739513_300x300.jpg">
             </div>
