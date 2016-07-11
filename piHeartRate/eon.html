@@ -64,7 +64,10 @@
                                                  transform: function(dataVal) {
                                                  var eon = {}
                                                  eon[dataVal.username] = dataVal.heartRate;
-                                                 return eon;
+                                                 return {
+                                                 
+                                                 eon:eon
+                                                 }
                                                  }
                                                  });
         
