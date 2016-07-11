@@ -3,7 +3,6 @@
     <head>
         <script type="text/javascript" src="http://pubnub.github.io/eon/v/eon/0.0.11/eon.js"></script>
         <link type="text/css" rel="stylesheet" href="http://pubnub.github.io/eon/v/eon/0.0.11/eon.css" />
-        <script type="text/javascript" src="inter.js" charset="utf-8"></script>
         
         <style type="text/css">
             @import url(https://fonts.googleapis.com/css?family=Droid+Serif:700italic);
@@ -61,19 +60,24 @@
                                                  } //axis
                                                  }, //gen
                                                  transform: function(dataVal) {
-                                                 console.log(dataVal);
+                                                 var eon = {};
+                                                 eon[dataVal.username] = dataVal.heartRate;
                                                  if(!dataVal.username) {
                                                  dataVal.username = 'default';
                                                  }
-                                                 var eon = {}
-                                                 eon[dataVal.username] = dataVal.heartRate;
-                                                 console.log("eon ", eon);
                                                  return {
-                                                 eon : eon
-                                                 }
-                                                 }
+                                                 eon: eon
+                                                 
+                                                 } //return
+                                                 } //transform
+                                                 
                                                  });
             </script>
+<!--        <a class="twitter-share-button"-->
+<!--            href="https://twitter.com/intent/tweet?text=Working%out%and%tracking%my%heart%rate%#pubnub%#fabric"-->
+<!--            data-size="large">-->
+<!--            Tweet</a>-->
+
         <div id = "pubnubLogo">
         <img src = "https://i.vimeocdn.com/portrait/7739513_300x300.jpg">
             </div>
